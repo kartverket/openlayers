@@ -69,6 +69,10 @@ body {
   top: 0;
   height: 13px;
   background-image: -webkit-linear-gradient(#9e9e9e, #505050);
+  background-image: -moz-linear-gradient(#9e9e9e, #505050);
+  background-image: -ms-linear-gradient(#9e9e9e, #505050);
+  background-image: -o-linear-gradient(#9e9e9e, #505050);
+  background-image: linear-gradient(#9e9e9e, #505050);
 }
 #share-toolbar {
   position: absolute;
@@ -120,8 +124,9 @@ body {
   width: 30px;
   height: 30px;
 }
-#basic-toolbar .icon.plus {
-  width: 69px;
+#basic-toolbar .icon.plus,
+#basic-toolbar .icon.minus {
+  width: 20px;
   height: 20px;
 }
 .icon {
@@ -129,7 +134,8 @@ body {
   -webkit-transition-property: fill;
   -webkit-transition-duration: .2s;
 }
-.panel:hover .icon {
+.icon:hover,
+button:focus .icon {
   fill: #f0f;
 }
 .rasterLayerList {
@@ -517,8 +523,6 @@ body {
   height: 20px;
   margin: 0 0 0 -13px;
   text-align: center;
-  text-indent: -500px;
-  border: 1px solid #999999;
   z-index: 20;
 }
 
