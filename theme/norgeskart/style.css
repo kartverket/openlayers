@@ -558,6 +558,9 @@ button:focus .icon {
   height: 22px;
   width: 15px;
 }
+#searchSubmit span {
+  color: #fff;
+}
 
 /**************************************
  === temporary search ctrl styles ===

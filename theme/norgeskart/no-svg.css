@@ -1,0 +1,38 @@
+.fullscreen-button,
+.olControlZoomIn,
+.olControlZoomOut,
+.getURL-button {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.fullscreen-button {
+  background-image: url('img/fullscreen-icon.png');
+}
+.fullscreen-button.fullscreen-active {
+  background-image: url('img/windowed-icon.png');
+}
+.olControlZoomIn {
+  background-image: url('img/plus-icon.png');
+}
+.olControlZoomOut {
+  background-image: url('img/minus-icon.png');
+}
+.getURL-button {
+  background-image: url('img/embed-icon.png');
+}
+
+#searchResults .h {
+  padding-left: 36px;
+  background-repeat: no-repeat;
+  background-position: left 50%;
+}
+#searchResults .areas .h {
+  background-image: url('img/area-search-icon.png');
+}
+#searchResults .addresses .h {
+  background-image: url('img/address-icon.png');
+}
+#searchResults .objects .h {
+  background-image: url('img/object-icon.png');
+}
