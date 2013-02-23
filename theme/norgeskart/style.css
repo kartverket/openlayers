@@ -512,6 +512,15 @@ button:focus .icon {
   bottom: 12px;
 }
 
+.zoom-to-selection-button {
+  padding: 5px;
+  border-radius: 3px;
+}
+.zoom-to-selection-selected .zoom-to-selection-button {
+  background-color: rgba(0,0,0,.3);
+  box-shadow: 2px 0 3px rgba(0,0,0,.5) inset;
+}
+
 
 /*****************************
 === search ===
