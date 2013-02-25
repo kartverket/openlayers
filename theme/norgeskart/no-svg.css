@@ -1,7 +1,8 @@
 .fullscreen-button,
 .olControlZoomIn,
 .olControlZoomOut,
-.getURL-button {
+.getURL-button,
+.zoom-to-selection-button {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -20,6 +21,9 @@
 }
 .getURL-button {
   background-image: url('img/embed-icon.png');
+}
+.zoom-to-selection-button {
+  background-image: url('img/zoom-to-selection-icon.png');
 }
 
 #searchResults .h {
