@@ -160,7 +160,15 @@ button:focus .icon {
   padding: 7px 3px;
   display: block;
   border-radius: 3px;
+  cursor: pointer;
 }
+.layersDiv .vectorWidgetToggleBtn:hover,
+.layersDiv .vectorWidgetToggleBtn:focus,
+.rasterLayerList label:hover,
+.rasterLayerList input:focus + label {
+  color: #f0f;  
+}
+
 
 .layersDiv.active .vectorWidgetToggleBtn,
 .layersDiv.show .vectorWidgetToggleBtn,
@@ -203,6 +211,7 @@ button:focus .icon {
 .fullscreen-button {
   min-height: 40px;
   width: 68px;
+  cursor: pointer;
 }
 #logo-panel img {
   position: relative;
@@ -508,6 +517,9 @@ button:focus .icon {
   text-align: center;
   z-index: 20;
 }
+.zoombar-and-buttons-wrapper .wrapper .olButton {
+  cursor: pointer;
+}
 
 #zoom-panel .olControlZoomIn.olButton {
   top: -25px;
@@ -668,6 +680,7 @@ button:focus .icon {
   height: 12px;
   display: inline-block;
   position: absolute;
+  cursor: pointer;
 }
 
 #pan-panel .olControlPanNorthItemInactive {
