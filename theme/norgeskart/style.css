@@ -136,10 +136,7 @@ body {
   -webkit-transition-property: fill;
   -webkit-transition-duration: .2s;
 }
-.icon:hover,
-button:focus .icon {
-  fill: #f0f;
-}
+
 .rasterLayerList {
   margin: 0;
   padding: 0;
@@ -162,13 +159,6 @@ button:focus .icon {
   border-radius: 3px;
   cursor: pointer;
 }
-.layersDiv .vectorWidgetToggleBtn:hover,
-.layersDiv .vectorWidgetToggleBtn:focus,
-.rasterLayerList label:hover,
-.rasterLayerList input:focus + label {
-  color: #f0f;  
-}
-
 
 .layersDiv.active .vectorWidgetToggleBtn,
 .layersDiv.show .vectorWidgetToggleBtn,
@@ -720,4 +710,19 @@ button:focus .icon {
 }
 #pan-panel .olControlPanWestItemInactive:focus {
   border-right-color: #ff0;
+}
+
+/**********************
+==== hover styling ====
+**********************/
+.icon:hover,
+button:focus .icon {
+  fill: #f0f;
+}
+
+.layersDiv .vectorWidgetToggleBtn:hover,
+.layersDiv .vectorWidgetToggleBtn:focus,
+.rasterLayerList label:hover,
+.rasterLayerList input:focus + label {
+  color: #f0f;  
 }
