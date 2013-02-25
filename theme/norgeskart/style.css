@@ -468,18 +468,23 @@ button:focus .icon {
 /******************************************
 === get Zoom panel ===
 ******************************************/      
+#zoom-panel {
+  margin-left: -4px;
+}
 #zoom-panel .sliderWrapper,
+#zoom-panel .zoombar-and-buttons-wrapper,
 #zoom-panel {
   position: relative;
 }
 
-#zoom-panel .sliderWrapper {
-  margin: 23px 4px 23px -4px;
-  /*background: red none repeat 0 0; */
+#zoom-panel .zoombar-and-buttons-wrapper {
+/*  margin: 23px 4px 23px -4px; */
+  margin: 25px 0;
 }
 
 #zoom-panel .slider {
-  margin: -4px 0 0 -1px;  
+/*  margin: -4px 0 0 -1px;   */
+  margin: 0;
   border: 1px solid #999999;
   background: #FFFFFF none repeat 0 0;      
 }
@@ -505,13 +510,15 @@ button:focus .icon {
 }
 
 #zoom-panel .olControlZoomIn.olButton {
-  top: 20px;
+  top: -25px;
 }
 
 #zoom-panel .olControlZoomOut.olButton {
-  bottom: 12px;
+  bottom: -25px;
 }
-
+.zoombar-and-buttons-wrapper + .zoom-to-selection-button {
+  margin-top: 20px;
+}
 .zoom-to-selection-button {
   padding: 5px;
   border-radius: 3px;
