@@ -542,13 +542,14 @@ body {
   width: 220px;
   border: none;
   margin: 0;
-  top: 17px;
+  top: 21px;
   position: relative;
-  border-radius: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
   height: 24px;
   font-size: 12px;
   line-height: 18px;
-  padding: 0 24px 0 12px;
+  padding: 0 12px;
   color: #787878;
   box-shadow: 0 3px 3px rgba(0,0,0,.2) inset;
   border: 1px solid grey;
@@ -557,12 +558,11 @@ body {
 #searchSubmit {
   cursor: pointer;
   margin: 0;
-  position: absolute;
-  top: 17px;
-  right: 20px;
+  position: relative;
+  top: 21px;
+  right: 12px;
   height: 24px;
   border-radius: 12px;
-  width: 24px;
   border: none;
   background-color: #4b8bc2;
   background-image: -webkit-linear-gradient(bottom, #01457f, #5998ce 50%);
@@ -573,10 +573,15 @@ body {
   border: 1px solid #003c6f;
   border-color: rgba(0, 60, 111, .82);
 }
+#searchSubmit span {
+  text-transform: uppercase;
+  margin: 0 12px;
+}
 
 #searchSubmit .icon {
   height: 22px;
   width: 15px;
+  display: none;
 }
 #searchSubmit span {
   color: #fff;
