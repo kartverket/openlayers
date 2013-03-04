@@ -508,6 +508,7 @@ body {
   background-color: #606161;
   color: #FFFFFF;
   text-transform: none;
+  text-align: left;
 }
 
 #getURL-panel.active .widget {
@@ -521,6 +522,14 @@ body {
   opacity: 0.4; 
   filter: alpha(opacity=40);
 }
+
+#getURL-panel .page-url {
+  font-family: monospace;
+  color: rgba(80,80,80,.9);
+  background-color: #fff;
+  padding: 8px; 
+}
+
 
 /******************************************
 === get Zoom panel ===
