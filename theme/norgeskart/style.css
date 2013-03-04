@@ -137,22 +137,26 @@ body {
   -webkit-transition-duration: .2s;
 }
 
-.rasterLayerList {
+.rasterLayerList,
+.vectorLayerList {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.rasterLayerList li {
+.rasterLayerList li,
+.vectorLayerList li {
   position: relative;
   padding: 0 3px 0 3px;
 }
-.rasterLayerList input {
+.rasterLayerList input,
+.vectorLayerList input {
   position: absolute;
   left: -100%;
 }
 
 .layersDiv .vectorWidgetToggleBtn,
-.rasterLayerList label {
+.rasterLayerList label, 
+.vectorLayerList label {
   color: #fff;
   padding: 7px 3px;
   display: block;
@@ -162,7 +166,8 @@ body {
 
 .layersDiv.active .vectorWidgetToggleBtn,
 .layersDiv.show .vectorWidgetToggleBtn,
-.rasterLayerList input:checked + label {
+.rasterLayerList input:checked + label,
+.vectorLayerList input:checked + label {
   background-color: rgba(0,0,0,.3);
   box-shadow: 2px 0 3px rgba(0,0,0,.5) inset;
 }
@@ -170,7 +175,8 @@ body {
 #getURL-panel.active:after,
 .layersDiv.active .vectorWidgetToggleBtn:after, 
 .layersDiv.show .vectorWidgetToggleBtn:after, 
-.rasterLayerList input:checked + label:after {
+.rasterLayerList input:checked + label:after,
+.vectorLayerList input:checked + label:after {
   content: '';
   display: block;
   position: absolute;
@@ -239,7 +245,7 @@ body {
    top: 12px;
 }
 
-.layersDiv.displayHorizontal .widget .rasterLayerList li {
+.layersDiv.displayHorizontal .widget .vectorLayerList li {
   float: left;
   clear: none;
   width: 125px;
@@ -250,11 +256,11 @@ body {
   margin: 0;
 }
 
-.layersDiv.displayHorizontal .widget .rasterLayerList input {
+.layersDiv.displayHorizontal .widget .vectorLayerList input {
   display: none;
 }
  
-.layersDiv.displayHorizontal .rasterLayerList input:checked + label:after {
+.layersDiv.displayHorizontal .vectorLayerList input:checked + label:after {
   border-color: transparent transparent rgba(80, 80, 80, 0.9) transparent;
   right: 50%;
   top: -20px;
@@ -267,6 +273,57 @@ body {
   opacity: 1;
   height: auto;
   overflow: visible;
+}
+
+.vectorLayerList li {
+  text-transform: none;
+  font-size: 12px;
+}
+
+#basic-toolbar .vectorLayerList .olButton {
+  margin: 0;
+}
+
+#basic-toolbar .vectorLayerList .olButton:hover,
+#basic-toolbar .vectorLayerList .olButton:focus {
+  text-decoration: underline;
+}
+
+.vector-layer-selector-item:hover:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background-color: yellow;
+  top: 0;
+  left: 100%;
+  border: 2px solid rgba(80,80,80,.9);
+  border-left: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 3000;
+  background-repeat: no-repeat;
+  background-image: url('img/coverage-thumbs.png');
+}
+.vector-layer-selector-item:last-child:hover:after {
+  bottom: 0;
+  top: auto;
+}
+#dekning-papir-selector:hover:after,
+#dekning-plast-selector:hover:after {
+  background-position: 0 0;
+}
+#dekning-sjo-selector:hover:after {
+  background-position: 0 -50px;
+}
+#dekning-sjo-hv-selector:hover:after {
+  background-position: 0 -100px;
+}
+#dekning-sjo-ky-selector:hover:after {
+  background-position: 0 -150px;
+}
+#dekning-sjo-fi-selector:hover:after {
+  background-position: 0 -200px;
 }
 
 /**********************************
@@ -450,6 +507,7 @@ body {
   border: 1px solid #333333;
   background-color: #606161;
   color: #FFFFFF;
+  text-transform: none;
 }
 
 #getURL-panel.active .widget {
@@ -601,6 +659,7 @@ body {
   right: 0;
   position: absolute;
   color: #fff;
+  min-height: 28px;
 }
 #searchResults .result-category {
   margin: 0 8px;
