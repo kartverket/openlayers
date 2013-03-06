@@ -597,6 +597,19 @@ body {
   box-shadow: 2px 0 3px rgba(0,0,0,.5) inset;
 }
 
+#zoom-panel .slider span {
+  display: none;
+  color: #ffffff;
+  background-color: rgba(80,80,80,.9);
+  box-shadow: 0 0 6px rgba(0,0,0,.7);
+}
+#zoom-panel .slider:hover span {
+  position: absolute;
+  padding: 3px 8px;
+  top: 0;
+  left: 30px;
+  display: block;
+}
 
 /*****************************
 === search ===
