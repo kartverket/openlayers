@@ -747,7 +747,9 @@ body {
 #searchResults .area {
 
 }
-
+.search-place {
+  cursor: pointer;
+}
 
 /*****************************
 === pan panel ===
@@ -851,3 +853,16 @@ button:focus .icon {
 .olPopupCloseBox {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII=');
 }
+@media screen and (max-height: 750px) {
+  #zoom-panel .sliderWrapper {
+    display: none;
+  }
+}
+@media screen and (max-height: 700px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 20px 0; } }
+@media screen and (max-height: 690px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 19px 0; } }
+@media screen and (max-height: 680px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 18px 0; } }
+@media screen and (max-height: 670px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 17px 0; } }
+@media screen and (max-height: 660px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 16px 0; } }
+@media screen and (max-height: 650px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 15px 0; } }
+@media screen and (max-height: 640px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 14px 0; } }
+@media screen and (max-height: 630px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 13px 0; } }
