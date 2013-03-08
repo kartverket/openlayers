@@ -188,6 +188,17 @@ body {
   top: 3px;
 }
 
+.layersDiv.active .vectorWidgetToggleBtn:after, 
+.layersDiv.show .vectorWidgetToggleBtn:after {
+  /* bigger arrow to allow gap between the widget and the raster layer selector arrow */
+  border-width: 15px;
+  right: -30px;
+}
+#layerselector-panel-vector .widget {
+  margin-left: 15px;
+  box-shadow: 0 0 6px rgba(0,0,0,.7);
+}
+
 #getURL-panel.active:after {
   top: 50%;
   margin-top: -13px;
@@ -273,6 +284,7 @@ body {
   opacity: 1;
   height: auto;
   overflow: visible;
+
 }
 
 .vectorLayerList li {
@@ -493,6 +505,7 @@ body {
   white-space: nowrap;
   margin-top: -20px;  
   font-size: 12px;
+  box-shadow: 0 0 6px rgba(0,0,0,.7);
 } 
 
 #getURL-panel .widget > .wrapper > .arrow {
@@ -712,9 +725,16 @@ body {
   font-family: Arial, sans-serif;
 }
 #searchResults .areas span,
-#searchResults .addresses span,
+#searchResults .addresses .municipality-name,
 #searchResults .objects span {
     font-weight: bolder;    
+}
+#searchResults .addresses select,
+#searchResults .addresses .selector {
+  float: right;
+}
+#searchResults .addresses .selector {
+  top: -.5em;
 }
 #searchResults ul li {
     list-style-type: none;
@@ -724,6 +744,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 14px;
     margin-top: 10px;
+    clear: right;
 }
 
 #searchResults a.close,
@@ -852,6 +873,12 @@ button:focus .icon {
 }
 .olPopupCloseBox {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII=');
+}
+@media screen and (max-height: 850px) {
+  #layerselector-panel-vector .widget {
+    top: auto;
+    bottom: 0;
+  }
 }
 @media screen and (max-height: 750px) {
   #zoom-panel .sliderWrapper {
