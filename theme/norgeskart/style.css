@@ -846,7 +846,8 @@ button:focus .icon {
 /**************************
 ==== popup styling ===
 **************************/
-#nk-selected-feature {
+#nk-selected-feature,
+#nk-selected-coverage-map {
   background-color: #606161 !important;
   background-color: rgba(80,80,80,.9) !important;
   box-shadow: 0 0 6px rgba(0,0,0,.7);
@@ -857,7 +858,8 @@ button:focus .icon {
   line-height: 14px;
   margin-top: 10px;
 }
-#nk-selected-feature .h {
+#nk-selected-feature .h,
+#nk-selected-coverage-map .h {
   font-size: 12px;
   font-family: Arial, sans-serif;
   font-weight: normal;
@@ -865,9 +867,18 @@ button:focus .icon {
   height: 20px;
   line-height: 14px;
 }
-#nk-selected-feature div {
+#nk-selected-feature div,
+#nk-selected-coverage-map div {
   margin-bottom: 8px;
 }
+
+#nk-selected-coverage-map .municipalities ul {
+  display: inline-block;
+}
+#nk-selected-coverage-map .municipalities li {
+  display: inline;
+}
+
 .olPopupContent {
   padding: 8px;
 }
