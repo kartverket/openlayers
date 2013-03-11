@@ -696,9 +696,19 @@ body {
   color: #fff;
   min-height: 28px;
 }
+#searchResults .result-paging {
+  margin: 0 40px 0 8px;
+  padding: 8px 0;
+  text-align: right;
+}
 #searchResults .result-category {
   margin: 0 8px;
   padding: 14px 0 10px;
+}
+#next-results-page-button {
+  cursor: pointer;
+  color: #fff;
+  margin: 0 2em;
 }
 #searchResults .h {
   font-size: 11px;
