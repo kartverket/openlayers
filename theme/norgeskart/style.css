@@ -825,22 +825,23 @@ body {
   top: 35px;
 }
 
-#pan-panel .olControlPanNorthItemInactive:focus {
-  border-bottom-color: #ff0;
-}
-#pan-panel .olControlPanSouthItemInactive:focus {
-  border-top-color: #ff0;
-}
-#pan-panel .olControlPanEastItemInactive:focus {
-  border-left-color: #ff0;
-}
-#pan-panel .olControlPanWestItemInactive:focus {
-  border-right-color: #ff0;
-}
 
 /**********************
-==== hover styling ====
-**********************/
+==== hover/focus styling ====
+*********************
+#pan-panel .olControlPanNorthItemInactive:focus {
+  border-bottom-color: #f0f;
+}
+#pan-panel .olControlPanSouthItemInactive:focus {
+  border-top-color: #f0f;
+}
+#pan-panel .olControlPanEastItemInactive:focus {
+  border-left-color: #f0f;
+}
+#pan-panel .olControlPanWestItemInactive:focus {
+  border-right-color: #f0f;
+}
+
 .icon:hover,
 button:focus .icon {
   fill: #f0f;
@@ -852,6 +853,7 @@ button:focus .icon {
 .rasterLayerList input:focus + label {
   color: #f0f;  
 }
+*/
 
 /**************************
 ==== popup styling ===
