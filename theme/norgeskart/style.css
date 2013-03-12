@@ -216,7 +216,6 @@ body {
 }
 
 .fullscreen-button {
-  min-height: 40px;
   width: 68px;
   cursor: pointer;
 }
@@ -441,9 +440,10 @@ body {
 === Toolbar nkButton ===
 ******************************************/
 .toolbar .nkButton {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
+  padding: 5px;
 }
 
 .widget {
@@ -485,6 +485,9 @@ body {
 /******************************************
 === get URL panel ===
 ******************************************/
+#basic-toolbar #getURL-panel {
+  padding: 10px 0;
+}
 #zoom-panel,
 #pan-panel,    
 #getURL-panel {
@@ -525,15 +528,19 @@ body {
 }
 
 #getURL-panel.active .widget {
-  /*display: block;*/
   filter: alpha(opacity=100);
   opacity: 1;
   height: auto;
 }
 
 #getURL-panel.active .nkButton {
+  border-radius: 3px;
+  background-color: rgba(0,0,0,.3);
+  box-shadow: 2px 0 3px rgba(0,0,0,.5) inset;
+/*
   opacity: 0.4; 
   filter: alpha(opacity=40);
+*/
 }
 
 #getURL-panel .page-url {
@@ -558,7 +565,7 @@ body {
 
 #zoom-panel .zoombar-and-buttons-wrapper {
 /*  margin: 23px 4px 23px -4px; */
-  margin: 25px 0;
+  padding: 25px 0;
 }
 
 #zoom-panel .slider {
@@ -596,17 +603,17 @@ body {
 }
 
 #zoom-panel .olControlZoomIn.olButton {
-  top: -25px;
+  top: 0;
 }
 
 #zoom-panel .olControlZoomOut.olButton {
-  bottom: -25px;
+  bottom: 0;
 }
 .zoombar-and-buttons-wrapper + .zoom-to-selection-button {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .zoom-to-selection-button {
-  padding: 5px 5px 5px 8px;
+  padding: 5px 5px 2px 8px;
   border-radius: 3px;
 }
 .zoom-to-selection-selected .zoom-to-selection-button {
@@ -920,3 +927,18 @@ button:focus .icon {
 @media screen and (max-height: 650px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 15px 0; } }
 @media screen and (max-height: 640px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 14px 0; } }
 @media screen and (max-height: 630px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 13px 0; } }
+
+@media screen and (max-width: 550px) {
+  #search-toolbar {
+    height: 120px;
+    right: 10px;
+  }
+  #search-toolbar .panel + .panel {
+      /* v-divider.png base64-encoded */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC');
+    background-repeat: repeat-x;
+  }
+  #search-panel {
+    width: 100%;
+  }
+}
