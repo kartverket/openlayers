@@ -563,7 +563,7 @@ body {
 
 #zoom-panel .slider {
 /*  margin: -4px 0 0 -1px;   */
-  margin: 0;
+  margin: 0 0 0 2px;
   border: 1px solid #999999;
   background: #FFFFFF none repeat 0 0;      
 }
@@ -573,8 +573,12 @@ body {
 }
 
 #zoom-panel .track {
-  margin: 0 0 0 30px;
-  background: #FFFFFF none repeat 0 0;        
+  margin: 0 0 0 32px;
+/*  background: #FFFFFF none repeat 0 0;*/
+  /* h-divider.png base64-encoded */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAAD0lEQVQI12OYPGkSMzMzAAitAcGVxxKdAAAAAElFTkSuQmCC');
+  background-repeat: repeat-y;
+  background-position: 1px center;
 }
 
 #zoom-panel .olControlZoomIn.olButton,
@@ -583,7 +587,7 @@ body {
   left: 50%;
   width: 20px;
   height: 20px;
-  margin: 0 0 0 -13px;
+  margin: 0 0 0 -10px;
   text-align: center;
   z-index: 20;
 }
@@ -602,7 +606,7 @@ body {
   margin-top: 20px;
 }
 .zoom-to-selection-button {
-  padding: 5px;
+  padding: 5px 5px 5px 8px;
   border-radius: 3px;
 }
 .zoom-to-selection-selected .zoom-to-selection-button {
@@ -817,7 +821,7 @@ body {
 }
 #pan-panel .olControlPanNorthItemInactive,
 #pan-panel .olControlPanSouthItemInactive {
-  left: 29px;
+  left: 28px;
 }
 
 #pan-panel .olControlPanEastItemInactive,
