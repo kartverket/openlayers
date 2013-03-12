@@ -180,22 +180,26 @@ body {
   content: '';
   display: block;
   position: absolute;
-  border: 10px solid transparent;
+  border: 7.5px solid transparent;
   border-left-color: rgba(80, 80, 80, .9);
   width: 0;
   height: 0;
-  right: -20px;
-  top: 3px;
+  right: -13px;
+  top: 6px;
 }
-
+/* bigger arrow to allow gap between the widget and the raster layer selector arrow
 .layersDiv.active .vectorWidgetToggleBtn:after, 
 .layersDiv.show .vectorWidgetToggleBtn:after {
-  /* bigger arrow to allow gap between the widget and the raster layer selector arrow */
   border-width: 15px;
   right: -30px;
+  top: 3px;
 }
+*/
 #layerselector-panel-vector .widget {
+/*
   margin-left: 15px;
+*/
+  margin-left: 7.5px;
   box-shadow: 0 0 6px rgba(0,0,0,.7);
 }
 
