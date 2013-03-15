@@ -818,6 +818,10 @@ body {
 .search-place {
   cursor: pointer;
 }
+.search-place:hover,
+.search-place:focus {
+  text-decoration: underline;
+}
 
 /*****************************
 === pan panel ===
