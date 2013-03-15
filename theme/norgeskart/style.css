@@ -168,6 +168,7 @@ body {
 .layersDiv.show .vectorWidgetToggleBtn,
 .rasterLayerList input:checked + label,
 .vectorLayerList input:checked + label {
+  background-color: #333333;
   background-color: rgba(0,0,0,.3);
   box-shadow: 2px 0 3px rgba(0,0,0,.5) inset;
 }
@@ -180,7 +181,8 @@ body {
   content: '';
   display: block;
   position: absolute;
-  border: 7.5px solid transparent;
+  border: 7px solid transparent;
+  border-left-color: #606161;
   border-left-color: rgba(80, 80, 80, .9);
   width: 0;
   height: 0;
@@ -199,7 +201,7 @@ body {
 /*
   margin-left: 15px;
 */
-  margin-left: 7.5px;
+  margin-left: 7px;
   box-shadow: 0 0 6px rgba(0,0,0,.7);
 }
 
@@ -239,6 +241,7 @@ body {
 
 .layersDiv .widget {
   margin: -10px 0 0 10px;
+  background-color: #606161;
   background-color: rgba(80,80,80,.9);        
   width: 125px;
   overflow: hidden;
@@ -275,6 +278,7 @@ body {
 }
  
 .layersDiv.displayHorizontal .vectorLayerList input:checked + label:after {
+  border-color: transparent transparent #606161 transparent;
   border-color: transparent transparent rgba(80, 80, 80, 0.9) transparent;
   right: 50%;
   top: -20px;
@@ -283,11 +287,9 @@ body {
 
 /* on show */
 .layersDiv.show .widget {
-  filter: alpha(opacity=100);
-  opacity: 1;
+  display: block;
   height: auto;
   overflow: visible;
-
 }
 
 .vectorLayerList li {
@@ -303,7 +305,9 @@ body {
 #basic-toolbar .vectorLayerList .olButton:focus {
   text-decoration: underline;
 }
-
+.raster-layer-selector-item:focus:after,
+.vector-layer-selector-item:focus:after,
+.raster-layer-selector-item:hover:after,
 .vector-layer-selector-item:hover:after {
   content: '';
   position: absolute;
@@ -312,31 +316,43 @@ body {
   background-color: yellow;
   top: 0;
   left: 100%;
+  border: 2px solid #606161;
   border: 2px solid rgba(80,80,80,.9);
   border-left: none;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   z-index: 3000;
   background-repeat: no-repeat;
-  background-image: url('img/coverage-thumbs.png');
 }
+.raster-layer-selector-item:hover:after {
+  background-image: url('img/raster-thumbs.png');  
+}
+.vector-layer-selector-item:hover:after {
+  background-image: url('img/coverage-thumbs.png');  
+}
+.raster-layer-selector-item:last-child:hover:after,
 .vector-layer-selector-item:last-child:hover:after {
   bottom: 0;
   top: auto;
 }
+#land-selector:hover:after,
 #dekning-papir-selector:hover:after,
 #dekning-plast-selector:hover:after {
   background-position: 0 0;
 }
+#graa-selector:hover:after,
 #dekning-sjo-selector:hover:after {
   background-position: 0 -50px;
 }
+#grunn-selector:hover:after,
 #dekning-sjo-hv-selector:hover:after {
   background-position: 0 -100px;
 }
+#flybilder-selector:hover:after,
 #dekning-sjo-ky-selector:hover:after {
   background-position: 0 -150px;
 }
+#sjo-selector:hover:after,
 #dekning-sjo-fi-selector:hover:after {
   background-position: 0 -200px;
 }
@@ -428,12 +444,13 @@ body {
   -webkit-transform: translate(70px, 0);
   -ms-transform: translate(70px, 0);
   transform: translate(70px, 0);
-
+  background-color: #606161;
   background-color: rgba(80, 80, 80, .9);
   box-shadow: 0 0 6px rgba(0,0,0,.7);
 }
-.lt-ie9 .fullscreen #basic-toolbar {
+.lt-ie9 .fullscreen #basic-toolbar  #fullscreen-panel {
   left: 70px;
+  position: relative;
 }
 #fullscreen-panel .icon {
   height: 20px;
@@ -457,8 +474,7 @@ body {
   height: 0;
   /*display: none;*/
 
-  filter: alpha(opacity=0);
-  opacity: 0;
+  display: none;
   -webkit-transition: opacity .5s ease-in-out;
   -moz-transition: opactiy .5s ease-in-out;
   -ms-transition: opacity .5s ease-in-out;
@@ -508,7 +524,7 @@ body {
 #getURL-panel .widget > .wrapper {
   position: relative;
   top: -50%;
-  left: 10px;
+  left: 7px;
   white-space: nowrap;
   margin-top: -20px;  
   font-size: 12px;
@@ -532,15 +548,15 @@ body {
 }
 
 #getURL-panel.active .widget {
-  filter: alpha(opacity=100);
-  opacity: 1;
+  display: block;
   height: auto;
 }
 
 #getURL-panel.active .nkButton {
   border-radius: 3px;
-  background-color: rgba(0,0,0,.3);
-  box-shadow: 2px 0 3px rgba(0,0,0,.5) inset;
+  background-color: #333333;  
+  background-color: rgba(0, 0, 0, .3);
+  box-shadow: 2px 0 3px rgba(0, 0, 0, .5) inset;
 /*
   opacity: 0.4; 
   filter: alpha(opacity=40);
@@ -549,7 +565,8 @@ body {
 
 #getURL-panel .page-url {
   font-family: monospace;
-  color: rgba(80,80,80,.9);
+  color: #606161;
+  color: rgba(80, 80, 80, .9);
   background-color: #fff;
   padding: 8px; 
 }
@@ -621,15 +638,17 @@ body {
   border-radius: 3px;
 }
 .zoom-to-selection-selected .zoom-to-selection-button {
-  background-color: rgba(0,0,0,.3);
-  box-shadow: 2px 0 3px rgba(0,0,0,.5) inset;
+  background-color: #333333;
+  background-color: rgba(0, 0, 0, .3);
+  box-shadow: 2px 0 3px rgba(0, 0, 0, .5) inset;
 }
 
 #zoom-panel .slider span {
   display: none;
   color: #ffffff;
-  background-color: rgba(80,80,80,.9);
-  box-shadow: 0 0 6px rgba(0,0,0,.7);
+  background-color: #606161;
+  background-color: rgba(80, 80, 80, .9);
+  box-shadow: 0 0 6px rgba(0, 0, 0, .7);
 }
 #zoom-panel .slider:hover span {
   position: absolute;
@@ -681,6 +700,9 @@ body {
   border: 1px solid #003c6f;
   border-color: rgba(0, 60, 111, .82);
 }
+.lt-ie9 #searchSubmit {
+  top: 23px;
+}
 #searchSubmit span {
   text-transform: uppercase;
   margin: 0 12px;
@@ -702,7 +724,7 @@ body {
 #searchResults {
   display: none;    
   background-color: #606161;
-  background-color: rgba(80,80,80,.9);  
+  background-color: rgba(80, 80, 80,.9);  
   box-shadow: 0 0 6px rgba(0,0,0,.7);
   top: 65px;
   left: 0;
@@ -861,14 +883,14 @@ body {
 button:focus .icon {
   fill: #f0f;
 }
-
+*/
 .layersDiv .vectorWidgetToggleBtn:hover,
 .layersDiv .vectorWidgetToggleBtn:focus,
 .rasterLayerList label:hover,
 .rasterLayerList input:focus + label {
-  color: #f0f;  
+  text-decoration: underline;
 }
-*/
+
 
 /**************************
 ==== popup styling ===
