@@ -746,6 +746,8 @@ body {
   cursor: pointer;
   color: #fff;
   margin: 0 2em;
+/*  text-transform: uppercase; */
+  font-size: 10px;
 }
 #searchResults .h {
   font-size: 11px;
