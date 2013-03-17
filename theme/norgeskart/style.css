@@ -1012,3 +1012,19 @@ button:focus .icon {
 .sub550w #search-panel {
   width: 100%;
 }
+
+/***************************
+focus for toolbar controls
+***************************/
+
+.fullscreen-button:focus,
+.olControlZoomIn:focus,
+.olControlZoomOut:focus, 
+.zoom-to-selection-button:focus,
+.getURL-button:focus,
+#layerselector-panel input:focus + label,
+#searchInpun:focus,
+#searchSubmit:focus
+{
+  outline: 2px solid grey;
+}
