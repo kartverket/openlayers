@@ -846,38 +846,39 @@ body {
 #pan-panel .olButton {
   margin: 0;
   z-index: 2;
-  border: 6px solid transparent;
-  width: 12px;
-  height: 12px;
-  display: inline-block;
+  width: 17px;
+  height: 17px;
+  display: block;
   position: absolute;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 #pan-panel .olControlPanNorthItemInactive {
-  border-bottom-color: #fff;
+  background-image: url('img/north-arrow.png');  
   top: 14px;
 }
-#pan-panel .olControlPanSouthItemInactive {
-  border-top-color: #fff;
-  bottom: 14px;
+#pan-panel .olButton.olControlPanSouthItemInactive {
+  background-image: url('img/south-arrow.png');  
+  bottom: 16px;
 }
 #pan-panel .olControlPanEastItemInactive {
-  border-left-color: #fff;
-  right: 6px;
+  background-image: url('img/east-arrow.png');  
+  right: 9px;
 }
 #pan-panel .olControlPanWestItemInactive {
-  border-right-color: #fff;
+  background-image: url('img/west-arrow.png');  
   left: 7px;
 }
 #pan-panel .olControlPanNorthItemInactive,
 #pan-panel .olControlPanSouthItemInactive {
-  left: 28px;
+  left: 25px;
 }
 
 #pan-panel .olControlPanEastItemInactive,
 #pan-panel .olControlPanWestItemInactive {
-  top: 35px;
+  top: 32px;
 }
 
 
