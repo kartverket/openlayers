@@ -326,7 +326,6 @@ body {
   position: absolute;
   width: 60px;
   height: 50px;
-  background-color: yellow;
   top: 0;
   left: 100%;
   border: 2px solid #606161;
@@ -341,12 +340,15 @@ body {
   background-image: url('img/raster-thumbs.png');  
 }
 .vector-layer-selector-item:hover:after {
-  background-image: url('img/coverage-thumbs.png');  
+  background-image: url('img/coverage-thumbs.png');
 }
 .raster-layer-selector-item:last-child:hover:after,
 .vector-layer-selector-item:last-child:hover:after {
   bottom: 0;
   top: auto;
+}
+.raster-layer-selector-item .labelSpan {
+  vertical-align: baseline;
 }
 #land-selector:hover:after,
 #dekning-papir-selector:hover:after,
