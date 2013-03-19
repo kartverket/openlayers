@@ -45,3 +45,9 @@
 #searchResults .objects .h {
   background-image: url('img/object-icon.png');
 }
+.splashscreen .overlay {
+    background: transparent;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000)"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);   /* IE6 & 7 */
+    zoom: 1;
+}
