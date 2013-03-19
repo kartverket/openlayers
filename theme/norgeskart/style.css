@@ -350,9 +350,9 @@ body {
   -webkit-transform: translate(75px, 0);
   -ms-transform: translate(75px, 0);
   transform: translate(75px, 0);
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -ms-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out; }
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -ms-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out; }
 
 .fullscreen .olControlScaleLine {
   -webkit-transform: translate(0, 0);
@@ -365,9 +365,9 @@ body {
 .fullscreen #basic-toolbar,
 .fullscreen #search-toolbar,
 .fullscreen #secondary-toolbar {
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -ms-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out; }
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -ms-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out; }
 
 .fullscreen #basic-toolbar {
   -webkit-transform: translate(-70px, 0);
@@ -382,9 +382,9 @@ body {
   -ms-transform: translate(0, -80px);
   transform: translate(0, -80px); }
 .fullscreen #fullscreen-panel {
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -ms-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -ms-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
   -webkit-transform: translate(70px, 0);
   -ms-transform: translate(70px, 0);
   transform: translate(70px, 0);
@@ -426,11 +426,11 @@ body {
   height: 0;
   /*display: none;*/
   display: none;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  -moz-transition: opactiy 0.5s ease-in-out;
-  -ms-transition: opacity 0.5s ease-in-out;
-  -o-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out; }
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opactiy .5s ease-in-out;
+  -ms-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out; }
 
 .toolbar .widget {
   left: 100%;
@@ -514,7 +514,7 @@ body {
   #zoom-panel .slider {
     margin: 0 0 0 2px;
     border: 1px solid #999999;
-    background: white none repeat 0 0; }
+    background: #FFFFFF none repeat 0 0; }
   #zoom-panel .slider > img {
     visibility: hidden; }
   #zoom-panel .track {
@@ -663,7 +663,7 @@ body {
   #searchResults .addresses .selector {
     float: right; }
   #searchResults .addresses .selector {
-    top: -.5em; }
+    top: -0.5em; }
   #searchResults ul li {
     list-style-type: none;
     text-transform: none;
