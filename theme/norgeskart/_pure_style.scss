@@ -42,6 +42,9 @@ $panel-color-hex: #606161;
   font-size: 12px;
 }
 
+%full-height {
+  height: 100%;
+}
 
 %button-style {
   border: 1px solid #003c6f;
@@ -73,7 +76,7 @@ $panel-color-hex: #606161;
 }
 
 body { 
-  height: 100%;
+  @extend %full-height;
   margin: 0; 
   padding: 0;
 
@@ -93,7 +96,9 @@ body {
   padding: 0; 
   margin: 0;
 }
-
+#map {
+  @extend %full-height;
+}
 button {
   @extend %button;
 }
@@ -124,11 +129,16 @@ button {
 #basic-toolbar,
 #secondary-toolbar {
   @extend %shadow;
+  @extend %full-height;  
   position: absolute;
   top: 0;
   bottom: 0;
   width: 68px;
   padding-top: 13px;
+  
+  .panel:last-child {
+    padding-bottom: 0;
+  }
 }
 #basic-toolbar {
   left: 0;
@@ -1046,6 +1056,11 @@ button:focus .icon {
     display: none;
   }
 }
+@media screen and (max-height: 600px) { 
+  #pan-panel { 
+    display: none; 
+  }
+}
 
 @media screen and (max-height: 700px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 20px 0; } }
 @media screen and (max-height: 690px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 19px 0; } }
@@ -1055,6 +1070,7 @@ button:focus .icon {
 @media screen and (max-height: 650px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 15px 0; } }
 @media screen and (max-height: 640px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 14px 0; } }
 @media screen and (max-height: 630px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 13px 0; } }
+
 
 @media screen and (max-width: 550px) {
   #search-toolbar {
