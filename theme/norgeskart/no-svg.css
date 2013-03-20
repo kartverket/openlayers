@@ -55,3 +55,6 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);   /* IE6 & 7 */
     zoom: 1;
 }
+#map.select-emergency-poster-point {
+  cursor: crosshair;
+}
