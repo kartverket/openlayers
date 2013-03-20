@@ -2,7 +2,8 @@
 .olControlZoomIn,
 .olControlZoomOut,
 .getURL-button,
-.zoom-to-selection-button {
+.zoom-to-selection-button,
+.emergency-poster-button {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -29,6 +30,9 @@
 .zoom-to-selection-button {
   background-image: url('img/zoom-to-selection-icon.png');
   background-position: 60% 50%;
+}
+.emergency-poster-button {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVCAYAAABCIB6VAAABzElEQVR42q2Uz0vCYBjHXZuGaQbiqYZEsVMHMfAW3fJUJ4/9+iMGeigiCCKog8eO3Qw8eRI0JFCog4IiIjIPgggijQSVmZu+PaM5HM7cnF/4HrZnz+d99vC8j0mHMIUXEcMwpm63u9vv928Gg0EaSeI4Lt1qtR5SqdS+y+WywKe45kMEQdgcDofvaI56vd5HNBr1QsoqeOVfKACPkE5ls9lzSF0DE7Og3lnJQqmE+FwO8fm8ajyZTB5LcFwBhZgV/DML/O3xoC8cR6zTqRqHojiapncAZVW0BWJ3CKQPrFSj0XgG1DrYPIYSCGQUPBqN+EAgsCVXDe/2DIJlJRKJE4DawLgIPlOc3G6LEM0WikU5t1wuh+R2wDO9LHCtVnucBF8qwJ0Oavt8CrN2+x/IYpmKCQwj51ar1dtJ8OGyepzJZE4BagcTItixLHAwGKTEizKeCtFvRsGwtD4B6JB2Bzae5W2j4EgkcqB6rWHAr9GCqtfrT1JvzVNrFOIYwF/0QlmWfaUoamMaqoSL+/hCKxTGK0SSpE2cAk0LH5a4jef5K7WNB3/Vazab9+FwmJSqXDHpVSwWwyqVigMqcxcKBXc8Hnf5/X5ChM2r8BcJ3WFgq//LGwAAAABJRU5ErkJggg==');
 }
 
 #searchResults .h {
