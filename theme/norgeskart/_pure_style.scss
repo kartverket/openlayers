@@ -1233,6 +1233,7 @@ focus for toolbar controls
     @extend %horizontal-divider;
     background-position: 0 0;
     padding: 24px;
+
     button {
       @extend %terms-accept-button-style;
       border: 1px solid #01437c;
