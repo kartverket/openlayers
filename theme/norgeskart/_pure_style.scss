@@ -697,6 +697,14 @@ button {
     position: relative;
   }
 
+  .sliderWrapper:hover .slider span {
+    position: absolute;
+    padding: 3px 8px;
+    top: 0;
+    left: 30px;
+    display: block;
+  }
+
   .zoombar-and-buttons-wrapper {
     padding: 25px 0;
   }
@@ -740,13 +748,13 @@ button {
     color: #ffffff;
     box-shadow: 0 0 6px rgba(0, 0, 0, .7);
   }
-  .slider:hover span {
-    position: absolute;
-    padding: 3px 8px;
-    top: 0;
-    left: 30px;
-    display: block;
-  }
+  //.slider:hover span {
+  //  position: absolute;
+  //  padding: 3px 8px;
+  //  top: 0;
+  //  left: 30px;
+  //  display: block;
+  //}
 }
 .zoombar-and-buttons-wrapper .wrapper .olButton {
   cursor: pointer;
