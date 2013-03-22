@@ -1052,6 +1052,60 @@ button:focus .icon {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII=');
 }
 
+.olPopup {
+  &.positioned {
+    .arrow-anchor {
+      &:after {
+        content: '';
+        border: 6px solid transparent;
+        width: 0;
+        height: 0;
+        position: absolute;
+      }
+      &.tl:after,
+      &.tc:after,
+      &.tr:after {
+        bottom: -12px;
+        border-top-color: $panel-color-hex;
+        border-top-color: $panel-color;
+      }
+      &.bl:after,
+      &.bc:after,
+      &.br:after {
+        top: -12px;
+        border-bottom-color: $panel-color-hex;
+        border-bottom-color: $panel-color;
+      }
+      &.cl:after,
+      &.cr:after {
+        top: 50%;
+      }
+      &.bl:after,
+      &.tl:after {
+        left: 0;
+      }
+      &.cl:after {
+        left: -12px;
+      }
+      &.br:after,
+      &.tr:after {
+        right: 0;
+      }
+      &.cr:after {
+        right: -12px;
+      }
+      &.bc:after,
+      &.tc:after {
+        left: 50%;
+      }
+      &.cc:after {
+        display: none;
+      }      
+
+    }
+  }
+}
+
 
 @media screen and (max-height: 850px) {
   #layerselector-panel-vector .widget {
