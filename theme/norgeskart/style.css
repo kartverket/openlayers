@@ -400,32 +400,40 @@ body {
 #basic-toolbar,
 #search-toolbar,
 #secondary-toolbar,
+#overview-container-panel,
 .fullscreen #basic-toolbar,
 .fullscreen #search-toolbar,
-.fullscreen #secondary-toolbar {
+.fullscreen #secondary-toolbar,
+.fullscreen #overview-container-panel {
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
   transition: -ms-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out; }
 
-.fullscreen #basic-toolbar {
-  -webkit-transform: translate(-70px, 0);
-  -ms-transform: translate(-70px, 0);
-  transform: translate(-70px, 0); }
-.fullscreen #secondary-toolbar {
-  -webkit-transform: translate(70px, 0);
-  -ms-transform: translate(70px, 0);
-  transform: translate(70px, 0); }
-.fullscreen #search-toolbar {
-  -webkit-transform: translate(0, -80px);
-  -ms-transform: translate(0, -80px);
-  transform: translate(0, -80px); }
-.fullscreen #fullscreen-panel {
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -ms-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
-  -webkit-transform: translate(70px, 0);
-  -ms-transform: translate(70px, 0);
-  transform: translate(70px, 0); }
+.fullscreen {
+  overflow: hidden; }
+  .fullscreen #basic-toolbar {
+    -webkit-transform: translate(-70px, 0);
+    -ms-transform: translate(-70px, 0);
+    transform: translate(-70px, 0); }
+  .fullscreen #secondary-toolbar {
+    -webkit-transform: translate(70px, 0);
+    -ms-transform: translate(70px, 0);
+    transform: translate(70px, 0); }
+  .fullscreen #search-toolbar {
+    -webkit-transform: translate(0, -80px);
+    -ms-transform: translate(0, -80px);
+    transform: translate(0, -80px); }
+  .fullscreen #fullscreen-panel {
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -ms-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    -webkit-transform: translate(70px, 0);
+    -ms-transform: translate(70px, 0);
+    transform: translate(70px, 0); }
+  .fullscreen #overview-container-panel {
+    -webkit-transform: translate(70px, 120px);
+    -ms-transform: translate(70px, 120px);
+    transform: translate(70px, 120px); }
 
 #fullscreen-panel .icon {
   height: 20px;

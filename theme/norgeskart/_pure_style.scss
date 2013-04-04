@@ -505,15 +505,19 @@ button {
 #basic-toolbar,
 #search-toolbar,
 #secondary-toolbar,
+#overview-container-panel,
 .fullscreen #basic-toolbar,
 .fullscreen #search-toolbar,
-.fullscreen #secondary-toolbar {
+.fullscreen #secondary-toolbar,
+.fullscreen #overview-container-panel {
   -webkit-transition: -webkit-transform .5s ease-in-out;
   transition: -ms-transform .5s ease-in-out;
   transition: transform .5s ease-in-out;
 }
 
 .fullscreen {
+  overflow: hidden;
+  
   #basic-toolbar {
     -webkit-transform: translate(-70px, 0);
     -ms-transform: translate(-70px, 0);
@@ -544,6 +548,12 @@ button {
     transform: translate(70px, 0);
 
     @extend %shadow;
+  }
+
+  #overview-container-panel {
+    -webkit-transform: translate(70px, 120px);
+    -ms-transform: translate(70px, 120px);
+    transform: translate(70px, 120px);    
   }
 }
 
