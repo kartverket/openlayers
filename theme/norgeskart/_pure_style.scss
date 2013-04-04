@@ -46,6 +46,16 @@ $panel-color-hex: #606161;
   height: 100%;
 }
 
+%arrow {
+   &:after {
+    content: '';
+    border: 7px solid transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+}
+
 %button-style {
   border: 1px solid #003c6f;
   border-color: rgba(0, 60, 111, .82);
@@ -187,6 +197,7 @@ button {
 }
 
 #share-toolbar {
+  @extend %shadow;
   position: absolute;
   top: 39px;
   right: 16.666%;
@@ -200,7 +211,7 @@ button {
 
   .icon {
     width: 20px;
-    height: 39px;
+    height: 20px;
   }
 }
 
@@ -595,6 +606,14 @@ button {
   padding: 5px;
 }
 
+#share-toolbar .nkButton {
+  @extend %button;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin: 5px; 
+}
+
 .widget {
   position: absolute;
   top : 0;
@@ -692,6 +711,41 @@ button {
     color: $panel-color;
     background-color: #fff;
     padding: 8px; 
+  }
+}
+
+/******************************************
+=== help panel ===
+******************************************/
+
+#help-panel {
+  button {
+    @extend %button;
+  }
+  &.active {
+    > button {
+      @extend %selected-button;
+    }
+    > .widget {
+      @extend %partial-transparent;
+
+      display: block;
+      top: 100%;
+      right: 0;
+      left: auto;
+      height: auto;
+      margin-top: 15px;
+      width: 307px;
+      @extend %arrow;
+      &:after {
+        top: -14px;
+        right: 24px;
+        border-bottom-color: $panel-color;
+      }
+    }
+    .shortcuts-panel {
+      @extend %horizontal-divider;
+    }
   }
 }
 
@@ -1065,13 +1119,8 @@ button:focus .icon {
 .olPopup {
   &.positioned {
     .arrow-anchor {
-      &:after {
-        content: '';
-        border: 6px solid transparent;
-        width: 0;
-        height: 0;
-        position: absolute;
-      }
+      @extend %arrow;
+
       &.tl:after,
       &.tc:after,
       &.tr:after {

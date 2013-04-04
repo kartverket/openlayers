@@ -1,11 +1,11 @@
 /* common styles */
-.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #zoom-panel .slider span, #searchResults, #tools-panel .widget, .emergency-poster-terms-popup {
+.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #help-panel.active > .widget, #zoom-panel .slider span, #searchResults, #tools-panel .widget, .emergency-poster-terms-popup {
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
 
 button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList label,
-.vectorLayerList label, .toolbar .nkButton, .zoom-to-selection-button {
+.vectorLayerList label, .toolbar .nkButton, #share-toolbar .nkButton, #help-panel button, .zoom-to-selection-button {
   border-radius: 3px;
   cursor: pointer; }
 
@@ -14,18 +14,18 @@ button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList input.is-checked + label,
 .rasterLayerList label.for-checked,
 .vectorLayerList input.is-checked + label,
-.vectorLayerList label.for-checked, #getURL-panel.active .nkButton, .zoom-to-selection-selected .zoom-to-selection-button, #tools-panel.active button {
+.vectorLayerList label.for-checked, #getURL-panel.active .nkButton, #help-panel.active > button, .zoom-to-selection-selected .zoom-to-selection-button, #tools-panel.active button {
   background-color: #333333;
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
 
 #basic-toolbar,
-#secondary-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #getURL-panel .widget > .wrapper, #searchResults, #nk-selected-feature,
+#secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #getURL-panel .widget > .wrapper, #searchResults, #nk-selected-feature,
 #nk-selected-coverage-map, #overview-container-panel, .emergency-poster-terms-popup {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
 #basic-toolbar .panel + .panel,
-#secondary-toolbar .panel + .panel, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .emergency-poster-terms-popup .button-panel {
+#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .emergency-poster-terms-popup .button-panel {
   /* v-divider.png base64-encoded */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC");
   background-repeat: repeat-x; }
@@ -42,6 +42,13 @@ button, .layersDiv .vectorWidgetToggleBtn,
 body, #map, #basic-toolbar,
 #secondary-toolbar {
   height: 100%; }
+
+#help-panel.active > .widget:after, .olPopup.positioned .arrow-anchor:after {
+  content: '';
+  border: 7px solid transparent;
+  width: 0;
+  height: 0;
+  position: absolute; }
 
 .emergency-poster-terms-popup .button-panel button, .splashscreen .widget .splash-button, #searchSubmit {
   border: 1px solid #003c6f;
@@ -164,7 +171,7 @@ body {
     text-align: center; }
   #share-toolbar .icon {
     width: 20px;
-    height: 39px; }
+    height: 20px; }
 
 #basic-toolbar .icon,
 #secondary-toolbar .icon {
@@ -461,6 +468,12 @@ body {
   height: 40px;
   padding: 5px; }
 
+#share-toolbar .nkButton {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin: 5px; }
+
 .widget {
   position: absolute;
   top: 0;
@@ -535,6 +548,22 @@ body {
   color: rgba(80, 80, 80, 0.9);
   background-color: #fff;
   padding: 8px; }
+
+/******************************************
+=== help panel ===
+******************************************/
+#help-panel.active > .widget {
+  display: block;
+  top: 100%;
+  right: 0;
+  left: auto;
+  height: auto;
+  margin-top: 15px;
+  width: 307px; }
+  #help-panel.active > .widget:after {
+    top: -14px;
+    right: 24px;
+    border-bottom-color: rgba(80, 80, 80, 0.9); }
 
 /******************************************
 === get Zoom panel ===
@@ -812,12 +841,6 @@ button:focus .icon {
 .olPopupCloseBox {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII="); }
 
-.olPopup.positioned .arrow-anchor:after {
-  content: '';
-  border: 6px solid transparent;
-  width: 0;
-  height: 0;
-  position: absolute; }
 .olPopup.positioned .arrow-anchor.tl:after, .olPopup.positioned .arrow-anchor.tc:after, .olPopup.positioned .arrow-anchor.tr:after {
   bottom: -12px;
   border-top-color: #606161;
