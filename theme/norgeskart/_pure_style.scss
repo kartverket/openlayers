@@ -728,7 +728,10 @@ button {
     }
     > .widget {
       @extend %partial-transparent;
-
+      @extend %shadow;
+      
+      text-align: left;
+      text-transform: none;
       display: block;
       top: 100%;
       right: 0;
@@ -736,6 +739,34 @@ button {
       height: auto;
       margin-top: 15px;
       width: 307px;
+      font-size: 12px;
+      line-height: 18px;
+
+      .h {
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      p {
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .cnt > div {
+        padding: 20px 16px 24px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table, tr, th, td {
+        border: 1px solid #444;
+      }
+      th, td {
+        padding: 8px 10px 6px;
+      }
+
       @extend %arrow;
       &:after {
         top: -14px;

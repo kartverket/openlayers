@@ -20,7 +20,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
 
 #basic-toolbar,
-#secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #getURL-panel .widget > .wrapper, #searchResults, #nk-selected-feature,
+#secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #getURL-panel .widget > .wrapper, #help-panel.active > .widget, #searchResults, #nk-selected-feature,
 #nk-selected-coverage-map, #overview-container-panel, .emergency-poster-terms-popup {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
@@ -553,13 +553,34 @@ body {
 === help panel ===
 ******************************************/
 #help-panel.active > .widget {
+  text-align: left;
+  text-transform: none;
   display: block;
   top: 100%;
   right: 0;
   left: auto;
   height: auto;
   margin-top: 15px;
-  width: 307px; }
+  width: 307px;
+  font-size: 12px;
+  line-height: 18px; }
+  #help-panel.active > .widget .h {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px; }
+  #help-panel.active > .widget p {
+    margin-bottom: 10px; }
+    #help-panel.active > .widget p:last-child {
+      margin-bottom: 0; }
+  #help-panel.active > .widget .cnt > div {
+    padding: 20px 16px 24px; }
+  #help-panel.active > .widget table {
+    width: 100%;
+    border-collapse: collapse; }
+  #help-panel.active > .widget table, #help-panel.active > .widget tr, #help-panel.active > .widget th, #help-panel.active > .widget td {
+    border: 1px solid #444444; }
+  #help-panel.active > .widget th, #help-panel.active > .widget td {
+    padding: 8px 10px 6px; }
   #help-panel.active > .widget:after {
     top: -14px;
     right: 24px;
