@@ -840,6 +840,12 @@ button:focus .icon {
   #overview-container-panel .olControlOverviewMapElement {
     background: none;
     padding: 8px; }
+  #overview-container-panel .olControlOverviewMapExtentRectangle {
+    border: 2px dotted #e57231;
+    background-color: rgba(229, 114, 49, 0.5);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box; }
 
 #secondary-toolbar ~ #overview-container-panel {
   right: 80px;

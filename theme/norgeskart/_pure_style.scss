@@ -1116,6 +1116,13 @@ button:focus .icon {
     background: none;
     padding: 8px;
   }
+  .olControlOverviewMapExtentRectangle {
+    border: 2px dotted #e57231;
+    background-color: rgba(229, 114, 49, .5);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;    
+    background-clip: padding-box;
+  }
 }
 #secondary-toolbar ~ #overview-container-panel {
   right: 80px;
