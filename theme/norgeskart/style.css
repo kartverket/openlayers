@@ -21,7 +21,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
 
 #basic-toolbar,
 #secondary-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #getURL-panel .widget > .wrapper, #searchResults, #nk-selected-feature,
-#nk-selected-coverage-map, .emergency-poster-terms-popup {
+#nk-selected-coverage-map, #overview-container-panel, .emergency-poster-terms-popup {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
 #basic-toolbar .panel + .panel,
@@ -832,6 +832,18 @@ button:focus .icon {
   left: 50%; }
 .olPopup.positioned .arrow-anchor.cc:after {
   display: none; }
+
+#overview-container-panel {
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+  #overview-container-panel .olControlOverviewMapElement {
+    background: none;
+    padding: 8px; }
+
+#secondary-toolbar ~ #overview-container-panel {
+  right: 80px;
+  bottom: 10px; }
 
 @media screen and (max-height: 850px) {
   #layerselector-panel-vector .widget {

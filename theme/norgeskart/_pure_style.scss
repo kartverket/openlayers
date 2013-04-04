@@ -1106,6 +1106,21 @@ button:focus .icon {
   }
 }
 
+#overview-container-panel {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  @extend %shadow;
+
+  .olControlOverviewMapElement {
+    background: none;
+    padding: 8px;
+  }
+}
+#secondary-toolbar ~ #overview-container-panel {
+  right: 80px;
+  bottom: 10px;
+}
 
 @media screen and (max-height: 850px) {
   #layerselector-panel-vector .widget {
