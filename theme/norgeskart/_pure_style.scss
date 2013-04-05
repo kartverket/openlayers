@@ -90,6 +90,8 @@ body {
   margin: 0; 
   padding: 0;
 
+ -webkit-font-smoothing: antialiased;
+ 
   /**
    * Overflow as hidden will hide the meny options,
    * when the window's size is small.
@@ -729,7 +731,7 @@ button {
     > .widget {
       @extend %partial-transparent;
       @extend %shadow;
-      
+
       text-align: left;
       text-transform: none;
       display: block;
