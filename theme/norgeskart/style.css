@@ -980,7 +980,8 @@ focus for toolbar controls
   emergency poster control
 ***************************/
 #map.select-emergency-poster-point {
-  cursor: url("img/emergency-cursor.png") 17 52, crosshair; }
+  cursor: crosshair;
+  cursor: url("img/emergency-marker.png") 17 52, crosshair; }
 
 #tools-panel {
   position: relative;
