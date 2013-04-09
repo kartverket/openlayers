@@ -1023,7 +1023,8 @@ focus for toolbar controls
       #tools-panel .widget .wrapper div {
         display: table-cell;
         padding: 10px 0;
-        vertical-align: middle; }
+        vertical-align: middle;
+        text-align: left; }
 
 .emergency-poster-terms-popup {
   position: absolute;
