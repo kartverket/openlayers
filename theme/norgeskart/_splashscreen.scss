@@ -60,7 +60,9 @@
       margin-bottom: 16px;
       margin-top: 8px;
     }
-
+    .labs-link {
+      color: #fff;
+    }
     .splash-button {
       @extend %terms-accept-button-style;
       display: block;

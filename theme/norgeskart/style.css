@@ -981,7 +981,7 @@ focus for toolbar controls
 ***************************/
 #map.select-emergency-poster-point {
   cursor: crosshair;
-  cursor: url("img/emergency-marker.png") 17 52, crosshair; }
+  cursor: url("img/emergency-marker.png") 18 50, crosshair; }
 
 #tools-panel {
   position: relative;
@@ -1126,6 +1126,8 @@ focus for toolbar controls
       border-bottom: #929292 1px solid;
       margin-bottom: 16px;
       margin-top: 8px; }
+    .splashscreen .widget .labs-link {
+      color: #fff; }
     .splashscreen .widget .splash-button {
       display: block;
       padding: 10px;
