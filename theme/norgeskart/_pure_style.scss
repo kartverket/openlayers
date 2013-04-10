@@ -509,15 +509,19 @@ button {
 #basic-toolbar,
 #search-toolbar,
 #secondary-toolbar,
+#overview-container-panel,
 .fullscreen #basic-toolbar,
 .fullscreen #search-toolbar,
-.fullscreen #secondary-toolbar {
+.fullscreen #secondary-toolbar,
+.fullscreen #overview-container-panel {
   -webkit-transition: -webkit-transform .5s ease-in-out;
   transition: -ms-transform .5s ease-in-out;
   transition: transform .5s ease-in-out;
 }
 
 .fullscreen {
+  overflow: hidden;
+  
   #basic-toolbar {
     -webkit-transform: translate(-70px, 0);
     -ms-transform: translate(-70px, 0);
@@ -548,6 +552,12 @@ button {
     transform: translate(70px, 0);
 
     @extend %shadow;
+  }
+
+  #overview-container-panel {
+    -webkit-transform: translate(70px, 120px);
+    -ms-transform: translate(70px, 120px);
+    transform: translate(70px, 120px);    
   }
 }
 
@@ -1032,7 +1042,7 @@ button:focus .icon {
     font-family: Arial, sans-serif;
     font-weight: normal;
     text-transform: uppercase;
-    height: 20px;
+    margin-bottom: 6px;
     line-height: 14px;
   }
   div {
@@ -1056,6 +1066,82 @@ button:focus .icon {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII=');
 }
 
+.olPopup {
+  &.positioned {
+    .arrow-anchor {
+      &:after {
+        content: '';
+        border: 6px solid transparent;
+        width: 0;
+        height: 0;
+        position: absolute;
+      }
+      &.tl:after,
+      &.tc:after,
+      &.tr:after {
+        bottom: -12px;
+        border-top-color: $panel-color-hex;
+        border-top-color: $panel-color;
+      }
+      &.bl:after,
+      &.bc:after,
+      &.br:after {
+        top: -12px;
+        border-bottom-color: $panel-color-hex;
+        border-bottom-color: $panel-color;
+      }
+      &.cl:after,
+      &.cr:after {
+        top: 50%;
+      }
+      &.bl:after,
+      &.tl:after {
+        left: 0;
+      }
+      &.cl:after {
+        left: -12px;
+      }
+      &.br:after,
+      &.tr:after {
+        right: 0;
+      }
+      &.cr:after {
+        right: -12px;
+      }
+      &.bc:after,
+      &.tc:after {
+        left: 50%;
+      }
+      &.cc:after {
+        display: none;
+      }      
+
+    }
+  }
+}
+
+#overview-container-panel {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  @extend %shadow;
+
+  .olControlOverviewMapElement {
+    background: none;
+    padding: 8px;
+  }
+  .olControlOverviewMapExtentRectangle {
+    border: 2px dotted #e57231;
+    background-color: rgba(229, 114, 49, .5);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;    
+    background-clip: padding-box;
+  }
+}
+#secondary-toolbar ~ #overview-container-panel {
+  right: 80px;
+  bottom: 10px;
+}
 
 @media screen and (max-height: 850px) {
   #layerselector-panel-vector .widget {
@@ -1140,7 +1226,8 @@ focus for toolbar controls
 ***************************/
  
 #map.select-emergency-poster-point {
-  cursor: url('img/emergency-cursor.png') 17 52, crosshair;
+  cursor: crosshair;
+  cursor: url('img/emergency-marker.png') 18 50, crosshair;
 }
 #tools-panel {
   position: relative;
@@ -1194,6 +1281,7 @@ focus for toolbar controls
         display: table-cell;
         padding: 10px 0;
         vertical-align: middle;
+        text-align: left;
       }
     }
   }
