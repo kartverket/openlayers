@@ -228,6 +228,9 @@ body {
   right: -13px;
   top: 6px; }
 
+.rasterLayerList .hidden {
+  display: none; }
+
 /* bigger arrow to allow gap between the widget and the raster layer selector arrow
 .layersDiv.active .vectorWidgetToggleBtn:after, 
 .layersDiv.show .vectorWidgetToggleBtn:after {
