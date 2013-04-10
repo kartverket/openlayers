@@ -67,6 +67,9 @@ body, #map, #basic-toolbar,
   background-image: -o-linear-gradient(bottom, #01457f, #5998ce 50%);
   background-image: linear-gradient(bottom, #01457f, #5998ce 50%); }
 
+html {
+  background-color: transparent; }
+
 body {
   margin: 0;
   padding: 0;
