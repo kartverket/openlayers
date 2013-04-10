@@ -85,6 +85,10 @@ $panel-color-hex: #606161;
   background-image: linear-gradient(bottom, #01457f, #5998ce 50%);
 }
 
+html {
+  background-color: transparent;
+}
+
 body { 
   @extend %full-height;
   margin: 0; 
@@ -305,6 +309,9 @@ button {
   height: 0;
   right: -13px;
   top: 6px;
+}
+.rasterLayerList .hidden {
+  display: none;
 }
 /* bigger arrow to allow gap between the widget and the raster layer selector arrow
 .layersDiv.active .vectorWidgetToggleBtn:after, 
