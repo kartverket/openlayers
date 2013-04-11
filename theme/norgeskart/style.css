@@ -1,7 +1,18 @@
+@charset "UTF-8";
 /* common styles */
-.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #help-panel.active > .widget, #zoom-panel .slider span, #searchResults, #tools-panel .widget, .emergency-poster-terms-popup {
+@font-face {
+  font-family: 'MetaBook';
+  src: url("/fonts/MetaWeb-Book.eot");
+  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); }
+
+.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget, #zoom-panel .slider span, #searchResults, #tools-panel .widget, .emergency-poster-terms-popup {
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
+
+#getURL-panel .widget .h {
+  font-family: MetaBook, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: normal; }
 
 button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList label,
@@ -20,7 +31,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
 
 #basic-toolbar,
-#secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #getURL-panel .widget > .wrapper, #help-panel.active > .widget, #searchResults, #nk-selected-feature,
+#secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget, #searchResults, #nk-selected-feature,
 #nk-selected-coverage-map, #overview-container-panel, .emergency-poster-terms-popup {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
@@ -43,7 +54,7 @@ body, #map, #basic-toolbar,
 #secondary-toolbar {
   height: 100%; }
 
-#help-panel.active > .widget:after, .olPopup.positioned .arrow-anchor:after {
+#share-toolbar .panel.active .widget:after, .olPopup.positioned .arrow-anchor:after {
   content: '';
   border: 7px solid transparent;
   width: 0;
@@ -214,7 +225,6 @@ body {
   display: block;
   cursor: pointer; }
 
-#getURL-panel.active:after,
 .layersDiv.active .vectorWidgetToggleBtn:after,
 .layersDiv.show .vectorWidgetToggleBtn:after,
 .rasterLayerList input.is-checked + label:after,
@@ -512,6 +522,49 @@ body {
   left: -7px; }
 
 /******************************************
+=== share toolbar ===
+******************************************/
+#share-toolbar .panel.active .widget {
+  right: 0;
+  top: 100%;
+  left: auto;
+  bottom: auto;
+  display: block;
+  height: auto;
+  font-size: 12px;
+  margin-top: 15px;
+  line-height: 18px;
+  text-align: left;
+  text-transform: none; }
+  #share-toolbar .panel.active .widget:after {
+    top: -14px;
+    border-bottom-color: rgba(80, 80, 80, 0.9); }
+#share-toolbar .panel.active:nth-last-child(1) .widget {
+  right: -0px; }
+  #share-toolbar .panel.active:nth-last-child(1) .widget:after {
+    right: 23px; }
+#share-toolbar .panel.active:nth-last-child(2) .widget {
+  right: -60px; }
+  #share-toolbar .panel.active:nth-last-child(2) .widget:after {
+    right: 83px; }
+#share-toolbar .panel.active:nth-last-child(3) .widget {
+  right: -120px; }
+  #share-toolbar .panel.active:nth-last-child(3) .widget:after {
+    right: 143px; }
+#share-toolbar .panel.active:nth-last-child(4) .widget {
+  right: -180px; }
+  #share-toolbar .panel.active:nth-last-child(4) .widget:after {
+    right: 203px; }
+#share-toolbar .panel.active:nth-last-child(5) .widget {
+  right: -240px; }
+  #share-toolbar .panel.active:nth-last-child(5) .widget:after {
+    right: 263px; }
+#share-toolbar .panel.active:nth-last-child(6) .widget {
+  right: -300px; }
+  #share-toolbar .panel.active:nth-last-child(6) .widget:after {
+    right: 323px; }
+
+/******************************************
 === get URL panel ===
 ******************************************/
 #basic-toolbar #getURL-panel {
@@ -524,53 +577,41 @@ body {
   position: relative; }
 
 #getURL-panel .widget {
-  left: 100%;
-  top: 50%;
-  border: 0 none; }
-  #getURL-panel .widget > .wrapper {
-    position: relative;
-    top: -50%;
-    left: 7px;
-    white-space: nowrap;
-    margin-top: -20px;
-    font-size: 12px; }
-  #getURL-panel .widget > .wrapper > .arrow {
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    margin: -9px 0 0 0; }
+  width: 510px; }
+  #getURL-panel .widget .h {
+    margin-bottom: 20px; }
   #getURL-panel .widget .cnt {
-    padding: 10px 15px 10px 15px;
-    border: 1px solid #333333;
-    background-color: #606161;
-    color: #FFFFFF;
+    padding: 20px 20px 25px;
     text-transform: none;
     text-align: left; }
-#getURL-panel.active .widget {
-  display: block;
-  height: auto; }
+    #getURL-panel .widget .cnt > span {
+      vertical-align: top; }
+    #getURL-panel .widget .cnt .share-link {
+      padding: 0 17px; }
+    #getURL-panel .widget .cnt .email {
+      width: 26px;
+      height: 26px; }
 #getURL-panel .page-url {
   font-family: monospace;
   color: #606161;
   color: rgba(80, 80, 80, 0.9);
   background-color: #fff;
-  padding: 8px; }
+  padding: 8px;
+  word-break: break-word;
+  margin-bottom: 20px; }
+#getURL-panel .share-link {
+  color: #fff;
+  overflow: hidden; }
+  #getURL-panel .share-link span {
+    position: absolute;
+    left: -999em; }
 
 /******************************************
 === help panel ===
 ******************************************/
 #help-panel.active > .widget {
-  text-align: left;
-  text-transform: none;
-  display: block;
-  top: 100%;
-  right: 0;
-  left: auto;
-  height: auto;
-  margin-top: 15px;
   width: 307px;
-  font-size: 12px;
-  line-height: 18px; }
+  display: block; }
   #help-panel.active > .widget .h {
     font-size: 12px;
     text-transform: uppercase;
@@ -588,10 +629,6 @@ body {
     border: 1px solid #444444; }
   #help-panel.active > .widget th, #help-panel.active > .widget td {
     padding: 8px 10px 6px; }
-  #help-panel.active > .widget:after {
-    top: -14px;
-    right: 24px;
-    border-bottom-color: rgba(80, 80, 80, 0.9); }
 
 /******************************************
 === get Zoom panel ===

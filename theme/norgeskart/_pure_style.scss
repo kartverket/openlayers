@@ -1,11 +1,25 @@
 /* common styles */
 
+@font-face {
+  font-family: 'MetaBook';
+  src: url("/fonts/MetaWeb-Book.eot");
+  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); 
+}
+
 $panel-color: rgba(80,80,80,.9);
 $panel-color-hex: #606161;
+$share-toolbar-panel-width: 60px;
+$share-toolbar-panel-height: 39px;
 
 %partial-transparent {
   background-color: $panel-color-hex;
   background-color: $panel-color;
+}
+
+%header-font {
+  font-family: MetaBook, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: normal;
 }
 
 %button {
@@ -210,8 +224,8 @@ button {
   height: 40px;
 
   .panel {
-    width: 60px;
-    height: 39px;
+    width: $share-toolbar-panel-width;
+    height: $share-toolbar-panel-height;
     text-align: center;
   }
 
@@ -288,7 +302,6 @@ button {
   @extend %selected-button;
 }
 
-#getURL-panel.active:after,
 .layersDiv.active .vectorWidgetToggleBtn:after, 
 .layersDiv.show .vectorWidgetToggleBtn:after, 
 .rasterLayerList input.is-checked + label:after,
@@ -659,6 +672,59 @@ button {
 }
 
 /******************************************
+=== share toolbar ===
+******************************************/
+
+#share-toolbar {
+  .panel {
+    &.active {
+      .widget {
+        @extend %shadow;
+        @extend %partial-transparent;
+
+        right: 0;
+        top: 100%;
+        left: auto;
+        bottom: auto;
+        display: block;
+        height: auto;
+        font-size: 12px;
+        margin-top: 15px;
+        line-height: 18px;
+        text-align: left;
+        text-transform: none;
+
+
+        @extend %arrow;
+        &:after {
+          top: -14px;
+          border-bottom-color: $panel-color;
+        }
+
+      }
+      @mixin share-widget-positioning($nth_last) {
+        &:nth-last-child(#{$nth_last}) {
+          .widget {
+            right: -#{$share-toolbar-panel-width * ($nth_last - 1)};
+
+            &:after {
+              right: #{$share-toolbar-panel-width * ($nth_last - 0.5) - 7px};
+            }        
+          }
+        }
+      }
+      @include share-widget-positioning(1);
+      @include share-widget-positioning(2);
+      @include share-widget-positioning(3);
+      @include share-widget-positioning(4);
+      @include share-widget-positioning(5);
+      @include share-widget-positioning(6);
+
+    }
+  }
+}
+
+/******************************************
 === get URL panel ===
 ******************************************/
 #basic-toolbar #getURL-panel {
@@ -670,45 +736,35 @@ button {
   text-align: center;
   position: relative;
 }
+
 #getURL-panel {
   .widget {
-    left: 100%;
-    top: 50%;
-    border: 0 none;
-
-    > .wrapper {
-      position: relative;
-      top: -50%;
-      left: 7px;
-      white-space: nowrap;
-      margin-top: -20px;  
-      font-size: 12px;
-      @extend %shadow;
-    } 
-
-    > .wrapper > .arrow {
-      position: absolute;
-      right: 100%;
-      top: 50%;
-      margin: -9px 0 0 0;
+    width: 510px;
+    .h {
+      margin-bottom: 20px;
+      @extend %header-font;
     }
 
     .cnt {
-      padding: 10px 15px 10px 15px;
-      border: 1px solid #333333;
-      background-color: $panel-color-hex;
-      color: #FFFFFF;
+      padding: 20px 20px 25px;
       text-transform: none;
       text-align: left;
+
+      > span {
+        vertical-align: top;
+      }
+
+      .share-link {
+        padding: 0 17px;
+      }
+      .email {
+        width: 26px;
+        height: 26px;
+      }
     }
   }
 
   &.active {
-    .widget {
-      display: block;
-      height: auto;
-    }
-
     .nkButton {
       @extend %selected-button;
     }
@@ -720,6 +776,27 @@ button {
     color: $panel-color;
     background-color: #fff;
     padding: 8px; 
+    word-break: break-word;
+    margin-bottom: 20px;
+  }
+  .share-link {
+    color: #fff;
+    overflow: hidden;
+
+
+    span {
+      position: absolute;
+      left: -999em;
+    }
+    .email {
+
+    }
+    .twitter {
+
+    }
+    .facebook {
+
+    }
   }
 }
 
@@ -736,20 +813,8 @@ button {
       @extend %selected-button;
     }
     > .widget {
-      @extend %partial-transparent;
-      @extend %shadow;
-
-      text-align: left;
-      text-transform: none;
-      display: block;
-      top: 100%;
-      right: 0;
-      left: auto;
-      height: auto;
-      margin-top: 15px;
       width: 307px;
-      font-size: 12px;
-      line-height: 18px;
+      display: block;
 
       .h {
         font-size: 12px;
@@ -774,13 +839,6 @@ button {
       }
       th, td {
         padding: 8px 10px 6px;
-      }
-
-      @extend %arrow;
-      &:after {
-        top: -14px;
-        right: 24px;
-        border-bottom-color: $panel-color;
       }
     }
     .shortcuts-panel {
