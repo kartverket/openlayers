@@ -705,7 +705,7 @@ button {
       @mixin share-widget-positioning($nth_last) {
         &:nth-last-child(#{$nth_last}) {
           .widget {
-            right: -#{$share-toolbar-panel-width * ($nth_last - 1)};
+//            right: -#{$share-toolbar-panel-width * ($nth_last - 1)};
 
             &:after {
               right: #{$share-toolbar-panel-width * ($nth_last - 0.5) - 7px};
@@ -731,13 +731,14 @@ button {
   padding: 10px 0;
 }
 #zoom-panel,
-#pan-panel,    
-#getURL-panel {
+#pan-panel {
   text-align: center;
   position: relative;
 }
 
 #getURL-panel {
+  text-align: center;
+
   .widget {
     width: 510px;
     .h {

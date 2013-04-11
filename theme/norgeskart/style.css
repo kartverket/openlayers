@@ -539,30 +539,18 @@ body {
   #share-toolbar .panel.active .widget:after {
     top: -14px;
     border-bottom-color: rgba(80, 80, 80, 0.9); }
-#share-toolbar .panel.active:nth-last-child(1) .widget {
-  right: -0px; }
-  #share-toolbar .panel.active:nth-last-child(1) .widget:after {
-    right: 23px; }
-#share-toolbar .panel.active:nth-last-child(2) .widget {
-  right: -60px; }
-  #share-toolbar .panel.active:nth-last-child(2) .widget:after {
-    right: 83px; }
-#share-toolbar .panel.active:nth-last-child(3) .widget {
-  right: -120px; }
-  #share-toolbar .panel.active:nth-last-child(3) .widget:after {
-    right: 143px; }
-#share-toolbar .panel.active:nth-last-child(4) .widget {
-  right: -180px; }
-  #share-toolbar .panel.active:nth-last-child(4) .widget:after {
-    right: 203px; }
-#share-toolbar .panel.active:nth-last-child(5) .widget {
-  right: -240px; }
-  #share-toolbar .panel.active:nth-last-child(5) .widget:after {
-    right: 263px; }
-#share-toolbar .panel.active:nth-last-child(6) .widget {
-  right: -300px; }
-  #share-toolbar .panel.active:nth-last-child(6) .widget:after {
-    right: 323px; }
+#share-toolbar .panel.active:nth-last-child(1) .widget:after {
+  right: 23px; }
+#share-toolbar .panel.active:nth-last-child(2) .widget:after {
+  right: 83px; }
+#share-toolbar .panel.active:nth-last-child(3) .widget:after {
+  right: 143px; }
+#share-toolbar .panel.active:nth-last-child(4) .widget:after {
+  right: 203px; }
+#share-toolbar .panel.active:nth-last-child(5) .widget:after {
+  right: 263px; }
+#share-toolbar .panel.active:nth-last-child(6) .widget:after {
+  right: 323px; }
 
 /******************************************
 === get URL panel ===
@@ -571,40 +559,41 @@ body {
   padding: 10px 0; }
 
 #zoom-panel,
-#pan-panel,
-#getURL-panel {
+#pan-panel {
   text-align: center;
   position: relative; }
 
-#getURL-panel .widget {
-  width: 510px; }
-  #getURL-panel .widget .h {
+#getURL-panel {
+  text-align: center; }
+  #getURL-panel .widget {
+    width: 510px; }
+    #getURL-panel .widget .h {
+      margin-bottom: 20px; }
+    #getURL-panel .widget .cnt {
+      padding: 20px 20px 25px;
+      text-transform: none;
+      text-align: left; }
+      #getURL-panel .widget .cnt > span {
+        vertical-align: top; }
+      #getURL-panel .widget .cnt .share-link {
+        padding: 0 17px; }
+      #getURL-panel .widget .cnt .email {
+        width: 26px;
+        height: 26px; }
+  #getURL-panel .page-url {
+    font-family: monospace;
+    color: #606161;
+    color: rgba(80, 80, 80, 0.9);
+    background-color: #fff;
+    padding: 8px;
+    word-break: break-word;
     margin-bottom: 20px; }
-  #getURL-panel .widget .cnt {
-    padding: 20px 20px 25px;
-    text-transform: none;
-    text-align: left; }
-    #getURL-panel .widget .cnt > span {
-      vertical-align: top; }
-    #getURL-panel .widget .cnt .share-link {
-      padding: 0 17px; }
-    #getURL-panel .widget .cnt .email {
-      width: 26px;
-      height: 26px; }
-#getURL-panel .page-url {
-  font-family: monospace;
-  color: #606161;
-  color: rgba(80, 80, 80, 0.9);
-  background-color: #fff;
-  padding: 8px;
-  word-break: break-word;
-  margin-bottom: 20px; }
-#getURL-panel .share-link {
-  color: #fff;
-  overflow: hidden; }
-  #getURL-panel .share-link span {
-    position: absolute;
-    left: -999em; }
+  #getURL-panel .share-link {
+    color: #fff;
+    overflow: hidden; }
+    #getURL-panel .share-link span {
+      position: absolute;
+      left: -999em; }
 
 /******************************************
 === help panel ===
