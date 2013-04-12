@@ -5,7 +5,7 @@
   src: url("/fonts/MetaWeb-Book.eot");
   src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); }
 
-.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget, #zoom-panel .slider span, #searchResults, #tools-panel .widget, .emergency-poster-terms-popup {
+.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .emergency-poster-terms-popup {
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
 
@@ -13,6 +13,10 @@
   font-family: MetaBook, Arial, sans-serif;
   font-size: 30px;
   font-weight: normal; }
+
+.tool.transformations .widget label:before {
+  content: '\a';
+  white-space: pre; }
 
 button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList label,
@@ -25,7 +29,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList input.is-checked + label,
 .rasterLayerList label.for-checked,
 .vectorLayerList input.is-checked + label,
-.vectorLayerList label.for-checked, #getURL-panel.active > .nkButton, #help-panel.active > button, .zoom-to-selection-selected .zoom-to-selection-button, #tools-panel.active > button {
+.vectorLayerList label.for-checked, #getURL-panel.active > .nkButton, #help-panel.active > button, .zoom-to-selection-selected .zoom-to-selection-button, .tool.active > button {
   background-color: #333333;
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
@@ -61,7 +65,7 @@ body, #map, #basic-toolbar,
   height: 0;
   position: absolute; }
 
-.emergency-poster-terms-popup .button-panel button, .splashscreen .widget .splash-button, #searchSubmit {
+.tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .splashscreen .widget .splash-button, #searchSubmit {
   border: 1px solid #003c6f;
   border-color: rgba(0, 60, 111, 0.82);
   cursor: pointer;
@@ -69,13 +73,31 @@ body, #map, #basic-toolbar,
   color: #fff;
   text-transform: uppercase; }
 
-.emergency-poster-terms-popup .button-panel button, .splashscreen .widget .splash-button {
-  background-color: #4b8bc2;
-  background-image: -webkit-linear-gradient(bottom, #0058a3, #408ccd 50%);
-  background-image: -moz-linear-gradient(bottom, #0058a3, #408ccd 50%);
-  background-image: -ms-linear-gradient(bottom, #0058a3, #408ccd 50%);
-  background-image: -o-linear-gradient(bottom, #0058a3, #408ccd 50%);
-  background-image: linear-gradient(bottom, #0058a3, #408ccd 50%); }
+.tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .splashscreen .widget .splash-button {
+  background-color: #408ccd;
+  background-image: -webkit-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
+  background-image: -moz-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
+  background-image: -ms-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
+  background-image: -o-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
+  background-image: linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
+  background-size: 150%;
+  background-position: 0 100%; }
+  .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .splashscreen .widget .splash-button:hover, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .splashscreen .widget .splash-button:focus {
+    -webkit-transition-property: background-position;
+    -webkit-transition-duration: .03s;
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.5, 0.75, 0.5); }
+  .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .splashscreen .widget .splash-button:hover, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .splashscreen .widget .splash-button:focus {
+    background-position: 0 0%;
+    text-decoration: underline; }
+
+.tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button {
+  border: 1px solid #01437c;
+  height: 24px;
+  width: auto;
+  padding: 0 24px 0 12px;
+  text-align: left;
+  position: relative;
+  line-height: 24px; }
 
 #searchSubmit {
   background-color: #4b8bc2;
@@ -1012,10 +1034,58 @@ focus for toolbar controls
 /***************************
 === tools ===
 ***************************/
+#tools-panel {
+  position: relative;
+  text-align: center; }
+  #tools-panel .tool > button {
+    margin: 10px 0;
+    width: 30px;
+    height: 30px;
+    padding: 5px; }
+  #tools-panel .icon {
+    width: 20px;
+    height: 20px; }
+  #tools-panel .tool.active > button:after {
+    border: 6px solid transparent;
+    border-right-color: #606161;
+    border-right-color: rgba(80, 80, 80, 0.9);
+    right: 100%;
+    top: 50%; }
+
 .tool {
   position: relative; }
+  .tool .widget {
+    position: absolute;
+    left: auto;
+    top: 25%;
+    height: auto;
+    right: 100%;
+    font-size: 12px;
+    text-align: left;
+    text-transform: none; }
+  .tool.active > button:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2000; }
   .tool.active .widget {
     display: block; }
+
+/***************************
+  transformations control 
+***************************/
+.tool.transformations .widget {
+  width: 300px;
+  padding: 10px 50px 10px 10px; }
+  .tool.transformations .widget label:after {
+    content: ':'; }
+  .tool.transformations .widget input, .tool.transformations .widget select {
+    margin-bottom: 10px; }
+  .tool.transformations .widget input {
+    border: 1px solid black;
+    height: 24px;
+    padding: 5px;
+    box-shadow: 3px 0 4px -2px rgba(0, 0, 0, 0.5) inset; }
 
 /***************************
   emergency poster control
@@ -1029,7 +1099,9 @@ focus for toolbar controls
   background-repeat: no-repeat;
   background-position: 10px 50%;
   padding: 0 20px 0 50px;
-  display: table; }
+  display: table;
+  white-space: pre;
+  text-transform: uppercase; }
   .tool.emergency-poster .widget .wrapper {
     display: table-row;
     height: 60px; }
@@ -1038,37 +1110,6 @@ focus for toolbar controls
       padding: 10px 0;
       vertical-align: middle;
       text-align: left; }
-
-#tools-panel {
-  position: relative;
-  text-align: center; }
-  #tools-panel.active > button:after {
-    content: '';
-    display: block;
-    border: 6px solid transparent;
-    border-right-color: #606161;
-    border-right-color: rgba(80, 80, 80, 0.9);
-    position: absolute;
-    right: 100%;
-    z-index: 2000;
-    top: 50%; }
-  #tools-panel button {
-    margin: 10px 0;
-    width: 30px;
-    height: 30px;
-    padding: 5px; }
-  #tools-panel .icon {
-    width: 20px;
-    height: 20px; }
-  #tools-panel .widget {
-    position: absolute;
-    left: auto;
-    top: 25%;
-    width: auto;
-    height: auto;
-    right: 100%;
-    font-size: 12px;
-    white-space: pre; }
 
 .emergency-poster-terms-popup {
   position: absolute;
@@ -1100,13 +1141,7 @@ focus for toolbar controls
     background-position: 0 0;
     padding: 24px; }
     .emergency-poster-terms-popup .button-panel button {
-      border: 1px solid #01437c;
-      height: 24px;
-      padding: 0 24px 0 12px;
-      width: 100%;
-      text-align: left;
-      position: relative;
-      line-height: 24px; }
+      width: 100%; }
       .emergency-poster-terms-popup .button-panel button:after {
         content: '';
         display: block;

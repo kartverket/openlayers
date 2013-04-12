@@ -22,6 +22,13 @@ $share-toolbar-panel-height: 39px;
   font-weight: normal;
 }
 
+%break-before {
+  &:before {
+    content: '\a';
+    white-space: pre;
+  }
+}
+
 %button {
   border-radius: 3px;
   cursor: pointer;
@@ -79,14 +86,43 @@ $share-toolbar-panel-height: 39px;
   text-transform: uppercase;
 }
 
+$button-light-blue: #408ccd;
+$button-dark-blue: #0058a3;
+
 %terms-accept-button-style {
   @extend %button-style;
-  background-color: #4b8bc2;
-  background-image: -webkit-linear-gradient(bottom, #0058a3, #408ccd 50%);
-  background-image: -moz-linear-gradient(bottom, #0058a3, #408ccd 50%);
-  background-image: -ms-linear-gradient(bottom, #0058a3, #408ccd 50%);
-  background-image: -o-linear-gradient(bottom, #0058a3, #408ccd 50%);
-  background-image: linear-gradient(bottom, #0058a3, #408ccd 50%);
+  background-color: $button-light-blue;
+  background-image: -webkit-linear-gradient(bottom, $button-dark-blue, $button-light-blue 33%, $button-light-blue 66%, $button-dark-blue);
+  background-image: -moz-linear-gradient(bottom, $button-dark-blue, $button-light-blue 33%, $button-light-blue 66%, $button-dark-blue);
+  background-image: -ms-linear-gradient(bottom, $button-dark-blue, $button-light-blue 33%, $button-light-blue 66%, $button-dark-blue);
+  background-image: -o-linear-gradient(bottom, $button-dark-blue, $button-light-blue 33%, $button-light-blue 66%, $button-dark-blue);
+  background-image: linear-gradient(bottom, $button-dark-blue, $button-light-blue 33%, $button-light-blue 66%, $button-dark-blue);
+  background-size: 150%;
+  background-position: 0 100%;
+
+  &,
+  &:hover,
+  &:focus {
+    -webkit-transition-property: background-position;
+    -webkit-transition-duration: .03s;
+    -webkit-transition-timing-function: cubic-bezier(.25,.5,.75,.5);
+  }
+  &:hover,
+  &:focus {
+    background-position: 0 0%;
+    text-decoration: underline;
+  }
+}
+
+%blue-one-lined-button {
+  @extend %terms-accept-button-style;
+  border: 1px solid #01437c;
+  height: 24px;
+  width: auto;
+  padding: 0 24px 0 12px;
+  text-align: left;
+  position: relative;
+  line-height: 24px;
 }
 
 %search-button-style {
@@ -1370,12 +1406,88 @@ focus for toolbar controls
 === tools ===
 ***************************/
 
+#tools-panel {
+  position: relative;
+  text-align: center;
+
+  .tool > button {
+    margin: 10px 0;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+  .tool.active > button:after {
+    border: 6px solid transparent;
+    border-right-color: $panel-color-hex;
+    border-right-color: $panel-color;
+    right: 100%;
+    top: 50%;
+  }
+}
+
 .tool {
   position: relative;
 
+  .widget {
+    @extend %partial-transparent;
+    position: absolute;
+    left: auto;
+    top: 25%;
+    height: auto;
+    right: 100%;
+    font-size: 12px;
+    text-align: left;
+    text-transform: none;
+  }  
+
   &.active {
+    > button {
+      @extend %selected-button;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 2000;
+      }
+    }
     .widget {
       display: block;
+    }
+  }
+}
+
+
+/***************************
+  transformations control 
+***************************/
+
+.tool.transformations {
+  .widget {
+    width: 300px;
+    padding: 10px 50px 10px 10px;
+
+    button {
+      @extend %blue-one-lined-button;
+    }
+    label {
+      @extend %break-before;
+      &:after {
+        content: ':';
+      }
+    }
+    input, select {
+      margin-bottom: 10px;
+    }
+    input {
+      border: 1px solid black;
+      height: 24px;
+      padding: 5px;
+      box-shadow: 3px 0 4px -2px rgba(0,0,0,0.5) inset;
     }
   }
 }
@@ -1392,10 +1504,13 @@ focus for toolbar controls
 .tool.emergency-poster {
   .widget {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAoCAYAAAACJPERAAAEEklEQVR42r2WTUgbURDHq1Fp66G1n4cePXhRqYqH4rUgBaGloAcRodJDD7314MFjD1bwIIIKrRc/8FtErZeKorTiJyYRFaMxaqJRk038TDR+TWe2PpPuy75s9uDCn+Tt7sxvZ+a9ee9ObGxsNIoRSLMfnaDQi3+uGyqAGHgFLy1wIVABirtWPC/2LPgBInAkoIGB8vLyHlRVVb1vaGhobG1tXejo6AD6pTHdp+f0HoOLwBGBBQUFSbW1tZ/6+/vBbDaDc3sbDg8PIRAIwP7+PmxuboLRaIS+vj6g9woLCx9HAouA8eXl5a+6u7thcXFRhpydn8PZ2Zn8//T0FE5OTsDv94PP55M/ZG5uDuh9siN7DsxBFRFWVFTkUHRutxvOESYCHh8fw9HRkQy22+3Q29sLZM9HzKB8lHHFxcVP6IslSQoL9GE6j8fG4Gh8/D/gwcGBnPKNjQ3o6uqCkpKSp+RPGW24KOOpNktLS6oRetPTQTIYQEpK4oB7e3vg9XrBhPWvq6v7rEgzD2UTZ2BgQFTDUGhYoOTxwO6uS55c+fn5jxTR3uFSi9P/rclkEtbQE4SGBbrdErhcLpiYmADyp0zxDZSltqmpqc/ldgsnjSctjUHVgBjpLqysrAD662YpZiyunm1tbTvknAH9aIwAzXKNjsrAnZ0dsDscQP4UdeWh7e3tPoqMRehD46igIyMElJvI1pYTqHNFhLa0tBgxXcGUYqq8WVngCZGUmPgPkpAAUmYmSBmkDHCjdrGODLi2tkat0qaA8jWlXkqtLVhDfh2G1jS0hqERko/5+QUgf8qacrO3srLy9dTUlCqQsiClpjKoKtBud8AIppr8KWcv1xxycnISe3p6CKK28EOhqsAVq1Xuw+SPpVbYkWpqakpmZmbUFn4oNCxw1WaToyQ/ah2JS3F2dvb9zs5OWmeidagKnJ6ehg60Jz+C3suDy8rKUqhpYw+OCkjzoRPtyD4ckEFVt7fS0tLk+vr6b3/Gxsi5ELhkscDQ0BDQ+2Sntq2RNB1Vqqur82lSDA8Pw+zsLFiWl8FiWaYsYCpn4NfgIFBW6D0tRxbNh7Lm5ub0yclJGEQAbe60g9Avjek+Pdd6ONN6/DQUFRXdXV9fD9iwblar9UY0pvu5ubkJfHTi06AmOB5FfjqdTqzl1o1wTCeFlggw/Sd8h8PxwUPrVJJuhGOCvovqhI+7ABtEFDpPZl2Kicarq6svxLY8VDMYJ0wc7T4KBRobG2N0QLWD8UTxmw5sTDj+ocGO+eegmj7g4uLi4+XlJTAh+I0AxCSAisWgKVdXV8CE4+cMIJB+KAkAEiB4BVAxQhvdUB5svoZ+p3HUUDTUoy/X0FwdtrqhL6+hz24Teo/V8zahpK/0e9vQh3pt/wI91djUogDO5gAAAABJRU5ErkJggg==');
+
     background-repeat: no-repeat;
     background-position: 10px 50%;
     padding: 0 20px 0 50px;
     display: table;
+    white-space: pre;
+    text-transform: uppercase;
 
     .wrapper {
       display: table-row;
@@ -1411,48 +1526,6 @@ focus for toolbar controls
   }
 }
 
-#tools-panel {
-  position: relative;
-  text-align: center;
-
-  &.active > button {
-    @extend %selected-button;
-
-    &:after {
-      content: '';
-      display: block;
-      border: 6px solid transparent;
-      border-right-color: $panel-color-hex;
-      border-right-color: $panel-color;
-      position: absolute;
-      right: 100%;
-      z-index: 2000;
-      top: 50%;
-    }
-  }
-  button {
-    margin: 10px 0;
-    width: 30px;
-    height: 30px;
-    padding: 5px;
-  }
-  .icon {
-    width: 20px;
-    height: 20px;
-  }
-  .widget {
-    @extend %partial-transparent;
-    position: absolute;
-    left: auto;
-    top: 25%;
-    width: auto;
-    height: auto;
-    right: 100%;
-    font-size: 12px;
-    white-space: pre;
-
-  }
-}
 .emergency-poster-terms-popup {
   @extend %partial-transparent;
   @extend %shadow;
@@ -1494,14 +1567,8 @@ focus for toolbar controls
     padding: 24px;
 
     button {
-      @extend %terms-accept-button-style;
-      border: 1px solid #01437c;
-      height: 24px;
-      padding: 0 24px 0 12px;
+      @extend %blue-one-lined-button;
       width: 100%;
-      text-align: left;
-      position: relative;
-      line-height: 24px;
 
       &:after {
         content: '';
