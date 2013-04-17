@@ -1086,6 +1086,16 @@ focus for toolbar controls
     height: 24px;
     padding: 5px;
     box-shadow: 3px 0 4px -2px rgba(0, 0, 0, 0.5) inset; }
+.tool.transformations form fieldset {
+  border: none; }
+.tool.transformations form.disabled label,
+.tool.transformations form.disabled legend {
+  color: #aaa; }
+.tool.transformations form.disabled input,
+.tool.transformations form.disabled select {
+  background-color: #aaa; }
+.tool.transformations form.disabled button {
+  display: none; }
 
 /***************************
   emergency poster control
