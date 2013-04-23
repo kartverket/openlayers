@@ -1512,6 +1512,86 @@ focus for toolbar controls
   }
 }
 
+
+/********************************
+ services (WMS overlay selector)
+********************************/
+
+$overlayMenuItemWidth: 68px;
+$overlayMenuItemMargin: 5px;
+
+@mixin overlayMenuWidth($elementCount) {
+  &.containing-#{$elementCount} {
+    width: ($overlayMenuItemWidth + $overlayMenuItemMargin * 4) * $elementCount;
+  }
+}
+
+.overlay-group-panel {
+  text-align: center;
+
+  .widget {
+//    @extend %shadow;
+    top: 0;
+
+    .cnt {
+      ul {
+        list-style: none;
+      }
+      > ul {
+        background-color: orange;
+        @include overlayMenuWidth(1);
+        @include overlayMenuWidth(2);
+        @include overlayMenuWidth(3);
+        @include overlayMenuWidth(4);
+        @include overlayMenuWidth(5);
+        @include overlayMenuWidth(6);
+        @include overlayMenuWidth(7);
+        @include overlayMenuWidth(8);
+
+        > li {
+          @extend %vertical-divider-inverted;
+          font-size: 10px;
+          display: block;
+          float: left;
+          height: 40px;
+          width: $overlayMenuItemWidth + $overlayMenuItemMargin * 4;
+          text-transform: uppercase;
+
+          &:first-child {
+            background-image: none;
+          }
+
+          a {
+            margin: $overlayMenuItemMargin;
+            padding: $overlayMenuItemMargin;
+
+            color: #fff;
+            width: $overlayMenuItemWidth + $overlayMenuItemMargin * 2;
+            display: block;
+            height: 30px;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+              text-decoration: underline;
+            }
+          }
+          ul {
+
+            li {
+
+            }
+          }
+        }
+      }
+    }
+  }
+  a.active {
+    @extend %button;
+    @extend %selected-button;
+  }
+}
+
 /***************************
   emergency poster control
 ***************************/

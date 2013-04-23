@@ -20,7 +20,7 @@
 
 button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList label,
-.vectorLayerList label, .toolbar .nkButton, #share-toolbar .nkButton, #help-panel button, .zoom-to-selection-button {
+.vectorLayerList label, .toolbar .nkButton, #share-toolbar .nkButton, #help-panel button, .zoom-to-selection-button, .overlay-group-panel a.active {
   border-radius: 3px;
   cursor: pointer; }
 
@@ -29,7 +29,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList input.is-checked + label,
 .rasterLayerList label.for-checked,
 .vectorLayerList input.is-checked + label,
-.vectorLayerList label.for-checked, #getURL-panel.active > .nkButton, #help-panel.active > button, .zoom-to-selection-selected .zoom-to-selection-button, .tool.active > button {
+.vectorLayerList label.for-checked, #getURL-panel.active > .nkButton, #help-panel.active > button, .zoom-to-selection-selected .zoom-to-selection-button, .tool.active > button, .overlay-group-panel a.active {
   background-color: #333333;
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
@@ -50,7 +50,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAAD0lEQVQI12OYPGkSMzMzAAitAcGVxxKdAAAAAElFTkSuQmCC");
   background-repeat: repeat-y; }
 
-#share-toolbar .panel + .panel {
+#share-toolbar .panel + .panel, .overlay-group-panel .widget .cnt > ul > li {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAAD0lEQVQI12NgZmaePGkSAAOjAcFz13/MAAAAAElFTkSuQmCC");
   background-repeat: repeat-y; }
 
@@ -1096,6 +1096,53 @@ focus for toolbar controls
   background-color: #aaa; }
 .tool.transformations form.disabled button {
   display: none; }
+
+/********************************
+ services (WMS overlay selector)
+********************************/
+.overlay-group-panel {
+  text-align: center; }
+  .overlay-group-panel .widget {
+    top: 0; }
+    .overlay-group-panel .widget .cnt ul {
+      list-style: none; }
+    .overlay-group-panel .widget .cnt > ul {
+      background-color: orange; }
+      .overlay-group-panel .widget .cnt > ul.containing-1 {
+        width: 88px; }
+      .overlay-group-panel .widget .cnt > ul.containing-2 {
+        width: 176px; }
+      .overlay-group-panel .widget .cnt > ul.containing-3 {
+        width: 264px; }
+      .overlay-group-panel .widget .cnt > ul.containing-4 {
+        width: 352px; }
+      .overlay-group-panel .widget .cnt > ul.containing-5 {
+        width: 440px; }
+      .overlay-group-panel .widget .cnt > ul.containing-6 {
+        width: 528px; }
+      .overlay-group-panel .widget .cnt > ul.containing-7 {
+        width: 616px; }
+      .overlay-group-panel .widget .cnt > ul.containing-8 {
+        width: 704px; }
+      .overlay-group-panel .widget .cnt > ul > li {
+        font-size: 10px;
+        display: block;
+        float: left;
+        height: 40px;
+        width: 88px;
+        text-transform: uppercase; }
+        .overlay-group-panel .widget .cnt > ul > li:first-child {
+          background-image: none; }
+        .overlay-group-panel .widget .cnt > ul > li a {
+          margin: 5px;
+          padding: 5px;
+          color: #fff;
+          width: 78px;
+          display: block;
+          height: 30px;
+          text-decoration: none; }
+          .overlay-group-panel .widget .cnt > ul > li a:hover, .overlay-group-panel .widget .cnt > ul > li a:focus {
+            text-decoration: underline; }
 
 /***************************
   emergency poster control
