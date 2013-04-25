@@ -1538,7 +1538,6 @@ $overlayMenuItemMargin: 5px;
         list-style: none;
       }
       > ul {
-        background-color: orange;
         @include overlayMenuWidth(1);
         @include overlayMenuWidth(2);
         @include overlayMenuWidth(3);
@@ -1561,7 +1560,14 @@ $overlayMenuItemMargin: 5px;
             background-image: none;
           }
 
-          a {
+          ul {
+              @extend %partial-transparent;
+              padding: 5px 0 0 0;
+              li {
+                overflow: hidden;
+              }
+          }
+          a, header {
             margin: $overlayMenuItemMargin;
             padding: $overlayMenuItemMargin;
 
@@ -1576,10 +1582,23 @@ $overlayMenuItemMargin: 5px;
               text-decoration: underline;
             }
           }
-          ul {
-
-            li {
-
+          .h {
+            font-size: 10px;
+          }
+          header {
+            + ul {
+              display: none;
+            }
+            &.active,
+            &:hover {
+              + ul {
+                display: block;
+              }
+            }
+          }
+          &.focused {
+            header + ul {
+              display: block;
             }
           }
         }

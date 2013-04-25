@@ -5,7 +5,7 @@
   src: url("/fonts/MetaWeb-Book.eot");
   src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); }
 
-.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .emergency-poster-terms-popup {
+.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .overlay-group-panel .widget .cnt > ul > li ul, .emergency-poster-terms-popup {
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
 
@@ -1106,43 +1106,53 @@ focus for toolbar controls
     top: 0; }
     .overlay-group-panel .widget .cnt ul {
       list-style: none; }
-    .overlay-group-panel .widget .cnt > ul {
-      background-color: orange; }
-      .overlay-group-panel .widget .cnt > ul.containing-1 {
-        width: 88px; }
-      .overlay-group-panel .widget .cnt > ul.containing-2 {
-        width: 176px; }
-      .overlay-group-panel .widget .cnt > ul.containing-3 {
-        width: 264px; }
-      .overlay-group-panel .widget .cnt > ul.containing-4 {
-        width: 352px; }
-      .overlay-group-panel .widget .cnt > ul.containing-5 {
-        width: 440px; }
-      .overlay-group-panel .widget .cnt > ul.containing-6 {
-        width: 528px; }
-      .overlay-group-panel .widget .cnt > ul.containing-7 {
-        width: 616px; }
-      .overlay-group-panel .widget .cnt > ul.containing-8 {
-        width: 704px; }
-      .overlay-group-panel .widget .cnt > ul > li {
-        font-size: 10px;
+    .overlay-group-panel .widget .cnt > ul.containing-1 {
+      width: 88px; }
+    .overlay-group-panel .widget .cnt > ul.containing-2 {
+      width: 176px; }
+    .overlay-group-panel .widget .cnt > ul.containing-3 {
+      width: 264px; }
+    .overlay-group-panel .widget .cnt > ul.containing-4 {
+      width: 352px; }
+    .overlay-group-panel .widget .cnt > ul.containing-5 {
+      width: 440px; }
+    .overlay-group-panel .widget .cnt > ul.containing-6 {
+      width: 528px; }
+    .overlay-group-panel .widget .cnt > ul.containing-7 {
+      width: 616px; }
+    .overlay-group-panel .widget .cnt > ul.containing-8 {
+      width: 704px; }
+    .overlay-group-panel .widget .cnt > ul > li {
+      font-size: 10px;
+      display: block;
+      float: left;
+      height: 40px;
+      width: 88px;
+      text-transform: uppercase; }
+      .overlay-group-panel .widget .cnt > ul > li:first-child {
+        background-image: none; }
+      .overlay-group-panel .widget .cnt > ul > li ul {
+        padding: 5px 0 0 0; }
+        .overlay-group-panel .widget .cnt > ul > li ul li {
+          overflow: hidden; }
+      .overlay-group-panel .widget .cnt > ul > li a, .overlay-group-panel .widget .cnt > ul > li header {
+        margin: 5px;
+        padding: 5px;
+        color: #fff;
+        width: 78px;
         display: block;
-        float: left;
-        height: 40px;
-        width: 88px;
-        text-transform: uppercase; }
-        .overlay-group-panel .widget .cnt > ul > li:first-child {
-          background-image: none; }
-        .overlay-group-panel .widget .cnt > ul > li a {
-          margin: 5px;
-          padding: 5px;
-          color: #fff;
-          width: 78px;
-          display: block;
-          height: 30px;
-          text-decoration: none; }
-          .overlay-group-panel .widget .cnt > ul > li a:hover, .overlay-group-panel .widget .cnt > ul > li a:focus {
-            text-decoration: underline; }
+        height: 30px;
+        text-decoration: none; }
+        .overlay-group-panel .widget .cnt > ul > li a:hover, .overlay-group-panel .widget .cnt > ul > li a:focus, .overlay-group-panel .widget .cnt > ul > li header:hover, .overlay-group-panel .widget .cnt > ul > li header:focus {
+          text-decoration: underline; }
+      .overlay-group-panel .widget .cnt > ul > li .h {
+        font-size: 10px; }
+      .overlay-group-panel .widget .cnt > ul > li header + ul {
+        display: none; }
+      .overlay-group-panel .widget .cnt > ul > li header.active + ul, .overlay-group-panel .widget .cnt > ul > li header:hover + ul {
+        display: block; }
+      .overlay-group-panel .widget .cnt > ul > li.focused header + ul {
+        display: block; }
 
 /***************************
   emergency poster control
