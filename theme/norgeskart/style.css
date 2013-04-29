@@ -42,7 +42,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
 #basic-toolbar .panel + .panel,
-#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .emergency-poster-terms-popup .button-panel {
+#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, #embed-panel .step-specific, #embed-panel .buttons-panel, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .emergency-poster-terms-popup .button-panel {
   /* v-divider.png base64-encoded */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC");
   background-repeat: repeat-x; }
@@ -68,7 +68,7 @@ body, #map, #basic-toolbar,
   height: 0;
   position: absolute; }
 
-.tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .splashscreen .widget .splash-button, #searchSubmit {
+.tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, #embed-panel .buttons-panel button, .splashscreen .widget .splash-button, #searchSubmit {
   border: 1px solid #003c6f;
   border-color: rgba(0, 60, 111, 0.82);
   cursor: pointer;
@@ -76,7 +76,7 @@ body, #map, #basic-toolbar,
   color: #fff;
   text-transform: uppercase; }
 
-.tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .splashscreen .widget .splash-button {
+.tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, #embed-panel .buttons-panel button, .splashscreen .widget .splash-button {
   background-color: #408ccd;
   background-image: -webkit-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
   background-image: -moz-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
@@ -85,11 +85,11 @@ body, #map, #basic-toolbar,
   background-image: linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
   background-size: 150%;
   background-position: 0 100%; }
-  .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .splashscreen .widget .splash-button:hover, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .splashscreen .widget .splash-button:focus {
+  .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, #embed-panel .buttons-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, #embed-panel .buttons-panel button:hover, .splashscreen .widget .splash-button:hover, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, #embed-panel .buttons-panel button:focus, .splashscreen .widget .splash-button:focus {
     -webkit-transition-property: background-position;
     -webkit-transition-duration: .03s;
     -webkit-transition-timing-function: cubic-bezier(0.25, 0.5, 0.75, 0.5); }
-  .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .splashscreen .widget .splash-button:hover, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .splashscreen .widget .splash-button:focus {
+  .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, #embed-panel .buttons-panel button:hover, .splashscreen .widget .splash-button:hover, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, #embed-panel .buttons-panel button:focus, .splashscreen .widget .splash-button:focus {
     background-position: 0 0%;
     text-decoration: underline; }
 
@@ -646,6 +646,62 @@ body {
     border: 1px solid #444444; }
   #help-panel.active > .widget th, #help-panel.active > .widget td {
     padding: 8px 10px 6px; }
+
+/******************************************
+=== embed panel ===
+******************************************/
+#embed-panel .widget {
+  width: 500px; }
+#embed-panel header {
+  padding: 20px; }
+#embed-panel .progress {
+  list-style: none;
+  background-image: -webkit-linear-gradient(left, rgba(127, 127, 127, 0), #7f7f7f);
+  background-size: 100% 2px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 20px; }
+  #embed-panel .progress li {
+    display: inline-block;
+    position: relative;
+    text-indent: -999em;
+    margin-right: 1em;
+    width: 20px; }
+    #embed-panel .progress li:last-child {
+      margin-right: 0; }
+  #embed-panel .progress .step-number {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #aaa;
+    color: rgba(80, 80, 80, 0.9);
+    text-indent: 0;
+    text-align: center;
+    line-height: 20px; }
+  #embed-panel .progress.type-active .type .step-number {
+    background-color: #fff; }
+  #embed-panel .progress.terms-active .terms .step-number {
+    background-color: #fff; }
+  #embed-panel .progress.area-active .area .step-number {
+    background-color: #fff; }
+  #embed-panel .progress.markers-active .markers .step-number {
+    background-color: #fff; }
+  #embed-panel .progress.descriptions-active .descriptions .step-number {
+    background-color: #fff; }
+  #embed-panel .progress.preview-active .preview .step-number {
+    background-color: #fff; }
+#embed-panel .buttons-panel {
+  margin-bottom: 20px;
+  padding: 20px; }
+  #embed-panel .buttons-panel button {
+    padding: 3px 10px; }
 
 /******************************************
 === get Zoom panel ===
