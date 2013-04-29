@@ -5,7 +5,8 @@
   src: url("/fonts/MetaWeb-Book.eot");
   src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); }
 
-.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .overlay-group-panel .widget .cnt > ul > li ul, .emergency-poster-terms-popup {
+.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
+#share-toolbar .panel .tool.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .overlay-group-panel .widget .cnt > ul > li ul, .emergency-poster-terms-popup {
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
 
@@ -35,7 +36,8 @@ button, .layersDiv .vectorWidgetToggleBtn,
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
 
 #basic-toolbar,
-#secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget, #searchResults, #nk-selected-feature,
+#secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
+#share-toolbar .panel .tool.active .widget, #searchResults, #nk-selected-feature,
 #nk-selected-coverage-map, #overview-container-panel, .emergency-poster-terms-popup {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
@@ -58,7 +60,8 @@ body, #map, #basic-toolbar,
 #secondary-toolbar {
   height: 100%; }
 
-#share-toolbar .panel.active .widget:after, .olPopup.positioned .arrow-anchor:after {
+#share-toolbar .panel.active .widget:after,
+#share-toolbar .panel .tool.active .widget:after, .olPopup.positioned .arrow-anchor:after {
   content: '';
   border: 7px solid transparent;
   width: 0;
@@ -547,7 +550,8 @@ body {
 /******************************************
 === share toolbar ===
 ******************************************/
-#share-toolbar .panel.active .widget {
+#share-toolbar .panel.active .widget,
+#share-toolbar .panel .tool.active .widget {
   right: 0;
   top: 100%;
   left: auto;
@@ -559,20 +563,21 @@ body {
   line-height: 18px;
   text-align: left;
   text-transform: none; }
-  #share-toolbar .panel.active .widget:after {
+  #share-toolbar .panel.active .widget:after,
+  #share-toolbar .panel .tool.active .widget:after {
     top: -14px;
     border-bottom-color: rgba(80, 80, 80, 0.9); }
-#share-toolbar .panel.active:nth-last-child(1) .widget:after {
+#share-toolbar .panel:nth-last-child(1) .widget:after {
   right: 23px; }
-#share-toolbar .panel.active:nth-last-child(2) .widget:after {
+#share-toolbar .panel:nth-last-child(2) .widget:after {
   right: 83px; }
-#share-toolbar .panel.active:nth-last-child(3) .widget:after {
+#share-toolbar .panel:nth-last-child(3) .widget:after {
   right: 143px; }
-#share-toolbar .panel.active:nth-last-child(4) .widget:after {
+#share-toolbar .panel:nth-last-child(4) .widget:after {
   right: 203px; }
-#share-toolbar .panel.active:nth-last-child(5) .widget:after {
+#share-toolbar .panel:nth-last-child(5) .widget:after {
   right: 263px; }
-#share-toolbar .panel.active:nth-last-child(6) .widget:after {
+#share-toolbar .panel:nth-last-child(6) .widget:after {
   right: 323px; }
 
 /******************************************
@@ -1070,6 +1075,9 @@ focus for toolbar controls
     z-index: 2000; }
   .tool.active .widget {
     display: block; }
+
+#share-toolbar .tool {
+  position: static; }
 
 /***************************
   transformations control 

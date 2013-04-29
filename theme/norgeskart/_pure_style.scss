@@ -714,7 +714,8 @@ button {
 
 #share-toolbar {
   .panel {
-    &.active {
+    &.active,
+    .tool.active {
       .widget {
         @extend %shadow;
         @extend %partial-transparent;
@@ -739,25 +740,26 @@ button {
         }
 
       }
-      @mixin share-widget-positioning($nth_last) {
-        &:nth-last-child(#{$nth_last}) {
-          .widget {
+    }
+
+    @mixin share-widget-positioning($nth_last) {
+      &:nth-last-child(#{$nth_last}) {
+        .widget {
 //            right: -#{$share-toolbar-panel-width * ($nth_last - 1)};
 
-            &:after {
-              right: #{$share-toolbar-panel-width * ($nth_last - 0.5) - 7px};
-            }        
-          }
+          &:after {
+            right: #{$share-toolbar-panel-width * ($nth_last - 0.5) - 7px};
+          }        
         }
       }
-      @include share-widget-positioning(1);
-      @include share-widget-positioning(2);
-      @include share-widget-positioning(3);
-      @include share-widget-positioning(4);
-      @include share-widget-positioning(5);
-      @include share-widget-positioning(6);
-
     }
+    @include share-widget-positioning(1);
+    @include share-widget-positioning(2);
+    @include share-widget-positioning(3);
+    @include share-widget-positioning(4);
+    @include share-widget-positioning(5);
+    @include share-widget-positioning(6);
+
   }
 }
 
@@ -1458,6 +1460,11 @@ focus for toolbar controls
     .widget {
       display: block;
     }
+  }
+}
+#share-toolbar {
+  .tool {
+    position: static;
   }
 }
 
