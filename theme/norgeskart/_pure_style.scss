@@ -901,6 +901,9 @@ button {
   }
   .step-specific {
     @extend %horizontal-divider;
+    &.type + .buttons-panel {
+      display: none;
+    }
   }
 
   .progress {
@@ -939,19 +942,28 @@ button {
       text-align: center;
       line-height: 20px;
     }
-    @mixin active-step($name) {
+    $grey: rgba(127, 127, 127, 1);
+    $white: #fff;
+
+    @mixin active-step($name, $step, $stepCount) {
       &.#{$name}-active {
+        $firstStop: $grey percentage(($step - 1) / ($stepCount - 1));
+        $midStop:  $white percentage($step / ($stepCount - 1));
+        $lastStop:  $grey percentage(($step + 1) / ($stepCount - 1));
+
+        background-image: -webkit-linear-gradient(left, $firstStop, $midStop, $lastStop);
+
         .#{$name} .step-number {
           background-color: #fff;
         }
       }
     }
-    @include active-step(type);
-    @include active-step(terms);
-    @include active-step(area);
-    @include active-step(markers);
-    @include active-step(descriptions);
-    @include active-step(preview);
+    @include active-step(type, 0, 6);
+    @include active-step(terms, 1, 6);
+    @include active-step(area, 2, 6);
+    @include active-step(markers, 3, 6);
+    @include active-step(descriptions, 4, 6);
+    @include active-step(preview, 5, 6);
   }
   .buttons-panel {
     margin-bottom: 20px;
@@ -962,6 +974,10 @@ button {
       @extend %terms-accept-button-style;
       padding: 3px 10px;
     }
+  }
+  .illustration {
+    stroke: #fff;
+    stroke-width: 1.5;
   }
 }
 

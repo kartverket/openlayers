@@ -654,6 +654,8 @@ body {
   width: 500px; }
 #embed-panel header {
   padding: 20px; }
+#embed-panel .step-specific.type + .buttons-panel {
+  display: none; }
 #embed-panel .progress {
   list-style: none;
   background-image: -webkit-linear-gradient(left, rgba(127, 127, 127, 0), #7f7f7f);
@@ -685,23 +687,38 @@ body {
     text-indent: 0;
     text-align: center;
     line-height: 20px; }
-  #embed-panel .progress.type-active .type .step-number {
-    background-color: #fff; }
-  #embed-panel .progress.terms-active .terms .step-number {
-    background-color: #fff; }
-  #embed-panel .progress.area-active .area .step-number {
-    background-color: #fff; }
-  #embed-panel .progress.markers-active .markers .step-number {
-    background-color: #fff; }
-  #embed-panel .progress.descriptions-active .descriptions .step-number {
-    background-color: #fff; }
-  #embed-panel .progress.preview-active .preview .step-number {
-    background-color: #fff; }
+  #embed-panel .progress.type-active {
+    background-image: -webkit-linear-gradient(left, #7f7f7f -20%, white 0%, #7f7f7f 20%); }
+    #embed-panel .progress.type-active .type .step-number {
+      background-color: #fff; }
+  #embed-panel .progress.terms-active {
+    background-image: -webkit-linear-gradient(left, #7f7f7f 0%, white 20%, #7f7f7f 40%); }
+    #embed-panel .progress.terms-active .terms .step-number {
+      background-color: #fff; }
+  #embed-panel .progress.area-active {
+    background-image: -webkit-linear-gradient(left, #7f7f7f 20%, white 40%, #7f7f7f 60%); }
+    #embed-panel .progress.area-active .area .step-number {
+      background-color: #fff; }
+  #embed-panel .progress.markers-active {
+    background-image: -webkit-linear-gradient(left, #7f7f7f 40%, white 60%, #7f7f7f 80%); }
+    #embed-panel .progress.markers-active .markers .step-number {
+      background-color: #fff; }
+  #embed-panel .progress.descriptions-active {
+    background-image: -webkit-linear-gradient(left, #7f7f7f 60%, white 80%, #7f7f7f 100%); }
+    #embed-panel .progress.descriptions-active .descriptions .step-number {
+      background-color: #fff; }
+  #embed-panel .progress.preview-active {
+    background-image: -webkit-linear-gradient(left, #7f7f7f 80%, white 100%, #7f7f7f 120%); }
+    #embed-panel .progress.preview-active .preview .step-number {
+      background-color: #fff; }
 #embed-panel .buttons-panel {
   margin-bottom: 20px;
   padding: 20px; }
   #embed-panel .buttons-panel button {
     padding: 3px 10px; }
+#embed-panel .illustration {
+  stroke: #fff;
+  stroke-width: 1.5; }
 
 /******************************************
 === get Zoom panel ===
