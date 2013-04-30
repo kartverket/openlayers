@@ -1478,14 +1478,24 @@ focus for toolbar controls
     width: 300px;
     padding: 10px 50px 10px 10px;
 
+    h1 {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 300;
+    }
+
     button {
       @extend %blue-one-lined-button;
+      margin-top: 30px;
     }
     label {
       @extend %break-before;
       &:after {
         content: ':';
       }
+    }
+    fieldset {
+      margin-top: 20px;
     }
     input, select {
       margin-bottom: 10px;
@@ -1495,6 +1505,7 @@ focus for toolbar controls
       height: 24px;
       padding: 5px;
       box-shadow: 3px 0 4px -2px rgba(0,0,0,0.5) inset;
+      width: 200px;
     }
   }
   form {
