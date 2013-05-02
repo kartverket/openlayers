@@ -3,7 +3,10 @@
 .olControlZoomOut,
 .getURL-button,
 .zoom-to-selection-button,
-.emergency-poster-button {
+.emergency-poster-button,
+.Print-button,
+.help-button,
+.Transformations-button {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -25,7 +28,7 @@
   background-image: url('img/minus-icon.png');
 }
 .getURL-button {
-  background-image: url('img/embed-icon.png');
+  background-image: url('img/geturl.png');
 }
 .zoom-to-selection-button {
   background-image: url('img/zoom-to-selection-icon.png');
@@ -57,4 +60,15 @@
 }
 #map.select-emergency-poster-point {
   cursor: crosshair;
+}
+.Print-button {
+  background-image: url('img/print-icon.png');
+}
+
+.help-button {
+  background-image: url('img/help-icon.png');
+}
+
+.Transformations-button {
+  background-image: url('img/transformations-icon.png');
 }
