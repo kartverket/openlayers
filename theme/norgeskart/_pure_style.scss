@@ -888,6 +888,100 @@ button {
 }
 
 /******************************************
+=== embed panel ===
+******************************************/
+
+#embed-panel {
+  .widget {
+    width: 500px;
+  }
+
+  header {
+    padding: 20px;
+  }
+  .step-specific {
+    @extend %horizontal-divider;
+    &.type + .buttons-panel {
+      display: none;
+    }
+  }
+
+  .progress {
+    list-style: none;
+    background-image: -webkit-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
+    background-size: 100% 2px;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    li {
+      display: inline-block;
+      position: relative;
+      text-indent: -999em;
+      margin-right: 1em;
+      width: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .step-number {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: #aaa;
+      color: $panel-color;
+      text-indent: 0;
+      text-align: center;
+      line-height: 20px;
+    }
+    $grey: rgba(127, 127, 127, 1);
+    $white: #fff;
+
+    @mixin active-step($name, $step, $stepCount) {
+      &.#{$name}-active {
+        $firstStop: $grey percentage(($step - 1) / ($stepCount - 1));
+        $midStop:  $white percentage($step / ($stepCount - 1));
+        $lastStop:  $grey percentage(($step + 1) / ($stepCount - 1));
+
+        background-image: -webkit-linear-gradient(left, $firstStop, $midStop, $lastStop);
+
+        .#{$name} .step-number {
+          background-color: #fff;
+        }
+      }
+    }
+    @include active-step(type, 0, 6);
+    @include active-step(terms, 1, 6);
+    @include active-step(area, 2, 6);
+    @include active-step(markers, 3, 6);
+    @include active-step(descriptions, 4, 6);
+    @include active-step(preview, 5, 6);
+  }
+  .buttons-panel {
+    margin-bottom: 20px;
+    padding: 20px;
+    @extend %horizontal-divider;
+
+    button {
+      @extend %terms-accept-button-style;
+      padding: 3px 10px;
+    }
+  }
+  .illustration {
+    stroke: #fff;
+    stroke-width: 1.5;
+  }
+}
+
+/******************************************
 === get Zoom panel ===
 ******************************************/      
 #zoom-panel {
