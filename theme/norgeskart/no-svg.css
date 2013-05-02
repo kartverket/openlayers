@@ -72,3 +72,23 @@
 .Transformations-button {
   background-image: url('img/transformations-icon.png');
 }
+
+.share-link {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  margin-left: 5px;
+  height: 26px;
+}
+
+.share-link.email {
+  background-image: url('img/email.png');
+}
+
+.share-link.twitter {
+  background-image: url('img/twitter.png');
+}
+
+.share-link.facebook {
+  background-image: url('img/facebook.png');
+}
