@@ -2,15 +2,47 @@
 .olControlZoomIn,
 .olControlZoomOut,
 .getURL-button,
+.help-button,
+.Print-button,
+.twitter,
+.facebook,
+.email,
 .zoom-to-selection-button,
 .emergency-poster-button {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 .fullscreen-button,
+.email,
+.facebook,
+.twitter,
 .zoom-to-selection-button {
   width: 40px;
   height: 40px;
+}
+.email{
+  background-image: url('img/email-icon.png');
+  background-size: 20px 15px;
+}
+.facebook{
+  background-image: url('img/facebook-icon.png');
+  background-size: 20px 20px;
+}
+.twitter{
+  background-image: url('img/twitter-icon.png');
+  background-size: 20px 20px;
+}
+.getURL-button{
+  background-image: url('img/geturl-icon.png');
+  background-size: 13px 20px;
+}
+.help-button{
+  background-image: url('img/help-icon.png');
+  background-size: 12px 20px;
+}
+.Print-button{
+  background-image: url('img/print-icon.png');
+  background-size: 20px 20px;
 }
 .fullscreen-button {
   background-image: url('img/fullscreen-icon.png');
@@ -23,9 +55,6 @@
 }
 .olControlZoomOut {
   background-image: url('img/minus-icon.png');
-}
-.getURL-button {
-  background-image: url('img/embed-icon.png');
 }
 .zoom-to-selection-button {
   background-image: url('img/zoom-to-selection-icon.png');
