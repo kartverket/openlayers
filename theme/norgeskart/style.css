@@ -41,7 +41,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
 #basic-toolbar .panel + .panel,
-#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, #embed-panel .step-specific, #embed-panel .buttons-panel, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .emergency-poster-terms-popup .button-panel {
+#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, #embed-panel .step-specific, #embed-panel .buttons-panel, #embed-panel .markers-list, #embed-panel .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .emergency-poster-terms-popup .button-panel {
   /* v-divider.png base64-encoded */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC");
   background-repeat: repeat-x; }
@@ -108,6 +108,14 @@ body, #map, #basic-toolbar,
   background-image: -ms-linear-gradient(bottom, #01457f, #5998ce 50%);
   background-image: -o-linear-gradient(bottom, #01457f, #5998ce 50%);
   background-image: linear-gradient(bottom, #01457f, #5998ce 50%); }
+
+#embed-panel .markers-list .remove-marker, #searchResults a.close,
+#searchResults a.close:hover,
+#searchResults a.close:visited,
+.splashscreen .widget a.close,
+.splashscreen .widget a.close:hover,
+.splashscreen .widget a.close:visited {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII="); }
 
 html {
   background-color: transparent; }
@@ -687,37 +695,114 @@ body {
     text-align: center;
     line-height: 20px; }
   #embed-panel .progress.type-active {
-    background-image: -webkit-linear-gradient(left, #7f7f7f -20%, white 0%, #7f7f7f 20%); }
+    background-image: -webkit-linear-gradient(left, #7f7f7f -16.66667%, white 0%, #7f7f7f 16.66667%); }
     #embed-panel .progress.type-active .type .step-number {
       background-color: #fff; }
   #embed-panel .progress.terms-active {
-    background-image: -webkit-linear-gradient(left, #7f7f7f 0%, white 20%, #7f7f7f 40%); }
+    background-image: -webkit-linear-gradient(left, #7f7f7f 0%, white 16.66667%, #7f7f7f 33.33333%); }
     #embed-panel .progress.terms-active .terms .step-number {
       background-color: #fff; }
   #embed-panel .progress.area-active {
-    background-image: -webkit-linear-gradient(left, #7f7f7f 20%, white 40%, #7f7f7f 60%); }
+    background-image: -webkit-linear-gradient(left, #7f7f7f 16.66667%, white 33.33333%, #7f7f7f 50%); }
     #embed-panel .progress.area-active .area .step-number {
       background-color: #fff; }
   #embed-panel .progress.markers-active {
-    background-image: -webkit-linear-gradient(left, #7f7f7f 40%, white 60%, #7f7f7f 80%); }
+    background-image: -webkit-linear-gradient(left, #7f7f7f 33.33333%, white 50%, #7f7f7f 66.66667%); }
     #embed-panel .progress.markers-active .markers .step-number {
       background-color: #fff; }
   #embed-panel .progress.descriptions-active {
-    background-image: -webkit-linear-gradient(left, #7f7f7f 60%, white 80%, #7f7f7f 100%); }
+    background-image: -webkit-linear-gradient(left, #7f7f7f 50%, white 66.66667%, #7f7f7f 83.33333%); }
     #embed-panel .progress.descriptions-active .descriptions .step-number {
       background-color: #fff; }
   #embed-panel .progress.preview-active {
-    background-image: -webkit-linear-gradient(left, #7f7f7f 80%, white 100%, #7f7f7f 120%); }
+    background-image: -webkit-linear-gradient(left, #7f7f7f 66.66667%, white 83.33333%, #7f7f7f 100%); }
     #embed-panel .progress.preview-active .preview .step-number {
+      background-color: #fff; }
+  #embed-panel .progress.output-active {
+    background-image: -webkit-linear-gradient(left, #7f7f7f 83.33333%, white 100%, #7f7f7f 116.66667%); }
+    #embed-panel .progress.output-active .output .step-number {
       background-color: #fff; }
 #embed-panel .buttons-panel {
   margin-bottom: 20px;
   padding: 20px; }
   #embed-panel .buttons-panel button {
     padding: 3px 10px; }
+#embed-panel .markers-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: marker-counter; }
+  #embed-panel .markers-list li {
+    margin: 0 25px;
+    padding: 10px 20px 10px 45px;
+    position: relative; }
+    #embed-panel .markers-list li:before {
+      content: counter(marker-counter);
+      counter-increment: marker-counter;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 10px;
+      background-color: blue;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 25px;
+      font-weight: bold; }
+  #embed-panel .markers-list .remove-marker {
+    position: absolute;
+    right: 0;
+    top: 11px;
+    background-repeat: no-repeat;
+    text-indent: -999em;
+    overflow: hidden;
+    width: 12px;
+    height: 12px; }
 #embed-panel .illustration {
   stroke: #fff;
   stroke-width: 1.5; }
+
+/******************************************
+=== ResizableBox ===
+******************************************/
+.olHandlerResizableBox {
+  border: 2px solid #606161;
+  -webkit-box-shadow: 0 0 0 2000px rgba(80, 80, 80, 0.4);
+  position: absolute;
+  background-color: transparent;
+  font-size: 1px; }
+  .olHandlerResizableBox .handle {
+    background-color: orange;
+    position: absolute;
+    width: 18px;
+    height: 18px; }
+    .olHandlerResizableBox .handle.top, .olHandlerResizableBox .handle.bottom {
+      left: 50%;
+      margin-left: -9px;
+      cursor: ns-resize; }
+    .olHandlerResizableBox .handle.left, .olHandlerResizableBox .handle.right {
+      top: 50%;
+      margin-top: -9px;
+      cursor: ew-resize; }
+    .olHandlerResizableBox .handle.top {
+      top: -9px; }
+    .olHandlerResizableBox .handle.bottom {
+      bottom: -9px; }
+    .olHandlerResizableBox .handle.left {
+      left: -9px; }
+    .olHandlerResizableBox .handle.right {
+      right: -9px; }
+  .olHandlerResizableBox .measures {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 10px;
+    height: 18px;
+    width: 75px;
+    background-color: rgba(80, 80, 80, 0.9);
+    color: #fff;
+    font-size: 12px; }
 
 /******************************************
 === get Zoom panel ===
@@ -888,8 +973,7 @@ body {
   right: 8px;
   top: 8px;
   overflow: hidden;
-  text-indent: 12px;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII="); }
+  text-indent: 12px; }
 
 .search-place {
   cursor: pointer; }

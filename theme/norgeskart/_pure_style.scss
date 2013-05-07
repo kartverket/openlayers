@@ -135,6 +135,10 @@ $button-dark-blue: #0058a3;
   background-image: linear-gradient(bottom, #01457f, #5998ce 50%);
 }
 
+%close-cross {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII=');
+}
+
 html {
   background-color: transparent;
 }
@@ -947,9 +951,9 @@ button {
 
     @mixin active-step($name, $step, $stepCount) {
       &.#{$name}-active {
-        $firstStop: $grey percentage(($step - 1) / ($stepCount - 1));
-        $midStop:  $white percentage($step / ($stepCount - 1));
-        $lastStop:  $grey percentage(($step + 1) / ($stepCount - 1));
+        $firstStop: $grey percentage(($step - 2) / ($stepCount - 1));
+        $midStop:  $white percentage(($step - 1)/ ($stepCount - 1));
+        $lastStop:  $grey percentage($step / ($stepCount - 1));
 
         background-image: -webkit-linear-gradient(left, $firstStop, $midStop, $lastStop);
 
@@ -958,12 +962,13 @@ button {
         }
       }
     }
-    @include active-step(type, 0, 6);
-    @include active-step(terms, 1, 6);
-    @include active-step(area, 2, 6);
-    @include active-step(markers, 3, 6);
-    @include active-step(descriptions, 4, 6);
-    @include active-step(preview, 5, 6);
+    @include active-step(type, 1, 7);
+    @include active-step(terms, 2, 7);
+    @include active-step(area, 3, 7);
+    @include active-step(markers, 4, 7);
+    @include active-step(descriptions, 5, 7);
+    @include active-step(preview, 6, 7);
+    @include active-step(output, 7, 7);
   }
   .buttons-panel {
     margin-bottom: 20px;
@@ -975,9 +980,114 @@ button {
       padding: 3px 10px;
     }
   }
+  .markers-list {
+    @extend %horizontal-divider;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: marker-counter;
+
+    li {
+      @extend %horizontal-divider;
+      margin: 0 25px;
+      padding: 10px 20px 10px 45px;
+      position: relative;
+
+      &:before {
+        content: counter(marker-counter);
+        counter-increment: marker-counter;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        background-color: blue;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        font-weight: bold;
+      }
+
+    }
+
+    .remove-marker {
+      @extend %close-cross;
+      position: absolute;
+      right: 0;
+      top: 11px;
+      background-repeat: no-repeat;
+      text-indent: -999em;
+      overflow: hidden;
+      width: 12px;
+      height: 12px;
+    }
+  }
   .illustration {
     stroke: #fff;
     stroke-width: 1.5;
+  }
+}
+
+/******************************************
+=== ResizableBox ===
+******************************************/
+
+.olHandlerResizableBox {
+  border: 2px solid $panel-color-hex;
+  -webkit-box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
+  position: absolute;
+  background-color: transparent;
+//    opacity: 0.50;
+  font-size: 1px;
+//    filter: alpha(opacity=50);
+
+  .handle {
+    $handle-height: 18px;
+    $handle-width: 18px;
+
+    background-color: orange;
+    position: absolute;
+    width: $handle-width;
+    height: $handle-height;
+
+    &.top,
+    &.bottom {
+      left: 50%;
+      margin-left: -$handle-width / 2;
+      cursor: ns-resize;
+    }
+
+    &.left,
+    &.right {
+      top: 50%;
+      margin-top: -$handle-height / 2;
+      cursor: ew-resize;
+    }
+
+    &.top {
+      top: -$handle-height / 2;
+    }
+    &.bottom {
+      bottom: -$handle-height / 2;
+    }
+    &.left {
+      left: -$handle-width /2;
+    }
+    &.right {
+      right: -$handle-width /2;
+    }
+  }
+  .measures {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 10px;
+    height: 18px;
+    width: 75px;
+    background-color: $panel-color;
+    color: #fff;
+    font-size: 12px;
   }
 }
 
@@ -1218,7 +1328,7 @@ button {
     top: 8px;
     overflow: hidden;
     text-indent: 12px;    
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII=');
+    @extend %close-cross;
 }
 
 .search-place {
