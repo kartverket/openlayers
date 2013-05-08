@@ -117,6 +117,15 @@ body, #map, #basic-toolbar,
 .splashscreen .widget a.close:visited {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII="); }
 
+#getURL-panel .page-url, #embed-panel .output-code {
+  font-family: monospace;
+  color: #606161;
+  color: rgba(80, 80, 80, 0.9);
+  background-color: #fff;
+  padding: 8px;
+  word-break: break-word;
+  margin-bottom: 20px; }
+
 html {
   background-color: transparent; }
 
@@ -615,14 +624,6 @@ body {
       #getURL-panel .widget .cnt .email {
         width: 26px;
         height: 26px; }
-  #getURL-panel .page-url {
-    font-family: monospace;
-    color: #606161;
-    color: rgba(80, 80, 80, 0.9);
-    background-color: #fff;
-    padding: 8px;
-    word-break: break-word;
-    margin-bottom: 20px; }
   #getURL-panel .share-link {
     color: #fff;
     overflow: hidden; }

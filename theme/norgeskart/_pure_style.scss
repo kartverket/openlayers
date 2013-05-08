@@ -139,6 +139,16 @@ $button-dark-blue: #0058a3;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII=');
 }
 
+%output {
+  font-family: monospace;
+  color: $panel-color-hex;
+  color: $panel-color;
+  background-color: #fff;
+  padding: 8px; 
+  word-break: break-word;
+  margin-bottom: 20px;
+}
+
 html {
   background-color: transparent;
 }
@@ -815,13 +825,7 @@ button {
   }
 
   .page-url {
-    font-family: monospace;
-    color: $panel-color-hex;
-    color: $panel-color;
-    background-color: #fff;
-    padding: 8px; 
-    word-break: break-word;
-    margin-bottom: 20px;
+    @extend %output;
   }
   .share-link {
     color: #fff;
@@ -1026,6 +1030,9 @@ button {
   .illustration {
     stroke: #fff;
     stroke-width: 1.5;
+  }
+  .output-code {
+    @extend %output;
   }
 }
 
