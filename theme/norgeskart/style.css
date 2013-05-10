@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* common styles */
 @font-face {
   font-family: 'MetaBook';
@@ -36,7 +37,8 @@ button, .layersDiv .vectorWidgetToggleBtn,
 
 #basic-toolbar,
 #secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
-#share-toolbar .panel .tool.active .widget, #searchResults, #nk-selected-feature,
+#share-toolbar .panel .tool.active .widget, #searchResults, .user-marker,
+#nk-selected-feature,
 #nk-selected-coverage-map, #overview-container-panel, .emergency-poster-terms-popup {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
@@ -1047,6 +1049,7 @@ button:focus .icon {
 /**************************
 ==== popup styling ===
 **************************/
+.user-marker,
 #nk-selected-feature,
 #nk-selected-coverage-map {
   background-color: #606161 !important;
@@ -1057,6 +1060,7 @@ button:focus .icon {
   font-family: Arial, sans-serif;
   line-height: 14px;
   margin-top: 10px; }
+  .user-marker .h,
   #nk-selected-feature .h,
   #nk-selected-coverage-map .h {
     font-size: 12px;
@@ -1065,6 +1069,7 @@ button:focus .icon {
     text-transform: uppercase;
     margin-bottom: 6px;
     line-height: 14px; }
+  .user-marker div,
   #nk-selected-feature div,
   #nk-selected-coverage-map div {
     margin-bottom: 8px; }
