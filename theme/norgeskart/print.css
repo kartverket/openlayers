@@ -1,4 +1,11 @@
-.toolbar {
+.olMapViewport {
+  overflow: visible !important; }
+
+#map {
+  max-height: 100%; }
+
+.toolbar,
+.splashscreen {
   display: none; }
 
 body {
