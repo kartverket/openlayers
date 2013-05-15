@@ -576,6 +576,7 @@ button {
   transform: translate(75px, 0);
 
   -webkit-transition: -webkit-transform .5s ease-in-out;
+  -o-transition: transform .5s ease-in-out;
   transition: -ms-transform .5s ease-in-out;
   transition: transform .5s ease-in-out;
 }
@@ -590,11 +591,15 @@ button {
 #search-toolbar,
 #secondary-toolbar,
 #overview-container-panel,
+#share-toolbar,
 .fullscreen #basic-toolbar,
 .fullscreen #search-toolbar,
 .fullscreen #secondary-toolbar,
-.fullscreen #overview-container-panel {
+.fullscreen #overview-container-panel,
+.fullscreen #share-toolbar 
+{
   -webkit-transition: -webkit-transform .5s ease-in-out;
+  -o-transition: transform .5s ease-in-out;  
   transition: -ms-transform .5s ease-in-out;
   transition: transform .5s ease-in-out;
 }
@@ -614,7 +619,9 @@ button {
     transform: translate(70px, 0);
   }
 
-  #search-toolbar {
+  #search-toolbar,
+  #share-toolbar
+  {
     -webkit-transform: translate(0, -80px);
     -ms-transform: translate(0, -80px);
     transform: translate(0, -80px);
@@ -624,6 +631,7 @@ button {
     @extend %partial-transparent;
 
     -webkit-transition: -webkit-transform .5s ease-in-out;
+    -o-transition: transform .5s ease-in-out;
     transition: -ms-transform .5s ease-in-out;
     transition: transform .5s ease-in-out;
 
@@ -1047,6 +1055,12 @@ button {
       white-space: pre;
     }
   }
+  input {
+    &:after {
+      content: '\a';
+      white-space: pre;
+    }
+  }
 }
 
 /******************************************
@@ -1056,6 +1070,10 @@ button {
 .olHandlerResizableBox {
   border: 2px solid $panel-color-hex;
   -webkit-box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
+  -moz-box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
+  -ms-box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
+  -o-box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
+  box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
   position: absolute;
   background-color: transparent;
 //    opacity: 0.50;

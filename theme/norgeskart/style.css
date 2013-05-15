@@ -457,6 +457,7 @@ body {
   -ms-transform: translate(75px, 0);
   transform: translate(75px, 0);
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
   transition: -ms-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out; }
 
@@ -469,11 +470,14 @@ body {
 #search-toolbar,
 #secondary-toolbar,
 #overview-container-panel,
+#share-toolbar,
 .fullscreen #basic-toolbar,
 .fullscreen #search-toolbar,
 .fullscreen #secondary-toolbar,
-.fullscreen #overview-container-panel {
+.fullscreen #overview-container-panel,
+.fullscreen #share-toolbar {
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
   transition: -ms-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out; }
 
@@ -487,12 +491,14 @@ body {
     -webkit-transform: translate(70px, 0);
     -ms-transform: translate(70px, 0);
     transform: translate(70px, 0); }
-  .fullscreen #search-toolbar {
+  .fullscreen #search-toolbar,
+  .fullscreen #share-toolbar {
     -webkit-transform: translate(0, -80px);
     -ms-transform: translate(0, -80px);
     transform: translate(0, -80px); }
   .fullscreen #fullscreen-panel {
     -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
     transition: -ms-transform 0.5s ease-in-out;
     transition: transform 0.5s ease-in-out;
     -webkit-transform: translate(70px, 0);
@@ -773,6 +779,9 @@ body {
 .edit-popup-content label:after {
   content: ':\a';
   white-space: pre; }
+.edit-popup-content input:after {
+  content: '\a';
+  white-space: pre; }
 
 /******************************************
 === ResizableBox ===
@@ -780,6 +789,10 @@ body {
 .olHandlerResizableBox {
   border: 2px solid #606161;
   -webkit-box-shadow: 0 0 0 2000px rgba(80, 80, 80, 0.4);
+  -moz-box-shadow: 0 0 0 2000px rgba(80, 80, 80, 0.4);
+  -ms-box-shadow: 0 0 0 2000px rgba(80, 80, 80, 0.4);
+  -o-box-shadow: 0 0 0 2000px rgba(80, 80, 80, 0.4);
+  box-shadow: 0 0 0 2000px rgba(80, 80, 80, 0.4);
   position: absolute;
   background-color: transparent;
   font-size: 1px; }
