@@ -1036,6 +1036,19 @@ button {
   }
 }
 
+.nkAddMarker #resizableBox {
+  cursor: crosshair;
+  cursor: url('img/embed-marker.png') 11 55, crosshair;
+}
+.edit-popup-content {
+  label {
+    &:after {
+      content: ':\a';
+      white-space: pre;
+    }
+  }
+}
+
 /******************************************
 === ResizableBox ===
 ******************************************/
@@ -1090,11 +1103,15 @@ button {
     left: 100%;
     top: 0;
     margin-left: 10px;
-    height: 18px;
-    width: 75px;
     background-color: $panel-color;
     color: #fff;
     font-size: 12px;
+    padding: 5px;
+
+    span {
+      display: block;
+      white-space: pre;
+    }
   }
 }
 

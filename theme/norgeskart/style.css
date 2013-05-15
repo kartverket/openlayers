@@ -766,6 +766,14 @@ body {
   stroke: #fff;
   stroke-width: 1.5; }
 
+.nkAddMarker #resizableBox {
+  cursor: crosshair;
+  cursor: url("img/embed-marker.png") 11 55, crosshair; }
+
+.edit-popup-content label:after {
+  content: ':\a';
+  white-space: pre; }
+
 /******************************************
 === ResizableBox ===
 ******************************************/
@@ -801,11 +809,13 @@ body {
     left: 100%;
     top: 0;
     margin-left: 10px;
-    height: 18px;
-    width: 75px;
     background-color: rgba(80, 80, 80, 0.9);
     color: #fff;
-    font-size: 12px; }
+    font-size: 12px;
+    padding: 5px; }
+    .olHandlerResizableBox .measures span {
+      display: block;
+      white-space: pre; }
 
 /******************************************
 === get Zoom panel ===
