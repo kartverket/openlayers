@@ -5,12 +5,18 @@
   src: url("/fonts/MetaWeb-Book.eot");
   src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); }
 
+#embed-panel .step-specific.type button.static-button:before, #embed-panel .step-specific.markers .instructions:before, #embed-panel .step-specific.type button.static-button:after, #embed-panel .step-specific.markers .instructions:after {
+  content: '';
+  display: table; }
+#embed-panel .step-specific.type button.static-button:after, #embed-panel .step-specific.markers .instructions:after {
+  clear: both; }
+
 .toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
 #share-toolbar .panel .tool.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .overlay-group-panel .widget .cnt > ul > li ul, .emergency-poster-terms-popup {
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
 
-#getURL-panel .widget .h {
+#getURL-panel .widget .h, #embed-panel header .h {
   font-family: MetaBook, Arial, sans-serif;
   font-size: 30px;
   font-weight: normal; }
@@ -37,13 +43,13 @@ button, .layersDiv .vectorWidgetToggleBtn,
 
 #basic-toolbar,
 #secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
-#share-toolbar .panel .tool.active .widget, #searchResults, .user-marker,
+#share-toolbar .panel .tool.active .widget, #embed-panel .step-specific.type button, #searchResults, .user-marker,
 #nk-selected-feature,
 #nk-selected-coverage-map, #overview-container-panel, .emergency-poster-terms-popup {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
 #basic-toolbar .panel + .panel,
-#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, #embed-panel .step-specific, #embed-panel .buttons-panel, #embed-panel .markers-list, #embed-panel .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .emergency-poster-terms-popup .button-panel {
+#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, #embed-panel .step-specific, #embed-panel .buttons-panel, #embed-panel .step-specific.markers .markers-list, #embed-panel .step-specific.markers .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .emergency-poster-terms-popup .button-panel {
   /* v-divider.png base64-encoded */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC");
   background-repeat: repeat-x; }
@@ -111,7 +117,7 @@ body, #map, #basic-toolbar,
   background-image: -o-linear-gradient(bottom, #01457f, #5998ce 50%);
   background-image: linear-gradient(bottom, #01457f, #5998ce 50%); }
 
-#embed-panel .markers-list .remove-marker, #searchResults a.close,
+#embed-panel .step-specific.markers .markers-list .remove-marker, #searchResults a.close,
 #searchResults a.close:hover,
 #searchResults a.close:visited,
 .splashscreen .widget a.close,
@@ -666,6 +672,7 @@ body {
 /******************************************
 === embed panel ===
 ******************************************/
+/* elements present in all steps */
 #embed-panel .widget {
   width: 500px; }
 #embed-panel header {
@@ -735,39 +742,113 @@ body {
   margin-bottom: 20px;
   padding: 20px; }
   #embed-panel .buttons-panel button {
-    padding: 3px 10px; }
-#embed-panel .markers-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  counter-reset: marker-counter; }
-  #embed-panel .markers-list li {
-    margin: 0 25px;
-    padding: 10px 20px 10px 45px;
+    padding: 3px 10px;
     position: relative; }
-    #embed-panel .markers-list li:before {
-      content: counter(marker-counter);
-      counter-increment: marker-counter;
+    #embed-panel .buttons-panel button.next:after, #embed-panel .buttons-panel button.back:before {
+      content: '';
+      width: 0;
+      height: 0;
       display: block;
+      border-width: 6px;
+      border-style: solid;
+      border-color: transparent;
       position: absolute;
-      left: 0;
-      top: 10px;
-      background-color: blue;
-      border-radius: 50%;
-      width: 25px;
-      height: 25px;
-      text-align: center;
-      line-height: 25px;
-      font-weight: bold; }
-  #embed-panel .markers-list .remove-marker {
-    position: absolute;
-    right: 0;
-    top: 11px;
-    background-repeat: no-repeat;
-    text-indent: -999em;
-    overflow: hidden;
-    width: 12px;
-    height: 12px; }
+      top: 5px; }
+    #embed-panel .buttons-panel button.next {
+      float: right;
+      padding-right: 26px; }
+      #embed-panel .buttons-panel button.next:after {
+        border-right-width: 0;
+        border-left-color: #fff;
+        right: 10px; }
+    #embed-panel .buttons-panel button.back {
+      position: relative;
+      padding-left: 26px; }
+      #embed-panel .buttons-panel button.back:before {
+        left: 10px;
+        border-left-width: 0;
+        border-right-color: #fff; }
+#embed-panel .step-specific {
+  padding: 25px;
+  /* elements present at step 1 (type) */
+  /* elements present at step 2 (terms) */
+  /* elements present at step 4 (markers) */
+  /* step specific headers above horizontal line */ }
+  #embed-panel .step-specific .h {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: normal; }
+  #embed-panel .step-specific .h, #embed-panel .step-specific p {
+    padding-bottom: 10px; }
+  #embed-panel .step-specific.type button {
+    border-radius: 7px;
+    border: 1px solid #939292;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.7), 2px 2px 3px -1px #939292 inset;
+    background-image: -webkit-linear-gradient(top, #5a5951, #3b3b3b);
+    padding: 12px 12px 30px;
+    width: 210px;
+    height: 210px; }
+    #embed-panel .step-specific.type button.static-button {
+      float: right; }
+    #embed-panel .step-specific.type button.active {
+      border: none;
+      box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
+    #embed-panel .step-specific.type button span {
+      text-align: left;
+      color: #fff;
+      font-family: MetaBook;
+      font-size: 18px; }
+    #embed-panel .step-specific.type button svg {
+      width: 188px; }
+  #embed-panel .step-specific.markers {
+    padding: 25px 0 0 0; }
+    #embed-panel .step-specific.markers .h,
+    #embed-panel .step-specific.markers .instructions {
+      padding-left: 25px;
+      padding-right: 25px; }
+    #embed-panel .step-specific.markers .marker-illustration {
+      margin-left: 25px;
+      float: right;
+      fill: #fff;
+      width: 120px; }
+    #embed-panel .step-specific.markers .markers-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      counter-reset: marker-counter; }
+      #embed-panel .step-specific.markers .markers-list li {
+        margin: 0 25px;
+        padding: 10px 20px 10px 45px;
+        position: relative; }
+        #embed-panel .step-specific.markers .markers-list li:before {
+          content: counter(marker-counter);
+          counter-increment: marker-counter;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 10px;
+          background-color: blue;
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          text-align: center;
+          line-height: 25px;
+          font-weight: bold; }
+      #embed-panel .step-specific.markers .markers-list .remove-marker {
+        position: absolute;
+        right: 0;
+        top: 11px;
+        background-repeat: no-repeat;
+        text-indent: -999em;
+        overflow: hidden;
+        width: 12px;
+        height: 12px; }
+  #embed-panel .step-specific.type, #embed-panel .step-specific.terms, #embed-panel .step-specific.markers {
+    background-position: 0 25px;
+    padding-top: 0; }
+    #embed-panel .step-specific.type .h, #embed-panel .step-specific.terms .h, #embed-panel .step-specific.markers .h {
+      padding-bottom: 25px;
+      line-height: 25px; }
 #embed-panel .illustration {
   stroke: #fff;
   stroke-width: 1.5; }

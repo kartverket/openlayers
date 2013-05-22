@@ -11,6 +11,17 @@ $panel-color-hex: #606161;
 $share-toolbar-panel-width: 60px;
 $share-toolbar-panel-height: 39px;
 
+%clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+      clear: both;
+  }
+}
+
 %partial-transparent {
   background-color: $panel-color-hex;
   background-color: $panel-color;
@@ -907,6 +918,8 @@ button {
 === embed panel ===
 ******************************************/
 
+/* elements present in all steps */
+
 #embed-panel {
   .widget {
     width: 500px;
@@ -914,6 +927,10 @@ button {
 
   header {
     padding: 20px;
+
+    .h {
+      @extend %header-font;
+    }
   }
   .step-specific {
     @extend %horizontal-divider;
@@ -990,51 +1007,186 @@ button {
     button {
       @extend %terms-accept-button-style;
       padding: 3px 10px;
-    }
-  }
-  .markers-list {
-    @extend %horizontal-divider;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    counter-reset: marker-counter;
-
-    li {
-      @extend %horizontal-divider;
-      margin: 0 25px;
-      padding: 10px 20px 10px 45px;
       position: relative;
 
-      &:before {
-        content: counter(marker-counter);
-        counter-increment: marker-counter;
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 10px;
-        background-color: blue;
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        text-align: center;
-        line-height: 25px;
-        font-weight: bold;
+      &.next:after,
+      &.back:before {
+          content: '';
+          width: 0;
+          height: 0;
+          display: block;
+          border-width: 6px;
+          border-style: solid;
+          border-color: transparent;
+          position: absolute;
+          top: 5px;
       }
 
-    }
+      &.next {
+        float: right;
+        padding-right: 26px;
 
-    .remove-marker {
-      @extend %close-cross;
-      position: absolute;
-      right: 0;
-      top: 11px;
-      background-repeat: no-repeat;
-      text-indent: -999em;
-      overflow: hidden;
-      width: 12px;
-      height: 12px;
+        &:after {
+          border-right-width: 0;
+          border-left-color: #fff;
+          right: 10px;
+        }
+      }
+      &.back {
+        position: relative;
+        padding-left: 26px;
+
+        &:before {
+          left: 10px;
+          border-left-width: 0;
+          border-right-color: #fff;
+        }
+      }
     }
   }
+
+
+  
+  .step-specific {
+    padding: 25px;    
+
+    .h {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+    .h, p {
+      padding-bottom: 10px;
+    }
+
+
+
+
+    /* elements present at step 1 (type) */
+
+    &.type {
+      button {
+
+        border-radius: 7px;
+        border: 1px solid #939292;
+
+        @extend %shadow;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.7), 2px 2px 3px -1px #939292 inset;
+
+        background-image: -webkit-linear-gradient(top, #5a5951, #3b3b3b);
+        padding: 12px 12px 30px;
+        width: 210px;
+        height: 210px;
+
+        &.static-button {
+          float: right;
+          @extend %clearfix;
+        }
+
+        &.active {
+          border: none;
+          box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
+        }
+
+        span {
+          text-align: left;
+          color: #fff;
+          font-family: MetaBook;
+          font-size: 18px;
+        }
+
+        svg {
+          width: 188px;
+        }
+
+      }
+    }
+
+
+    /* elements present at step 2 (terms) */
+
+
+    /* elements present at step 4 (markers) */
+
+    &.markers {
+      padding: 25px 0 0 0;
+
+      .h,
+      .instructions {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      .instructions {
+        @extend %clearfix;
+      }
+
+      .marker-illustration {
+        margin-left: 25px;
+        float: right;
+        fill: #fff;
+        width: 120px;
+      }
+
+      .markers-list {
+        @extend %horizontal-divider;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        counter-reset: marker-counter;
+
+        li {
+          @extend %horizontal-divider;
+          margin: 0 25px;
+          padding: 10px 20px 10px 45px;
+          position: relative;
+
+          &:before {
+            content: counter(marker-counter);
+            counter-increment: marker-counter;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 10px;
+            background-color: blue;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+          }
+
+        }
+
+        .remove-marker {
+          @extend %close-cross;
+          position: absolute;
+          right: 0;
+          top: 11px;
+          background-repeat: no-repeat;
+          text-indent: -999em;
+          overflow: hidden;
+          width: 12px;
+          height: 12px;
+        }
+      }    
+    }
+
+    /* step specific headers above horizontal line */
+    &.type,
+    &.terms,
+    &.markers {
+      background-position: 0 25px;
+      padding-top: 0;
+
+      .h {
+        padding-bottom: 25px;
+        line-height: 25px;
+      }
+    }
+  }
+
   .illustration {
     stroke: #fff;
     stroke-width: 1.5;
@@ -1061,6 +1213,8 @@ button {
       white-space: pre;
     }
   }
+
+
 }
 
 /******************************************
