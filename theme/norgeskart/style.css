@@ -5,10 +5,10 @@
   src: url("/fonts/MetaWeb-Book.eot");
   src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); }
 
-#embed-panel .step-specific.type button.static-button:before, #embed-panel .step-specific.markers .instructions:before, #embed-panel .step-specific.type button.static-button:after, #embed-panel .step-specific.markers .instructions:after {
+#embed-panel .step-specific.type button.static-button:before, #embed-panel .step-specific.area:before, #embed-panel .step-specific.markers .instructions:before, #embed-panel .step-specific.type button.static-button:after, #embed-panel .step-specific.area:after, #embed-panel .step-specific.markers .instructions:after {
   content: '';
   display: table; }
-#embed-panel .step-specific.type button.static-button:after, #embed-panel .step-specific.markers .instructions:after {
+#embed-panel .step-specific.type button.static-button:after, #embed-panel .step-specific.area:after, #embed-panel .step-specific.markers .instructions:after {
   clear: both; }
 
 .toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
@@ -771,7 +771,8 @@ body {
 #embed-panel .step-specific {
   padding: 25px;
   /* elements present at step 1 (type) */
-  /* elements present at step 2 (terms) */
+  /* elements present at step 2 (terms)   */
+  /* elements present at step 3 (area)    */
   /* elements present at step 4 (markers) */
   /* step specific headers above horizontal line */ }
   #embed-panel .step-specific .h {
@@ -800,6 +801,11 @@ body {
       font-size: 18px; }
     #embed-panel .step-specific.type button svg {
       width: 188px; }
+  #embed-panel .step-specific.area .h {
+    float: left; }
+  #embed-panel .step-specific.area input,
+  #embed-panel .step-specific.area label {
+    float: right; }
   #embed-panel .step-specific.markers {
     padding: 25px 0 0 0; }
     #embed-panel .step-specific.markers .h,
@@ -1369,6 +1375,18 @@ focus for toolbar controls
     padding: 5px;
     box-shadow: 3px 0 4px -2px rgba(0, 0, 0, 0.5) inset;
     width: 200px; }
+  .tool.transformations .widget h2 {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 15px 0px 0px; }
+  .tool.transformations .widget .output-value {
+    font-weight: bold; }
+  .tool.transformations .widget .output-label {
+    margin-top: 15px;
+    display: block; }
+  .tool.transformations .widget h2:after,
+  .tool.transformations .widget .output-label:after {
+    content: ':'; }
 .tool.transformations form fieldset {
   border: none; }
 .tool.transformations form.disabled label,

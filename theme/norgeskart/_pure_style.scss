@@ -1103,8 +1103,21 @@ button {
     }
 
 
-    /* elements present at step 2 (terms) */
+    /* elements present at step 2 (terms)   */
 
+    /* elements present at step 3 (area)    */
+
+    &.area {
+      @extend %clearfix;
+      .h {
+        float: left;
+      }
+
+      input,
+      label {
+        float: right;
+      }
+    }
 
     /* elements present at step 4 (markers) */
 
@@ -1908,7 +1921,26 @@ focus for toolbar controls
       box-shadow: 3px 0 4px -2px rgba(0,0,0,0.5) inset;
       width: 200px;
     }
+    h2 {
+      font-size: 12px;
+      font-weight: bold;
+      margin: 15px 0px 0px;
+    }
+    .output-value {
+      font-weight: bold;
+    }
+    .output-label {
+      margin-top: 15px;
+      display: block;
+    }
+    h2, 
+    .output-label {
+      &:after {
+        content: ':';
+      }
+    }
   }
+
   form {
     fieldset {
       border: none;
