@@ -2156,3 +2156,38 @@ $overlayMenuItemMargin: 5px;
   }
 }
 
+/************************************
+  map load error popup
+************************************/
+
+.map-load-error {
+  display: block;
+  z-index: 9999;
+
+  .inner-wrapper {
+    background-color: $panel-color-hex;
+    background-color: $panel-color;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 400px;
+    margin-top: -100px;
+    margin-left: -200px;
+    z-index: 999;
+    padding: 25px;
+  }
+  h1 {
+    @extend %header-font;
+  }
+}
+
+/*******************************************
+ override OpenLayers default styles
+*******************************************/
+
+.olImageLoadError {
+  background-color: transparent;
+  visibility: hidden !important;
+}

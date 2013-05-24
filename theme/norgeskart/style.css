@@ -16,7 +16,7 @@
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
 
-#getURL-panel .widget .h, #embed-panel header .h {
+#getURL-panel .widget .h, #embed-panel header .h, .map-load-error h1 {
   font-family: MetaBook, Arial, sans-serif;
   font-size: 30px;
   font-weight: normal; }
@@ -1520,6 +1520,33 @@ focus for toolbar controls
         right: 6px; }
   .emergency-poster-terms-popup .h {
     margin: 0; }
+
+/************************************
+  map load error popup
+************************************/
+.map-load-error {
+  display: block;
+  z-index: 9999; }
+  .map-load-error .inner-wrapper {
+    background-color: #606161;
+    background-color: rgba(80, 80, 80, 0.9);
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    width: 400px;
+    margin-top: -100px;
+    margin-left: -200px;
+    z-index: 999;
+    padding: 25px; }
+
+/*******************************************
+ override OpenLayers default styles
+*******************************************/
+.olImageLoadError {
+  background-color: transparent;
+  visibility: hidden !important; }
 
 /**************************
 ==== splashscreen styling ===
