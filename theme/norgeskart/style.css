@@ -43,7 +43,8 @@ button, .layersDiv .vectorWidgetToggleBtn,
 
 #basic-toolbar,
 #secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
-#share-toolbar .panel .tool.active .widget, #embed-panel .step-specific.type button, #searchResults, .user-marker,
+#share-toolbar .panel .tool.active .widget, #embed-panel .step-specific.type button, #embed-panel .step-specific.descriptions #long-desc-explanation,
+#embed-panel .step-specific.descriptions #short-desc-explanation, #searchResults, .user-marker,
 #nk-selected-feature,
 #nk-selected-coverage-map, #overview-container-panel, .emergency-poster-terms-popup {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
@@ -117,13 +118,18 @@ body, #map, #basic-toolbar,
   background-image: -o-linear-gradient(bottom, #01457f, #5998ce 50%);
   background-image: linear-gradient(bottom, #01457f, #5998ce 50%); }
 
-#embed-panel .step-specific.markers .markers-list .remove-marker, #searchResults a.close,
+#embed-panel .step-specific.descriptions #long-desc-explanation .close,
+#embed-panel .step-specific.descriptions #short-desc-explanation .close, #embed-panel .step-specific.markers .markers-list .remove-marker, #searchResults a.close,
 #searchResults a.close:hover,
 #searchResults a.close:visited,
 .splashscreen .widget a.close,
 .splashscreen .widget a.close:hover,
 .splashscreen .widget a.close:visited {
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII="); }
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAYCAYAAADOMhxqAAAAT0lEQVR42r2RUQoAMAhCPWL3v4z7in2VE2GBBMETJdAc3K2VAQvMEZAGwrXvEaAjRaV//cEcVBUdNYAXxcAEcwOUAUfXvqeAjhSV/vgHRwe/QqT/idrCCQAAAABJRU5ErkJggg=="); }
+
+#embed-panel .step-specific.descriptions #long-desc-explanation .close,
+#embed-panel .step-specific.descriptions #short-desc-explanation .close {
+  background-position: 0 -12px; }
 
 #getURL-panel .page-url, #embed-panel .output-code {
   font-family: monospace;
@@ -849,6 +855,59 @@ body {
         overflow: hidden;
         width: 12px;
         height: 12px; }
+  #embed-panel .step-specific.descriptions label {
+    font-weight: bold; }
+    #embed-panel .step-specific.descriptions label, #embed-panel .step-specific.descriptions label + span {
+      margin-right: .5em; }
+  #embed-panel .step-specific.descriptions a {
+    color: #fff; }
+  #embed-panel .step-specific.descriptions input, #embed-panel .step-specific.descriptions textarea {
+    display: block;
+    width: 75%;
+    margin-top: 5px;
+    padding: 5px;
+    line-height: 18px; }
+  #embed-panel .step-specific.descriptions input {
+    margin-bottom: 20px; }
+  #embed-panel .step-specific.descriptions textarea {
+    height: 150px; }
+  #embed-panel .step-specific.descriptions #long-desc-explanation,
+  #embed-panel .step-specific.descriptions #short-desc-explanation {
+    display: none;
+    color: rgba(80, 80, 80, 0.9);
+    background-color: #fff;
+    position: absolute;
+    width: 200px;
+    padding: 10px;
+    top: 100%; }
+  #embed-panel .step-specific.descriptions #long-desc-explanation {
+    left: 100%; }
+  #embed-panel .step-specific.descriptions #short-desc-explanation {
+    right: 100%; }
+  #embed-panel .step-specific.descriptions #long-desc-help,
+  #embed-panel .step-specific.descriptions #short-desc-help {
+    display: inline-block;
+    position: relative; }
+  #embed-panel .step-specific.descriptions #long-desc-help.active #long-desc-explanation,
+  #embed-panel .step-specific.descriptions #short-desc-help.active #short-desc-explanation {
+    display: block; }
+  #embed-panel .step-specific.descriptions #long-desc-explanation,
+  #embed-panel .step-specific.descriptions #short-desc-explanation {
+    padding-top: 28px; }
+    #embed-panel .step-specific.descriptions #long-desc-explanation .h,
+    #embed-panel .step-specific.descriptions #short-desc-explanation .h {
+      position: absolute;
+      top: 8px;
+      color: rgba(80, 80, 80, 0.9); }
+    #embed-panel .step-specific.descriptions #long-desc-explanation .close,
+    #embed-panel .step-specific.descriptions #short-desc-explanation .close {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      overflow: hidden;
+      text-indent: -999em; }
   #embed-panel .step-specific.type, #embed-panel .step-specific.terms, #embed-panel .step-specific.markers {
     background-position: 0 25px;
     padding-top: 0; }

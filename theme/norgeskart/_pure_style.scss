@@ -147,8 +147,14 @@ $button-dark-blue: #0058a3;
 }
 
 %close-cross {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII=');
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAYCAYAAADOMhxqAAAAT0lEQVR42r2RUQoAMAhCPWL3v4z7in2VE2GBBMETJdAc3K2VAQvMEZAGwrXvEaAjRaV//cEcVBUdNYAXxcAEcwOUAUfXvqeAjhSV/vgHRwe/QqT/idrCCQAAAABJRU5ErkJggg==');
 }
+
+%close-cross-grey {
+  @extend %close-cross;
+  background-position: 0 -12px;
+}
+
 
 %output {
   font-family: monospace;
@@ -1184,6 +1190,79 @@ button {
           height: 12px;
         }
       }    
+    }
+
+    &.descriptions {
+      label {
+        font-weight: bold;
+        &, + span {
+          margin-right: .5em;
+        }
+      }
+      a {
+        color: #fff;
+      }
+      input, textarea {
+        display: block;
+        width: 75%;
+        margin-top: 5px;
+        padding: 5px;
+        line-height: 18px;
+      }
+      input {
+        margin-bottom: 20px;
+      }
+      textarea {
+        height: 150px;
+      }
+      #long-desc-explanation,
+      #short-desc-explanation {
+        display: none;
+        @extend %shadow;
+        color: $panel-color;
+        background-color: #fff;
+        position: absolute;
+        width: 200px;
+        padding: 10px;
+        top: 100%;
+      }
+      #long-desc-explanation {
+        left: 100%;
+      }
+      #short-desc-explanation {
+        right: 100%;
+      }
+      #long-desc-help,
+      #short-desc-help {
+        display: inline-block;
+        position: relative;
+      }
+      #long-desc-help.active #long-desc-explanation,
+      #short-desc-help.active #short-desc-explanation {
+        display: block;
+      }
+
+      #long-desc-explanation,
+      #short-desc-explanation {
+        padding-top: 28px;
+
+        .h {
+          position: absolute;
+          top: 8px;
+          color: $panel-color;
+        }
+        .close {
+          @extend %close-cross-grey;
+          position: absolute;
+          right: 8px;
+          top: 8px;
+          width: 12px;
+          height: 12px;
+          overflow: hidden;
+          text-indent: -999em;
+        }
+      }
+
     }
 
     /* step specific headers above horizontal line */
