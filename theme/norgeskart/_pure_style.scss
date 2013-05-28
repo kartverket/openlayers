@@ -100,14 +100,25 @@ $share-toolbar-panel-height: 39px;
 $button-light-blue: #408ccd;
 $button-dark-blue: #0058a3;
 
+@mixin button-gradient($start, $end) {
+  background-color: $start;
+  background-image: -webkit-linear-gradient(bottom, $end, $start 33%, $start 66%, $end);
+  background-image: -moz-linear-gradient(bottom, $end, $start 33%, $start 66%, $end);
+  background-image: -ms-linear-gradient(bottom, $end, $start 33%, $start 66%, $end);
+  background-image: -o-linear-gradient(bottom, $end, $start 33%, $start 66%, $end);
+  background-image: linear-gradient(bottom, $end, $start 33%, $start 66%, $end);
+}
+
+%blue-button-gradient {
+  @include button-gradient($button-light-blue, $button-dark-blue);
+}
+
+%grey-button-gradient {
+  @include button-gradient(#ffffff, #d8d8d8);
+}
+
 %terms-accept-button-style {
   @extend %button-style;
-  background-color: $button-light-blue;
-  background-image: -webkit-linear-gradient(bottom, $button-dark-blue, $button-light-blue 33%, $button-light-blue 66%, $button-dark-blue);
-  background-image: -moz-linear-gradient(bottom, $button-dark-blue, $button-light-blue 33%, $button-light-blue 66%, $button-dark-blue);
-  background-image: -ms-linear-gradient(bottom, $button-dark-blue, $button-light-blue 33%, $button-light-blue 66%, $button-dark-blue);
-  background-image: -o-linear-gradient(bottom, $button-dark-blue, $button-light-blue 33%, $button-light-blue 66%, $button-dark-blue);
-  background-image: linear-gradient(bottom, $button-dark-blue, $button-light-blue 33%, $button-light-blue 66%, $button-dark-blue);
   background-size: 150%;
   background-position: 0 100%;
 
@@ -125,16 +136,36 @@ $button-dark-blue: #0058a3;
   }
 }
 
-%blue-one-lined-button {
+%blue-terms-accept-button-style {
   @extend %terms-accept-button-style;
-  border: 1px solid #01437c;
+  @extend %blue-button-gradient; 
+}
+
+%one-lined-button {
   height: 24px;
   width: auto;
-  padding: 0 24px 0 12px;
-  text-align: left;
   position: relative;
   line-height: 24px;
 }
+
+%blue-one-lined-button {
+  @extend %blue-button-gradient;
+  @extend %terms-accept-button-style;
+  @extend %one-lined-button;
+  border: 1px solid #01437c;
+  padding: 0 24px 0 12px;
+  text-align: left;
+}
+
+%grey-one-lined-button {
+  @extend %grey-button-gradient;
+  @extend %terms-accept-button-style;
+  @extend %one-lined-button;
+  border: 1px solid #01437c;
+  padding: 0 12px;
+  text-align: left;
+}
+
 
 %search-button-style {
   @extend %button-style;
@@ -1011,7 +1042,8 @@ button {
     @extend %horizontal-divider;
 
     button {
-      @extend %terms-accept-button-style;
+
+      @extend %blue-terms-accept-button-style;
       padding: 3px 10px;
       position: relative;
 
@@ -1309,74 +1341,21 @@ button {
 
 }
 
-/******************************************
-=== ResizableBox ===
-******************************************/
+#added-marker-description {
+  display: block;
+  line-height: 18px;
+  padding: 5px;
+  margin: 5px 0 10px;
+}
 
-.olHandlerResizableBox {
-  border: 2px solid $panel-color-hex;
-  -webkit-box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
-  -moz-box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
-  -ms-box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
-  -o-box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
-  box-shadow: 0 0 0 2000px transparentize($panel-color, 0.5);
-  position: absolute;
-  background-color: transparent;
-//    opacity: 0.50;
-  font-size: 1px;
-//    filter: alpha(opacity=50);
-
-  .handle {
-    $handle-height: 18px;
-    $handle-width: 18px;
-
-    background-color: orange;
-    position: absolute;
-    width: $handle-width;
-    height: $handle-height;
-
-    &.top,
-    &.bottom {
-      left: 50%;
-      margin-left: -$handle-width / 2;
-      cursor: ns-resize;
-    }
-
-    &.left,
-    &.right {
-      top: 50%;
-      margin-top: -$handle-height / 2;
-      cursor: ew-resize;
-    }
-
-    &.top {
-      top: -$handle-height / 2;
-    }
-    &.bottom {
-      bottom: -$handle-height / 2;
-    }
-    &.left {
-      left: -$handle-width /2;
-    }
-    &.right {
-      right: -$handle-width /2;
-    }
-  }
-  .measures {
-    position: absolute;
-    left: 100%;
-    top: 0;
-    margin-left: 10px;
-    background-color: $panel-color;
-    color: #fff;
-    font-size: 12px;
-    padding: 5px;
-
-    span {
-      display: block;
-      white-space: pre;
-    }
-  }
+.embed-cancel-marker,
+.embed-add-marker {
+  @extend %grey-one-lined-button;
+  color: $panel-color;
+  font-weight: bold;
+}
+.embed-add-marker {
+  margin-right: 10px;
 }
 
 /******************************************
