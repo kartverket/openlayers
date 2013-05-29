@@ -76,8 +76,8 @@ body, #map, #basic-toolbar,
   height: 0;
   position: absolute; }
 
-#embed-panel .buttons-panel button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
-.embed-add-marker, .splashscreen .widget .splash-button, #searchSubmit {
+#embed-panel .buttons-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
+.embed-add-marker, #searchSubmit {
   border: 1px solid #003c6f;
   border-color: rgba(0, 60, 111, 0.82);
   cursor: pointer;
@@ -85,7 +85,7 @@ body, #map, #basic-toolbar,
   color: #fff;
   text-transform: uppercase; }
 
-#embed-panel .buttons-panel button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button {
+#embed-panel .buttons-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button {
   background-color: #408ccd;
   background-image: -webkit-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
   background-image: -moz-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
@@ -102,20 +102,20 @@ body, #map, #basic-toolbar,
   background-image: -o-linear-gradient(bottom, #d8d8d8, white 33%, white 66%, #d8d8d8);
   background-image: linear-gradient(bottom, #d8d8d8, white 33%, white 66%, #d8d8d8); }
 
-#embed-panel .buttons-panel button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
-.embed-add-marker, .splashscreen .widget .splash-button {
+#embed-panel .buttons-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
+.embed-add-marker {
   background-size: 150%;
   background-position: 0 100%; }
-  #embed-panel .buttons-panel button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
-  .embed-add-marker, .splashscreen .widget .splash-button, #embed-panel .buttons-panel button:hover, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .embed-cancel-marker:hover,
-  .embed-add-marker:hover, .splashscreen .widget .splash-button:hover, #embed-panel .buttons-panel button:focus, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .embed-cancel-marker:focus,
-  .embed-add-marker:focus, .splashscreen .widget .splash-button:focus {
+  #embed-panel .buttons-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
+  .embed-add-marker, #embed-panel .buttons-panel button:hover, .splashscreen .widget .splash-button:hover, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .embed-cancel-marker:hover,
+  .embed-add-marker:hover, #embed-panel .buttons-panel button:focus, .splashscreen .widget .splash-button:focus, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .embed-cancel-marker:focus,
+  .embed-add-marker:focus {
     -webkit-transition-property: background-position;
     -webkit-transition-duration: .03s;
     -webkit-transition-timing-function: cubic-bezier(0.25, 0.5, 0.75, 0.5); }
-  #embed-panel .buttons-panel button:hover, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .embed-cancel-marker:hover,
-  .embed-add-marker:hover, .splashscreen .widget .splash-button:hover, #embed-panel .buttons-panel button:focus, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .embed-cancel-marker:focus,
-  .embed-add-marker:focus, .splashscreen .widget .splash-button:focus {
+  #embed-panel .buttons-panel button:hover, .splashscreen .widget .splash-button:hover, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .embed-cancel-marker:hover,
+  .embed-add-marker:hover, #embed-panel .buttons-panel button:focus, .splashscreen .widget .splash-button:focus, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .embed-cancel-marker:focus,
+  .embed-add-marker:focus {
     background-position: 0 0%;
     text-decoration: underline; }
 
