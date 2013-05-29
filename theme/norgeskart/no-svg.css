@@ -6,6 +6,7 @@
 .emergency-poster-button,
 .Print-button,
 .help-button,
+.embed-button,
 .Transformations-button {
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -92,4 +93,8 @@
 
 .share-link.facebook {
   background-image: url('img/facebook.png');
+}
+
+.embed-button {
+  background-image: url('img/embed-icon.png');
 }
