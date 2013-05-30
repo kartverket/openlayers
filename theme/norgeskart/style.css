@@ -164,7 +164,7 @@ body, #map, #basic-toolbar,
   color: rgba(80, 80, 80, 0.9);
   background-color: #fff;
   padding: 8px;
-  word-break: break-word;
+  word-break: break-all;
   margin-bottom: 20px; }
 
 html {

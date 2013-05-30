@@ -123,3 +123,11 @@
 #embed-panel .progress li span {
   color: #616060;
 }
+
+#getURL-panel .page-url,
+#embed-panel .output-code {
+  -ms-word-break: break-all;
+  overflow: hidden;
+  white-space: normal;
+}
+

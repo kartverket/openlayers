@@ -193,7 +193,8 @@ $button-dark-blue: #0058a3;
   color: $panel-color;
   background-color: #fff;
   padding: 8px; 
-  word-break: break-word;
+  word-break: break-all;
+
   margin-bottom: 20px;
 }
 
