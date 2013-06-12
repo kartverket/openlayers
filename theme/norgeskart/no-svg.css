@@ -7,6 +7,8 @@
 .Print-button,
 .help-button,
 .embed-button,
+.static-button,
+.dynamic-button,
 .Transformations-button {
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -123,6 +125,32 @@
 #embed-panel .progress li span {
   color: #616060;
 }
+#embed-panel .type button {
+  position: relative;
+}
+#embed-panel .type button.active {
+  background-color: #5a5951;
+}
+#embed-panel .type button span {
+  position: absolute;
+  top: 15px;
+}
+#embed-panel .type .dynamic-button {
+  background-image: url('img/dynamisk.png');
+  background-position: 50% 80px;
+}
+#embed-panel .type .static-button {
+  background-image: url('img/statisk.png');
+  background-position: 50% 80px;
+}
+
+#embed-panel .markers .marker-illustration {
+  background-image: url('img/herborjeg.png');
+  width: 120px;
+  height: 75px;
+  background-repeat: no-repeat;
+}
+
 
 #getURL-panel .page-url,
 #embed-panel .output-code {
