@@ -865,14 +865,21 @@ body {
           display: block;
           position: absolute;
           left: 0;
-          top: 10px;
-          background-color: blue;
+          top: 7px;
+          background-color: #0159a3;
           border-radius: 50%;
           width: 25px;
           height: 25px;
           text-align: center;
           line-height: 25px;
-          font-weight: bold; }
+          font-weight: bold;
+          border: 1px solid #505050;
+          box-shadow: 0 0 10px -5px black;
+          background-image: -webkit-linear-gradient(135deg, #0159a3, #4a8ac1);
+          background-image: -moz-linear-gradient(135deg, #0159a3, #4a8ac1);
+          background-image: -ms-linear-gradient(135deg, #0159a3, #4a8ac1);
+          background-image: -o-linear-gradient(135deg, #0159a3, #4a8ac1);
+          background-image: linear-gradient(135deg, #0159a3, #4a8ac1); }
       #embed-panel .step-specific.markers .markers-list .remove-marker {
         position: absolute;
         right: 0;
