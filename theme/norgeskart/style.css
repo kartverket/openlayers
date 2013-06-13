@@ -1680,3 +1680,223 @@ focus for toolbar controls
         content: " "; }
     .splashscreen .widget .large-splash-button {
       width: 360px; }
+
+
+.toolbar button.btnPointMenu {
+   margin: 0 0 0 10px;
+   padding: 4px 2px 0 2px;
+}
+
+.toolbar button.btnPointMenu.active {
+  background-color: #434444;
+}
+
+#pointMenu {
+  width: 155px;
+  height: 155px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 900;
+  margin: -72px 0 0 -72px;
+  display: none;
+}
+
+#pointMenu.active {
+  display: block;
+}
+
+#pointMenu ul {
+  outline: none;
+  list-style: none;
+  outline-style: none;
+} 
+
+
+#pointMenu a:hover, 
+#pointMenu a:visited,
+#pointMenu a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+#pointMenu.display {
+  background: transparent url('img/pointMenuSelectedSector.png') no-repeat scroll center 3px;
+}
+
+#PMmenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: transparent url('img/pointMenuCircle.png') no-repeat scroll center center;
+  border-radius: 100%;
+  opacity: 1; 
+  filter: alpha(opacity=100);    
+}
+
+#PMmenu, 
+#PMtool, 
+#pointMenu .item {
+  margin: 0;
+  padding: 0;
+  
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  -moz-backface-visibility: hidden;
+  -moz-transform: translateZ(0) scale(1.0, 1.0);
+  backface-visibility: hidden;
+  
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
+  transform-style: preserve-3d;
+}
+
+#pointMenu #PMtool,
+#pointMenu .item {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: transparent none no-repeat center center;
+  cursor: pointer;
+  margin: 0;
+  position: 0;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  overflow: visible;
+}
+
+/******************* Menu's tool */
+#pointMenu #PMtool {  
+  top: 50%;
+  left: 50%;
+  margin: -23px 0 0 -23px;
+}
+
+#pointMenu #PMtool .item,
+#pointMenu #PMtool {  
+  width: 46px;
+  height: 46px;
+}
+
+#pointMenu #PMopener { 
+  background-image: url('img/pointMenuOpener.png');  
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  z-index: 2;
+}
+
+#pointMenu #PMcloser { 
+  background-image: url('img/pointMenuCloser.png'); 
+  z-index: 3;
+}
+
+#pointMenu.onClose #PMtool {  
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+#pointMenu.onOpen #PMmenu .item,
+#pointMenu.onClose #PMmenu .item {  
+  display: none;
+}
+
+#pointMenu.onClose #PMcloser { 
+  z-index: 1;
+}
+
+#pointMenu.onOpen #PMmenu .item {
+  display: block\9;
+}
+
+/******************* Menu's item */
+#pointMenu #PMinformation { background-image: url('img/pointMenuInformation.png'); }
+#pointMenu #PMweather     { background-image: url('img/pointMenuWeather.png'); }
+#pointMenu #PMsun         { background-image: url('img/pointMenuSun.png');}
+#pointMenu #PMshare       { background-image: url('img/pointMenuShare.png'); }
+#pointMenu #PMwater       { background-image: url('img/pointMenuWater.png');}
+#pointMenu #PMmaid        { background-image: url('img/pointMenuMaid.png'); }
+
+#pointMenu #PMmenu .icon1 { top: 15px;  left: 62px;  }
+#pointMenu #PMmenu .icon2 { top: 37px;  left: 105px; }
+#pointMenu #PMmenu .icon3 { top: 87px;  left: 106px; }
+#pointMenu #PMmenu .icon4 { top: 111px; left: 63px;  }
+#pointMenu #PMmenu .icon5 { top: 85px;  left: 20px;  }
+#pointMenu #PMmenu .icon6 { top: 37px;  left: 20px;  }
+
+#pointMenu.onClose #PMmenu {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+#pointMenu #PMmenu .item {
+  opacity: 0.7; 
+  filter: alpha(opacity=70);  
+}
+
+#pointMenu #PMmenu .item.active,
+#pointMenu #PMmenu .item:hover {
+  opacity: 1; 
+  filter: alpha(opacity=100);  
+}
+
+
+/******************* Menu's widget */
+
+#pointMenu #PMarrow,
+#pointMenu #PMwidget {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  display: none;
+}
+
+#pointMenu #PMwidget {
+  width: 120px;
+  margin: 0 0 7px -60px;
+  padding: 0;
+  border: 1px solid #666666;
+  background: #555555;
+  background-color: rgba(80, 80, 80, 0.9);
+}
+
+#pointMenu.display #PMarrow,
+#pointMenu.display #PMwidget {
+  display: block;
+}
+
+#pointMenu #PMarrow {
+  position: absolute;
+  border-color: #555555 transparent transparent transparent;
+  border-style: solid;
+  border-width: 7px;
+  margin: 0 0 -6px -8px;
+}
+
+/*********************/
+#pointMenu .shareContent a {
+  display: block;
+  padding: 5px;
+  font-size: 13px;
+}
+
+#pointMenu .shareContent a:hover {
+  background-color: #3A80BB;
+}
+
