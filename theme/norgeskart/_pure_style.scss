@@ -849,61 +849,51 @@ button {
 #getURL-panel {
   text-align: center;
 
-  .widget {
-    width: 510px;
-    .h {
-      margin-bottom: 20px;
-      @extend %header-font;
-    }
-
-    .cnt {
-      padding: 20px 20px 25px;
-      text-transform: none;
-      text-align: left;
-
-      > span {
-        vertical-align: top;
-      }
-
-      .share-link {
-        padding: 0 17px;
-      }
-      .email {
-        width: 26px;
-        height: 26px;
-      }
-    }
-  }
-
   &.active {
     > .nkButton {
       @extend %selected-button;
     }
   }
+}
+
+
+.getURLcontent {
+  width: 510px;
+  padding: 20px 20px 25px;
+  text-transform: none;
+  text-align: left;
+  color: #FFFFFF;
 
   .page-url {
     @extend %output;
   }
+
+  .h {
+    margin-bottom: 20px;
+    @extend %header-font;
+  }
+
+  .icon {
+    height: 20px;
+    width: 20px;
+  }
+    
+  > span {
+    vertical-align: top;
+  }
+
   .share-link {
+    padding: 0 17px;
     color: #fff;
     overflow: hidden;
-
 
     span {
       position: absolute;
       left: -999em;
     }
-    .email {
-
-    }
-    .twitter {
-
-    }
-    .facebook {
-
-    }
   }
 }
+
 
 /******************************************
 === help panel ===
@@ -2469,6 +2459,14 @@ $overlayMenuItemMargin: 5px;
   display: none;
 }
 
+#PMarrow {
+  position: absolute;
+  border-color: #555555 transparent transparent transparent;
+  border-style: solid;
+  border-width: 7px;
+  margin: 0 0 -6px -8px;
+}
+
 #PMwidget {
   width: 120px;
   margin: 0 0 7px -60px;
@@ -2476,13 +2474,14 @@ $overlayMenuItemMargin: 5px;
   border: 1px solid #666666;
   background: #555555;
   background-color: rgba(80, 80, 80, 0.9);
-}
 
-#PMarrow {
-  position: absolute;
-  border-color: #555555 transparent transparent transparent;
-  border-style: solid;
-  border-width: 7px;
-  margin: 0 0 -6px -8px;
+  .getURLcontent { 
+    width: auto;
+  }
+
+  &.displayShareMapView {
+    width: 500px;
+    margin-left: -250px;
+  }
 }
 

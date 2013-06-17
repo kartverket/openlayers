@@ -15,7 +15,7 @@
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
 
-#getURL-panel .widget .h, #embed-panel header .h, .map-load-error h1 {
+.getURLcontent .h, #embed-panel header .h, .map-load-error h1 {
   font-family: MetaBook, Arial, sans-serif;
   font-size: 30px;
   font-weight: normal; }
@@ -157,7 +157,7 @@ body, #map, #basic-toolbar,
 #embed-panel .step-specific.descriptions #short-desc-explanation .close {
   background-position: 0 -12px; }
 
-#getURL-panel .page-url, #embed-panel .output-code {
+.getURLcontent .page-url, #embed-panel .output-code {
   font-family: monospace;
   color: #606161;
   color: rgba(80, 80, 80, 0.9);
@@ -655,25 +655,25 @@ body {
 
 #getURL-panel {
   text-align: center; }
-  #getURL-panel .widget {
-    width: 510px; }
-    #getURL-panel .widget .h {
-      margin-bottom: 20px; }
-    #getURL-panel .widget .cnt {
-      padding: 20px 20px 25px;
-      text-transform: none;
-      text-align: left; }
-      #getURL-panel .widget .cnt > span {
-        vertical-align: top; }
-      #getURL-panel .widget .cnt .share-link {
-        padding: 0 17px; }
-      #getURL-panel .widget .cnt .email {
-        width: 26px;
-        height: 26px; }
-  #getURL-panel .share-link {
+
+.getURLcontent {
+  width: 510px;
+  padding: 20px 20px 25px;
+  text-transform: none;
+  text-align: left;
+  color: #FFFFFF; }
+  .getURLcontent .h {
+    margin-bottom: 20px; }
+  .getURLcontent .icon {
+    height: 20px;
+    width: 20px; }
+  .getURLcontent > span {
+    vertical-align: top; }
+  .getURLcontent .share-link {
+    padding: 0 17px;
     color: #fff;
     overflow: hidden; }
-    #getURL-panel .share-link span {
+    .getURLcontent .share-link span {
       position: absolute;
       left: -999em; }
 
@@ -1781,6 +1781,13 @@ focus for toolbar controls
   left: 50%;
   display: none; }
 
+#PMarrow {
+  position: absolute;
+  border-color: #555555 transparent transparent transparent;
+  border-style: solid;
+  border-width: 7px;
+  margin: 0 0 -6px -8px; }
+
 #PMwidget {
   width: 120px;
   margin: 0 0 7px -60px;
@@ -1788,13 +1795,11 @@ focus for toolbar controls
   border: 1px solid #666666;
   background: #555555;
   background-color: rgba(80, 80, 80, 0.9); }
-
-#PMarrow {
-  position: absolute;
-  border-color: #555555 transparent transparent transparent;
-  border-style: solid;
-  border-width: 7px;
-  margin: 0 0 -6px -8px; }
+  #PMwidget .getURLcontent {
+    width: auto; }
+  #PMwidget.displayShareMapView {
+    width: 500px;
+    margin-left: -250px; }
 
 /**************************
 ==== splashscreen styling ===
