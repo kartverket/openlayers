@@ -952,7 +952,9 @@ button {
   .widget {
     width: 500px;
   }
+}
 
+.embedContent {
   header {
     padding: 20px;
 
@@ -2393,18 +2395,6 @@ $overlayMenuItemMargin: 5px;
     background-image: url('img/pointMenuCloser.png'); 
     z-index: 3;
   }
-
-  .shareContent {
-    a {
-      display: block;
-      padding: 5px;
-      font-size: 13px;
-      
-      &:hover {
-	background-color: #3A80BB;
-      }
-    }
-  }
 }
 
 /************ END OF POINTMENU *********/
@@ -2468,20 +2458,34 @@ $overlayMenuItemMargin: 5px;
 }
 
 #PMwidget {
-  width: 120px;
-  margin: 0 0 7px -60px;
+  width: 140px;
+  margin: 0 0 7px -70px;
   padding: 0;
   border: 1px solid #666666;
   background: #555555;
   background-color: rgba(80, 80, 80, 0.9);
+  color: #FFFFFF;
+  font-size: 12px;
 
   .getURLcontent { 
     width: auto;
   }
 
+  &.displayUseMapView,
   &.displayShareMapView {
     width: 500px;
     margin-left: -250px;
+  }
+
+  .shareContent {
+    a {
+      display: block;
+      padding: 5px;
+      
+      &:hover {
+	background-color: #3A80BB;
+      }
+    }
   }
 }
 
