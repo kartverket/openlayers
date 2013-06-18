@@ -2487,5 +2487,24 @@ $overlayMenuItemMargin: 5px;
       }
     }
   }
+
+  .goBackButton {
+    position: absolute;
+    top: 3px;
+    left: -1px;
+    padding: 0;
+    margin: 0;
+    border-color: transparent #FFFFFF transparent transparent;
+    border-style: solid;
+    border-width: 7px;
+
+    opacity: 0.7; 
+    filter: alpha(opacity=70);    
+    
+    &:hover {
+      opacity: 1; 
+      filter: alpha(opacity=100); 
+    }
+  }
 }
 
