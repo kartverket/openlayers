@@ -2477,6 +2477,11 @@ $overlayMenuItemMargin: 5px;
     margin-left: -250px;
   }
 
+  &.displayPMsun {
+    width: 300px;
+    margin-left: -150px;      
+  }
+
   .shareContent {
     a {
       display: block;
@@ -2504,6 +2509,32 @@ $overlayMenuItemMargin: 5px;
     &:hover {
       opacity: 1; 
       filter: alpha(opacity=100); 
+    }
+  }
+}
+
+#sunMoonWrapper {
+  overflow: hidden;
+  > li {
+    float: left;
+    width: 50%;
+    padding: 100px 0 10px 0;
+    text-align: center;
+
+    div {
+      overflow: hidden;
+      padding: 5px 0 0 0;
+    }
+
+    .label {
+      display: inline-block;
+      width: 70px;
+    }
+
+    &.moonRiseAndSetWrapper {
+      .label {
+        width: 78px;
+      }
     }
   }
 }

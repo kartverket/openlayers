@@ -1797,6 +1797,9 @@ focus for toolbar controls
   #PMwidget.displayUseMapView, #PMwidget.displayShareMapView {
     width: 500px;
     margin-left: -250px; }
+  #PMwidget.displayPMsun {
+    width: 300px;
+    margin-left: -150px; }
   #PMwidget .shareContent a {
     display: block;
     padding: 5px; }
@@ -1816,6 +1819,22 @@ focus for toolbar controls
     #PMwidget .goBackButton:hover {
       opacity: 1;
       filter: alpha(opacity=100); }
+
+#sunMoonWrapper {
+  overflow: hidden; }
+  #sunMoonWrapper > li {
+    float: left;
+    width: 50%;
+    padding: 100px 0 10px 0;
+    text-align: center; }
+    #sunMoonWrapper > li div {
+      overflow: hidden;
+      padding: 5px 0 0 0; }
+    #sunMoonWrapper > li .label {
+      display: inline-block;
+      width: 70px; }
+    #sunMoonWrapper > li.moonRiseAndSetWrapper .label {
+      width: 78px; }
 
 /**************************
 ==== splashscreen styling ===
