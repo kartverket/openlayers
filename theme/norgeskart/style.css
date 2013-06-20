@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* common styles */
 @font-face {
   font-family: 'MetaBook';
@@ -494,10 +495,10 @@ body {
   -webkit-transform: translate(75px, 0);
   -ms-transform: translate(75px, 0);
   transform: translate(75px, 0);
-  -webkit-transition: -webkit-transform .5s ease-in-out;
-  -o-transition: transform .5s ease-in-out;
-  transition: -ms-transform .5s ease-in-out;
-  transition: transform .5s ease-in-out; }
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: -ms-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out; }
 
 .fullscreen .olControlScaleLine {
   -webkit-transform: translate(0, 0);
@@ -514,10 +515,10 @@ body {
 .fullscreen #secondary-toolbar,
 .fullscreen #overview-container-panel,
 .fullscreen #share-toolbar {
-  -webkit-transition: -webkit-transform .5s ease-in-out;
-  -o-transition: transform .5s ease-in-out;
-  transition: -ms-transform .5s ease-in-out;
-  transition: transform .5s ease-in-out; }
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: -ms-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out; }
 
 .fullscreen {
   overflow: hidden; }
@@ -535,10 +536,10 @@ body {
     -ms-transform: translate(0, -80px);
     transform: translate(0, -80px); }
   .fullscreen #fullscreen-panel {
-    -webkit-transition: -webkit-transform .5s ease-in-out;
-    -o-transition: transform .5s ease-in-out;
-    transition: -ms-transform .5s ease-in-out;
-    transition: transform .5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+    transition: -ms-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     -webkit-transform: translate(70px, 0);
     -ms-transform: translate(70px, 0);
     transform: translate(70px, 0); }
@@ -586,11 +587,11 @@ body {
   height: 0;
   /*display: none;*/
   display: none;
-  -webkit-transition: opacity .5s ease-in-out;
-  -moz-transition: opactiy .5s ease-in-out;
-  -ms-transition: opacity .5s ease-in-out;
-  -o-transition: opacity .5s ease-in-out;
-  transition: opacity .5s ease-in-out; }
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opactiy 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out; }
 
 .toolbar .widget {
   left: 100%;
@@ -697,7 +698,7 @@ body {
     width: 100%;
     border-collapse: collapse; }
   #help-panel.active > .widget table, #help-panel.active > .widget tr, #help-panel.active > .widget th, #help-panel.active > .widget td {
-    border: 1px solid #444; }
+    border: 1px solid #444444; }
   #help-panel.active > .widget th, #help-panel.active > .widget td {
     padding: 8px 10px 6px; }
 
@@ -874,7 +875,7 @@ body {
           line-height: 25px;
           font-weight: bold;
           border: 1px solid #505050;
-          box-shadow: 0 0 10px -5px #000000;
+          box-shadow: 0 0 10px -5px black;
           background-image: -webkit-linear-gradient(135deg, #0159a3, #4a8ac1);
           background-image: -moz-linear-gradient(135deg, #0159a3, #4a8ac1);
           background-image: -ms-linear-gradient(135deg, #0159a3, #4a8ac1);
@@ -997,7 +998,7 @@ body {
   #zoom-panel .slider {
     margin: 0 0 0 2px;
     border: 1px solid #999999;
-    background: #FFFFFF none repeat 0 0; }
+    background: white none repeat 0 0; }
   #zoom-panel .slider > img {
     visibility: hidden; }
   #zoom-panel .track {
@@ -1282,15 +1283,31 @@ button:focus .icon {
   position: absolute;
   bottom: 0;
   right: 0; }
-  #overview-container-panel .olControlOverviewMapElement {
+  #overview-container-panel .olControlOverviewMapExpandableElement {
     background: none;
     padding: 8px; }
-  #overview-container-panel .olControlOverviewMapExtentRectangle {
+  #overview-container-panel .olControlOverviewMapExpandableExtentRectangle {
     border: 2px dotted #e57231;
     background-color: rgba(229, 114, 49, 0.5);
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding-box;
     background-clip: padding-box; }
+  #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton {
+    background-color: #606161;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAYCAMAAAD57OxYAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAA6SURBVHjalc7RCgBQBAPQ+f+fdlva6JayeDhRYCaUH1ww+iRgsIzq2qeWOyOX3zoo34FACZSAl8NvCWoIAK1I4r+CAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    border-bottom: 6px solid #606161;
+    border-right: 6px solid #606161;
+    box-sizing: content-box;
+    cursor: pointer;
+    height: 12px;
+    left: 8px;
+    overflow: hidden;
+    position: absolute;
+    top: 8px;
+    width: 12px; }
+  #overview-container-panel.maximized-size .olControlOverviewMapExpandableToggleSizeButton {
+    background-position: 0 -12px; }
 
 #secondary-toolbar ~ #overview-container-panel {
   right: 80px;
@@ -1811,7 +1828,7 @@ focus for toolbar controls
     left: -1px;
     padding: 0;
     margin: 0;
-    border-color: transparent #FFFFFF transparent transparent;
+    border-color: transparent white transparent transparent;
     border-style: solid;
     border-width: 7px;
     opacity: 0.7;
