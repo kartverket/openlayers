@@ -2467,6 +2467,12 @@ $overlayMenuItemMargin: 5px;
   color: #FFFFFF;
   font-size: 11px;
 
+  .loading {
+    display: block;
+    overflow: hidden;
+    padding: 5px;
+  }
+
   .getURLcontent { 
     width: auto;
   }
@@ -2475,6 +2481,11 @@ $overlayMenuItemMargin: 5px;
   &.displayShareMapView {
     width: 500px;
     margin-left: -250px;
+  }
+
+  &.displayPMweather {
+    width: 210px;
+    margin-left: -105px;      
   }
 
   &.displayPMsun {
@@ -2513,6 +2524,32 @@ $overlayMenuItemMargin: 5px;
   }
 }
 
+/********************************
+  weatherWrapper
+*********************************/
+#weatherWrapper {
+  display: block;
+  padding: 5px;
+
+  .data {
+    display: block;
+    overflow: hidden;
+    padding: 5px 0 0 0;
+    
+    &:first-child {
+      padding: 0;
+    }
+
+    .label {
+      display: inline-block;
+      width: 80px;
+    }
+  }
+}
+
+/********************************
+  sunMoonWrapper
+*********************************/
 #sunMoonWrapper {
   overflow: hidden;
   > li {

@@ -1792,11 +1792,18 @@ focus for toolbar controls
   background-color: rgba(80, 80, 80, 0.9);
   color: #FFFFFF;
   font-size: 11px; }
+  #PMwidget .loading {
+    display: block;
+    overflow: hidden;
+    padding: 5px; }
   #PMwidget .getURLcontent {
     width: auto; }
   #PMwidget.displayUseMapView, #PMwidget.displayShareMapView {
     width: 500px;
     margin-left: -250px; }
+  #PMwidget.displayPMweather {
+    width: 210px;
+    margin-left: -105px; }
   #PMwidget.displayPMsun {
     width: 300px;
     margin-left: -150px; }
@@ -1820,6 +1827,25 @@ focus for toolbar controls
       opacity: 1;
       filter: alpha(opacity=100); }
 
+/********************************
+  weatherWrapper
+*********************************/
+#weatherWrapper {
+  display: block;
+  padding: 5px; }
+  #weatherWrapper .data {
+    display: block;
+    overflow: hidden;
+    padding: 5px 0 0 0; }
+    #weatherWrapper .data:first-child {
+      padding: 0; }
+    #weatherWrapper .data .label {
+      display: inline-block;
+      width: 80px; }
+
+/********************************
+  sunMoonWrapper
+*********************************/
 #sunMoonWrapper {
   overflow: hidden; }
   #sunMoonWrapper > li {
