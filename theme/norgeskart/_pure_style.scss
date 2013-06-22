@@ -1781,17 +1781,38 @@ button:focus .icon {
   right: 0;
   @extend %shadow;
 
-  .olControlOverviewMapElement {
+  .olControlOverviewMapExpandableElement {
     background: none;
     padding: 8px;
   }
-  .olControlOverviewMapExtentRectangle {
+  .olControlOverviewMapExpandableExtentRectangle {
     border: 2px dotted #e57231;
     background-color: rgba(229, 114, 49, .5);
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding-box;    
     background-clip: padding-box;
   }
+  .olControlOverviewMapExpandableToggleSizeButton {
+    background-color: $panel-color-hex;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAYCAMAAAD57OxYAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAA6SURBVHjalc7RCgBQBAPQ+f+fdlva6JayeDhRYCaUH1ww+iRgsIzq2qeWOyOX3zoo34FACZSAl8NvCWoIAK1I4r+CAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    border-bottom: 6px solid $panel-color-hex;
+    border-right: 6px solid $panel-color-hex;
+    box-sizing: content-box;
+    cursor: pointer;
+    height: 12px;
+    left: 8px;
+    overflow: hidden;
+    position: absolute;
+    top: 8px;
+    width: 12px;
+  }
+  &.maximized-size {
+    .olControlOverviewMapExpandableToggleSizeButton {
+      background-position: 0 -12px;
+    }
+  }
+
 }
 #secondary-toolbar ~ #overview-container-panel {
   right: 80px;
