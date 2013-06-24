@@ -1785,6 +1785,9 @@ focus for toolbar controls
 #PMmaid {
   background-image: url("img/pointMenuMaid.png"); }
 
+#PMruler {
+  background-image: url("img/pointMenuRuler.png"); }
+
 /******************* Menu's widget */
 #PMarrow, #PMwidget {
   position: absolute;
@@ -1818,9 +1821,6 @@ focus for toolbar controls
     width: 500px;
     margin-left: -250px; }
   #PMwidget.displayPMweather {
-    width: 210px;
-    margin-left: -105px; }
-  #PMwidget.displayPMsun {
     width: 300px;
     margin-left: -150px; }
   #PMwidget .shareContent a {
@@ -1852,12 +1852,14 @@ focus for toolbar controls
   #weatherWrapper .data {
     display: block;
     overflow: hidden;
-    padding: 5px 0 0 0; }
+    padding: 5px 0 0 0;
+    text-align: center; }
     #weatherWrapper .data:first-child {
       padding: 0; }
-    #weatherWrapper .data .label {
-      display: inline-block;
-      width: 80px; }
+    #weatherWrapper .data.temperature img {
+      margin: 0 5px -9px 0; }
+    #weatherWrapper .data.temperature .number {
+      font-size: 28px; }
 
 /********************************
   sunMoonWrapper

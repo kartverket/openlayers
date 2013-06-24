@@ -2460,6 +2460,7 @@ $overlayMenuItemMargin: 5px;
 #PMshare       { background-image: url('img/pointMenuShare.png'); }
 #PMwater       { background-image: url('img/pointMenuWater.png');}
 #PMmaid        { background-image: url('img/pointMenuMaid.png'); }
+#PMruler       { background-image: url('img/pointMenuRuler.png'); }
 
 /******************* Menu's widget */
 
@@ -2505,13 +2506,8 @@ $overlayMenuItemMargin: 5px;
   }
 
   &.displayPMweather {
-    width: 210px;
-    margin-left: -105px;      
-  }
-
-  &.displayPMsun {
     width: 300px;
-    margin-left: -150px;      
+    margin-left: -150px; 
   }
 
   .shareContent {
@@ -2556,14 +2552,20 @@ $overlayMenuItemMargin: 5px;
     display: block;
     overflow: hidden;
     padding: 5px 0 0 0;
-    
+    text-align: center;
+
     &:first-child {
       padding: 0;
     }
 
-    .label {
-      display: inline-block;
-      width: 80px;
+    &.temperature {
+      img {
+	 margin: 0 5px -9px 0;
+      }
+
+      .number {
+	font-size: 28px;
+      }
     }
   }
 }
