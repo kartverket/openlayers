@@ -2576,8 +2576,16 @@ $overlayMenuItemMargin: 5px;
   > li {
     float: left;
     width: 50%;
-    padding: 100px 0 10px 0;
+    padding: 60px 0 10px 0;
     text-align: center;
+    
+    &.sunRiseAndSetWrapper {
+      background: transparent url('img/pointMenuSunRise.png') no-repeat scroll center 15px;
+    }
+
+    &.moonRiseAndSetWrapper {
+      background: transparent url('img/pointMenuMoonRise.png') no-repeat scroll center 22px;
+    }
 
     div {
       overflow: hidden;

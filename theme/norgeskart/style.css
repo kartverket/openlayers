@@ -1867,8 +1867,12 @@ focus for toolbar controls
   #sunMoonWrapper > li {
     float: left;
     width: 50%;
-    padding: 100px 0 10px 0;
+    padding: 60px 0 10px 0;
     text-align: center; }
+    #sunMoonWrapper > li.sunRiseAndSetWrapper {
+      background: transparent url("img/pointMenuSunRise.png") no-repeat scroll center 15px; }
+    #sunMoonWrapper > li.moonRiseAndSetWrapper {
+      background: transparent url("img/pointMenuMoonRise.png") no-repeat scroll center 22px; }
     #sunMoonWrapper > li div {
       overflow: hidden;
       padding: 5px 0 0 0; }
