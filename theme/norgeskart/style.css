@@ -1823,6 +1823,9 @@ focus for toolbar controls
   #PMwidget.displayPMweather {
     width: 300px;
     margin-left: -150px; }
+  #PMwidget.displayPMinformation {
+    width: 200px;
+    margin-left: -100px; }
   #PMwidget .shareContent a {
     display: block;
     padding: 5px; }
@@ -1842,6 +1845,31 @@ focus for toolbar controls
     #PMwidget .goBackButton:hover {
       opacity: 1;
       filter: alpha(opacity=100); }
+
+/********************************
+  weatherWrapper
+*********************************/
+#locationWrapper {
+  display: block;
+  padding: 5px 20px 10px 20px; }
+  #locationWrapper .data {
+    display: block;
+    overflow: hidden;
+    padding: 20px 0 0 0; }
+    #locationWrapper .data:first-child {
+      padding: 0; }
+    #locationWrapper .data.placename .value {
+      font-size: 18px;
+      font-weight: bold; }
+    #locationWrapper .data.coordinate .name {
+      font-weight: bold; }
+    #locationWrapper .data.coordinate .value, #locationWrapper .data.coordinate .description {
+      font-size: 13px; }
+    #locationWrapper .data .label, #locationWrapper .data .value {
+      display: block;
+      overflow: hidden;
+      padding: 2px 0 0 0;
+      white-space: nowrap; }
 
 /********************************
   weatherWrapper

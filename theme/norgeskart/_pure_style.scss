@@ -2510,6 +2510,11 @@ $overlayMenuItemMargin: 5px;
     margin-left: -150px; 
   }
 
+  &.displayPMinformation {
+    width: 200px;
+    margin-left: -100px; 
+  }
+
   .shareContent {
     a {
       display: block;
@@ -2537,6 +2542,48 @@ $overlayMenuItemMargin: 5px;
     &:hover {
       opacity: 1; 
       filter: alpha(opacity=100); 
+    }
+  }
+}
+
+/********************************
+  weatherWrapper
+*********************************/
+#locationWrapper {
+  display: block;
+  padding: 5px 20px 10px 20px;
+
+  .data {
+    display: block;
+    overflow: hidden;
+    padding: 20px 0 0 0;
+  
+    &:first-child {
+      padding: 0;
+    }
+
+    &.placename {
+      .value {
+	font-size: 18px;
+	font-weight: bold;
+      }
+    }
+    
+    &.coordinate { 
+      .name {
+	font-weight: bold;
+      }
+
+      .value, .description {
+	font-size: 13px;
+      }
+    }
+
+    .label, .value {
+      display: block;
+      overflow: hidden;
+      padding: 2px 0 0 0;
+      white-space: nowrap;
     }
   }
 }
