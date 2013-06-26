@@ -1864,12 +1864,14 @@ focus for toolbar controls
     #locationWrapper .data.coordinate .name {
       font-weight: bold; }
     #locationWrapper .data.coordinate .value, #locationWrapper .data.coordinate .description {
-      font-size: 13px; }
+      font-size: 12px; }
     #locationWrapper .data .label, #locationWrapper .data .value {
       display: block;
       overflow: hidden;
       padding: 2px 0 0 0;
       white-space: nowrap; }
+    #locationWrapper .data .label.description, #locationWrapper .data .value {
+      padding-left: 10px; }
 
 /********************************
   weatherWrapper
