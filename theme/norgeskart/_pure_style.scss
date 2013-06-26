@@ -2144,10 +2144,45 @@ $overlayMenuItemMargin: 5px;
 /***************************
   emergency poster control
 ***************************/
- 
-#map.select-emergency-poster-point {
-  cursor: crosshair;
-  cursor: url('img/emergency-marker.png') 18 50, crosshair;
+
+#emergencyMainMenu {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 900;  
+  display: none;
+  overflow: visible;
+  background: transparent url('img/emergency-marker.png') no-repeat 0 0;
+  margin: -52px 0 0 -17px;
+  margin: -44px 0 0 -9px;
+
+  &.active {
+    display: block;
+  } 
+
+  > .arrow {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    z-index: 1000;
+    border-color: #555555 transparent transparent transparent;
+    border-style: solid;
+    border-width: 7px;
+    margin: 0 0 -11px -18px;      
+    opacity: 0.7; 
+    filter: alpha(opacity=70);    
+  }
+
+  .emergency-poster-terms-popup {
+     top: auto;
+     rigth: auto;
+     bottom: 100%;
+     left : -165px;
+     width: 400px;       
+     margin-bottom: 3px;     
+  }
 }
 
 .tool.emergency-poster {
