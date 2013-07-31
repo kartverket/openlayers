@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* common styles */
 @font-face {
   font-family: 'MetaBook';
@@ -35,7 +36,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList input.is-checked + label,
 .rasterLayerList label.for-checked,
 .vectorLayerList input.is-checked + label,
-.vectorLayerList label.for-checked, #getURL-panel.active > .nkButton, #help-panel.active > button, .zoom-to-selection-selected .zoom-to-selection-button, .tool.active > button, .overlay-group-panel a.active {
+.vectorLayerList label.for-checked, #getURL-panel.active > .nkButton, #help-panel.active > button, .zoom-to-selection-selected .zoom-to-selection-button, .tool.active > button, .tool.draw .widget ul button.active, .tool.draw .widget ul button:active, .overlay-group-panel a.active {
   background-color: #333333;
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
@@ -49,7 +50,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
 #basic-toolbar .panel + .panel,
-#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, .embedContent .step-specific, .embedContent .buttons-panel, .embedContent .step-specific.markers .markers-list, .embedContent .step-specific.markers .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .emergency-poster-terms-popup .button-panel {
+#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, .embedContent .step-specific, .embedContent .buttons-panel, .embedContent .step-specific.markers .markers-list, .embedContent .step-specific.markers .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .tool.draw .widget ul button span, .emergency-poster-terms-popup .button-panel {
   /* v-divider.png base64-encoded */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC");
   background-repeat: repeat-x; }
@@ -165,6 +166,11 @@ body, #map, #basic-toolbar,
   padding: 8px;
   word-break: break-all;
   margin-bottom: 20px; }
+
+.tool.draw .widget .h, .tool.transformations .widget h1 {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 300; }
 
 html {
   background-color: transparent; }
@@ -284,6 +290,13 @@ body {
   fill: #fff;
   -webkit-transition-property: fill;
   -webkit-transition-duration: .2s; }
+  .icon.stroked,
+  .icon .stroked {
+    stroke: #fff;
+    stroke-width: 4; }
+  .icon.semitransparent,
+  .icon .semitransparent {
+    fill: rgba(255, 255, 255, 0.5); }
 
 .rasterLayerList,
 .vectorLayerList {
@@ -494,10 +507,10 @@ body {
   -webkit-transform: translate(75px, 0);
   -ms-transform: translate(75px, 0);
   transform: translate(75px, 0);
-  -webkit-transition: -webkit-transform .5s ease-in-out;
-  -o-transition: transform .5s ease-in-out;
-  transition: -ms-transform .5s ease-in-out;
-  transition: transform .5s ease-in-out; }
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: -ms-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out; }
 
 .fullscreen .olControlScaleLine {
   -webkit-transform: translate(0, 0);
@@ -514,10 +527,10 @@ body {
 .fullscreen #secondary-toolbar,
 .fullscreen #overview-container-panel,
 .fullscreen #share-toolbar {
-  -webkit-transition: -webkit-transform .5s ease-in-out;
-  -o-transition: transform .5s ease-in-out;
-  transition: -ms-transform .5s ease-in-out;
-  transition: transform .5s ease-in-out; }
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: -ms-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out; }
 
 .fullscreen {
   overflow: hidden; }
@@ -535,10 +548,10 @@ body {
     -ms-transform: translate(0, -80px);
     transform: translate(0, -80px); }
   .fullscreen #fullscreen-panel {
-    -webkit-transition: -webkit-transform .5s ease-in-out;
-    -o-transition: transform .5s ease-in-out;
-    transition: -ms-transform .5s ease-in-out;
-    transition: transform .5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+    transition: -ms-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     -webkit-transform: translate(70px, 0);
     -ms-transform: translate(70px, 0);
     transform: translate(70px, 0); }
@@ -586,11 +599,11 @@ body {
   height: 0;
   /*display: none;*/
   display: none;
-  -webkit-transition: opacity .5s ease-in-out;
-  -moz-transition: opactiy .5s ease-in-out;
-  -ms-transition: opacity .5s ease-in-out;
-  -o-transition: opacity .5s ease-in-out;
-  transition: opacity .5s ease-in-out; }
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opactiy 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out; }
 
 .toolbar .widget {
   left: 100%;
@@ -697,7 +710,7 @@ body {
     width: 100%;
     border-collapse: collapse; }
   #help-panel.active > .widget table, #help-panel.active > .widget tr, #help-panel.active > .widget th, #help-panel.active > .widget td {
-    border: 1px solid #444; }
+    border: 1px solid #444444; }
   #help-panel.active > .widget th, #help-panel.active > .widget td {
     padding: 8px 10px 6px; }
 
@@ -874,7 +887,7 @@ body {
           line-height: 25px;
           font-weight: bold;
           border: 1px solid #505050;
-          box-shadow: 0 0 10px -5px #000000;
+          box-shadow: 0 0 10px -5px black;
           background-image: -webkit-linear-gradient(135deg, #0159a3, #4a8ac1);
           background-image: -moz-linear-gradient(135deg, #0159a3, #4a8ac1);
           background-image: -ms-linear-gradient(135deg, #0159a3, #4a8ac1);
@@ -997,7 +1010,7 @@ body {
   #zoom-panel .slider {
     margin: 0 0 0 2px;
     border: 1px solid #999999;
-    background: #FFFFFF none repeat 0 0; }
+    background: white none repeat 0 0; }
   #zoom-panel .slider > img {
     visibility: hidden; }
   #zoom-panel .track {
@@ -1428,15 +1441,53 @@ focus for toolbar controls
   position: static; }
 
 /***************************
+  draw control
+***************************/
+.tool.draw .widget {
+  width: 88px;
+  padding: 10px; }
+  .tool.draw .widget ul {
+    list-style: none;
+    text-align: center;
+    position: relative;
+    left: -5px; }
+    .tool.draw .widget ul button {
+      color: #fff;
+      position: relative;
+      overflow: hidden; }
+      .tool.draw .widget ul button.active span, .tool.draw .widget ul button:active span {
+        background-image: none; }
+      .tool.draw .widget ul button.text-button {
+        width: 100%;
+        padding-top: 10px; }
+      .tool.draw .widget ul button .icon,
+      .tool.draw .widget ul button span {
+        margin: 5px; }
+      .tool.draw .widget ul button .icon {
+        width: 20px;
+        height: 20px; }
+      .tool.draw .widget ul button span {
+        background-position: 0 top;
+        display: block;
+        min-height: 20px;
+        padding-top: 10px; }
+      .tool.draw .widget ul button .icon + span {
+        position: absolute;
+        left: 100%;
+        background-image: none; }
+    .tool.draw .widget ul li {
+      margin-top: 5px; }
+      .tool.draw .widget ul li.text-only button {
+        width: 100%; }
+        .tool.draw .widget ul li.text-only button span {
+          margin-top: 0; }
+
+/***************************
   transformations control 
 ***************************/
 .tool.transformations .widget {
   width: 300px;
   padding: 10px 50px 10px 10px; }
-  .tool.transformations .widget h1 {
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 300; }
   .tool.transformations .widget button {
     margin-top: 30px; }
   .tool.transformations .widget label:after {
@@ -1877,7 +1928,7 @@ focus for toolbar controls
     left: -1px;
     padding: 0;
     margin: 0;
-    border-color: transparent #FFFFFF transparent transparent;
+    border-color: transparent white transparent transparent;
     border-style: solid;
     border-width: 7px;
     opacity: 0.7;
