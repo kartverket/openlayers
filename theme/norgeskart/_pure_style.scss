@@ -2052,6 +2052,20 @@ focus for toolbar controls
         }
       }
     }
+
+    .measures {
+      &.point {
+        .length,
+        .area {
+          display: none;
+        }
+      }
+      &.line {
+        .area {
+          display: none;
+        }
+      }
+    }
   }
 }
 

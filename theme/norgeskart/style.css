@@ -1481,6 +1481,11 @@ focus for toolbar controls
         width: 100%; }
         .tool.draw .widget ul li.text-only button span {
           margin-top: 0; }
+  .tool.draw .widget .measures.point .length,
+  .tool.draw .widget .measures.point .area {
+    display: none; }
+  .tool.draw .widget .measures.line .area {
+    display: none; }
 
 /***************************
   transformations control 
