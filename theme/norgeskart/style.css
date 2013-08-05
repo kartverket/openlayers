@@ -742,6 +742,9 @@ body {
     width: 20px; }
     .embedContent .progress li:last-child {
       margin-right: 0; }
+    .embedContent .progress li.disabled {
+      opacity: 0.2;
+      filter: alpha(opacity=20); }
   .embedContent .progress .step-number {
     position: absolute;
     display: block;
