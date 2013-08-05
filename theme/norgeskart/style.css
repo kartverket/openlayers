@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* common styles */
 @font-face {
   font-family: 'MetaBook';
@@ -507,10 +506,10 @@ body {
   -webkit-transform: translate(75px, 0);
   -ms-transform: translate(75px, 0);
   transform: translate(75px, 0);
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  -o-transition: transform 0.5s ease-in-out;
-  transition: -ms-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out; }
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  -o-transition: transform .5s ease-in-out;
+  transition: -ms-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out; }
 
 .fullscreen .olControlScaleLine {
   -webkit-transform: translate(0, 0);
@@ -527,10 +526,10 @@ body {
 .fullscreen #secondary-toolbar,
 .fullscreen #overview-container-panel,
 .fullscreen #share-toolbar {
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  -o-transition: transform 0.5s ease-in-out;
-  transition: -ms-transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out; }
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  -o-transition: transform .5s ease-in-out;
+  transition: -ms-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out; }
 
 .fullscreen {
   overflow: hidden; }
@@ -548,10 +547,10 @@ body {
     -ms-transform: translate(0, -80px);
     transform: translate(0, -80px); }
   .fullscreen #fullscreen-panel {
-    -webkit-transition: -webkit-transform 0.5s ease-in-out;
-    -o-transition: transform 0.5s ease-in-out;
-    transition: -ms-transform 0.5s ease-in-out;
-    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform .5s ease-in-out;
+    -o-transition: transform .5s ease-in-out;
+    transition: -ms-transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
     -webkit-transform: translate(70px, 0);
     -ms-transform: translate(70px, 0);
     transform: translate(70px, 0); }
@@ -599,11 +598,11 @@ body {
   height: 0;
   /*display: none;*/
   display: none;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  -moz-transition: opactiy 0.5s ease-in-out;
-  -ms-transition: opacity 0.5s ease-in-out;
-  -o-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out; }
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opactiy .5s ease-in-out;
+  -ms-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out; }
 
 .toolbar .widget {
   left: 100%;
@@ -710,7 +709,7 @@ body {
     width: 100%;
     border-collapse: collapse; }
   #help-panel.active > .widget table, #help-panel.active > .widget tr, #help-panel.active > .widget th, #help-panel.active > .widget td {
-    border: 1px solid #444444; }
+    border: 1px solid #444; }
   #help-panel.active > .widget th, #help-panel.active > .widget td {
     padding: 8px 10px 6px; }
 
@@ -887,7 +886,7 @@ body {
           line-height: 25px;
           font-weight: bold;
           border: 1px solid #505050;
-          box-shadow: 0 0 10px -5px black;
+          box-shadow: 0 0 10px -5px #000000;
           background-image: -webkit-linear-gradient(135deg, #0159a3, #4a8ac1);
           background-image: -moz-linear-gradient(135deg, #0159a3, #4a8ac1);
           background-image: -ms-linear-gradient(135deg, #0159a3, #4a8ac1);
@@ -1010,7 +1009,7 @@ body {
   #zoom-panel .slider {
     margin: 0 0 0 2px;
     border: 1px solid #999999;
-    background: white none repeat 0 0; }
+    background: #FFFFFF none repeat 0 0; }
   #zoom-panel .slider > img {
     visibility: hidden; }
   #zoom-panel .track {
@@ -1911,8 +1910,8 @@ focus for toolbar controls
     margin-left: -200px;
     background-color: transparent; }
   #PMwidget.displayPMinformation {
-    width: 200px;
-    margin-left: -100px; }
+    width: 280px;
+    margin-left: -140px; }
   #PMwidget .shareContent a {
     display: block;
     padding: 5px; }
@@ -1933,7 +1932,7 @@ focus for toolbar controls
     left: -1px;
     padding: 0;
     margin: 0;
-    border-color: transparent white transparent transparent;
+    border-color: transparent #FFFFFF transparent transparent;
     border-style: solid;
     border-width: 7px;
     opacity: 0.7;
@@ -1943,7 +1942,7 @@ focus for toolbar controls
       filter: alpha(opacity=100); }
 
 /********************************
-  weatherWrapper
+  locationWrapper
 *********************************/
 #locationWrapper {
   display: block;
@@ -1961,11 +1960,28 @@ focus for toolbar controls
       font-weight: bold; }
     #locationWrapper .data.coordinate .value, #locationWrapper .data.coordinate .description {
       font-size: 12px; }
+    #locationWrapper .data.coordinate h1, #locationWrapper .data.coordinate fieldset, #locationWrapper .data.coordinate input, #locationWrapper .data.coordinate select, #locationWrapper .data.coordinate label, #locationWrapper .data.coordinate button {
+      display: none; }
+    #locationWrapper .data.coordinate .output-label, #locationWrapper .data.coordinate .output-value, #locationWrapper .data.coordinate h2,
+    #locationWrapper .data.coordinate label[for="transformations-output-coordinate-system"],
+    #locationWrapper .data.coordinate select#transformations-output-coordinate-system {
+      display: block;
+      font-size: 13px; }
+    #locationWrapper .data.coordinate h2 {
+      font-weight: normal;
+      margin-top: 15px; }
+    #locationWrapper .data.coordinate .output-label, #locationWrapper .data.coordinate .output-value,
+    #locationWrapper .data.coordinate select#transformations-output-coordinate-system {
+      margin: 0 0 5px 15px; }
+    #locationWrapper .data.coordinate label[for="transformations-output-coordinate-system"] {
+      font-size: 13px;
+      margin: 15px 0 2px 0; }
     #locationWrapper .data .label, #locationWrapper .data .value {
       display: block;
       overflow: hidden;
       padding: 2px 0 0 0;
-      white-space: nowrap; }
+      white-space: nowrap;
+      font-size: 13px; }
     #locationWrapper .data .label.description, #locationWrapper .data .value {
       padding-left: 10px; }
 
@@ -2009,6 +2025,10 @@ focus for toolbar controls
       width: 70px; }
     #sunMoonWrapper > li.moonRiseAndSetWrapper .label {
       width: 78px; }
+
+input:disabled {
+  opacity: 0.7;
+  filter: alpha(opacity=70); }
 
 /**************************
 ==== splashscreen styling ===

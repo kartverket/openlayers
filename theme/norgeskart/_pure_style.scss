@@ -2656,8 +2656,8 @@ $overlayMenuItemMargin: 5px;
   }
 
   &.displayPMinformation {
-    width: 200px;
-    margin-left: -100px; 
+    width: 280px;
+    margin-left: -140px; 
   }
 
   .shareContent {
@@ -2703,7 +2703,7 @@ $overlayMenuItemMargin: 5px;
 }
 
 /********************************
-  weatherWrapper
+  locationWrapper
 *********************************/
 #locationWrapper {
   display: block;
@@ -2726,12 +2726,40 @@ $overlayMenuItemMargin: 5px;
     }
     
     &.coordinate { 
+	
+
       .name {
 	font-weight: bold;
       }
 
       .value, .description {
 	font-size: 12px;
+      }
+      
+      h1, fieldset, input, select, label, button{
+        display: none;
+      }
+
+      .output-label, .output-value, h2,
+      label[for="transformations-output-coordinate-system"],
+      select#transformations-output-coordinate-system {
+	display: block;
+	font-size: 13px;
+      }
+      
+      h2 {
+	font-weight: normal;
+	margin-top: 15px;
+      }
+
+      .output-label, .output-value,
+      select#transformations-output-coordinate-system {
+	  margin: 0 0 5px 15px;
+      }
+
+      label[for="transformations-output-coordinate-system"] {
+	font-size: 13px;
+	margin: 15px 0 2px 0;
       }
     }
 
@@ -2740,6 +2768,7 @@ $overlayMenuItemMargin: 5px;
       overflow: hidden;
       padding: 2px 0 0 0;
       white-space: nowrap;
+      font-size: 13px;
     }
 
     .label.description, .value {
@@ -2814,3 +2843,7 @@ $overlayMenuItemMargin: 5px;
   }
 }
 
+input:disabled {
+  opacity: 0.7; 
+  filter: alpha(opacity=70);    
+}
