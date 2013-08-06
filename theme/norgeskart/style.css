@@ -49,7 +49,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
 #basic-toolbar .panel + .panel,
-#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, .embedContent .step-specific, .embedContent .buttons-panel, .embedContent .step-specific.markers .markers-list, .embedContent .step-specific.markers .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .tool.draw .widget ul button span, .emergency-poster-terms-popup .button-panel {
+#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, .embedContent .step-specific, .embedContent .buttons-panel, .embedContent .step-specific.markers .markers-list, .embedContent .step-specific.markers .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .tool.draw .widget ul button span, .tool.draw .widget .measures .h, .emergency-poster-terms-popup .button-panel {
   /* v-divider.png base64-encoded */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC");
   background-repeat: repeat-x; }
@@ -1446,7 +1446,7 @@ focus for toolbar controls
   draw control
 ***************************/
 .tool.draw .widget {
-  width: 88px;
+  width: 92px;
   padding: 10px; }
   .tool.draw .widget ul {
     list-style: none;
@@ -1488,6 +1488,19 @@ focus for toolbar controls
     display: none; }
   .tool.draw .widget .measures.line .area {
     display: none; }
+  .tool.draw .widget .measures .h {
+    background-position: 0 top;
+    margin: 10px -10px;
+    padding: 10px 10px 0 10px; }
+  .tool.draw .widget .measures dl {
+    line-height: 1.4em; }
+  .tool.draw .widget .measures .h,
+  .tool.draw .widget .measures dd {
+    margin-bottom: 10px; }
+  .tool.draw .widget .measures dt:after {
+    content: ':'; }
+  .tool.draw .widget .measures dd {
+    text-align: right; }
 
 /***************************
   transformations control 
