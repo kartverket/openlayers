@@ -1999,7 +1999,8 @@ focus for toolbar controls
 
 .tool.draw {
   .widget {
-    width: 88px;
+
+    width: 92px;
     padding: 10px;
 
     .h {
@@ -2068,6 +2069,7 @@ focus for toolbar controls
     }
 
     .measures {
+  
       &.point {
         .length,
         .area {
@@ -2078,6 +2080,25 @@ focus for toolbar controls
         .area {
           display: none;
         }
+      }
+      .h {
+        @extend %horizontal-divider;
+        background-position: 0 top;
+        margin: 10px -10px;
+        padding: 10px 10px 0 10px;
+      }
+      dl {
+        line-height: 1.4em;
+      }
+      .h,
+      dd {
+        margin-bottom: 10px;
+      }
+      dt:after {
+        content: ':';
+      }
+      dd {
+        text-align: right;
       }
     }
   }
