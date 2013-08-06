@@ -1182,6 +1182,15 @@ button {
       .instructions {
         padding-left: 25px;
         padding-right: 25px;
+
+	label, #PointMenuEmbedMarkerComment {
+	   display: block;
+	}
+	#PointMenuEmbedMarkerComment {
+	   margin: 1px 0 15px 0;
+	   padding: 2px 5px 2px 5px;
+	   width: 80%;
+	}
       }
 
       .instructions {

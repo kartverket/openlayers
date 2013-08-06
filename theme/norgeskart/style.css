@@ -860,6 +860,15 @@ body {
     .embedContent .step-specific.markers .instructions {
       padding-left: 25px;
       padding-right: 25px; }
+      .embedContent .step-specific.markers .h label, .embedContent .step-specific.markers .h #PointMenuEmbedMarkerComment,
+      .embedContent .step-specific.markers .instructions label,
+      .embedContent .step-specific.markers .instructions #PointMenuEmbedMarkerComment {
+        display: block; }
+      .embedContent .step-specific.markers .h #PointMenuEmbedMarkerComment,
+      .embedContent .step-specific.markers .instructions #PointMenuEmbedMarkerComment {
+        margin: 1px 0 15px 0;
+        padding: 2px 5px 2px 5px;
+        width: 80%; }
     .embedContent .step-specific.markers .marker-illustration {
       margin-left: 25px;
       float: right;
