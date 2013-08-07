@@ -2098,6 +2098,7 @@ focus for toolbar controls
         content: ':';
       }
       dd {
+        white-space: pre;
         text-align: right;
       }
     }
@@ -2318,7 +2319,7 @@ $overlayMenuItemMargin: 5px;
 
   .emergency-poster-terms-popup {
      top: auto;
-     rigth: auto;
+     right: auto;
      bottom: 100%;
      left : -165px;
      width: 400px;       
