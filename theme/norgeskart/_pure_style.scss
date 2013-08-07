@@ -2105,6 +2105,19 @@ focus for toolbar controls
   }
 }
 
+/***************************
+  height profile control
+***************************/
+.tool.height-profile {
+  .widget {
+    button {
+      background-color: blue;
+      &:disabled {
+        background-color: grey;
+      }
+    }
+  }
+}
 
 /***************************
   transformations control 

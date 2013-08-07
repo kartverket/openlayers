@@ -1513,6 +1513,14 @@ focus for toolbar controls
     text-align: right; }
 
 /***************************
+  height profile control
+***************************/
+.tool.height-profile .widget button {
+  background-color: blue; }
+  .tool.height-profile .widget button:disabled {
+    background-color: grey; }
+
+/***************************
   transformations control 
 ***************************/
 .tool.transformations .widget {
