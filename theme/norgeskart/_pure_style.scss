@@ -2502,7 +2502,7 @@ $overlayMenuItemMargin: 5px;
   &.onClose { 
     #PMtool {  
       -moz-transform: rotateY(180deg);
-      -webkit-transform: rotateY(180deg);
+      -webkit-transform: rotateY(0);
       -o-transform: rotateY(180deg);
       transform: rotateY(180deg);
     }
@@ -2520,7 +2520,12 @@ $overlayMenuItemMargin: 5px;
 
     #PMcloser { 
       z-index: 1;
+      -webkit-transform: rotateY(180deg);
     }
+    
+     #PMopener { 
+       -webkit-transform: rotateY(0);
+     }
   }
   
   &.onOpen {
