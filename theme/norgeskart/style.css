@@ -1509,7 +1509,16 @@ focus for toolbar controls
   .tool.draw .widget .measures dt:after {
     content: ':'; }
   .tool.draw .widget .measures dd {
+    white-space: pre;
     text-align: right; }
+
+/***************************
+  height profile control
+***************************/
+.tool.height-profile .widget button {
+  background-color: blue; }
+  .tool.height-profile .widget button:disabled {
+    background-color: grey; }
 
 /***************************
   transformations control 
@@ -1641,7 +1650,7 @@ focus for toolbar controls
     filter: alpha(opacity=70); }
   #emergencyMainMenu .emergency-poster-terms-popup {
     top: auto;
-    rigth: auto;
+    right: auto;
     bottom: 100%;
     left: -165px;
     width: 400px;
