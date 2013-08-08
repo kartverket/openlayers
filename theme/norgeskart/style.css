@@ -1930,6 +1930,14 @@ focus for toolbar controls
   background-color: rgba(80, 80, 80, 0.9);
   color: #FFFFFF;
   font-size: 11px; }
+  #PMwidget a.weatherReference {
+    color: #1122D4;
+    display: inline-block;
+    font-size: 11px;
+    padding: 5px 2px 5px 2px; }
+    #PMwidget a.weatherReference:hover {
+      color: #FFFFFF;
+      text-decoration: underline; }
   #PMwidget .loading {
     display: block;
     overflow: hidden;

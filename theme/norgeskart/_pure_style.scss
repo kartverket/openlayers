@@ -2682,6 +2682,18 @@ $overlayMenuItemMargin: 5px;
   color: #FFFFFF;
   font-size: 11px;
 
+  a.weatherReference {
+    color: #1122D4;
+    display: inline-block;
+    font-size: 11px;
+    padding: 5px 2px 5px 2px;
+    
+    &:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+  }
+
   .loading {
     display: block;
     overflow: hidden;
