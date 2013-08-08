@@ -2309,7 +2309,7 @@ $overlayMenuItemMargin: 5px;
   z-index: 900;  
   display: none;
   overflow: visible;
-  background: transparent url('img/emergency-marker.png') no-repeat 0 0;
+  /*background: transparent url('img/emergency-marker.png') no-repeat 0 0;*/
   margin: -52px 0 0 -17px;
   margin: -44px 0 0 -9px;
 
@@ -2330,7 +2330,7 @@ $overlayMenuItemMargin: 5px;
     filter: alpha(opacity=70);    
   }
 
-  .emergency-poster-terms-popup {
+  .emergency-poster-terms-popup, .emergency-poster-location-popup {
      top: auto;
      right: auto;
      bottom: 100%;
@@ -2365,7 +2365,7 @@ $overlayMenuItemMargin: 5px;
   }
 }
 
-.emergency-poster-terms-popup {
+.emergency-poster-terms-popup, .emergency-poster-location-popup {
   @extend %partial-transparent;
   @extend %shadow;
   position: absolute;
@@ -2374,17 +2374,23 @@ $overlayMenuItemMargin: 5px;
   z-index: 2000;
   max-width: 406px;
   color: #fff;
+  font-size:12px;
 
   .header {
     padding: 24px 24px 24px 60px;
     background-repeat: no-repeat;
     background-position: 20px 24px;
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAB8lBMVEUCAgICAgICAgICAgICAgICAgKqqqoCAgKIiIh5eXlfX1+KioqWlpaNjY11dXV9fX2UlJSPj4+BgYGXl5eenp45OTmdnZ0ODg56enqRkZGOjo5lZWWcnJyoqKiampqnp6dqamqZmZlUVFRYWFinp6eAgIBra2ufn5+VlZWampp+fn5oaGiQkJCXl5diYmKSkpKUlJSampptbW2bm5tvb28iIiLsAwPb29uxsbG4uLjpLy/AwMC7u7vi4uK2trbR0dHf39/x8fHrMTHsMjKwsLCvr6+srKze3t6qqqrrLCzNzc3JycnpLi/oLi63t7fg4eHt7e3rMDDPz8/GxsbBwcG8vLzqKirsLCzsMTHW1tbj4+PpKSnLy8vsCwvn5+ju7u7MzM3Y2Nnz8/PExMTqMDC5ubnHx8fuoaLgnp7tj4/a2tr29vbtm5vV1dbW19fq6urp6enS0tLtmprfjY3n5+e6uruys7Prqqrc3N3pLi7b29zdm5vg4ODr7OzQ0ND39/fo6Ojgjo6tra3rKyv4+Pjw8PDv7/D09PTurK3X19fS0tPoKSm/v7/T09TqLy+ysrLh4eHhlJThhITgg4PekZHrn5/m5ub19fbMzMzl5eXb3NzW1tfOzs7CwsL19fXtkJC9vb66urq0tLTIyMjy8vLU1dXfL3tCAAAANnRSTlMAAQIEBQMABkApF0JpSyQtX1A0bJQMjwcrVk4aiOJ53h57EhPVMR2bYnUvHFRwGFljfh+AIQmEbjEzAAACE0lEQVR4XpXUVZfbMBAF4KSS4+ByF7pbZmbZDnOWmbHMzMzMzAz/s5p4pFrHfek8f2fuTWTJ4/P5PMp4vR7XOI3XMSpykllyFKYSjdijaf9kNqF6c43fXxnUKSkzl+Fkwbz51s6fe2LJJbVBYKAUQ+iyhZaReXt3x6/MnVOpM+HFFJXTVJvGrau2mem9fK39RogSVNKssG47zNFj04bZ5NzF+9A1u7+o5s37Uj4ESoRppMLMoNn7df/rshlPHCkugkCxSG9Ji6wRxkZs05MeCEOgaBQYklkctaEpXcgHYRU2qr8k+3B0E805Y6AWV/FFs/MHZWdAwhw4PFfnCNNi0hxt40iY7ffNIEFE52wDcy+Xy41mpxib2vUkGu3cx82YtRSRRqtSkHWIKXOdm9/xEDQvow3HIeuEik5y8/g0IoibhD5nR7PZvj6Ii3ae7+q6yM2D7hqBSGVMnsX4MGPD5c5gUmYzkX9BoVeYBEcT0rS3Ngik0eWGMD2AhLkyuBLPBfJWxYVJAxKmv7BanDBHet0YmtIEYw+FebQWFslPpfHpMzyL5y9evkLTUVyHi7DVeishzwLNu0IEF8lrEO7+oJqOQhUYRKia8v1OM1iM4EVQVGNdcvKjbT59NjduEka9nHqgvpiMfxv6/qN18xb35URF6NaAvzrir2hQrrn7waCUEmITadxPj8YBkv98xISS0F3lD6SF3DjTwx3qAAAAAElFTkSuQmCC');
+    
+    h1.h {
+      font-family: Metabook, Arial, sans-serif;
+      font-size:30px;
+      font-weight: normal;
+    }
   }
-  .terms-body {
+  .step-body {
     padding: 0 24px 24px 24px;
-    &,
-    .h {
+    &, .h {
       font-size: 12px;
       line-height: 1.5;
     }
@@ -2404,11 +2410,101 @@ $overlayMenuItemMargin: 5px;
     @extend %horizontal-divider;
     background-position: 0 0;
     padding: 24px;
+  }
+  .h {
+    margin: 0;
+  }
+}
 
+.emergency-poster-terms-popup, .emergency-poster-location-popup {
+  .progress {
+    list-style: none;
+    background-image: -webkit-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
+    background-size: 100% 2px;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+
+    li {
+      display: inline-block;
+      position: relative;
+      text-indent: -999em;
+      margin-right: 2em;
+      width: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.disabled {
+        opacity: 0.2;
+        filter: alpha(opacity=20);
+      }
+    }
+    .step-number {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: #aaa;
+      color: $panel-color;
+      text-indent: 0;
+      text-align: center;
+      line-height: 20px;
+    }
+    .step-label {
+      position:absolute;
+      top:24px;
+      left:-10px;
+      height:10px;
+      width:40px;
+      font-size:9px;
+      font-weight: bold;
+      color: #aaa;
+      text-indent:0;
+      text-align:center;
+      text-transform:uppercase;
+      line-height:10px;
+    }
+
+    $grey: rgba(127, 127, 127, 1);
+    $white: #fff;
+
+    @mixin active-step($name, $step, $stepCount) {
+      &.#{$name}-active {
+        $firstStop: $grey percentage(($step - 2) / ($stepCount - 1));
+        $midStop:  $white percentage(($step - 1)/ ($stepCount - 1));
+        $lastStop:  $grey percentage($step / ($stepCount - 1));
+
+        background-image: -webkit-linear-gradient(left, $firstStop, $midStop, $lastStop);
+
+        .#{$name} .step-label {
+          color:#fff;
+        }
+        .#{$name} .step-number {
+          background-color: #fff;
+        }
+      }
+    }
+
+    @include active-step(terms, 1, 3);
+    @include active-step(location, 2, 3);
+    @include active-step(preview, 3, 3);
+  }
+}
+
+.emergency-poster-terms-popup {
+  .button-panel {
     button {
       @extend %blue-one-lined-button;
       width: 100%;
-
+      
       &:after {
         content: '';
         display: block;
@@ -2420,8 +2516,89 @@ $overlayMenuItemMargin: 5px;
       }
     }
   }
-  .h {
-    margin: 0;
+} 
+
+.emergency-poster-location-popup {
+
+  .emergency-point-name-input-wrapper {
+
+    margin-bottom:20px;
+
+    label[for="emergencyPointNameInput"] {
+      display:block;
+      margin-bottom:5px;
+      text-transform:uppercase;
+      font-weight:bold;
+    }
+
+    #emergencyPointNameInput {
+      padding:5px;
+      margin-right:5px;
+      width:60%;
+      border:none;
+      font-size:12px;
+      line-height:18px;
+    }
+
+    span {
+      text-transform:none;
+      font-weight:normal;
+      line-height:14px;
+    }
+  }
+
+  .emergency-point-location-wrapper {
+    h2 {
+      font-size:12px;
+      text-transform:uppercase;
+      font-weight:bold;
+    }
+    h3 {
+      font-size:20px;
+      font-weight:bold;
+    }
+    #emergencyPointAltLocationMenu {
+      display:block;
+    }
+  }
+  .map-preview {
+    @extend %horizontal-divider;
+    padding:24px;
+  }
+  .button-panel {
+    button {
+      /*@extend %button-style;*/
+      @extend %terms-accept-button-style;
+      line-height:24px;
+      text-align: left;
+      padding:0px 12px;
+
+      &.redo {
+        @extend %grey-button-gradient;
+        border: 1px solid #01437c;
+        position:relative;
+        text-transform:none;
+        color:#505050;
+      }
+
+      &.accept {
+        @extend %blue-button-gradient;
+        border: 1px solid #01437c;
+        padding-right:26px;
+        position:relative;
+        float:right;
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          border: 6px solid transparent;
+          border-left-color: #fff;
+          top: 6px;
+          right: 6px;
+        }
+      }
+    }
   }
 }
 

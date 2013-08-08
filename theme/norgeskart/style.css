@@ -11,7 +11,7 @@
   clear: both; }
 
 .toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
-#share-toolbar .panel .tool.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .overlay-group-panel .widget .cnt > ul > li ul, .emergency-poster-terms-popup {
+#share-toolbar .panel .tool.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .overlay-group-panel .widget .cnt > ul > li ul, .emergency-poster-terms-popup, .emergency-poster-location-popup {
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
 
@@ -45,11 +45,11 @@ button, .layersDiv .vectorWidgetToggleBtn,
 #share-toolbar .panel .tool.active .widget, .embedContent .step-specific.type button, .embedContent .step-specific.descriptions #long-desc-explanation,
 .embedContent .step-specific.descriptions #short-desc-explanation, #searchResults, .user-marker,
 #nk-selected-feature,
-#nk-selected-coverage-map, #overview-container-panel, .emergency-poster-terms-popup {
+#nk-selected-coverage-map, #overview-container-panel, .emergency-poster-terms-popup, .emergency-poster-location-popup {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
 #basic-toolbar .panel + .panel,
-#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, .embedContent .step-specific, .embedContent .buttons-panel, .embedContent .step-specific.markers .markers-list, .embedContent .step-specific.markers .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .tool.draw .widget ul button span, .tool.draw .widget .measures .h, .emergency-poster-terms-popup .button-panel {
+#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, .embedContent .step-specific, .embedContent .buttons-panel, .embedContent .step-specific.markers .markers-list, .embedContent .step-specific.markers .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .tool.draw .widget ul button span, .tool.draw .widget .measures .h, .emergency-poster-terms-popup .button-panel, .emergency-poster-location-popup .button-panel, .emergency-poster-location-popup .map-preview {
   /* v-divider.png base64-encoded */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC");
   background-repeat: repeat-x; }
@@ -75,8 +75,8 @@ body, #map, #basic-toolbar,
   height: 0;
   position: absolute; }
 
-.embedContent .buttons-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
-.embed-add-marker, #searchSubmit {
+.embedContent .buttons-panel button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
+.embed-add-marker, .emergency-poster-location-popup .button-panel button, #searchSubmit {
   border: 1px solid #003c6f;
   border-color: rgba(0, 60, 111, 0.82);
   cursor: pointer;
@@ -84,7 +84,7 @@ body, #map, #basic-toolbar,
   color: #fff;
   text-transform: uppercase; }
 
-.embedContent .buttons-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button {
+.embedContent .buttons-panel button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .emergency-poster-location-popup .button-panel button.accept {
   background-color: #408ccd;
   background-image: -webkit-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
   background-image: -moz-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
@@ -93,7 +93,7 @@ body, #map, #basic-toolbar,
   background-image: linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3); }
 
 .embed-cancel-marker,
-.embed-add-marker {
+.embed-add-marker, .emergency-poster-location-popup .button-panel button.redo {
   background-color: white;
   background-image: -webkit-linear-gradient(bottom, #d8d8d8, white 33%, white 66%, #d8d8d8);
   background-image: -moz-linear-gradient(bottom, #d8d8d8, white 33%, white 66%, #d8d8d8);
@@ -101,20 +101,20 @@ body, #map, #basic-toolbar,
   background-image: -o-linear-gradient(bottom, #d8d8d8, white 33%, white 66%, #d8d8d8);
   background-image: linear-gradient(bottom, #d8d8d8, white 33%, white 66%, #d8d8d8); }
 
-.embedContent .buttons-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
-.embed-add-marker {
+.embedContent .buttons-panel button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
+.embed-add-marker, .emergency-poster-location-popup .button-panel button {
   background-size: 150%;
   background-position: 0 100%; }
-  .embedContent .buttons-panel button, .splashscreen .widget .splash-button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
-  .embed-add-marker, .embedContent .buttons-panel button:hover, .splashscreen .widget .splash-button:hover, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .embed-cancel-marker:hover,
-  .embed-add-marker:hover, .embedContent .buttons-panel button:focus, .splashscreen .widget .splash-button:focus, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .embed-cancel-marker:focus,
-  .embed-add-marker:focus {
+  .embedContent .buttons-panel button, .tool.transformations .widget button, .emergency-poster-terms-popup .button-panel button, .embed-cancel-marker,
+  .embed-add-marker, .emergency-poster-location-popup .button-panel button, .embedContent .buttons-panel button:hover, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .embed-cancel-marker:hover,
+  .embed-add-marker:hover, .emergency-poster-location-popup .button-panel button:hover, .embedContent .buttons-panel button:focus, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .embed-cancel-marker:focus,
+  .embed-add-marker:focus, .emergency-poster-location-popup .button-panel button:focus {
     -webkit-transition-property: background-position;
     -webkit-transition-duration: .03s;
     -webkit-transition-timing-function: cubic-bezier(0.25, 0.5, 0.75, 0.5); }
-  .embedContent .buttons-panel button:hover, .splashscreen .widget .splash-button:hover, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .embed-cancel-marker:hover,
-  .embed-add-marker:hover, .embedContent .buttons-panel button:focus, .splashscreen .widget .splash-button:focus, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .embed-cancel-marker:focus,
-  .embed-add-marker:focus {
+  .embedContent .buttons-panel button:hover, .tool.transformations .widget button:hover, .emergency-poster-terms-popup .button-panel button:hover, .embed-cancel-marker:hover,
+  .embed-add-marker:hover, .emergency-poster-location-popup .button-panel button:hover, .embedContent .buttons-panel button:focus, .tool.transformations .widget button:focus, .emergency-poster-terms-popup .button-panel button:focus, .embed-cancel-marker:focus,
+  .embed-add-marker:focus, .emergency-poster-location-popup .button-panel button:focus {
     background-position: 0 0%;
     text-decoration: underline; }
 
@@ -1632,7 +1632,7 @@ focus for toolbar controls
   z-index: 900;
   display: none;
   overflow: visible;
-  background: transparent url("img/emergency-marker.png") no-repeat 0 0;
+  /*background: transparent url('img/emergency-marker.png') no-repeat 0 0;*/
   margin: -52px 0 0 -17px;
   margin: -44px 0 0 -9px; }
   #emergencyMainMenu.active {
@@ -1648,7 +1648,7 @@ focus for toolbar controls
     margin: 0 0 -11px -18px;
     opacity: 0.7;
     filter: alpha(opacity=70); }
-  #emergencyMainMenu .emergency-poster-terms-popup {
+  #emergencyMainMenu .emergency-poster-terms-popup, #emergencyMainMenu .emergency-poster-location-popup {
     top: auto;
     right: auto;
     bottom: 100%;
@@ -1673,47 +1673,171 @@ focus for toolbar controls
       vertical-align: middle;
       text-align: left; }
 
-.emergency-poster-terms-popup {
+.emergency-poster-terms-popup, .emergency-poster-location-popup {
   position: absolute;
   top: 100px;
   right: 200px;
   z-index: 2000;
   max-width: 406px;
-  color: #fff; }
-  .emergency-poster-terms-popup .header {
+  color: #fff;
+  font-size: 12px; }
+  .emergency-poster-terms-popup .header, .emergency-poster-location-popup .header {
     padding: 24px 24px 24px 60px;
     background-repeat: no-repeat;
     background-position: 20px 24px;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAB8lBMVEUCAgICAgICAgICAgICAgICAgKqqqoCAgKIiIh5eXlfX1+KioqWlpaNjY11dXV9fX2UlJSPj4+BgYGXl5eenp45OTmdnZ0ODg56enqRkZGOjo5lZWWcnJyoqKiampqnp6dqamqZmZlUVFRYWFinp6eAgIBra2ufn5+VlZWampp+fn5oaGiQkJCXl5diYmKSkpKUlJSampptbW2bm5tvb28iIiLsAwPb29uxsbG4uLjpLy/AwMC7u7vi4uK2trbR0dHf39/x8fHrMTHsMjKwsLCvr6+srKze3t6qqqrrLCzNzc3JycnpLi/oLi63t7fg4eHt7e3rMDDPz8/GxsbBwcG8vLzqKirsLCzsMTHW1tbj4+PpKSnLy8vsCwvn5+ju7u7MzM3Y2Nnz8/PExMTqMDC5ubnHx8fuoaLgnp7tj4/a2tr29vbtm5vV1dbW19fq6urp6enS0tLtmprfjY3n5+e6uruys7Prqqrc3N3pLi7b29zdm5vg4ODr7OzQ0ND39/fo6Ojgjo6tra3rKyv4+Pjw8PDv7/D09PTurK3X19fS0tPoKSm/v7/T09TqLy+ysrLh4eHhlJThhITgg4PekZHrn5/m5ub19fbMzMzl5eXb3NzW1tfOzs7CwsL19fXtkJC9vb66urq0tLTIyMjy8vLU1dXfL3tCAAAANnRSTlMAAQIEBQMABkApF0JpSyQtX1A0bJQMjwcrVk4aiOJ53h57EhPVMR2bYnUvHFRwGFljfh+AIQmEbjEzAAACE0lEQVR4XpXUVZfbMBAF4KSS4+ByF7pbZmbZDnOWmbHMzMzMzAz/s5p4pFrHfek8f2fuTWTJ4/P5PMp4vR7XOI3XMSpykllyFKYSjdijaf9kNqF6c43fXxnUKSkzl+Fkwbz51s6fe2LJJbVBYKAUQ+iyhZaReXt3x6/MnVOpM+HFFJXTVJvGrau2mem9fK39RogSVNKssG47zNFj04bZ5NzF+9A1u7+o5s37Uj4ESoRppMLMoNn7df/rshlPHCkugkCxSG9Ji6wRxkZs05MeCEOgaBQYklkctaEpXcgHYRU2qr8k+3B0E805Y6AWV/FFs/MHZWdAwhw4PFfnCNNi0hxt40iY7ffNIEFE52wDcy+Xy41mpxib2vUkGu3cx82YtRSRRqtSkHWIKXOdm9/xEDQvow3HIeuEik5y8/g0IoibhD5nR7PZvj6Ii3ae7+q6yM2D7hqBSGVMnsX4MGPD5c5gUmYzkX9BoVeYBEcT0rS3Ngik0eWGMD2AhLkyuBLPBfJWxYVJAxKmv7BanDBHet0YmtIEYw+FebQWFslPpfHpMzyL5y9evkLTUVyHi7DVeishzwLNu0IEF8lrEO7+oJqOQhUYRKia8v1OM1iM4EVQVGNdcvKjbT59NjduEka9nHqgvpiMfxv6/qN18xb35URF6NaAvzrir2hQrrn7waCUEmITadxPj8YBkv98xISS0F3lD6SF3DjTwx3qAAAAAElFTkSuQmCC"); }
-  .emergency-poster-terms-popup .terms-body {
+    .emergency-poster-terms-popup .header h1.h, .emergency-poster-location-popup .header h1.h {
+      font-family: Metabook, Arial, sans-serif;
+      font-size: 30px;
+      font-weight: normal; }
+  .emergency-poster-terms-popup .step-body, .emergency-poster-location-popup .step-body {
     padding: 0 24px 24px 24px; }
-    .emergency-poster-terms-popup .terms-body,
-    .emergency-poster-terms-popup .terms-body .h {
+    .emergency-poster-terms-popup .step-body, .emergency-poster-terms-popup .step-body .h, .emergency-poster-location-popup .step-body, .emergency-poster-location-popup .step-body .h {
       font-size: 12px;
       line-height: 1.5; }
-    .emergency-poster-terms-popup .terms-body .h {
+    .emergency-poster-terms-popup .step-body .h, .emergency-poster-location-popup .step-body .h {
       text-transform: uppercase;
       font-weight: normal;
       margin-bottom: .75em; }
-    .emergency-poster-terms-popup .terms-body p {
+    .emergency-poster-terms-popup .step-body p, .emergency-poster-location-popup .step-body p {
       margin-bottom: 1.5em; }
-      .emergency-poster-terms-popup .terms-body p:last-child {
+      .emergency-poster-terms-popup .step-body p:last-child, .emergency-poster-location-popup .step-body p:last-child {
         margin-bottom: 0; }
-  .emergency-poster-terms-popup .button-panel {
+  .emergency-poster-terms-popup .button-panel, .emergency-poster-location-popup .button-panel {
     background-position: 0 0;
     padding: 24px; }
-    .emergency-poster-terms-popup .button-panel button {
-      width: 100%; }
-      .emergency-poster-terms-popup .button-panel button:after {
-        content: '';
-        display: block;
-        position: absolute;
-        border: 6px solid transparent;
-        border-left-color: #fff;
-        top: 6px;
-        right: 6px; }
-  .emergency-poster-terms-popup .h {
+  .emergency-poster-terms-popup .h, .emergency-poster-location-popup .h {
     margin: 0; }
+
+.emergency-poster-terms-popup .progress, .emergency-poster-location-popup .progress {
+  list-style: none;
+  background-image: -webkit-linear-gradient(left, rgba(127, 127, 127, 0), #7f7f7f);
+  background-size: 100% 2px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 20px; }
+  .emergency-poster-terms-popup .progress li, .emergency-poster-location-popup .progress li {
+    display: inline-block;
+    position: relative;
+    text-indent: -999em;
+    margin-right: 2em;
+    width: 20px; }
+    .emergency-poster-terms-popup .progress li:last-child, .emergency-poster-location-popup .progress li:last-child {
+      margin-right: 0; }
+    .emergency-poster-terms-popup .progress li.disabled, .emergency-poster-location-popup .progress li.disabled {
+      opacity: 0.2;
+      filter: alpha(opacity=20); }
+  .emergency-poster-terms-popup .progress .step-number, .emergency-poster-location-popup .progress .step-number {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #aaa;
+    color: rgba(80, 80, 80, 0.9);
+    text-indent: 0;
+    text-align: center;
+    line-height: 20px; }
+  .emergency-poster-terms-popup .progress .step-label, .emergency-poster-location-popup .progress .step-label {
+    position: absolute;
+    top: 24px;
+    left: -10px;
+    height: 10px;
+    width: 40px;
+    font-size: 9px;
+    font-weight: bold;
+    color: #aaa;
+    text-indent: 0;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 10px; }
+  .emergency-poster-terms-popup .progress.terms-active, .emergency-poster-location-popup .progress.terms-active {
+    background-image: -webkit-linear-gradient(left, #7f7f7f -50%, white 0%, #7f7f7f 50%); }
+    .emergency-poster-terms-popup .progress.terms-active .terms .step-label, .emergency-poster-location-popup .progress.terms-active .terms .step-label {
+      color: #fff; }
+    .emergency-poster-terms-popup .progress.terms-active .terms .step-number, .emergency-poster-location-popup .progress.terms-active .terms .step-number {
+      background-color: #fff; }
+  .emergency-poster-terms-popup .progress.location-active, .emergency-poster-location-popup .progress.location-active {
+    background-image: -webkit-linear-gradient(left, #7f7f7f 0%, white 50%, #7f7f7f 100%); }
+    .emergency-poster-terms-popup .progress.location-active .location .step-label, .emergency-poster-location-popup .progress.location-active .location .step-label {
+      color: #fff; }
+    .emergency-poster-terms-popup .progress.location-active .location .step-number, .emergency-poster-location-popup .progress.location-active .location .step-number {
+      background-color: #fff; }
+  .emergency-poster-terms-popup .progress.preview-active, .emergency-poster-location-popup .progress.preview-active {
+    background-image: -webkit-linear-gradient(left, #7f7f7f 50%, white 100%, #7f7f7f 150%); }
+    .emergency-poster-terms-popup .progress.preview-active .preview .step-label, .emergency-poster-location-popup .progress.preview-active .preview .step-label {
+      color: #fff; }
+    .emergency-poster-terms-popup .progress.preview-active .preview .step-number, .emergency-poster-location-popup .progress.preview-active .preview .step-number {
+      background-color: #fff; }
+
+.emergency-poster-terms-popup .button-panel button {
+  width: 100%; }
+  .emergency-poster-terms-popup .button-panel button:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border: 6px solid transparent;
+    border-left-color: #fff;
+    top: 6px;
+    right: 6px; }
+
+.emergency-poster-location-popup .emergency-point-name-input-wrapper {
+  margin-bottom: 20px; }
+  .emergency-poster-location-popup .emergency-point-name-input-wrapper label[for="emergencyPointNameInput"] {
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: bold; }
+  .emergency-poster-location-popup .emergency-point-name-input-wrapper #emergencyPointNameInput {
+    padding: 5px;
+    margin-right: 5px;
+    width: 60%;
+    border: none;
+    font-size: 12px;
+    line-height: 18px; }
+  .emergency-poster-location-popup .emergency-point-name-input-wrapper span {
+    text-transform: none;
+    font-weight: normal;
+    line-height: 14px; }
+.emergency-poster-location-popup .emergency-point-location-wrapper h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold; }
+.emergency-poster-location-popup .emergency-point-location-wrapper h3 {
+  font-size: 20px;
+  font-weight: bold; }
+.emergency-poster-location-popup .emergency-point-location-wrapper #emergencyPointAltLocationMenu {
+  display: block; }
+.emergency-poster-location-popup .map-preview {
+  padding: 24px; }
+.emergency-poster-location-popup .button-panel button {
+  /*@extend %button-style;*/
+  line-height: 24px;
+  text-align: left;
+  padding: 0px 12px; }
+  .emergency-poster-location-popup .button-panel button.redo {
+    border: 1px solid #01437c;
+    position: relative;
+    text-transform: none;
+    color: #505050; }
+  .emergency-poster-location-popup .button-panel button.accept {
+    border: 1px solid #01437c;
+    padding-right: 26px;
+    position: relative;
+    float: right; }
+    .emergency-poster-location-popup .button-panel button.accept:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border: 6px solid transparent;
+      border-left-color: #fff;
+      top: 6px;
+      right: 6px; }
 
 /************************************
   map load error popup
@@ -2074,83 +2198,3 @@ focus for toolbar controls
 input:disabled {
   opacity: 0.7;
   filter: alpha(opacity=70); }
-
-/**************************
-==== splashscreen styling ===
-**************************/
-.splashscreen {
-  position: absolute;
-  z-index: 9999;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  display: none;
-  font: normal 14px/1.3em Arial, sans-serif; }
-  .splashscreen.show {
-    left: 0;
-    display: block; }
-  .splashscreen .overlay {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); }
-  .splashscreen .widget {
-    position: relative;
-    z-index: 2;
-    display: block;
-    width: 500px;
-    height: auto;
-    margin: 200px auto 0;
-    padding: 20px 0 6px;
-    color: #fff;
-    background-color: #606161;
-    background-color: rgba(80, 80, 80, 0.9);
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
-    .splashscreen .widget a.close, .splashscreen .widget a.close:hover, .splashscreen .widget a.close:visited {
-      top: 0px;
-      right: 0px;
-      margin: 4px 20px 0 0; }
-    .splashscreen .widget h2, .splashscreen .widget p {
-      margin-bottom: 14px;
-      padding: 0 20px; }
-    .splashscreen .widget hr {
-      width: 100%;
-      height: 2px;
-      background-color: #000000;
-      border: none;
-      border: 0;
-      border-bottom: #929292 1px solid;
-      margin-bottom: 16px;
-      margin-top: 8px; }
-    .splashscreen .widget .labs-link {
-      color: #fff; }
-    .splashscreen .widget .splash-button {
-      display: block;
-      padding: 10px;
-      text-decoration: none;
-      margin: 0;
-      height: auto; }
-      .splashscreen .widget .splash-button:hover {
-        background-image: -webkit-linear-gradient(top, #0058a3, #408ccd 50%);
-        background-image: -moz-linear-gradient(top, #0058a3, #408ccd 50%);
-        background-image: -ms-linear-gradient(top, #0058a3, #408ccd 50%);
-        background-image: -o-linear-gradient(top, #0058a3, #408ccd 50%);
-        background-image: linear-gradient(top, #0058a3, #408ccd 50%); }
-      .splashscreen .widget .splash-button:after {
-        display: block;
-        float: right;
-        width: 0;
-        height: 0;
-        margin-top: 3px;
-        margin-right: 0px;
-        border-color: transparent;
-        border-left-color: #ffffff;
-        border-style: solid;
-        border-width: 6px 0 6px 6px;
-        content: " "; }
-    .splashscreen .widget .large-splash-button {
-      width: 360px; }
