@@ -2110,11 +2110,37 @@ focus for toolbar controls
 ***************************/
 .tool.height-profile {
   .widget {
+    padding: 10px;
+
+    .h {
+      @extend %widget-main-heading;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+    }
+    label,
     button {
-      background-color: blue;
+      display: block;
+      margin-top: 30px;
+    }
+
+    button {
+      @extend %blue-one-lined-button;
+      padding: 0 12px 0 12px;
+
       &:disabled {
-        background-color: grey;
+        @extend %grey-one-lined-button;
+        color: $panel-color-hex;
+        cursor: not-allowed;
       }
+    }
+
+    .error-message {
+      @extend %horizontal-divider;
+      background-position: 0 0;
+      margin-top: 20px;
+      padding-top: 10px;
     }
   }
 }
