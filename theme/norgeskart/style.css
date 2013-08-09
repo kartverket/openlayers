@@ -2107,6 +2107,14 @@ focus for toolbar controls
     padding: 5px; }
     #PMwidget .shareContent a:hover {
       background-color: #3A80BB; }
+  #PMwidget .measureContent li {
+    display: block;
+    padding: 0 5px 5px 5px; }
+    #PMwidget .measureContent li:first-child {
+      padding-top: 5px; }
+  #PMwidget .measureContent .label, #PMwidget .measureContent .value {
+    display: inline-block;
+    padding: 0 5px 0 0; }
   #PMwidget .emergency-poster-terms-popup {
     top: auto;
     right: auto;

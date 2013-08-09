@@ -2943,6 +2943,22 @@ $overlayMenuItemMargin: 5px;
       }
     }
   }
+  
+  .measureContent {
+      li {
+	display: block;
+	padding: 0 5px 5px 5px;
+	
+	&:first-child {
+	    padding-top: 5px;
+	}	
+      }
+
+      .label, .value {
+	display: inline-block;
+	padding: 0 5px 0 0;  
+      }
+  }
 
   .emergency-poster-terms-popup {
      top: auto;
