@@ -985,6 +985,23 @@ button {
     &.type + .buttons-panel {
       display: none;
     }
+
+    &.preview {
+      overflow: auto;
+      max-height: 500px;
+
+      section {
+	padding-bottom: 10px;
+	  
+	.h {
+	  padding-bottom: 5px;	      
+	}
+      }
+
+      iframe {
+	  margin-right: 5px;
+      }
+    }
   }
 
   .progress {
