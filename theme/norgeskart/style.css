@@ -736,6 +736,10 @@ body {
 .embedContent .progress {
   list-style: none;
   background-image: -webkit-linear-gradient(left, rgba(127, 127, 127, 0), #7f7f7f);
+  background-image: -moz-linear-gradient(left, rgba(127, 127, 127, 0), #7f7f7f);
+  background-image: -ms-linear-gradient(left, rgba(127, 127, 127, 0), #7f7f7f);
+  background-image: -o-linear-gradient(left, rgba(127, 127, 127, 0), #7f7f7f);
+  background-image: linear-gradient(left, rgba(127, 127, 127, 0), #7f7f7f);
   background-size: 100% 2px;
   background-position: 0 50%;
   background-repeat: no-repeat;
@@ -2208,6 +2212,8 @@ focus for toolbar controls
   background-color: rgba(80, 80, 80, 0.9);
   color: #FFFFFF;
   font-size: 11px; }
+  #PMwidget.embedContent .progress li {
+    margin-bottom: 5px; }
   #PMwidget a.weatherReference {
     color: #1122D4;
     display: inline-block;
