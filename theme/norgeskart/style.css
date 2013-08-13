@@ -2361,6 +2361,79 @@ input:disabled {
   opacity: 0.7;
   filter: alpha(opacity=70); }
 
+/********************************
+  embedLight
+*********************************/
+.embedLight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  background: rgba(0, 0, 0, 0.5); }
+  .embedLight .tool {
+    position: absolute;
+    border: 1px solid #000000;
+    width: 10px;
+    height: 10px;
+    background: #FFFFFF none repeat 0 0;
+    z-index: 10;
+    border-radius: 5px; }
+    .embedLight .tool:hover {
+      border-color: red; }
+
+#embedLightOFbase {
+  bottom: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  background: #F0F0F0 none repeat 0 0; }
+  #embedLightOFbase.adjust {
+    display: none; }
+  #embedLightOFbase .tool {
+    display: none; }
+
+#embedLightOFsquare {
+  border: 1px solid #000000;
+  background: transparent none repeat 0 0; }
+  #embedLightOFsquare.adjust {
+    border: 0 none; }
+  #embedLightOFsquare .tool {
+    z-index: 100;
+    top: 0;
+    left: 0;
+    font-size: 13px;
+    margin: 5px 0 0 0;
+    border-radius: 0;
+    border: 0 none;
+    width: auto;
+    height: auto; }
+
+#embedLightOFtop {
+  z-index: 810; }
+  #embedLightOFtop .left {
+    bottom: 0;
+    right: 100%;
+    margin: 0 -5px -5px 0;
+    cursor: nw-resize; }
+  #embedLightOFtop .right {
+    bottom: 0;
+    left: 100%;
+    margin: 0 0 -5px -5px;
+    cursor: ne-resize; }
+
+#embedLightOFbottom {
+  z-index: 810; }
+  #embedLightOFbottom .left {
+    top: 0;
+    left: 0;
+    margin: -5px 0 0 -5px;
+    cursor: ne-resize; }
+  #embedLightOFbottom .right {
+    top: 0;
+    left: 100%;
+    margin: -5px 0 0 -5px;
+    cursor: nw-resize; }
+
 /**************************
 ==== splashscreen styling ===
 **************************/
