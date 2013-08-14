@@ -11,3 +11,18 @@
 body {
 	width: 1000px;
  }
+
+#search-toolbar {
+  &.toolbar {
+    background: #FFFFFF none repeat 0 0;
+    position: absolute;
+    margin: -110px 0 0 0;
+    top: 100%;
+    left: 10px;
+    display: block;
+ 
+    #search-panel {
+      display: none;
+    }		  
+  }
+}
