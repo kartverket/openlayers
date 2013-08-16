@@ -3495,3 +3495,17 @@ input:disabled {
     cursor: nw-resize;
   }
 }
+
+/********************************
+  propertyTable
+*********************************/
+#propertyTable {
+   td {
+     padding: 3px;
+     vertical-align: top;
+     
+     &:first-child {
+       color: #D0D0D0;
+     }
+   }
+}

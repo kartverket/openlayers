@@ -2450,6 +2450,15 @@ input:disabled {
     margin: -5px 0 0 -5px;
     cursor: nw-resize; }
 
+/********************************
+  propertyTable
+*********************************/
+#propertyTable td {
+  padding: 3px;
+  vertical-align: top; }
+  #propertyTable td:first-child {
+    color: #EEEEEE; }
+
 /**************************
 ==== splashscreen styling ===
 **************************/
