@@ -2196,6 +2196,9 @@ focus for toolbar controls
 #PMruler {
   background-image: url("img/pointMenuRuler.png"); }
 
+#PMhome {
+  background-image: url("img/pointMenuHome.png"); }
+
 /******************* Menu's widget */
 #PMarrow, #PMwidget {
   position: absolute;
@@ -2238,7 +2241,7 @@ focus for toolbar controls
   #PMwidget.displayUseMapView, #PMwidget.displayShareMapView {
     width: 500px;
     margin-left: -250px; }
-  #PMwidget.displayPMsun, #PMwidget.displayPMweather {
+  #PMwidget.displayPMhome, #PMwidget.displayPMsun, #PMwidget.displayPMweather {
     width: 300px;
     margin-left: -150px; }
   #PMwidget.displayPMmaid {

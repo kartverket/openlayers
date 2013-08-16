@@ -3109,6 +3109,7 @@ $overlayMenuItemMargin: 5px;
 #PMwater       { background-image: url('img/pointMenuWater.png');}
 #PMmaid        { background-image: url('img/pointMenuMaid.png'); }
 #PMruler       { background-image: url('img/pointMenuRuler.png'); }
+#PMhome       { background-image: url('img/pointMenuHome.png'); }
 
 /******************* Menu's widget */
 
@@ -3173,6 +3174,7 @@ $overlayMenuItemMargin: 5px;
     margin-left: -250px;
   }
 
+  &.displayPMhome,
   &.displayPMsun,
   &.displayPMweather {
     width: 300px;
