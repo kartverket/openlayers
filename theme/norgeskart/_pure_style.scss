@@ -2165,6 +2165,89 @@ focus for toolbar controls
     }
   }
 }
+.height-profile-lightbox.splashscreen {
+  .widget {
+    
+    .loadingNotice {
+      display:none;
+    }
+    &.loading {
+      .header, .image-wrapper, .button-panel {
+        display:none;
+      }
+      .loadingNotice {
+        display:block;
+        padding:25px;
+      }
+    }
+    
+    width:820px;
+    padding:0px;
+    margin:25px auto 0;
+
+    .header {
+      padding: 24px 15px 24px 24px;
+      
+      a.close {
+        position:absolute;
+        top:4px;
+        right:-12px;
+      }
+
+      h1.h {
+        font-family: Metabook, Arial, sans-serif;
+        font-size:30px;
+        line-height:34px;
+        font-weight: normal;
+      }
+    }
+
+    .image-wrapper {
+      text-align:center;
+    }
+
+    .button-panel {
+      
+      background-position: 0 0;
+      padding: 15px;
+      text-align:right;
+
+      button {
+        @extend %terms-accept-button-style;
+        @extend %blue-button-gradient;
+        line-height:24px;
+        text-align: left;
+        padding:0px 32px 0px 12px;
+        margin-right:20px;
+        position:relative;
+
+        &:last-child {
+          margin-right:0px;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          width:14px;
+          height:14px;
+          position: absolute;
+          border: none;
+          top: 5px;
+          right: 10px;
+        }
+
+        &.save:after {
+          background: url('img/btn-icon-save.png') no-repeat 0px 0px;
+        }
+
+        &.print:after {
+          background: url('img/btn-icon-print.png') no-repeat 0px 0px;
+        }
+
+      }
+    }
+  }
+}
 
 /***************************
   transformations control 
