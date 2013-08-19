@@ -2939,6 +2939,10 @@ $overlayMenuItemMargin: 5px;
   margin: -70px 0 0 -70px;
   display: none;
 
+  &.bySearch {
+    margin: -78px 0 0 -78px;      
+  }
+
   &.active {
     display: block;    
   }

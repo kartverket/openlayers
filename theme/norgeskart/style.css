@@ -2047,6 +2047,8 @@ focus for toolbar controls
   /*margin: -72px 0 0 -72px;*/
   margin: -70px 0 0 -70px;
   display: none; }
+  #pointMenu.bySearch {
+    margin: -78px 0 0 -78px; }
   #pointMenu.active {
     display: block; }
   #pointMenu.display {
