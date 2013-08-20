@@ -749,9 +749,29 @@ button {
 ******************************************/
 .toolbar .nkButton {
   @extend %button;
-  width: 40px;
-  height: 40px;
+  width: 66px;
+  min-height: 40px;
   padding: 5px;
+
+  &.button-text-with-icon {
+    span {
+      display:block;
+      padding-bottom:5px;
+    }
+  }
+
+  span {
+    font-size:10px;
+    color:white;
+  }
+}
+
+#services-panel {
+  .panel-name {
+    display:block;
+    text-align:center;
+    margin-bottom:5px;
+  }
 }
 
 #share-toolbar .nkButton {
