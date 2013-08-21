@@ -581,12 +581,9 @@ body {
 === Toolbar nkButton ===
 ******************************************/
 .toolbar .nkButton {
-  width: 66px;
-  min-height: 40px;
+  width: 60px;
+  height: 40px;
   padding: 5px; }
-  .toolbar .nkButton.button-text-with-icon span {
-    display: block;
-    padding-bottom: 5px; }
   .toolbar .nkButton span {
     font-size: 10px;
     color: white; }
@@ -595,6 +592,9 @@ body {
   display: block;
   text-align: center;
   margin-bottom: 5px; }
+#services-panel button.nkButton {
+  height: auto;
+  min-height: 40px; }
 
 #share-toolbar .nkButton {
   width: 30px;
