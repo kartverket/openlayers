@@ -749,16 +749,9 @@ button {
 ******************************************/
 .toolbar .nkButton {
   @extend %button;
-  width: 66px;
-  min-height: 40px;
+  width: 60px;
+  height: 40px;
   padding: 5px;
-
-  &.button-text-with-icon {
-    span {
-      display:block;
-      padding-bottom:5px;
-    }
-  }
 
   span {
     font-size:10px;
@@ -771,6 +764,11 @@ button {
     display:block;
     text-align:center;
     margin-bottom:5px;
+  }
+  
+  button.nkButton {
+    height:auto;
+    min-height:40px;
   }
 }
 
