@@ -374,10 +374,19 @@ body {
   width: 68px;
   cursor: pointer; }
 
+#logo-panel svg.kartverket.logo {
+  height: 42px;
+  width: 119px;
+  margin-top: 10px; }
+  #logo-panel svg.kartverket.logo .outline,
+  #logo-panel svg.kartverket.logo .text {
+    fill: #ffffff; }
 #logo-panel img {
   position: relative;
   top: 10px;
   display: block; }
+#logo-panel svg + img {
+  display: none; }
 
 .layersDiv {
   position: relative; }

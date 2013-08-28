@@ -480,10 +480,25 @@ button {
   width: 68px;
   cursor: pointer;
 }
-#logo-panel img {
-  position: relative;
-  top: 10px;
-  display: block;
+#logo-panel {
+  svg.kartverket.logo {
+    height: 42px;
+    width: 119px;
+    margin-top: 10px;
+
+    .outline,
+    .text {
+      fill: #ffffff;
+    }
+  }
+  img {
+    position: relative;
+    top: 10px;
+    display: block;
+  }
+  svg + img {
+    display: none;
+  }
 }
 
 .layersDiv {
