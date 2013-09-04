@@ -1921,9 +1921,12 @@ focus for toolbar controls
   font-weight: bold; }
 .emergency-poster-popup .contentContainer.location .emergency-point-location-wrapper h3 {
   font-size: 20px;
-  font-weight: bold; }
-.emergency-poster-popup .contentContainer.location .emergency-point-location-wrapper #emergencyPointAltLocationMenu {
-  display: block; }
+  font-weight: bold;
+  line-height: 1em; }
+.emergency-poster-popup .contentContainer.location .emergency-point-location-wrapper .altPointListContainer {
+  margin-top: 5px; }
+  .emergency-poster-popup .contentContainer.location .emergency-point-location-wrapper .altPointListContainer #emergencyPointAltLocationMenu {
+    display: block; }
 .emergency-poster-popup .contentContainer.location .iframe-container {
   padding: 24px; }
 .emergency-poster-popup .contentContainer.location .button-panel button {

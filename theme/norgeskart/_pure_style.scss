@@ -2750,9 +2750,14 @@ $overlayMenuItemMargin: 5px;
     h3 {
       font-size:20px;
       font-weight:bold;
+      line-height:1em;
     }
-    #emergencyPointAltLocationMenu {
-      display:block;
+    .altPointListContainer {
+      margin-top:5px;
+      
+      #emergencyPointAltLocationMenu {
+        display:block;
+      }
     }
   }
   .iframe-container {
