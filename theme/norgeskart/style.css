@@ -1313,11 +1313,11 @@ button:focus .icon {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAAkSURBVAhbY2BAAYxwgMkB8xlgMlABqDIYicFBVoZqAA57kAAAG2wAWXXlAvwAAAAASUVORK5CYII="); }
 
 .olPopup.positioned .arrow-anchor.tl:after, .olPopup.positioned .arrow-anchor.tc:after, .olPopup.positioned .arrow-anchor.tr:after {
-  bottom: -12px;
+  bottom: -14px;
   border-top-color: #606161;
   border-top-color: rgba(80, 80, 80, 0.9); }
 .olPopup.positioned .arrow-anchor.bl:after, .olPopup.positioned .arrow-anchor.bc:after, .olPopup.positioned .arrow-anchor.br:after {
-  top: -12px;
+  top: -14px;
   border-bottom-color: #606161;
   border-bottom-color: rgba(80, 80, 80, 0.9); }
 .olPopup.positioned .arrow-anchor.cl:after, .olPopup.positioned .arrow-anchor.cr:after {
@@ -1325,12 +1325,13 @@ button:focus .icon {
 .olPopup.positioned .arrow-anchor.bl:after, .olPopup.positioned .arrow-anchor.tl:after {
   left: 0; }
 .olPopup.positioned .arrow-anchor.cl:after {
-  left: -12px; }
+  left: -14px; }
 .olPopup.positioned .arrow-anchor.br:after, .olPopup.positioned .arrow-anchor.tr:after {
   right: 0; }
 .olPopup.positioned .arrow-anchor.cr:after {
-  right: -12px; }
+  right: -14px; }
 .olPopup.positioned .arrow-anchor.bc:after, .olPopup.positioned .arrow-anchor.tc:after {
+  margin-left: -7px;
   left: 50%; }
 .olPopup.positioned .arrow-anchor.cc:after {
   display: none; }
@@ -2153,10 +2154,14 @@ focus for toolbar controls
     outline: none;
     list-style: none;
     outline-style: none; }
-  #pointMenu a:hover, #pointMenu a:visited, #pointMenu a {
+  #pointMenu a:hover,
+  #pointMenu a:visited,
+  #pointMenu a {
     text-decoration: none;
     color: #FFFFFF; }
-  #pointMenu #PMmenu, #pointMenu #PMtool, #pointMenu .item {
+  #pointMenu #PMmenu,
+  #pointMenu #PMtool,
+  #pointMenu .item {
     margin: 0;
     padding: 0;
     -moz-transition: all 1s ease;
@@ -2173,7 +2178,8 @@ focus for toolbar controls
     -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     transform-style: preserve-3d; }
-  #pointMenu #PMtool, #pointMenu .item {
+  #pointMenu #PMtool,
+  #pointMenu .item {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -2186,25 +2192,35 @@ focus for toolbar controls
     z-index: 20;
     top: 0;
     left: 0;
-    overflow: visible; }
+    overflow: hidden; }
   #pointMenu #PMtool {
     top: 50%;
     left: 50%;
     margin: -23px 0 0 -23px;
     width: 46px;
     height: 46px; }
-    #pointMenu #PMtool .item {
-      width: 46px;
-      height: 46px; }
+  #pointMenu #PMopener,
+  #pointMenu #PMcloser {
+    background-image: url("img/src/point-menu-icon-sprite.svg");
+    background-size: 24px;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    margin-left: 12px;
+    margin-top: 11px; }
   #pointMenu #PMopener {
-    background-image: url("img/pointMenuOpener.png");
+    background-position: 0 0; }
+  #pointMenu #PMcloser {
+    background-position: 0 -24px; }
+  #pointMenu #PMopener {
+    /*    background-image: url('img/pointMenuOpener.png'); */
     -moz-transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
     z-index: 2; }
   #pointMenu #PMcloser {
-    background-image: url("img/pointMenuCloser.png");
+    /*    background-image: url('img/pointMenuCloser.png');  */
     -moz-transform: rotateY(0);
     -webkit-transform: rotateY(0);
     -o-transform: rotateY(0);

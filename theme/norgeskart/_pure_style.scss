@@ -1820,14 +1820,14 @@ button:focus .icon {
       &.tl:after,
       &.tc:after,
       &.tr:after {
-        bottom: -12px;
+        bottom: -14px;
         border-top-color: $panel-color-hex;
         border-top-color: $panel-color;
       }
       &.bl:after,
       &.bc:after,
       &.br:after {
-        top: -12px;
+        top: -14px;
         border-bottom-color: $panel-color-hex;
         border-bottom-color: $panel-color;
       }
@@ -1840,17 +1840,18 @@ button:focus .icon {
         left: 0;
       }
       &.cl:after {
-        left: -12px;
+        left: -14px;
       }
       &.br:after,
       &.tr:after {
         right: 0;
       }
       &.cr:after {
-        right: -12px;
+        right: -14px;
       }
       &.bc:after,
       &.tc:after {
+        margin-left: -7px;
         left: 50%;
       }
       &.cc:after {
@@ -3123,12 +3124,16 @@ $overlayMenuItemMargin: 5px;
     outline-style: none;
   }
 
-  a:hover, a:visited, a {
+  a:hover, 
+  a:visited, 
+  a {
     text-decoration: none;
     color: #FFFFFF;
   }
 
-  #PMmenu, #PMtool, .item {
+  #PMmenu, 
+  #PMtool, 
+  .item {
     margin: 0;
     padding: 0;
     
@@ -3151,7 +3156,8 @@ $overlayMenuItemMargin: 5px;
     transform-style: preserve-3d;
   }
 
-  #PMtool, .item {
+  #PMtool, 
+  .item {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -3164,7 +3170,7 @@ $overlayMenuItemMargin: 5px;
     z-index: 20;
     top: 0;
     left: 0;
-    overflow: visible;
+    overflow: hidden;
   }
 
   #PMtool {  
@@ -3173,15 +3179,27 @@ $overlayMenuItemMargin: 5px;
     margin: -23px 0 0 -23px;
     width: 46px;
     height: 46px;
-    
-    .item {
-      width: 46px;
-      height: 46px;
-    }
+  }
+
+  #PMopener,
+  #PMcloser {
+    background-image: url('img/src/point-menu-icon-sprite.svg');
+    background-size: 24px;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    margin-left: 12px;
+    margin-top: 11px;
+  }
+  #PMopener {
+    background-position: 0 0;
+  }
+  #PMcloser {
+    background-position: 0 -24px;
   }
 
   #PMopener { 
-    background-image: url('img/pointMenuOpener.png');  
+/*    background-image: url('img/pointMenuOpener.png'); */
     -moz-transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
@@ -3190,7 +3208,7 @@ $overlayMenuItemMargin: 5px;
   }
 
   #PMcloser { 
-    background-image: url('img/pointMenuCloser.png'); 
+/*    background-image: url('img/pointMenuCloser.png');  */
     -moz-transform: rotateY(0);
     -webkit-transform: rotateY(0);
     -o-transform: rotateY(0);
