@@ -2118,8 +2118,7 @@ focus for toolbar controls
   top: 50%;
   left: 50%;
   z-index: 2000;
-  /*margin: -72px 0 0 -72px;*/
-  margin: -70px 0 0 -70px;
+  margin: -76px 0 0 -76px;
   display: none; }
   #pointMenu.bySearch {
     margin: -78px 0 0 -78px; }
@@ -2141,7 +2140,8 @@ focus for toolbar controls
     -moz-transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
-    transform: rotateY(180deg); }
+    transform: rotateY(180deg);
+    visibility: hidden; }
   #pointMenu.onClose #PMopener {
     -moz-transform: rotateY(0);
     -webkit-transform: rotateY(0);
@@ -2213,19 +2213,21 @@ focus for toolbar controls
   #pointMenu #PMcloser {
     background-position: 0 -24px; }
   #pointMenu #PMopener {
-    /*    background-image: url('img/pointMenuOpener.png'); */
     -moz-transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
     z-index: 2; }
   #pointMenu #PMcloser {
-    /*    background-image: url('img/pointMenuCloser.png');  */
     -moz-transform: rotateY(0);
     -webkit-transform: rotateY(0);
     -o-transform: rotateY(0);
     transform: rotateY(0);
     z-index: 3; }
+
+.no-svg #pointMenu #PMopener,
+.no-svg #pointMenu #PMcloser {
+  background-image: url("img/point-menu-icon-sprite.png"); }
 
 /************ END OF POINTMENU *********/
 /********************************
