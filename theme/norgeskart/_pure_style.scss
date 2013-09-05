@@ -3444,46 +3444,54 @@ $overlayMenuItemMargin: 5px;
 
     &.placename {
       .value {
-	font-size: 18px;
-	font-weight: bold;
+        &.external-link {
+          text-decoration: underline;
+        }
+      	font-size: 18px;
+      	font-weight: bold;
       }
     }
     
     &.coordinate { 
-	
-
       .name {
-	font-weight: bold;
+      	font-weight: bold;
       }
-
-      .value, .description {
-	font-size: 12px;
+      .value, 
+      .description {
+      	font-size: 12px;
       }
       
-      h1, fieldset, input, select, label, button{
+      h1,
+      fieldset,
+      input,
+      select,
+      label,
+      button {
         display: none;
       }
 
-      .output-label, .output-value, h2,
+      .output-label,
+      .output-value,
+      h2,
       label[for="transformations-output-coordinate-system"],
       select#transformations-output-coordinate-system {
-	display: block;
-	font-size: 13px;
+      	display: block;
+      	font-size: 13px;
       }
       
       h2 {
-	font-weight: normal;
-	margin-top: 15px;
+      	font-weight: normal;
+      	margin-top: 15px;
       }
 
       .output-label, .output-value,
       select#transformations-output-coordinate-system {
-	  margin: 0 0 5px 15px;
+    	  margin: 0 0 5px 15px;
       }
 
       label[for="transformations-output-coordinate-system"] {
-	font-size: 13px;
-	margin: 15px 0 2px 0;
+      	font-size: 13px;
+      	margin: 15px 0 2px 0;
       }
     }
 

@@ -2402,13 +2402,23 @@ focus for toolbar controls
     #locationWrapper .data.placename .value {
       font-size: 18px;
       font-weight: bold; }
+      #locationWrapper .data.placename .value.external-link {
+        text-decoration: underline; }
     #locationWrapper .data.coordinate .name {
       font-weight: bold; }
-    #locationWrapper .data.coordinate .value, #locationWrapper .data.coordinate .description {
+    #locationWrapper .data.coordinate .value,
+    #locationWrapper .data.coordinate .description {
       font-size: 12px; }
-    #locationWrapper .data.coordinate h1, #locationWrapper .data.coordinate fieldset, #locationWrapper .data.coordinate input, #locationWrapper .data.coordinate select, #locationWrapper .data.coordinate label, #locationWrapper .data.coordinate button {
+    #locationWrapper .data.coordinate h1,
+    #locationWrapper .data.coordinate fieldset,
+    #locationWrapper .data.coordinate input,
+    #locationWrapper .data.coordinate select,
+    #locationWrapper .data.coordinate label,
+    #locationWrapper .data.coordinate button {
       display: none; }
-    #locationWrapper .data.coordinate .output-label, #locationWrapper .data.coordinate .output-value, #locationWrapper .data.coordinate h2,
+    #locationWrapper .data.coordinate .output-label,
+    #locationWrapper .data.coordinate .output-value,
+    #locationWrapper .data.coordinate h2,
     #locationWrapper .data.coordinate label[for="transformations-output-coordinate-system"],
     #locationWrapper .data.coordinate select#transformations-output-coordinate-system {
       display: block;
