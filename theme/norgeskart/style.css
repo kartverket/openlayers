@@ -1015,7 +1015,7 @@ body {
   .embedContent .step-specific.descriptions input {
     margin-bottom: 20px; }
   .embedContent .step-specific.descriptions textarea {
-    height: 150px; }
+    height: 75px; }
   .embedContent .step-specific.descriptions #long-desc-explanation,
   .embedContent .step-specific.descriptions #short-desc-explanation {
     display: none;
