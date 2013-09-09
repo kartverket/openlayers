@@ -906,11 +906,41 @@ body {
       font-size: 18px; }
     .embedContent .step-specific.type button svg {
       width: 188px; }
-  .embedContent .step-specific.area .h {
-    float: left; }
-  .embedContent .step-specific.area input,
-  .embedContent .step-specific.area label {
-    float: right; }
+  .embedContent .step-specific.area {
+    /*
+    input,
+    label {
+      float: right;
+    }
+    */ }
+    .embedContent .step-specific.area .h {
+      float: left; }
+    .embedContent .step-specific.area .mode-options-container {
+      position: relative;
+      margin-bottom: 5px; }
+      .embedContent .step-specific.area .mode-options-container label {
+        margin: 0px 5px; }
+        .embedContent .step-specific.area .mode-options-container label[for="defineAreaModeDraw"] {
+          margin-right: 15px; }
+      .embedContent .step-specific.area .mode-options-container input#include-map-tools {
+        position: absolute;
+        top: 2px;
+        right: 0px; }
+      .embedContent .step-specific.area .mode-options-container label[for="include-map-tools"] {
+        position: absolute;
+        top: 0px;
+        right: 15px; }
+    .embedContent .step-specific.area .fixed-inputs-container {
+      display: none;
+      margin-bottom: 5px; }
+      .embedContent .step-specific.area .fixed-inputs-container input {
+        width: 75px;
+        padding: 2px 4px; }
+      .embedContent .step-specific.area .fixed-inputs-container span.x {
+        display: inline-block;
+        margin: 0px 5px; }
+      .embedContent .step-specific.area .fixed-inputs-container.on {
+        display: block; }
   .embedContent .step-specific.markers {
     padding: 25px 0 0 0; }
     .embedContent .step-specific.markers .h,

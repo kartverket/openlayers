@@ -1221,10 +1221,60 @@ button {
         float: left;
       }
 
+      /*
       input,
       label {
         float: right;
       }
+      */
+
+      .mode-options-container {
+        
+        position:relative;
+        margin-bottom:5px;
+
+        label {
+          margin:0px 5px;
+
+          &[for="defineAreaModeDraw"] {
+            margin-right:15px;
+          }
+        }
+
+        input#include-map-tools {
+          position:absolute;
+          top:2px;
+          right:0px;
+        }
+        label[for="include-map-tools"] {
+          position:absolute;
+          top:0px;
+          right:15px;
+        }
+      }
+
+      .fixed-inputs-container {
+
+        display:none;
+        margin-bottom:5px;
+
+        input {
+          width:75px;
+          padding:2px 4px;
+        }
+
+        span {
+          &.x {
+            display:inline-block;
+            margin:0px 5px;
+          }
+        }
+
+        &.on {
+          display:block;
+        }
+      }
+
     }
 
     /* elements present at step 4 (markers) */
