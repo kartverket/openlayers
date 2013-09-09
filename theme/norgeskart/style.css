@@ -76,9 +76,8 @@ body, #map, #basic-toolbar,
   position: absolute; }
 
 .embedContent .buttons-panel button, .splashscreen .widget .splash-button, .update-feature-label,
-.cancel-feature-label, .tool.height-profile .widget button,
-.tool.height-profile .widget .popular-route, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .embed-cancel-marker,
-.embed-add-marker, .height-profile-lightbox.splashscreen .widget .button-panel button, .emergency-poster-popup .contentContainer.location .button-panel button, .emergency-poster-preview-popup.splashscreen .widget .button-panel button, #searchSubmit {
+.cancel-feature-label, .tool.height-profile .widget button, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .embed-cancel-marker,
+.embed-add-marker, .tool.height-profile .widget .popular-route, .height-profile-lightbox.splashscreen .widget .button-panel button, .emergency-poster-popup .contentContainer.location .button-panel button, .emergency-poster-preview-popup.splashscreen .widget .button-panel button, #searchSubmit {
   border: 1px solid #003c6f;
   border-color: rgba(0, 60, 111, 0.82);
   cursor: pointer;
@@ -87,8 +86,7 @@ body, #map, #basic-toolbar,
   text-transform: uppercase; }
 
 .embedContent .buttons-panel button, .splashscreen .widget .splash-button, .update-feature-label,
-.cancel-feature-label, .tool.height-profile .widget button,
-.tool.height-profile .widget .popular-route, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .height-profile-lightbox.splashscreen .widget .button-panel button, .emergency-poster-popup .contentContainer.location .button-panel button.accept, .emergency-poster-preview-popup.splashscreen .widget .button-panel button {
+.cancel-feature-label, .tool.height-profile .widget button, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .height-profile-lightbox.splashscreen .widget .button-panel button, .emergency-poster-popup .contentContainer.location .button-panel button.accept, .emergency-poster-preview-popup.splashscreen .widget .button-panel button {
   background-color: #408ccd;
   background-image: -webkit-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
   background-image: -moz-linear-gradient(bottom, #0058a3, #408ccd 33%, #408ccd 66%, #0058a3);
@@ -98,8 +96,7 @@ body, #map, #basic-toolbar,
 
 .embed-cancel-marker,
 .embed-add-marker, .update-feature-label:disabled,
-.cancel-feature-label:disabled, .tool.height-profile .widget button:disabled,
-.tool.height-profile .widget .popular-route:disabled, .emergency-poster-popup .contentContainer.location .button-panel button.redo {
+.cancel-feature-label:disabled, .tool.height-profile .widget button:disabled, .tool.height-profile .widget .popular-route, .emergency-poster-popup .contentContainer.location .button-panel button.redo {
   background-color: white;
   background-image: -webkit-linear-gradient(bottom, #d8d8d8, white 33%, white 66%, #d8d8d8);
   background-image: -moz-linear-gradient(bottom, #d8d8d8, white 33%, white 66%, #d8d8d8);
@@ -108,54 +105,45 @@ body, #map, #basic-toolbar,
   background-image: linear-gradient(bottom, #d8d8d8, white 33%, white 66%, #d8d8d8); }
 
 .embedContent .buttons-panel button, .splashscreen .widget .splash-button, .update-feature-label,
-.cancel-feature-label, .tool.height-profile .widget button,
-.tool.height-profile .widget .popular-route, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .embed-cancel-marker,
-.embed-add-marker, .height-profile-lightbox.splashscreen .widget .button-panel button, .emergency-poster-popup .contentContainer.location .button-panel button, .emergency-poster-preview-popup.splashscreen .widget .button-panel button {
+.cancel-feature-label, .tool.height-profile .widget button, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .embed-cancel-marker,
+.embed-add-marker, .tool.height-profile .widget .popular-route, .height-profile-lightbox.splashscreen .widget .button-panel button, .emergency-poster-popup .contentContainer.location .button-panel button, .emergency-poster-preview-popup.splashscreen .widget .button-panel button {
   background-size: 150%;
   background-position: 0 100%; }
   .embedContent .buttons-panel button, .splashscreen .widget .splash-button, .update-feature-label,
-  .cancel-feature-label, .tool.height-profile .widget button,
-  .tool.height-profile .widget .popular-route, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .embed-cancel-marker,
-  .embed-add-marker, .height-profile-lightbox.splashscreen .widget .button-panel button, .emergency-poster-popup .contentContainer.location .button-panel button, .emergency-poster-preview-popup.splashscreen .widget .button-panel button, .embedContent .buttons-panel button:hover, .splashscreen .widget .splash-button:hover, .update-feature-label:hover,
-  .cancel-feature-label:hover, .tool.height-profile .widget button:hover,
-  .tool.height-profile .widget .popular-route:hover, .tool.transformations .widget button:hover, .emergency-poster-popup .contentContainer.terms .button-panel button:hover, .embed-cancel-marker:hover,
-  .embed-add-marker:hover, .height-profile-lightbox.splashscreen .widget .button-panel button:hover, .emergency-poster-popup .contentContainer.location .button-panel button:hover, .emergency-poster-preview-popup.splashscreen .widget .button-panel button:hover, .embedContent .buttons-panel button:focus, .splashscreen .widget .splash-button:focus, .update-feature-label:focus,
-  .cancel-feature-label:focus, .tool.height-profile .widget button:focus,
-  .tool.height-profile .widget .popular-route:focus, .tool.transformations .widget button:focus, .emergency-poster-popup .contentContainer.terms .button-panel button:focus, .embed-cancel-marker:focus,
-  .embed-add-marker:focus, .height-profile-lightbox.splashscreen .widget .button-panel button:focus, .emergency-poster-popup .contentContainer.location .button-panel button:focus, .emergency-poster-preview-popup.splashscreen .widget .button-panel button:focus {
+  .cancel-feature-label, .tool.height-profile .widget button, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .embed-cancel-marker,
+  .embed-add-marker, .tool.height-profile .widget .popular-route, .height-profile-lightbox.splashscreen .widget .button-panel button, .emergency-poster-popup .contentContainer.location .button-panel button, .emergency-poster-preview-popup.splashscreen .widget .button-panel button, .embedContent .buttons-panel button:hover, .splashscreen .widget .splash-button:hover, .update-feature-label:hover,
+  .cancel-feature-label:hover, .tool.height-profile .widget button:hover, .tool.transformations .widget button:hover, .emergency-poster-popup .contentContainer.terms .button-panel button:hover, .embed-cancel-marker:hover,
+  .embed-add-marker:hover, .tool.height-profile .widget .popular-route:hover, .height-profile-lightbox.splashscreen .widget .button-panel button:hover, .emergency-poster-popup .contentContainer.location .button-panel button:hover, .emergency-poster-preview-popup.splashscreen .widget .button-panel button:hover, .embedContent .buttons-panel button:focus, .splashscreen .widget .splash-button:focus, .update-feature-label:focus,
+  .cancel-feature-label:focus, .tool.height-profile .widget button:focus, .tool.transformations .widget button:focus, .emergency-poster-popup .contentContainer.terms .button-panel button:focus, .embed-cancel-marker:focus,
+  .embed-add-marker:focus, .tool.height-profile .widget .popular-route:focus, .height-profile-lightbox.splashscreen .widget .button-panel button:focus, .emergency-poster-popup .contentContainer.location .button-panel button:focus, .emergency-poster-preview-popup.splashscreen .widget .button-panel button:focus {
     -webkit-transition-property: background-position;
     -webkit-transition-duration: .03s;
     -webkit-transition-timing-function: cubic-bezier(0.25, 0.5, 0.75, 0.5); }
   .embedContent .buttons-panel button:hover, .splashscreen .widget .splash-button:hover, .update-feature-label:hover,
-  .cancel-feature-label:hover, .tool.height-profile .widget button:hover,
-  .tool.height-profile .widget .popular-route:hover, .tool.transformations .widget button:hover, .emergency-poster-popup .contentContainer.terms .button-panel button:hover, .embed-cancel-marker:hover,
-  .embed-add-marker:hover, .height-profile-lightbox.splashscreen .widget .button-panel button:hover, .emergency-poster-popup .contentContainer.location .button-panel button:hover, .emergency-poster-preview-popup.splashscreen .widget .button-panel button:hover, .embedContent .buttons-panel button:focus, .splashscreen .widget .splash-button:focus, .update-feature-label:focus,
-  .cancel-feature-label:focus, .tool.height-profile .widget button:focus,
-  .tool.height-profile .widget .popular-route:focus, .tool.transformations .widget button:focus, .emergency-poster-popup .contentContainer.terms .button-panel button:focus, .embed-cancel-marker:focus,
-  .embed-add-marker:focus, .height-profile-lightbox.splashscreen .widget .button-panel button:focus, .emergency-poster-popup .contentContainer.location .button-panel button:focus, .emergency-poster-preview-popup.splashscreen .widget .button-panel button:focus {
+  .cancel-feature-label:hover, .tool.height-profile .widget button:hover, .tool.transformations .widget button:hover, .emergency-poster-popup .contentContainer.terms .button-panel button:hover, .embed-cancel-marker:hover,
+  .embed-add-marker:hover, .tool.height-profile .widget .popular-route:hover, .height-profile-lightbox.splashscreen .widget .button-panel button:hover, .emergency-poster-popup .contentContainer.location .button-panel button:hover, .emergency-poster-preview-popup.splashscreen .widget .button-panel button:hover, .embedContent .buttons-panel button:focus, .splashscreen .widget .splash-button:focus, .update-feature-label:focus,
+  .cancel-feature-label:focus, .tool.height-profile .widget button:focus, .tool.transformations .widget button:focus, .emergency-poster-popup .contentContainer.terms .button-panel button:focus, .embed-cancel-marker:focus,
+  .embed-add-marker:focus, .tool.height-profile .widget .popular-route:focus, .height-profile-lightbox.splashscreen .widget .button-panel button:focus, .emergency-poster-popup .contentContainer.location .button-panel button:focus, .emergency-poster-preview-popup.splashscreen .widget .button-panel button:focus {
     background-position: 0 0%;
     text-decoration: underline; }
 
 .update-feature-label,
-.cancel-feature-label, .tool.height-profile .widget button,
-.tool.height-profile .widget .popular-route, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .embed-cancel-marker,
-.embed-add-marker {
+.cancel-feature-label, .tool.height-profile .widget button, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .embed-cancel-marker,
+.embed-add-marker, .tool.height-profile .widget .popular-route {
   height: 24px;
   width: auto;
   position: relative;
   line-height: 24px; }
 
 .update-feature-label,
-.cancel-feature-label, .tool.height-profile .widget button,
-.tool.height-profile .widget .popular-route, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button {
+.cancel-feature-label, .tool.height-profile .widget button, .tool.transformations .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button {
   border: 1px solid #01437c;
   padding: 0 24px 0 12px;
   text-align: left; }
 
 .embed-cancel-marker,
 .embed-add-marker, .update-feature-label:disabled,
-.cancel-feature-label:disabled, .tool.height-profile .widget button:disabled,
-.tool.height-profile .widget .popular-route:disabled {
+.cancel-feature-label:disabled, .tool.height-profile .widget button:disabled, .tool.height-profile .widget .popular-route {
   border: 1px solid #01437c;
   padding: 0 12px;
   text-align: left; }
@@ -1632,14 +1620,19 @@ focus for toolbar controls
     border: none;
     margin-top: 20px;
     padding-top: 1em; }
-  .tool.height-profile .widget button,
-  .tool.height-profile .widget .popular-route {
+  .tool.height-profile .widget button {
     padding: 0 12px 0 12px; }
-    .tool.height-profile .widget button:disabled,
-    .tool.height-profile .widget .popular-route:disabled {
+    .tool.height-profile .widget button:disabled {
       color: #606161;
       cursor: not-allowed; }
+    .tool.height-profile .widget button[type='submit'] {
+      height: 40px;
+      text-align: center;
+      width: 100%;
+      font-size: 12px; }
   .tool.height-profile .widget .popular-route {
+    color: #606161;
+    padding: 0 12px 0 12px;
     display: block;
     text-decoration: none;
     margin: 0 0 1em 0;

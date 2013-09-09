@@ -2253,8 +2253,7 @@ focus for toolbar controls
       padding-top: 1em;
     }
 
-    button,
-    .popular-route {
+    button {
       @extend %blue-one-lined-button;
       padding: 0 12px 0 12px;
 
@@ -2263,8 +2262,19 @@ focus for toolbar controls
         color: $panel-color-hex;
         cursor: not-allowed;
       }
+      &[type='submit'] {
+        height: 40px;
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+      }
     }
+
     .popular-route {
+      @extend %grey-one-lined-button;
+      color: $panel-color-hex;
+      padding: 0 12px 0 12px;
+
       display: block;
       text-decoration: none;
       margin: 0 0 1em 0;
