@@ -1785,6 +1785,12 @@ button {
   .olControlPanWestItemInactive {
     top: 32px;
   }
+
+  &.disabled {
+    button {
+      opacity:0.5;
+    }
+  }
 }
 
 /**********************

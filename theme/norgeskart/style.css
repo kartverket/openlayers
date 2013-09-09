@@ -1287,6 +1287,8 @@ body {
   #pan-panel .olControlPanEastItemInactive,
   #pan-panel .olControlPanWestItemInactive {
     top: 32px; }
+  #pan-panel.disabled button {
+    opacity: 0.5; }
 
 /**********************
 ==== hover/focus styling ====
