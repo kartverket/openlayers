@@ -40,7 +40,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
 
-#basic-toolbar,
+#embed-basic-toolbar, #embed-basic-toolbar .collapse-toolbar-toggle.on, #basic-toolbar,
 #secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
 #share-toolbar .panel .tool.active .widget, .embedContent .step-specific.type button, .embedContent .step-specific.descriptions #long-desc-explanation,
 .embedContent .step-specific.descriptions #short-desc-explanation, #searchResults, .user-marker,
@@ -49,7 +49,8 @@ button, .layersDiv .vectorWidgetToggleBtn,
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
 #basic-toolbar .panel + .panel,
-#secondary-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, .embedContent .step-specific, .embedContent .buttons-panel, .embedContent .step-specific.markers .markers-list, .embedContent .step-specific.markers .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .tool.draw .widget ul button span, .tool.draw .widget .measures .h, .tool.height-profile .widget .error-message, .emergency-poster-popup .contentContainer .button-panel, .emergency-poster-popup .contentContainer.location .iframe-container {
+#secondary-toolbar .panel + .panel,
+#embed-basic-toolbar .panel + .panel, #help-panel.active .shortcuts-panel, .embedContent .step-specific, .embedContent .buttons-panel, .embedContent .step-specific.markers .markers-list, .embedContent .step-specific.markers .markers-list li, #searchResults .result-category + .result-category, .sub550w #search-toolbar .panel + .panel, .tool.draw .widget ul button span, .tool.draw .widget .measures .h, .tool.height-profile .widget .error-message, .emergency-poster-popup .contentContainer .button-panel, .emergency-poster-popup .contentContainer.location .iframe-container {
   /* v-divider.png base64-encoded */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC");
   background-repeat: repeat-x; }
@@ -216,10 +217,47 @@ body {
   color: #fff; }
   .toolbar .panel {
     background-position: left top;
-    display: inline-block; }
+    /*    display: inline-block; */ }
   .toolbar button {
     background-color: transparent;
     border: none; }
+
+#embed-basic-toolbar {
+  position: absolute;
+  top: 0;
+  width: 68px;
+  transition-duration: 0.5s;
+  transition-property: -webkit-transform;
+  transition-property: -o-transform;
+  transition-property: -moz-transform;
+  transition-property: -ms-transform;
+  transition-property: transform; }
+  #embed-basic-toolbar .collapse-toolbar-toggle {
+    width: 100%;
+    padding: 5px;
+    border-radius: 0; }
+  #embed-basic-toolbar .collapse-toolbar-toggle.on {
+    background-color: #606161;
+    background-color: rgba(80, 80, 80, 0.9);
+    display: none; }
+  #embed-basic-toolbar .collapse-toolbar-panel {
+    position: relative;
+    padding-top: 2px; }
+  #embed-basic-toolbar.collapsed {
+    -webkit-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%); }
+    #embed-basic-toolbar.collapsed .collapse-toolbar-toggle.on {
+      position: absolute;
+      top: 100%;
+      border-radius: 0;
+      display: block; }
+  #embed-basic-toolbar .panel {
+    padding: 20px 0; }
+    #embed-basic-toolbar .panel:last-child {
+      padding-bottom: 0; }
 
 #basic-toolbar,
 #secondary-toolbar {
@@ -228,9 +266,13 @@ body {
   bottom: 0;
   width: 68px;
   padding-top: 13px; }
-  #basic-toolbar .panel:last-child,
-  #secondary-toolbar .panel:last-child {
-    padding-bottom: 0; }
+  #basic-toolbar .panel,
+  #secondary-toolbar .panel {
+    width: 68px;
+    padding: 20px 0; }
+    #basic-toolbar .panel:last-child,
+    #secondary-toolbar .panel:last-child {
+      padding-bottom: 0; }
 
 #basic-toolbar {
   left: 0;
@@ -238,11 +280,6 @@ body {
 
 #secondary-toolbar {
   right: 0; }
-
-#basic-toolbar .panel,
-#secondary-toolbar .panel {
-  width: 68px;
-  padding: 20px 0; }
 
 #search-toolbar {
   position: absolute;
@@ -282,18 +319,20 @@ body {
   #share-toolbar .panel {
     width: 60px;
     height: 39px;
-    text-align: center; }
+    text-align: center;
+    display: inline-block; }
   #share-toolbar .icon {
     width: 20px;
     height: 20px; }
 
 #basic-toolbar .icon,
-#secondary-toolbar .icon {
+#secondary-toolbar .icon,
+#embed-basic-toolbar .icon {
   width: 30px;
   height: 30px; }
 
-#basic-toolbar .icon.plus,
-#basic-toolbar .icon.minus {
+#zoom-panel .icon.plus,
+#zoom-panel .icon.minus {
   width: 20px;
   height: 20px; }
 

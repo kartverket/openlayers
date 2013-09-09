@@ -252,13 +252,66 @@ button {
 
   .panel {
     background-position: left top;
-    display: inline-block;
+/*    display: inline-block; */
   }
 
   button {
     background-color: transparent;
     border: none;
   }
+}
+#embed-basic-toolbar {
+  @extend %shadow;
+
+  position: absolute;
+  top: 0;
+  width: 68px;
+  transition-duration: 0.5s;
+  transition-property: -webkit-transform;
+  transition-property: -o-transform;
+  transition-property: -moz-transform;
+  transition-property: -ms-transform;
+  transition-property: transform;
+
+
+  .collapse-toolbar-toggle {
+    width: 100%;
+    padding: 5px;
+    border-radius: 0;
+  }
+  .collapse-toolbar-toggle.on {
+    background-color: $panel-color-hex;
+    background-color: $panel-color;
+    display: none;
+    @extend %shadow;
+  }
+  .collapse-toolbar-panel {
+    position: relative;
+    padding-top: 2px;
+  }
+
+  &.collapsed {
+    -webkit-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+
+    .collapse-toolbar-toggle.on {
+      position: absolute;
+      top: 100%;
+      border-radius: 0;
+      display: block;
+    }
+  }
+
+  .panel{
+    padding: 20px 0;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
 }
 
 #basic-toolbar,
@@ -271,8 +324,13 @@ button {
   width: 68px;
   padding-top: 13px;
   
-  .panel:last-child {
-    padding-bottom: 0;
+  .panel {
+    width: 68px;
+    padding: 20px 0;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 }
 #basic-toolbar {
@@ -282,11 +340,7 @@ button {
 #secondary-toolbar {
   right: 0;
 }
-#basic-toolbar .panel,
-#secondary-toolbar .panel {
-  width: 68px;
-  padding: 20px 0;
-}
+
 
 #search-toolbar {
   position: absolute;
@@ -333,6 +387,7 @@ button {
     width: $share-toolbar-panel-width;
     height: $share-toolbar-panel-height;
     text-align: center;
+    display: inline-block;
   }
 
   .icon {
@@ -343,7 +398,8 @@ button {
 }
 
 #basic-toolbar .panel + .panel,
-#secondary-toolbar .panel + .panel {
+#secondary-toolbar .panel + .panel,
+#embed-basic-toolbar .panel + .panel {
   @extend %horizontal-divider;
 }
 
@@ -355,16 +411,19 @@ button {
 }
 
 #basic-toolbar,
-#secondary-toolbar {
+#secondary-toolbar,
+#embed-basic-toolbar {
   .icon {
     width: 30px;
     height: 30px;
   }
 }
-#basic-toolbar .icon.plus,
-#basic-toolbar .icon.minus {
-  width: 20px;
-  height: 20px;
+#zoom-panel {
+  .icon.plus,
+  .icon.minus {
+    width: 20px;
+    height: 20px;
+  }
 }
 .icon {
   fill: #fff;
