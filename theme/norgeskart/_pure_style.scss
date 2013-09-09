@@ -3154,7 +3154,7 @@ $overlayMenuItemMargin: 5px;
   top: 50%;
   left: 50%;
   z-index: 2000;
-  margin: -76px 0 0 -76px;
+  margin: -77.5px 0 0 -77.5px;
   display: none;
 
   &.bySearch {
@@ -3173,7 +3173,11 @@ $overlayMenuItemMargin: 5px;
     }
   }
 
-  &.onClose { 
+  &.onClose {
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+
     #PMmenu {
       left: 100%;
       top: 100%;
