@@ -2159,6 +2159,24 @@ focus for toolbar controls
     }
   }
 }
+#feature-label {
+  width: 100%;
+}
+.update-feature-label,
+.cancel-feature-label {
+  @extend %blue-one-lined-button;
+  padding: 0 12px 0 12px;
+  margin-top: 1em;
+
+  &:disabled {
+    @extend %grey-one-lined-button;
+    color: $panel-color-hex;
+    cursor: not-allowed;
+  }
+}
+.cancel-feature-label {
+  float: right;
+}
 
 /***************************
   height profile control
@@ -2177,10 +2195,16 @@ focus for toolbar controls
     label,
     button {
       display: block;
-      margin-top: 30px;
+      margin-top: 20px;
+    }
+    fieldset {
+      border: none;
+      margin-top: 20px;
+      padding-top: 1em;
     }
 
-    button {
+    button,
+    .popular-route {
       @extend %blue-one-lined-button;
       padding: 0 12px 0 12px;
 
@@ -2189,6 +2213,13 @@ focus for toolbar controls
         color: $panel-color-hex;
         cursor: not-allowed;
       }
+    }
+    .popular-route {
+      display: block;
+      text-decoration: none;
+      margin: 0 0 1em 0;
+      text-transform: none;
+      font-size: 12px;
     }
 
     .error-message {
