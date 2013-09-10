@@ -232,14 +232,34 @@ body {
   transition-property: -moz-transform;
   transition-property: -ms-transform;
   transition-property: transform; }
+  #embed-basic-toolbar .panel {
+    padding: 20px 0; }
+    #embed-basic-toolbar .panel:last-child {
+      padding-bottom: 0; }
   #embed-basic-toolbar .collapse-toolbar-toggle {
     width: 100%;
     padding: 5px;
-    border-radius: 0; }
-  #embed-basic-toolbar .collapse-toolbar-toggle.on {
-    background-color: #606161;
-    background-color: rgba(80, 80, 80, 0.9);
-    display: none; }
+    border-radius: 0;
+    text-indent: -999em;
+    overflow: hidden; }
+    #embed-basic-toolbar .collapse-toolbar-toggle:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin: 0 0 10px -10px;
+      border: 10px solid transparent; }
+    #embed-basic-toolbar .collapse-toolbar-toggle.on {
+      background-color: #606161;
+      background-color: rgba(80, 80, 80, 0.9);
+      display: none; }
+      #embed-basic-toolbar .collapse-toolbar-toggle.on:after {
+        border-bottom: none;
+        border-top-color: #fff; }
+    #embed-basic-toolbar .collapse-toolbar-toggle.off:after {
+      border-top: none;
+      border-bottom-color: #fff; }
   #embed-basic-toolbar .collapse-toolbar-panel {
     position: relative;
     padding-top: 2px; }
@@ -254,10 +274,8 @@ body {
       top: 100%;
       border-radius: 0;
       display: block; }
-  #embed-basic-toolbar .panel {
-    padding: 20px 0; }
-    #embed-basic-toolbar .panel:last-child {
-      padding-bottom: 0; }
+    #embed-basic-toolbar.collapsed .collapse-toolbar-toggle.off:after {
+      border-bottom-color: transparent; }
 
 #basic-toolbar,
 #secondary-toolbar {
@@ -2317,14 +2335,16 @@ focus for toolbar controls
     left: 50%;
     margin: -12px 0 0 -12px;
     width: 24px;
-    height: 24px; }
+    height: 24px;
+    border-radius: 50%; }
   #pointMenu #PMopener,
   #pointMenu #PMcloser {
     background-image: url("img/src/point-menu-icon-sprite.svg");
     background-size: 24px;
     height: 24px;
     width: 24px;
-    overflow: hidden; }
+    overflow: hidden;
+    border-radius: 50%; }
   #pointMenu #PMopener {
     background-position: 0 0; }
   #pointMenu #PMcloser {

@@ -273,17 +273,47 @@ button {
   transition-property: -ms-transform;
   transition-property: transform;
 
+  .panel{
+    padding: 20px 0;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
 
   .collapse-toolbar-toggle {
     width: 100%;
     padding: 5px;
     border-radius: 0;
-  }
-  .collapse-toolbar-toggle.on {
-    background-color: $panel-color-hex;
-    background-color: $panel-color;
-    display: none;
-    @extend %shadow;
+    text-indent: -999em;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin: 0 0 10px -10px;
+      border: 10px solid transparent;
+    }
+
+    &.on {
+      @extend %shadow;
+
+      background-color: $panel-color-hex;
+      background-color: $panel-color;
+      display: none;
+
+      &:after {
+        border-bottom: none;
+        border-top-color: #fff;
+      }
+    }
+    &.off:after {
+      border-top: none;
+      border-bottom-color: #fff;
+    }
+
   }
   .collapse-toolbar-panel {
     position: relative;
@@ -297,18 +327,16 @@ button {
     -ms-transform: translateY(-100%);
     transform: translateY(-100%);
 
-    .collapse-toolbar-toggle.on {
-      position: absolute;
-      top: 100%;
-      border-radius: 0;
-      display: block;
-    }
-  }
-
-  .panel{
-    padding: 20px 0;
-    &:last-child {
-      padding-bottom: 0;
+    .collapse-toolbar-toggle {
+      &.on {
+        position: absolute;
+        top: 100%;
+        border-radius: 0;
+        display: block;
+      }
+      &.off:after {
+        border-bottom-color: transparent;
+      }
     }
   }
 
@@ -3339,6 +3367,7 @@ $overlayMenuItemMargin: 5px;
     margin: -12px 0 0 -12px;
     width: 24px;
     height: 24px;
+    border-radius: 50%;
   }
 
   #PMopener,
@@ -3348,6 +3377,7 @@ $overlayMenuItemMargin: 5px;
     height: 24px;
     width: 24px;
     overflow: hidden;
+    border-radius: 50%;
   }
   #PMopener {
     background-position: 0 0;
