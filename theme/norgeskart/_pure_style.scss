@@ -2146,11 +2146,13 @@ focus for toolbar controls
     height: 20px;
   }
   .tool.active > button:after {
-    border: 6px solid transparent;
-    border-right-color: $panel-color-hex;
-    border-right-color: $panel-color;
+    border: 10px solid transparent;
+    border-right-color: #484848;
+    border-right-color: rgba(0, 0, 0, 0.3);
     right: 100%;
     top: 50%;
+    margin-top: -5px;
+
   }
 }
 
