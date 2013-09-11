@@ -4,10 +4,10 @@
   src: url("/fonts/MetaWeb-Book.eot");
   src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); }
 
-.embedContent .step-specific.type button.static-button:before, .embedContent .step-specific.area:before, .embedContent .step-specific.markers .instructions:before, .embedContent .step-specific.type button.static-button:after, .embedContent .step-specific.area:after, .embedContent .step-specific.markers .instructions:after {
+#make-your-own-panel.active > .widget:before, .embedContent .step-specific.type button.static-button:before, .embedContent .step-specific.area:before, .embedContent .step-specific.markers .instructions:before, #make-your-own-panel.active > .widget:after, .embedContent .step-specific.type button.static-button:after, .embedContent .step-specific.area:after, .embedContent .step-specific.markers .instructions:after {
   content: '';
   display: table; }
-.embedContent .step-specific.type button.static-button:after, .embedContent .step-specific.area:after, .embedContent .step-specific.markers .instructions:after {
+#make-your-own-panel.active > .widget:after, .embedContent .step-specific.type button.static-button:after, .embedContent .step-specific.area:after, .embedContent .step-specific.markers .instructions:after {
   clear: both; }
 
 .toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
@@ -15,7 +15,7 @@
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
 
-.getURLcontent .h, .embedContent header .h, .map-load-error h1 {
+.getURLcontent .h, #make-your-own-panel.active > .widget a.external-link .h, .embedContent header .h, .map-load-error h1 {
   font-family: MetaBook, Arial, sans-serif;
   font-size: 30px;
   font-weight: normal; }
@@ -40,7 +40,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
 
-.embedContent .step-specific.type button, #embed-basic-toolbar, #embed-basic-toolbar .collapse-toolbar-toggle.on, #basic-toolbar,
+#make-your-own-panel.active > .widget a.external-link, .embedContent .step-specific.type button, #embed-basic-toolbar, #embed-basic-toolbar .collapse-toolbar-toggle.on, #basic-toolbar,
 #secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
 #share-toolbar .panel .tool.active .widget, .embedContent .step-specific.descriptions #long-desc-explanation,
 .embedContent .step-specific.descriptions #short-desc-explanation, #searchResults, .user-marker,
@@ -86,7 +86,7 @@ body, #map, #basic-toolbar,
   color: #fff;
   text-transform: uppercase; }
 
-.embedContent .step-specific.type button {
+#make-your-own-panel.active > .widget a.external-link, .embedContent .step-specific.type button {
   background-image: -webkit-linear-gradient(top, #5a5951, #3b3b3b);
   background-image: -moz-linear-gradient(top, #5a5951, #3b3b3b);
   background-image: -ms-linear-gradient(top, #5a5951, #3b3b3b);
@@ -98,10 +98,10 @@ body, #map, #basic-toolbar,
   padding: 12px 12px 30px;
   width: 210px;
   height: 210px; }
-  .embedContent .step-specific.type button.active {
+  #make-your-own-panel.active > .widget a.active.external-link, .embedContent .step-specific.type button.active {
     border: none;
     box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
-  .embedContent .step-specific.type button span {
+  #make-your-own-panel.active > .widget a.external-link span, .embedContent .step-specific.type button span {
     text-align: left;
     color: #fff;
     font-family: MetaBook, Arial, sans-serif;
@@ -200,7 +200,7 @@ body, #map, #basic-toolbar,
   word-break: break-all;
   margin-bottom: 20px; }
 
-.tool.draw .widget .h, .tool.height-profile .widget .h, .tool.transformations .widget h1 {
+#make-your-own-panel.active > .widget .h, .tool.draw .widget .h, .tool.height-profile .widget .h, .tool.transformations .widget h1 {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 300; }
@@ -859,12 +859,42 @@ body {
 === help panel ===
 ******************************************/
 #make-your-own-panel.active > .widget {
-  width: 307px;
-  display: block; }
+  width: 475px;
+  display: block;
+  padding: 18px; }
+  #make-your-own-panel.active > .widget a.external-link {
+    height: auto;
+    min-height: 280px;
+    text-align: center;
+    float: left;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px; }
+    #make-your-own-panel.active > .widget a.external-link + .external-link {
+      float: right; }
+    #make-your-own-panel.active > .widget a.external-link .illustration {
+      width: 100px;
+      height: 100px;
+      stroke-width: 1.5; }
+    #make-your-own-panel.active > .widget a.external-link .h {
+      font-size: 18px;
+      text-transform: none;
+      margin-bottom: 15px; }
+    #make-your-own-panel.active > .widget a.external-link span,
+    #make-your-own-panel.active > .widget a.external-link .h {
+      text-align: left;
+      display: block;
+      text-decoration: none;
+      color: #fff; }
+    #make-your-own-panel.active > .widget a.external-link span {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px; }
+    #make-your-own-panel.active > .widget a.external-link:hover .h, #make-your-own-panel.active > .widget a.external-link:focus .h, #make-your-own-panel.active > .widget a.external-link:active .h {
+      text-decoration: underline; }
   #make-your-own-panel.active > .widget .h {
-    font-size: 12px;
-    text-transform: uppercase;
-    margin-bottom: 10px; }
+    margin-bottom: 15px; }
 
 /******************************************
 === help panel ===

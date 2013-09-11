@@ -1160,13 +1160,61 @@ button {
       @extend %selected-button;
     }
     > .widget {
-      width: 307px;
+      width: 475px;
       display: block;
+      padding: 18px;
+
+      @extend %clearfix;
+
+      a.external-link {
+        @extend %big-button;
+        height: auto;
+        min-height: 280px;
+        text-align: center;
+        float: left;
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        padding: 15px;
+
+        + .external-link {
+          float: right;
+        }
+        .illustration {
+          width: 100px;
+          height: 100px;
+          stroke-width: 1.5;
+        }
+        .h {
+          @extend %header-font;
+          font-size: 18px;
+          text-transform: none;
+          margin-bottom: 15px;
+        }
+        span,
+        .h {
+          text-align: left;
+          display: block;
+          text-decoration: none;
+          color: #fff;
+        }
+        span {
+          display: block;
+          margin-top: 10px;
+          font-size: 12px;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+          .h {
+            text-decoration: underline;
+          }
+        }
+      }
 
       .h {
-        font-size: 12px;
-        text-transform: uppercase;
-        margin-bottom: 10px;
+        @extend %widget-main-heading;
+        margin-bottom: 15px;
       }
     }
     .shortcuts-panel {
