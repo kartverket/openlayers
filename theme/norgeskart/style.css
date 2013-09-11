@@ -815,11 +815,13 @@ body {
   display: none; }
 .embedContent .step-specific.preview {
   overflow: auto;
-  max-height: 500px; }
+  max-height: 400px; }
   .embedContent .step-specific.preview section {
     padding-bottom: 10px; }
     .embedContent .step-specific.preview section .h {
       padding-bottom: 5px; }
+    .embedContent .step-specific.preview section.mapContainer {
+      padding-bottom: 0px; }
   .embedContent .step-specific.preview iframe {
     margin-right: 5px; }
 .embedContent .progress {

@@ -1108,18 +1108,22 @@ button {
 
     &.preview {
       overflow: auto;
-      max-height: 500px;
+      max-height: 400px;
 
       section {
-	padding-bottom: 10px;
-	  
-	.h {
-	  padding-bottom: 5px;	      
-	}
+      	padding-bottom: 10px;
+      	  
+      	.h {
+      	  padding-bottom: 5px;	      
+      	}
+
+        &.mapContainer {
+          padding-bottom:0px;
+        }
       }
 
       iframe {
-	  margin-right: 5px;
+	       margin-right: 5px;
       }
     }
   }
