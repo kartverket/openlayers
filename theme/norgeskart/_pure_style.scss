@@ -1107,8 +1107,6 @@ button {
     }
 
     &.preview {
-      overflow: auto;
-      max-height: 400px;
 
       section {
       	padding-bottom: 10px;
@@ -1117,9 +1115,14 @@ button {
       	  padding-bottom: 5px;	      
       	}
 
-        &.mapContainer {
+        &.map-container {
           padding-bottom:0px;
         }
+      }
+
+      &.limit-height {
+        overflow: auto;
+        max-height: 350px;
       }
 
       iframe {
