@@ -99,6 +99,30 @@ $share-toolbar-panel-height: 39px;
 
 $button-light-blue: #408ccd;
 $button-dark-blue: #0058a3;
+$grey: rgba(127, 127, 127, 1);
+$white: #fff;
+
+@mixin active-step($name, $step, $stepCount) {
+  &.#{$name}-active {
+    $firstStop: $grey percentage(($step - 2) / ($stepCount - 1));
+    $midStop:  $white percentage(($step - 1)/ ($stepCount - 1));
+    $lastStop:  $grey percentage($step / ($stepCount - 1));
+
+    background-image: -webkit-linear-gradient(left, $firstStop, $midStop, $lastStop);
+    background-image: -moz-linear-gradient(left, $firstStop, $midStop, $lastStop);
+    background-image: -ms-linear-gradient(left, $firstStop, $midStop, $lastStop);
+    background-image: -o-linear-gradient(left, $firstStop, $midStop, $lastStop);
+    background-image: linear-gradient(left, $firstStop, $midStop, $lastStop);
+
+    .#{$name} .step-label {
+      color:#fff;
+    }
+
+    .#{$name} .step-number {
+      background-color: #fff;
+    }
+  }
+}
 
 @mixin button-gradient($start, $end) {
   background-color: $start;
@@ -107,6 +131,38 @@ $button-dark-blue: #0058a3;
   background-image: -ms-linear-gradient(bottom, $end, $start 33%, $start 66%, $end);
   background-image: -o-linear-gradient(bottom, $end, $start 33%, $start 66%, $end);
   background-image: linear-gradient(bottom, $end, $start 33%, $start 66%, $end);
+}
+@mixin top-bottom-gradient($start, $end) {
+  background-image: -webkit-linear-gradient(top, $start, $end);
+  background-image: -moz-linear-gradient(top, $start, $end);
+  background-image: -ms-linear-gradient(top, $start, $end);
+  background-image: -o-linear-gradient(top, $start, $end);
+  background-image: linear-gradient(top, $start, $end);
+}
+%big-button {
+  @extend %shadow;
+
+  @include top-bottom-gradient(#5a5951, #3b3b3b);
+
+  border-radius: 7px;
+  border: 1px solid #939292;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.7), 2px 2px 3px -1px #939292 inset;
+
+  padding: 12px 12px 30px;
+  width: 210px;
+  height: 210px;
+
+  &.active {
+    border: none;
+    box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
+  }
+
+  span {
+    text-align: left;
+    color: #fff;
+    font-family: MetaBook, Arial, sans-serif;
+    font-size: 18px;
+  }
 }
 
 %blue-button-gradient {
@@ -202,6 +258,65 @@ $button-dark-blue: #0058a3;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 300;
+}
+
+%progress-bullets {
+  list-style: none;
+  background-image: -webkit-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
+  background-image: -moz-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
+  background-image: -ms-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
+  background-image: -o-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
+  background-image: linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
+  background-size: 100% 2px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: absolute;
+
+  li {
+    display: inline-block;
+    position: relative;
+    text-indent: -999em;
+    margin-right: 2em;
+    width: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.disabled {
+      opacity: 0.2;
+      filter: alpha(opacity=20);
+    }
+  }
+  .step-number {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #aaa;
+    color: $panel-color;
+    text-indent: 0;
+    text-align: center;
+    line-height: 20px;
+  }
+  .step-label {
+    position: absolute;
+    top: 24px;
+    left: -10px;
+    height: 10px;
+    width: 40px;
+    font-size: 9px;
+    font-weight: bold;
+    color: #aaa;
+    text-indent: 0;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 10px;
+  }
 }
 
 html {
@@ -1129,66 +1244,14 @@ button {
   }
 
   .progress {
-    list-style: none;
-    background-image: -webkit-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
-    background-image: -moz-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
-    background-image: -ms-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
-    background-image: -o-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
-    background-image: linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
-    background-size: 100% 2px;
-    background-position: 0 50%;
-    background-repeat: no-repeat;
-    display: inline-block;
-    position: absolute;
+    @extend %progress-bullets;
     right: 20px;
     top: 20px;
 
     li {
-      display: inline-block;
-      position: relative;
-      text-indent: -999em;
       margin-right: 1em;
-      width: 20px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &.disabled {
-        opacity: 0.2; 
-        filter: alpha(opacity=20);    
-      }
     }
-    .step-number {
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-      height: 20px;
-      width: 20px;
-      border-radius: 50%;
-      background-color: #aaa;
-      color: $panel-color;
-      text-indent: 0;
-      text-align: center;
-      line-height: 20px;
-    }
-    $grey: rgba(127, 127, 127, 1);
-    $white: #fff;
 
-    @mixin active-step($name, $step, $stepCount) {
-      &.#{$name}-active {
-        $firstStop: $grey percentage(($step - 2) / ($stepCount - 1));
-        $midStop:  $white percentage(($step - 1)/ ($stepCount - 1));
-        $lastStop:  $grey percentage($step / ($stepCount - 1));
-
-        background-image: -webkit-linear-gradient(left, $firstStop, $midStop, $lastStop);
-
-        .#{$name} .step-number {
-          background-color: #fff;
-        }
-      }
-    }
     @include active-step(type, 1, 7);
     @include active-step(terms, 2, 7);
     @include active-step(area, 3, 7);
@@ -1197,6 +1260,7 @@ button {
     @include active-step(preview, 6, 7);
     @include active-step(output, 7, 7);
   }
+
   .buttons-panel {
     margin-bottom: 20px;
     padding: 20px;
@@ -1262,33 +1326,11 @@ button {
 
     &.type {
       button {
-
-        border-radius: 7px;
-        border: 1px solid #939292;
-
-        @extend %shadow;
-        box-shadow: 0 0 6px rgba(0, 0, 0, 0.7), 2px 2px 3px -1px #939292 inset;
-
-        background-image: -webkit-linear-gradient(top, #5a5951, #3b3b3b);
-        padding: 12px 12px 30px;
-        width: 210px;
-        height: 210px;
+        @extend %big-button;
 
         &.static-button {
           float: right;
           @extend %clearfix;
-        }
-
-        &.active {
-          border: none;
-          box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
-        }
-
-        span {
-          text-align: left;
-          color: #fff;
-          font-family: MetaBook;
-          font-size: 18px;
         }
 
         svg {
@@ -2806,13 +2848,16 @@ $overlayMenuItemMargin: 5px;
   }
 }
 
-.emergency-poster-popup, .emergency-poster-preview-popup.splashscreen {
+.emergency-poster-popup, 
+.emergency-poster-preview-popup.splashscreen {
 
   .loadingNotice {
     display:none;
   }
   &.loading {
-    .header, .step-body, .button-panel {
+    .header, 
+    .step-body, 
+    .button-panel {
       display:none;
     }
     .loadingNotice {
@@ -2822,80 +2867,10 @@ $overlayMenuItemMargin: 5px;
   }
 
   .progress {
-    list-style: none;
-    background-image: -webkit-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1));
-    background-size: 100% 2px;
-    background-position: 0 50%;
-    background-repeat: no-repeat;
-    display: inline-block;
-    position: absolute;
+
+    @extend %progress-bullets;
     right: 24px;
     top: 24px;
-
-    li {
-      display: inline-block;
-      position: relative;
-      text-indent: -999em;
-      margin-right: 2em;
-      width: 20px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &.disabled {
-        opacity: 0.2;
-        filter: alpha(opacity=20);
-      }
-    }
-    .step-number {
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 0;
-      height: 20px;
-      width: 20px;
-      border-radius: 50%;
-      background-color: #aaa;
-      color: $panel-color;
-      text-indent: 0;
-      text-align: center;
-      line-height: 20px;
-    }
-    .step-label {
-      position:absolute;
-      top:24px;
-      left:-10px;
-      height:10px;
-      width:40px;
-      font-size:9px;
-      font-weight: bold;
-      color: #aaa;
-      text-indent:0;
-      text-align:center;
-      text-transform:uppercase;
-      line-height:10px;
-    }
-
-    $grey: rgba(127, 127, 127, 1);
-    $white: #fff;
-
-    @mixin active-step($name, $step, $stepCount) {
-      &.#{$name}-active {
-        $firstStop: $grey percentage(($step - 2) / ($stepCount - 1));
-        $midStop:  $white percentage(($step - 1)/ ($stepCount - 1));
-        $lastStop:  $grey percentage($step / ($stepCount - 1));
-
-        background-image: -webkit-linear-gradient(left, $firstStop, $midStop, $lastStop);
-
-        .#{$name} .step-label {
-          color:#fff;
-        }
-        .#{$name} .step-number {
-          background-color: #fff;
-        }
-      }
-    }
 
     @include active-step(terms, 1, 3);
     @include active-step(location, 2, 3);
@@ -2904,9 +2879,14 @@ $overlayMenuItemMargin: 5px;
 
   .button-panel {
     button {
-      font-size:11px;
+      font-size: 11px;
     }
   }
+}
+
+.emergency-poster-popup .progress li {
+  position: relative;
+  top: -3px;
 }
 
 .emergency-poster-popup .contentContainer.terms {
@@ -3536,7 +3516,7 @@ $overlayMenuItemMargin: 5px;
   &.embedContent { 
     .progress { 
       li {
-	margin-bottom: 5px;
+        margin-bottom: 5px;
       }
     }
   }
@@ -3593,24 +3573,24 @@ $overlayMenuItemMargin: 5px;
       padding: 5px;
       
       &:hover {
-	background-color: #3A80BB;
+        background-color: #3A80BB;
       }
     }
   }
   
   .measureContent {
       li {
-	display: block;
-	padding: 0 5px 5px 5px;
-	
-	&:first-child {
-	    padding-top: 5px;
-	}	
+        display: block;
+        padding: 0 5px 5px 5px;
+
+        &:first-child {
+          padding-top: 5px;
+        }	
       }
 
       .label, .value {
-	display: inline-block;
-	padding: 0 5px 0 0;  
+        display: inline-block;
+        padding: 0 5px 0 0;  
       }
   }
 
