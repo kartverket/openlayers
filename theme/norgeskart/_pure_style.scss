@@ -1032,6 +1032,33 @@ button {
   }
 }
 
+/******************************************
+=== help panel ===
+******************************************/
+
+#make-your-own-panel {
+  button {
+    @extend %button;
+  }
+  &.active {
+    > button {
+      @extend %selected-button;
+    }
+    > .widget {
+      width: 307px;
+      display: block;
+
+      .h {
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+    }
+    .shortcuts-panel {
+      @extend %horizontal-divider;
+    }
+  }
+}
 
 /******************************************
 === help panel ===
@@ -1100,36 +1127,6 @@ button {
       @extend %header-font;
     }
   }
-  .step-specific {
-    @extend %horizontal-divider;
-    &.type + .buttons-panel {
-      display: none;
-    }
-
-    &.preview {
-
-      section {
-      	padding-bottom: 10px;
-      	  
-      	.h {
-      	  padding-bottom: 5px;	      
-      	}
-
-        &.map-container {
-          padding-bottom:0px;
-        }
-      }
-
-      &.limit-height {
-        overflow: auto;
-        max-height: 350px;
-      }
-
-      iframe {
-	       margin-right: 5px;
-      }
-    }
-  }
 
   .progress {
     list-style: none;
@@ -1158,8 +1155,8 @@ button {
       }
 
       &.disabled {
-	opacity: 0.2; 
-	filter: alpha(opacity=20);    
+        opacity: 0.2; 
+        filter: alpha(opacity=20);    
       }
     }
     .step-number {
@@ -1247,9 +1244,9 @@ button {
     }
   }
 
-
-  
   .step-specific {
+
+    @extend %horizontal-divider;
     padding: 25px;    
 
     .h {
@@ -1260,9 +1257,6 @@ button {
     .h, p {
       padding-bottom: 10px;
     }
-
-
-
 
     /* elements present at step 1 (type) */
 
@@ -1300,7 +1294,10 @@ button {
         svg {
           width: 188px;
         }
+      }
 
+      + .buttons-panel {
+        display: none;
       }
     }
 
@@ -1381,14 +1378,15 @@ button {
         padding-left: 25px;
         padding-right: 25px;
 
-	label, #PointMenuEmbedMarkerComment {
-	   display: block;
-	}
-	#PointMenuEmbedMarkerComment {
-	   margin: 1px 0 15px 0;
-	   padding: 2px 5px 2px 5px;
-	   width: 80%;
-	}
+        label,
+        #PointMenuEmbedMarkerComment {
+          display: block;
+        }
+        #PointMenuEmbedMarkerComment {
+          margin: 1px 0 15px 0;
+          padding: 2px 5px 2px 5px;
+          width: 80%;
+        }
       }
 
       .instructions {
@@ -1498,10 +1496,13 @@ button {
       #short-desc-help {
         display: inline-block;
         position: relative;
-      }
-      #long-desc-help.active #long-desc-explanation,
-      #short-desc-help.active #short-desc-explanation {
-        display: block;
+
+        &.active {
+          #long-desc-explanation,
+          #short-desc-explanation {
+            display: block;
+          }
+        }
       }
 
       #long-desc-explanation,
@@ -1524,7 +1525,29 @@ button {
           text-indent: -999em;
         }
       }
+    }
 
+    &.preview {
+
+      section {
+        padding-bottom: 10px;
+
+        &.map-container {
+          padding-bottom:0px;
+        }
+          
+        .h {
+          padding-bottom: 5px;        
+        }
+      }
+      &.limit-height {
+        overflow: auto;
+        max-height: 350px;
+      }
+
+      iframe {
+        margin-right: 5px;
+      }
     }
 
     /* step specific headers above horizontal line */
@@ -3888,4 +3911,17 @@ input:disabled {
        color: #D0D0D0;
      }
    }
+}
+.illustration {
+
+  &.data-free,
+  &.data-nonfree {
+    path {
+      stroke: #fff;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10;
+    }
+  }
 }
