@@ -9,6 +9,10 @@
 .embed-button,
 .static-button,
 .dynamic-button,
+.point-menu-button,
+.Draw-button,
+.height-profile-button,
+.make-your-own-button,
 .Transformations-button {
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -17,6 +21,20 @@
 .zoom-to-selection-button {
   width: 40px;
   height: 40px;
+}
+.Draw-button {
+  background-image: url('img/pencil-icon.png');
+}
+.height-profile-button {
+  background-image: url('img/height-profile-icon.png');
+}
+.-button {
+  background-image: url('img/-icon.png');
+}
+.point-menu-button {
+  background-image: url('img/point-menu-icon.png');
+  width: 30px;
+  height: 30px;
 }
 .fullscreen-button {
   background-image: url('img/fullscreen-icon.png');
@@ -32,6 +50,9 @@
 }
 .getURL-button {
   background-image: url('img/geturl.png');
+}
+.make-your-own-button {
+  background-image: url('img/make-your-own-icon.png');
 }
 .zoom-to-selection-button {
   background-image: url('img/zoom-to-selection-icon.png');
@@ -158,4 +179,14 @@
   overflow: hidden;
   white-space: normal;
 }
+
+/* Point menu items */
+#PMinformation { background-image: url('img/pointMenuInformation.png'); }
+#PMweather     { background-image: url('img/pointMenuWeather.png'); }
+#PMsun         { background-image: url('img/pointMenuSun.png');}
+#PMshare       { background-image: url('img/pointMenuShare.png'); }
+#PMwater       { background-image: url('img/pointMenuWater.png');}
+#PMruler       { background-image: url('img/pointMenuRuler.png'); }
+#PMmaid        { background-image: url('img/pointMenuMaid.png'); }
+#PMhome        { background-image: url('img/pointMenuHome.png'); }
 

@@ -2525,23 +2525,6 @@ focus for toolbar controls
 
 /******************* Menu's tool */
 /******************* Menu's item */
-.no-svg #PMinformation {
-  background-image: url("img/pointMenuInformation.png"); }
-.no-svg #PMweather {
-  background-image: url("img/pointMenuWeather.png"); }
-.no-svg #PMsun {
-  background-image: url("img/pointMenuSun.png"); }
-.no-svg #PMshare {
-  background-image: url("img/pointMenuShare.png"); }
-.no-svg #PMwater {
-  background-image: url("img/pointMenuWater.png"); }
-.no-svg #PMruler {
-  background-image: url("img/pointMenuRuler.png"); }
-.no-svg #PMmaid {
-  background-image: url("img/pointMenuMaid.png"); }
-.no-svg #PMhome {
-  background-image: url("img/pointMenuHome.png"); }
-
 /******************* Menu's widget */
 #PMarrow, #PMwidget {
   position: absolute;
