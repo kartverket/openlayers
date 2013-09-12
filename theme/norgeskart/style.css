@@ -859,6 +859,7 @@ body {
 === help panel ===
 ******************************************/
 #make-your-own-panel.active > .widget {
+<<<<<<< HEAD
   width: 475px;
   display: block;
   padding: 18px; }
@@ -895,6 +896,14 @@ body {
       text-decoration: underline; }
   #make-your-own-panel.active > .widget .h {
     margin-bottom: 15px; }
+=======
+  width: 307px;
+  display: block; }
+  #make-your-own-panel.active > .widget .h {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px; }
+>>>>>>> 43616-172 Embed selection is now compatible with map movements
 
 /******************************************
 === help panel ===
@@ -1047,10 +1056,33 @@ body {
     font-weight: normal; }
   .embedContent .step-specific .h, .embedContent .step-specific p {
     padding-bottom: 10px; }
+<<<<<<< HEAD
   .embedContent .step-specific.type button.static-button {
     float: right; }
   .embedContent .step-specific.type button svg {
     width: 188px; }
+=======
+  .embedContent .step-specific.type button {
+    border-radius: 7px;
+    border: 1px solid #939292;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.7), 2px 2px 3px -1px #939292 inset;
+    background-image: -webkit-linear-gradient(top, #5a5951, #3b3b3b);
+    padding: 12px 12px 30px;
+    width: 210px;
+    height: 210px; }
+    .embedContent .step-specific.type button.static-button {
+      float: right; }
+    .embedContent .step-specific.type button.active {
+      border: none;
+      box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
+    .embedContent .step-specific.type button span {
+      text-align: left;
+      color: #fff;
+      font-family: MetaBook;
+      font-size: 18px; }
+    .embedContent .step-specific.type button svg {
+      width: 188px; }
+>>>>>>> 43616-172 Embed selection is now compatible with map movements
   .embedContent .step-specific.type + .buttons-panel {
     display: none; }
   .embedContent .step-specific.area {
@@ -1203,6 +1235,7 @@ body {
       height: 12px;
       overflow: hidden;
       text-indent: -999em; }
+<<<<<<< HEAD
   .embedContent .step-specific.preview section {
     padding-bottom: 10px; }
     .embedContent .step-specific.preview section.map-container {
@@ -1214,6 +1247,21 @@ body {
     max-height: 350px; }
   .embedContent .step-specific.preview iframe {
     margin-right: 5px; }
+=======
+  .embedContent .step-specific.preview {
+    overflow: auto;
+    max-height: 450px; }
+    .embedContent .step-specific.preview section {
+      padding-bottom: 10px; }
+      .embedContent .step-specific.preview section.map-container {
+        padding-bottom: 0px; }
+      .embedContent .step-specific.preview section .h {
+        padding-bottom: 5px; }
+    .embedContent .step-specific.preview.limit-height {
+      max-height: 350px; }
+    .embedContent .step-specific.preview iframe {
+      margin-right: 5px; }
+>>>>>>> 43616-172 Embed selection is now compatible with map movements
   .embedContent .step-specific.type, .embedContent .step-specific.terms, .embedContent .step-specific.markers {
     background-position: 0 25px;
     padding-top: 0; }

@@ -1618,6 +1618,8 @@ button {
     }
 
     &.preview {
+      overflow: auto;
+      max-height:450px;
 
       section {
         padding-bottom: 10px;
@@ -1631,7 +1633,6 @@ button {
         }
       }
       &.limit-height {
-        overflow: auto;
         max-height: 350px;
       }
 
