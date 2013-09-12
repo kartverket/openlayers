@@ -2648,31 +2648,22 @@ focus for toolbar controls
     #locationWrapper .data.coordinate .name {
       font-weight: bold; }
     #locationWrapper .data.coordinate .value,
-    #locationWrapper .data.coordinate .description {
-      font-size: 12px; }
-    #locationWrapper .data.coordinate h1,
-    #locationWrapper .data.coordinate fieldset,
-    #locationWrapper .data.coordinate input,
-    #locationWrapper .data.coordinate select,
+    #locationWrapper .data.coordinate .description,
+    #locationWrapper .data.coordinate dt,
+    #locationWrapper .data.coordinate dd {
+      font-size: 13px; }
     #locationWrapper .data.coordinate label,
-    #locationWrapper .data.coordinate button {
-      display: none; }
-    #locationWrapper .data.coordinate .output-label,
-    #locationWrapper .data.coordinate .output-value,
-    #locationWrapper .data.coordinate h2,
-    #locationWrapper .data.coordinate label[for="transformations-output-coordinate-system"],
-    #locationWrapper .data.coordinate select#transformations-output-coordinate-system {
+    #locationWrapper .data.coordinate select {
       display: block;
       font-size: 13px; }
-    #locationWrapper .data.coordinate h2 {
-      font-weight: normal;
-      margin-top: 15px; }
-    #locationWrapper .data.coordinate .output-label, #locationWrapper .data.coordinate .output-value,
-    #locationWrapper .data.coordinate select#transformations-output-coordinate-system {
-      margin: 0 0 5px 15px; }
-    #locationWrapper .data.coordinate label[for="transformations-output-coordinate-system"] {
-      font-size: 13px;
-      margin: 15px 0 2px 0; }
+    #locationWrapper .data.coordinate label,
+    #locationWrapper .data.coordinate dl {
+      margin-left: 10px; }
+    #locationWrapper .data.coordinate select {
+      margin-left: 20px; }
+    #locationWrapper .data.coordinate dt,
+    #locationWrapper .data.coordinate label {
+      margin-top: 5px; }
     #locationWrapper .data .label, #locationWrapper .data .value {
       display: block;
       overflow: hidden;
