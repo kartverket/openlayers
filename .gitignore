@@ -6,3 +6,6 @@
 /examples/example-list.js
 /examples/example-list.xml
 .sass-cache
+.DS_Store
+/theme/.DS_Store
+/theme/norgeskart/.DS_Store
