@@ -1205,6 +1205,7 @@ body {
       text-indent: -999em; }
   .embedContent .step-specific.preview {
     overflow: auto;
+    height: 350px;
     max-height: 450px; }
     .embedContent .step-specific.preview section {
       padding-bottom: 10px; }
