@@ -1831,7 +1831,8 @@ focus for toolbar controls
   height profile control
 ***************************/
 .tool.height-profile .widget {
-  padding: 10px; }
+  padding: 10px;
+  min-width: 230px; }
   .tool.height-profile .widget .h {
     margin-bottom: 20px; }
   .tool.height-profile .widget input {
@@ -1991,7 +1992,8 @@ focus for toolbar controls
       float: left;
       height: 40px;
       width: 88px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      position: relative; }
       .overlay-group-panel .widget .cnt > ul > li:first-child {
         background-image: none; }
       .overlay-group-panel .widget .cnt > ul > li ul {
@@ -2009,9 +2011,18 @@ focus for toolbar controls
         .overlay-group-panel .widget .cnt > ul > li a:hover, .overlay-group-panel .widget .cnt > ul > li a:focus, .overlay-group-panel .widget .cnt > ul > li header:hover, .overlay-group-panel .widget .cnt > ul > li header:focus {
           text-decoration: underline; }
       .overlay-group-panel .widget .cnt > ul > li .h {
-        font-size: 10px; }
+        font-size: 10px;
+        height: 40px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 88px; }
       .overlay-group-panel .widget .cnt > ul > li header + ul {
         display: none; }
+        .overlay-group-panel .widget .cnt > ul > li header + ul:hover, .overlay-group-panel .widget .cnt > ul > li header + ul:focus {
+          display: block; }
       .overlay-group-panel .widget .cnt > ul > li header.active + ul, .overlay-group-panel .widget .cnt > ul > li header:hover + ul {
         display: block; }
       .overlay-group-panel .widget .cnt > ul > li.focused header + ul {

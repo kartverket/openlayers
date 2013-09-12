@@ -28,6 +28,15 @@
 .height-profile-button {
   background-image: url('img/height-profile-icon.png');
 }
+.tool.height-profile .widget .illustration-wrapper {
+  height: 54px;
+  width: 212px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  margin: 10px;
+  background-image: url('img/height-profile-illustration.png');
+}
+
 .-button {
   background-image: url('img/-icon.png');
 }
@@ -178,6 +187,18 @@
   -ms-word-break: break-all;
   overflow: hidden;
   white-space: normal;
+}
+
+#make-your-own-panel .external-link .h {
+  padding-bottom: 120px;
+  background-position: 50% bottom;
+  background-repeat: no-repeat;
+}
+#make-your-own-panel .external-link.free-data .h {
+  background-image: url('img/data-free-illustration.png');
+}
+#make-your-own-panel .external-link.nonfree-data .h {
+  background-image: url('img/data-nonfree-illustration.png');
 }
 
 /* Point menu items */

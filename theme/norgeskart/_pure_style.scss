@@ -2450,6 +2450,7 @@ focus for toolbar controls
 .tool.height-profile {
   .widget {
     padding: 10px;
+    min-width: 230px;
 
     .h {
       @extend %widget-main-heading;
@@ -2711,6 +2712,7 @@ $overlayMenuItemMargin: 5px;
           height: 40px;
           width: $overlayMenuItemWidth + $overlayMenuItemMargin * 4;
           text-transform: uppercase;
+          position: relative;
 
           &:first-child {
             background-image: none;
@@ -2740,11 +2742,25 @@ $overlayMenuItemMargin: 5px;
           }
           .h {
             font-size: 10px;
+            height: 40px;
+            top: 0;
+            left: 0;
+            position: absolute;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: $overlayMenuItemWidth + $overlayMenuItemMargin * 4;
+
           }
           header {
             + ul {
               display: none;
+
+              &:hover,
+              &:focus {
+                display: block;
+              }
             }
+
             &.active,
             &:hover {
               + ul {
