@@ -201,6 +201,39 @@
   background-image: url('img/data-nonfree-illustration.png');
 }
 
+.tool.draw .widget ul button {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.tool.draw .widget ul li.text-only button {
+  width: auto;
+  height: auto;
+}
+
+.tool.draw .widget ul button span {
+  position: absolute;
+  left: 100%;
+  background-image: none;
+}
+.tool.draw .widget ul li.text-only span {
+  position: static;
+}
+.tool.draw .widget button.point {
+  background-image: url('img/point-icon.png');
+}
+.tool.draw .widget button.line {
+  background-image: url('img/line-icon.png');
+}
+.tool.draw .widget button.polygon {
+  background-image: url('img/area-icon.png');
+}
+.tool.draw .widget button.label {
+  background-image: url('img/label-icon.png');
+}
+
+
 /* Point menu items */
 #PMinformation { background-image: url('img/pointMenuInformation.png'); }
 #PMweather     { background-image: url('img/pointMenuWeather.png'); }
