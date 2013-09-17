@@ -2346,6 +2346,10 @@ focus for toolbar controls
     margin-left: -200px;
     z-index: 999;
     padding: 25px; }
+  .map-load-error .external-link {
+    position: absolute;
+    bottom: 25px;
+    color: white; }
 
 /*******************************************
  override OpenLayers default styles

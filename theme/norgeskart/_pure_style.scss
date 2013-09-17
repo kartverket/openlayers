@@ -3286,6 +3286,11 @@ $overlayMenuItemMargin: 5px;
   h1 {
     @extend %header-font;
   }
+  .external-link {
+    position: absolute;
+    bottom: 25px;
+    color: white;
+  }
 }
 
 /*******************************************
