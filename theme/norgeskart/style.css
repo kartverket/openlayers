@@ -1742,7 +1742,8 @@ focus for toolbar controls
         left: 100%;
         background-image: none; }
     .tool.draw .widget ul li {
-      margin-top: 5px; }
+      margin-top: 5px;
+      overflow: hidden; }
       .tool.draw .widget ul li.text-only button {
         width: 100%; }
         .tool.draw .widget ul li.text-only button span {
