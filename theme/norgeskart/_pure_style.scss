@@ -1397,9 +1397,15 @@ button {
     /* elements present at step 3 (area)    */
 
     &.area {
+
       @extend %clearfix;
+      padding-top:0px;
+      background-position:0px 25px;
+
       .h {
-        float: left;
+        
+        padding-bottom:25px;
+        line-height:25px;
       }
 
       /*
@@ -1413,6 +1419,10 @@ button {
         
         position:relative;
         margin-bottom:5px;
+
+        p.draw-instructions {
+          margin-right:150px;
+        }
 
         label {
           margin:0px 5px;
@@ -1638,6 +1648,7 @@ button {
       }
 
       iframe {
+        border:none;
         margin-right: 5px;
       }
     }

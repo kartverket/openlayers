@@ -1054,6 +1054,8 @@ body {
   .embedContent .step-specific.type + .buttons-panel {
     display: none; }
   .embedContent .step-specific.area {
+    padding-top: 0px;
+    background-position: 0px 25px;
     /*
     input,
     label {
@@ -1061,10 +1063,13 @@ body {
     }
     */ }
     .embedContent .step-specific.area .h {
-      float: left; }
+      padding-bottom: 25px;
+      line-height: 25px; }
     .embedContent .step-specific.area .mode-options-container {
       position: relative;
       margin-bottom: 5px; }
+      .embedContent .step-specific.area .mode-options-container p.draw-instructions {
+        margin-right: 150px; }
       .embedContent .step-specific.area .mode-options-container label {
         margin: 0px 5px; }
         .embedContent .step-specific.area .mode-options-container label[for="defineAreaModeDraw"] {
@@ -1216,6 +1221,7 @@ body {
     .embedContent .step-specific.preview.limit-height {
       max-height: 350px; }
     .embedContent .step-specific.preview iframe {
+      border: none;
       margin-right: 5px; }
   .embedContent .step-specific.type, .embedContent .step-specific.terms, .embedContent .step-specific.markers {
     background-position: 0 25px;
