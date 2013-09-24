@@ -2368,6 +2368,7 @@ focus for toolbar controls
   bntPointMenu
 *********************************/
 .toolbar #point-panel {
+  display: none;
   text-align: center; }
 .toolbar button.btnPointMenu {
   margin: 0 auto;
