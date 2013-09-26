@@ -865,10 +865,14 @@ button {
   transition: transform .5s ease-in-out;
 }
 
-.fullscreen .olControlScaleLine {
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
+.fullscreen,
+.embedded-map {
+
+  .olControlScaleLine {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
 }
 
 #basic-toolbar,

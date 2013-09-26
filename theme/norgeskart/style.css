@@ -666,7 +666,8 @@ body {
   transition: -ms-transform .5s ease-in-out;
   transition: transform .5s ease-in-out; }
 
-.fullscreen .olControlScaleLine {
+.fullscreen .olControlScaleLine,
+.embedded-map .olControlScaleLine {
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0); }
