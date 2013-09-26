@@ -1362,7 +1362,10 @@ body {
   right: 0;
   position: absolute;
   color: #fff;
-  min-height: 28px; }
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 28px;
+  max-height: 450px; }
   #searchResults .result-paging {
     margin: 0 40px 0 8px;
     padding: 8px 0;
