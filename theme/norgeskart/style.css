@@ -1362,7 +1362,7 @@ body {
   right: 0;
   position: absolute;
   color: #fff;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   min-height: 28px;
   max-height: 450px; }
