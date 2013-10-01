@@ -1857,6 +1857,9 @@ button {
  === temporary search ctrl styles ===
 **************************************/
 
+#searchLoadingNotice, #noResultsNotice {
+  padding:10px;
+}
 #searchResults {
   @extend %partial-transparent;
   @extend %shadow;

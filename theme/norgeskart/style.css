@@ -1355,6 +1355,9 @@ body {
 /**************************************
  === temporary search ctrl styles ===
 **************************************/
+#searchLoadingNotice, #noResultsNotice {
+  padding: 10px; }
+
 #searchResults {
   display: none;
   top: 65px;
