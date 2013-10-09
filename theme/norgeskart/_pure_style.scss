@@ -865,10 +865,14 @@ button {
   transition: transform .5s ease-in-out;
 }
 
-.fullscreen .olControlScaleLine {
-  -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
+.fullscreen,
+.embedded-map {
+
+  .olControlScaleLine {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
 }
 
 #basic-toolbar,
@@ -1853,6 +1857,9 @@ button {
  === temporary search ctrl styles ===
 **************************************/
 
+#searchLoadingNotice, #noResultsNotice {
+  padding:10px;
+}
 #searchResults {
   @extend %partial-transparent;
   @extend %shadow;
@@ -1863,7 +1870,10 @@ button {
   right: 0;
   position: absolute;
   color: #fff;
+  overflow-y:auto;
+  overflow-x:hidden;
   min-height: 28px;
+  max-height:450px;
 
   .result-paging {
     margin: 0 40px 0 8px;

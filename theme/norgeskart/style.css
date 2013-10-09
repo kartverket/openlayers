@@ -666,7 +666,8 @@ body {
   transition: -ms-transform .5s ease-in-out;
   transition: transform .5s ease-in-out; }
 
-.fullscreen .olControlScaleLine {
+.fullscreen .olControlScaleLine,
+.embedded-map .olControlScaleLine {
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0); }
@@ -1354,6 +1355,9 @@ body {
 /**************************************
  === temporary search ctrl styles ===
 **************************************/
+#searchLoadingNotice, #noResultsNotice {
+  padding: 10px; }
+
 #searchResults {
   display: none;
   top: 65px;
@@ -1361,7 +1365,10 @@ body {
   right: 0;
   position: absolute;
   color: #fff;
-  min-height: 28px; }
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 28px;
+  max-height: 450px; }
   #searchResults .result-paging {
     margin: 0 40px 0 8px;
     padding: 8px 0;
