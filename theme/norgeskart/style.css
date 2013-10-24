@@ -629,11 +629,11 @@ body {
 #dekning-plast-selector:hover:after {
   background-position: 0 0; }
 
-#terreng-selector:hover:after,
+#graa-selector:hover:after,
 #dekning-sjo-selector:hover:after {
   background-position: 0 -50px; }
 
-#enkel-selector:hover:after,
+#grunn-selector:hover:after,
 #dekning-sjo-hv-selector:hover:after {
   background-position: 0 -100px; }
 
@@ -644,7 +644,6 @@ body {
 #sjo-selector:hover:after,
 #dekning-sjo-fi-selector:hover:after {
   background-position: 0 -200px; }
-
 
 /**********************************
 === Full screen ===
