@@ -1803,6 +1803,17 @@ button {
   @extend %selected-button;
 }
 
+html.touch #zoom-panel {
+  .sliderWrapper {
+    display: none;
+  }
+  .icon {
+    &.plus,
+    &.minus {
+      fill: blue;
+    }
+  }
+}
 
 /*****************************
 === search ===
