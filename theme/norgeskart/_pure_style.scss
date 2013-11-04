@@ -1803,15 +1803,14 @@ button {
   @extend %selected-button;
 }
 
-html.touch #zoom-panel {
-  .sliderWrapper {
-    display: none;
+html.touch {
+  #zoom-panel {
+    .sliderWrapper {
+      display: none;
+    } 
   }
-  .icon {
-    &.plus,
-    &.minus {
-      fill: blue;
-    }
+  #pan-panel {
+    display: none;
   }
 }
 
@@ -1819,7 +1818,7 @@ html.touch #zoom-panel {
 === search ===
 *****************************/
 #search-panel {
-  position: relative;
+  position: relative; 
 }
 
 #searchInput {
