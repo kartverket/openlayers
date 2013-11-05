@@ -2,47 +2,48 @@
 .olControlZoomIn,
 .olControlZoomOut,
 .getURL-button,
-.help-button,
-.Print-button,
-.twitter,
-.facebook,
-.email,
 .zoom-to-selection-button,
-.emergency-poster-button {
+.emergency-poster-button,
+.Print-button,
+.help-button,
+.embed-button,
+.static-button,
+.dynamic-button,
+.point-menu-button,
+.Draw-button,
+.height-profile-button,
+.make-your-own-button,
+.Transformations-button {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 .fullscreen-button,
-.email,
-.facebook,
-.twitter,
 .zoom-to-selection-button {
   width: 40px;
   height: 40px;
 }
-.email{
-  background-image: url('img/email-icon.png');
-  background-size: 20px 15px;
+.Draw-button {
+  background-image: url('img/pencil-icon.png');
 }
-.facebook{
-  background-image: url('img/facebook-icon.png');
-  background-size: 20px 20px;
+.height-profile-button {
+  background-image: url('img/height-profile-icon.png');
 }
-.twitter{
-  background-image: url('img/twitter-icon.png');
-  background-size: 20px 20px;
+.tool.height-profile .widget .illustration-wrapper {
+  height: 54px;
+  width: 212px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  margin: 10px;
+  background-image: url('img/height-profile-illustration.png');
 }
-.getURL-button{
-  background-image: url('img/geturl-icon.png');
-  background-size: 13px 20px;
+
+.-button {
+  background-image: url('img/-icon.png');
 }
-.help-button{
-  background-image: url('img/help-icon.png');
-  background-size: 12px 20px;
-}
-.Print-button{
-  background-image: url('img/print-icon.png');
-  background-size: 20px 20px;
+.point-menu-button {
+  background-image: url('img/point-menu-icon.png');
+  width: 30px;
+  height: 30px;
 }
 .fullscreen-button {
   background-image: url('img/fullscreen-icon.png');
@@ -55,6 +56,12 @@
 }
 .olControlZoomOut {
   background-image: url('img/minus-icon.png');
+}
+.getURL-button {
+  background-image: url('img/geturl.png');
+}
+.make-your-own-button {
+  background-image: url('img/make-your-own-icon.png');
 }
 .zoom-to-selection-button {
   background-image: url('img/zoom-to-selection-icon.png');
@@ -87,3 +94,153 @@
 #map.select-emergency-poster-point {
   cursor: crosshair;
 }
+.Print-button {
+  background-image: url('img/print-icon.png');
+}
+
+.help-button {
+  background-image: url('img/help-icon.png');
+}
+
+.Transformations-button {
+  background-image: url('img/transformations-icon.png');
+}
+
+.share-link {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 26px;
+}
+
+.share-link.email {
+  background-image: url('img/email.png');
+}
+
+.share-link.twitter {
+  background-image: url('img/twitter.png');
+}
+
+.share-link.facebook {
+  background-image: url('img/facebook.png');
+}
+
+.embed-button {
+  background-image: url('img/embed-icon.png');
+}
+
+.progress:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #aaa;
+  top: 50%;
+  position: absolute;
+}
+#embed-panel .progress li {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+#embed-panel .progress li.type {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+#embed-panel .progress li + li {
+  margin-right: 0px;
+  margin-left: 10px;
+}
+#embed-panel .progress li span {
+  color: #616060;
+}
+#embed-panel .type button {
+  position: relative;
+}
+#embed-panel .type button.active {
+  background-color: #5a5951;
+}
+#embed-panel .type button span {
+  position: absolute;
+  top: 15px;
+}
+#embed-panel .type .dynamic-button {
+  background-image: url('img/dynamisk.png');
+  background-position: 50% 80px;
+}
+#embed-panel .type .static-button {
+  background-image: url('img/statisk.png');
+  background-position: 50% 80px;
+}
+
+#embed-panel .markers .marker-illustration {
+  background-image: url('img/herborjeg.png');
+  width: 120px;
+  height: 75px;
+  background-repeat: no-repeat;
+}
+
+
+#getURL-panel .page-url,
+#embed-panel .output-code {
+  -ms-word-break: break-all;
+  overflow: hidden;
+  white-space: normal;
+}
+
+#make-your-own-panel .external-link .h {
+  padding-bottom: 120px;
+  background-position: 50% bottom;
+  background-repeat: no-repeat;
+}
+#make-your-own-panel .external-link.free-data .h {
+  background-image: url('img/data-free-illustration.png');
+}
+#make-your-own-panel .external-link.nonfree-data .h {
+  background-image: url('img/data-nonfree-illustration.png');
+}
+
+.tool.draw .widget ul button {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.tool.draw .widget ul li.text-only button {
+  width: auto;
+  height: auto;
+}
+
+.tool.draw .widget ul button span {
+  position: absolute;
+  left: 100%;
+  background-image: none;
+}
+.tool.draw .widget ul li.text-only span {
+  position: static;
+}
+.tool.draw .widget button.point {
+  background-image: url('img/point-icon.png');
+}
+.tool.draw .widget button.line {
+  background-image: url('img/line-icon.png');
+}
+.tool.draw .widget button.polygon {
+  background-image: url('img/area-icon.png');
+}
+.tool.draw .widget button.label {
+  background-image: url('img/label-icon.png');
+}
+
+
+/* Point menu items */
+#PMinformation { background-image: url('img/pointMenuInformation.png'); }
+#PMweather     { background-image: url('img/pointMenuWeather.png'); }
+#PMsun         { background-image: url('img/pointMenuSun.png');}
+#PMshare       { background-image: url('img/pointMenuShare.png'); }
+#PMwater       { background-image: url('img/pointMenuWater.png');}
+#PMruler       { background-image: url('img/pointMenuRuler.png'); }
+#PMmaid        { background-image: url('img/pointMenuMaid.png'); }
+#PMhome        { background-image: url('img/pointMenuHome.png'); }
+
