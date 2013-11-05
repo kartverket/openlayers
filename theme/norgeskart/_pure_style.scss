@@ -1803,12 +1803,22 @@ button {
   @extend %selected-button;
 }
 
+html.touch {
+  #zoom-panel {
+    .sliderWrapper {
+      display: none;
+    } 
+  }
+  #pan-panel {
+    display: none;
+  }
+}
 
 /*****************************
 === search ===
 *****************************/
 #search-panel {
-  position: relative;
+  position: relative; 
 }
 
 #searchInput {
@@ -2199,8 +2209,29 @@ button:focus .icon {
   }
 }
 @media screen and (max-height: 750px) {
-  #zoom-panel .sliderWrapper {
-    display: none;
+  #zoom-panel {
+    .sliderWrapper {
+      display: none;
+    }
+    .wrapper {
+      height: 20px;
+    }
+    .olButton {
+      &.olControlZoomIn,
+      &.olControlZoomOut {
+        width: 30px;
+        height: 30px;
+        margin: 0 0 0 -15px;
+      }
+    }
+
+    .icon {
+      &.plus,
+      &.minus {
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
 }
 @media screen and (max-height: 600px) { 
