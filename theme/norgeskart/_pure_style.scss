@@ -1807,7 +1807,7 @@ html.touch {
   #zoom-panel {
     .sliderWrapper {
       display: none;
-    } 
+    }
   }
   #pan-panel {
     display: none;
@@ -1818,7 +1818,7 @@ html.touch {
 === search ===
 *****************************/
 #search-panel {
-  position: relative; 
+  position: relative;
 }
 
 #searchInput {
@@ -1951,29 +1951,66 @@ html.touch {
   margin: 0 2em;
   font-size: 10px;
 }
-
-#searchResults a.close,
-#searchResults a.close:hover, 
-#searchResults a.close:visited,
-.splashscreen .widget a.close,
-.splashscreen .widget a.close:hover,
-.splashscreen .widget a.close:visited {
-    text-decoration: none;
-    color: #fff;
-    padding: 1px;
-    font-family: monospace;
-    font-size: 10px;
-    float: right;
-    width: 12px;
-    height: 12px;
-    position: relative;
-    right: 8px;
-    top: 8px;
-    overflow: hidden;
-    text-indent: 12px;    
-    @extend %close-cross;
+%close-cross-container {
+  text-decoration: none;
+  color: #fff;
+  padding: 1px;
+  font-family: monospace;
+  font-size: 10px;
+  float: right;
+  width: 12px;
+  height: 12px;
+  position: relative;
+  right: 8px;
+  top: 8px;
+  overflow: hidden;
+  text-indent: 12px;    
+  @extend %close-cross;
+}
+#searchResults,
+.splashscreen .widget {
+  a.close {
+    &,
+    &:hover,
+    &:visited,
+    &:active {
+      @extend %close-cross-container;
+    }
+  }
 }
 
+html.svg {
+  #searchResults,
+  .splashscreen .widget {
+    a.close {
+      &,
+      &:hover,
+      &:visited,
+      &:active {
+        background: transparent;
+        padding: 0;
+
+        .icon.close {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+#share-toolbar .icon.close,
+.icon.close {
+  fill: transparent;
+  stroke-width: 3px;
+  stroke: #fff;
+  width: 12px;
+  height: 12px;
+}
+.remove-marker .icon.close {
+  position: absolute;
+  right: 0;
+}
 .search-place {
   cursor: pointer;
 }
