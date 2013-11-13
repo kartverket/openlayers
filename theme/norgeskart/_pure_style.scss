@@ -3435,7 +3435,8 @@ $overlayMenuItemMargin: 5px;
   &.display {
     background: transparent url('img/pointMenuSelectedSector.png') no-repeat scroll center 3px;
 
-    #PMarrow, #PMwidget {
+    #PMarrow, 
+    #PMwidget {
       display: block;
     }
   }
@@ -3594,7 +3595,7 @@ $overlayMenuItemMargin: 5px;
   left: 0;
   bottom: 0;
   right: 0;
-  background: transparent url('img/pointMenuCircle.png') no-repeat scroll center center;
+  background: transparent url('img/pointMenuBackground.min.svg') no-repeat scroll center center;
   border-radius: 100%;
 
   .icon1 { top: 15px;  left: 62px;  }
@@ -3632,6 +3633,9 @@ $overlayMenuItemMargin: 5px;
       filter: alpha(opacity=100);  
     }
   }
+}
+.no-svg #PMenu {
+  background-image: url('img/pointMenuCircle.png');
 }
 /******************* Menu's tool */
 

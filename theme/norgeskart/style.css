@@ -2443,7 +2443,8 @@ focus for toolbar controls
     display: block; }
   #pointMenu.display {
     background: transparent url("img/pointMenuSelectedSector.png") no-repeat scroll center 3px; }
-    #pointMenu.display #PMarrow, #pointMenu.display #PMwidget {
+    #pointMenu.display #PMarrow,
+    #pointMenu.display #PMwidget {
       display: block; }
   #pointMenu.onClose {
     width: 24px;
@@ -2560,7 +2561,7 @@ focus for toolbar controls
   left: 0;
   bottom: 0;
   right: 0;
-  background: transparent url("img/pointMenuCircle.png") no-repeat scroll center center;
+  background: transparent url("img/pointMenuBackground.min.svg") no-repeat scroll center center;
   border-radius: 100%; }
   #PMmenu .icon1 {
     top: 15px;
@@ -2599,6 +2600,9 @@ focus for toolbar controls
     #PMmenu .item.active, #PMmenu .item:hover {
       opacity: 1;
       filter: alpha(opacity=100); }
+
+.no-svg #PMenu {
+  background-image: url("img/pointMenuCircle.png"); }
 
 /******************* Menu's tool */
 /******************* Menu's item */
