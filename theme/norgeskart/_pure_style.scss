@@ -48,10 +48,12 @@ $share-toolbar-panel-height: 39px;
 %selected-button {
   background-color: #333333;
   background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
 }
 
 %shadow {
+  -webkit-box-shadow: 0 0 6px rgba(0,0,0,.7);
   box-shadow: 0 0 6px rgba(0,0,0,.7);
 }
 
@@ -3552,6 +3554,7 @@ $overlayMenuItemMargin: 5px;
     height: 24px;
     width: 24px;
     overflow: hidden;
+    -webkit-border-radius: 50%;
     border-radius: 50%;
   }
   #PMopener {
@@ -3596,7 +3599,8 @@ $overlayMenuItemMargin: 5px;
   bottom: 0;
   right: 0;
   background: transparent url('img/pointMenuBackground.min.svg') no-repeat scroll center center;
-  border-radius: 100%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
 
   .icon1 { top: 15px;  left: 62px;  }
   .icon2 { top: 37px;  left: 105px; }

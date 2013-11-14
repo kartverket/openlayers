@@ -38,6 +38,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
 .vectorLayerList label.for-checked, #getURL-panel.active > .nkButton, #make-your-own-panel.active > button, #help-panel.active > button, .zoom-to-selection-selected .zoom-to-selection-button, .tool.active > button, .tool.draw .widget ul button.active, .tool.draw .widget ul button:active, .overlay-group-panel a.active, .toolbar button.btnPointMenu.active {
   background-color: #333333;
   background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
 
 #make-your-own-panel.active > .widget a.external-link, .embedContent .step-specific.type button, #embed-basic-toolbar, #embed-basic-toolbar .collapse-toolbar-toggle.on, #basic-toolbar,
@@ -46,6 +47,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
 .embedContent .step-specific.descriptions #short-desc-explanation, #searchResults, .user-marker,
 #nk-selected-feature,
 #nk-selected-coverage-map, #overview-container-panel, .emergency-poster-popup {
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 
 #basic-toolbar .panel + .panel,
@@ -2529,6 +2531,7 @@ focus for toolbar controls
     height: 24px;
     width: 24px;
     overflow: hidden;
+    -webkit-border-radius: 50%;
     border-radius: 50%; }
   #pointMenu #PMopener {
     background-position: 0 0; }
@@ -2562,7 +2565,8 @@ focus for toolbar controls
   bottom: 0;
   right: 0;
   background: transparent url("img/pointMenuBackground.min.svg") no-repeat scroll center center;
-  border-radius: 100%; }
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
   #PMmenu .icon1 {
     top: 15px;
     left: 62px; }
