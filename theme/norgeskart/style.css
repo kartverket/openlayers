@@ -10,8 +10,8 @@
 #make-your-own-panel.active > .widget:after, .embedContent .step-specific.type button.static-button:after, .embedContent .step-specific.area:after, .embedContent .step-specific.markers .instructions:after {
   clear: both; }
 
-.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
-#share-toolbar .panel .tool.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .overlay-group-panel .widget .cnt > ul > li ul, .emergency-poster-popup {
+.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-panel .panel.active .widget,
+#share-panel .panel .tool.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .overlay-group-panel .widget .cnt > ul > li ul, .emergency-poster-popup {
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9); }
 
@@ -26,7 +26,7 @@
 
 button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList label,
-.vectorLayerList label, .toolbar .nkButton, #share-toolbar .nkButton, #make-your-own-panel button, #help-panel button, .zoom-to-selection-button, .overlay-group-panel a.active, .toolbar button.btnPointMenu {
+.vectorLayerList label, .toolbar .nkButton, #share-panel .nkButton, #make-your-own-panel button, #help-panel button, .zoom-to-selection-button, .overlay-group-panel a.active, .toolbar button.btnPointMenu {
   border-radius: 3px;
   cursor: pointer; }
 
@@ -42,8 +42,8 @@ button, .layersDiv .vectorWidgetToggleBtn,
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset; }
 
 #make-your-own-panel.active > .widget a.external-link, .embedContent .step-specific.type button, #embed-basic-toolbar, #embed-basic-toolbar .collapse-toolbar-toggle.on, #basic-toolbar,
-#secondary-toolbar, #share-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-toolbar .panel.active .widget,
-#share-toolbar .panel .tool.active .widget, .embedContent .step-specific.descriptions #long-desc-explanation,
+#secondary-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-panel .panel.active .widget,
+#share-panel .panel .tool.active .widget, .embedContent .step-specific.descriptions #long-desc-explanation,
 .embedContent .step-specific.descriptions #short-desc-explanation, #searchResults, .user-marker,
 #nk-selected-feature,
 #nk-selected-coverage-map, #overview-container-panel, .emergency-poster-popup {
@@ -57,21 +57,20 @@ button, .layersDiv .vectorWidgetToggleBtn,
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC");
   background-repeat: repeat-x; }
 
-#search-toolbar .panel + .panel, #zoom-panel .track {
+#top-toolbar .panel + .panel, #zoom-panel .track {
   /* h-divider.png base64-encoded */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAAD0lEQVQI12OYPGkSMzMzAAitAcGVxxKdAAAAAElFTkSuQmCC");
   background-repeat: repeat-y; }
 
-#share-toolbar .panel + .panel, .overlay-group-panel .widget .cnt > ul > li {
+#share-panel .panel + .panel, .overlay-group-panel .widget .cnt > ul > li {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAAD0lEQVQI12NgZmaePGkSAAOjAcFz13/MAAAAAElFTkSuQmCC");
   background-repeat: repeat-y; }
 
-body, #map, #basic-toolbar,
-#secondary-toolbar {
+body, #map {
   height: 100%; }
 
-#share-toolbar .panel.active .widget:after,
-#share-toolbar .panel .tool.active .widget:after, .olPopup.positioned .arrow-anchor:after {
+#share-panel .panel.active .widget:after,
+#share-panel .panel .tool.active .widget:after, .olPopup.positioned .arrow-anchor:after {
   content: '';
   border: 7px solid transparent;
   width: 0;
@@ -288,6 +287,11 @@ body {
   padding: 0;
   margin: 0; }
 
+html,
+body {
+  overflow-x: hidden !important;
+  position: relative !important; }
+
 .layerTriggerTarget {
   display: none; }
 
@@ -362,7 +366,7 @@ body {
 #basic-toolbar,
 #secondary-toolbar {
   position: absolute;
-  top: 0;
+  top: 60px;
   bottom: 0;
   width: 68px;
   padding-top: 13px; }
@@ -381,22 +385,24 @@ body {
 #secondary-toolbar {
   right: 0; }
 
-#search-toolbar {
+#top-toolbar {
   position: absolute;
-  top: 19px;
-  left: 75px;
-  height: 60px;
-  background-image: -webkit-linear-gradient(#898989, #505050);
-  background-image: -moz-linear-gradient(#898989, #505050);
-  background-image: -ms-linear-gradient(#898989, #505050);
-  background-image: -o-linear-gradient(#898989, #505050);
-  background-image: linear-gradient(#898989, #505050);
-  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.25); }
-  #search-toolbar .panel {
-    height: 60px;
-    padding: 0 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: -webkit-linear-gradient(#8a8989, #333333);
+  background-image: -moz-linear-gradient(#8a8989, #333333);
+  background-image: -ms-linear-gradient(#8a8989, #333333);
+  background-image: -o-linear-gradient(#8a8989, #333333);
+  background-image: linear-gradient(#8a8989, #333333);
+  box-shadow: 2px 0 2px rgba(0, 0, 0, 0.25);
+  padding: 0 68px;
+  z-index: 4000; }
+  #top-toolbar .panel {
     vertical-align: top;
     display: inline-block; }
+  #top-toolbar > .panel {
+    height: 60px; }
 
 #top-decoration-bar {
   position: absolute;
@@ -411,19 +417,20 @@ body {
   background-image: -o-linear-gradient(#9e9e9e, #505050);
   background-image: linear-gradient(#9e9e9e, #505050); }
 
-#share-toolbar {
-  position: absolute;
-  top: 39px;
-  right: 16.666%;
-  height: 40px; }
-  #share-toolbar .panel {
+#share-panel {
+  position: relative;
+  height: 40px;
+  padding-left: 0;
+  padding: 0; }
+  #share-panel .panel {
+    margin-top: 10px;
     width: 60px;
     height: 39px;
     text-align: center;
     display: inline-block; }
-  #share-toolbar .icon {
-    width: 20px;
-    height: 20px; }
+  #share-panel .icon {
+    width: 26px;
+    height: 26px; }
 
 #basic-toolbar .icon,
 #secondary-toolbar .icon,
@@ -525,19 +532,21 @@ body {
   width: 68px;
   cursor: pointer; }
 
-#logo-panel svg.kartverket.logo {
-  height: 42px;
-  width: 119px;
-  margin-top: 10px; }
-  #logo-panel svg.kartverket.logo .outline,
-  #logo-panel svg.kartverket.logo .text {
-    fill: #ffffff; }
-#logo-panel img {
-  position: relative;
-  top: 10px;
-  display: block; }
-#logo-panel svg + img {
-  display: none; }
+#logo-panel {
+  padding: 0 20px 0 0; }
+  #logo-panel svg.kartverket.logo {
+    height: 42px;
+    width: 119px;
+    margin-top: 10px; }
+    #logo-panel svg.kartverket.logo .outline,
+    #logo-panel svg.kartverket.logo .text {
+      fill: #ffffff; }
+  #logo-panel img {
+    position: relative;
+    top: 10px;
+    display: block; }
+  #logo-panel svg + img {
+    display: none; }
 
 .layersDiv {
   position: relative; }
@@ -682,11 +691,13 @@ body {
 #secondary-toolbar,
 #overview-container-panel,
 #share-toolbar,
+#top-toolbar,
 .fullscreen #basic-toolbar,
 .fullscreen #search-toolbar,
 .fullscreen #secondary-toolbar,
 .fullscreen #overview-container-panel,
-.fullscreen #share-toolbar {
+.fullscreen #share-toolbar,
+.fullscreen #top-toolbar {
   -webkit-transition: -webkit-transform .5s ease-in-out;
   -o-transition: transform .5s ease-in-out;
   transition: -ms-transform .5s ease-in-out;
@@ -703,10 +714,11 @@ body {
     -ms-transform: translate(70px, 0);
     transform: translate(70px, 0); }
   .fullscreen #search-toolbar,
-  .fullscreen #share-toolbar {
-    -webkit-transform: translate(0, -80px);
-    -ms-transform: translate(0, -80px);
-    transform: translate(0, -80px); }
+  .fullscreen #share-toolbar,
+  .fullscreen #top-toolbar {
+    -webkit-transform: translate(0, -100%);
+    -ms-transform: translate(0, -100%);
+    transform: translate(0, -100%); }
   .fullscreen #fullscreen-panel {
     -webkit-transition: -webkit-transform .5s ease-in-out;
     -o-transition: transform .5s ease-in-out;
@@ -757,10 +769,10 @@ body {
   height: auto;
   min-height: 40px; }
 
-#share-toolbar .nkButton {
+#share-panel .nkButton {
   width: 30px;
   height: 30px;
-  padding: 5px;
+  padding: 2px;
   margin: 5px; }
 
 .widget {
@@ -796,8 +808,8 @@ body {
 /******************************************
 === share toolbar ===
 ******************************************/
-#share-toolbar .panel.active .widget,
-#share-toolbar .panel .tool.active .widget {
+#share-panel .panel.active .widget,
+#share-panel .panel .tool.active .widget {
   right: 0;
   top: 100%;
   left: auto;
@@ -809,21 +821,21 @@ body {
   line-height: 18px;
   text-align: left;
   text-transform: none; }
-  #share-toolbar .panel.active .widget:after,
-  #share-toolbar .panel .tool.active .widget:after {
+  #share-panel .panel.active .widget:after,
+  #share-panel .panel .tool.active .widget:after {
     top: -14px;
     border-bottom-color: rgba(80, 80, 80, 0.9); }
-#share-toolbar .panel:nth-last-child(1) .widget:after {
+#share-panel .panel:nth-last-child(1) .widget:after {
   right: 23px; }
-#share-toolbar .panel:nth-last-child(2) .widget:after {
+#share-panel .panel:nth-last-child(2) .widget:after {
   right: 83px; }
-#share-toolbar .panel:nth-last-child(3) .widget:after {
+#share-panel .panel:nth-last-child(3) .widget:after {
   right: 143px; }
-#share-toolbar .panel:nth-last-child(4) .widget:after {
+#share-panel .panel:nth-last-child(4) .widget:after {
   right: 203px; }
-#share-toolbar .panel:nth-last-child(5) .widget:after {
+#share-panel .panel:nth-last-child(5) .widget:after {
   right: 263px; }
-#share-toolbar .panel:nth-last-child(6) .widget:after {
+#share-panel .panel:nth-last-child(6) .widget:after {
   right: 323px; }
 
 /******************************************
@@ -1326,6 +1338,7 @@ html.touch #pan-panel {
 === search ===
 *****************************/
 #search-panel {
+  padding: 0 20px;
   position: relative; }
 
 #searchInput {
@@ -1369,6 +1382,7 @@ html.touch #pan-panel {
   padding: 10px; }
 
 #searchResults {
+  z-index: 1;
   display: none;
   top: 65px;
   left: 0;
@@ -1690,6 +1704,73 @@ button:focus .icon {
 
   #search-panel {
     width: 100%; } }
+@media screen and (max-width: 900px) {
+  #top-toolbar {
+    padding: 0 8px;
+    text-align: center; }
+    #top-toolbar > .panel {
+      text-align: left; }
+
+  #search-panel {
+    padding: 0 10px; } }
+@media screen and (max-width: 767px) {
+  #top-toolbar {
+    height: 100px;
+    background-image: -moz-linear-gradient(#8a8989, #333333 60px, rgba(80, 80, 80, 0.9) 60px);
+    background-image: -ms-linear-gradient(#8a8989, #333333 60px, rgba(80, 80, 80, 0.9) 60px);
+    background-image: -o-linear-gradient(#8a8989, #333333 60px, rgba(80, 80, 80, 0.9) 60px);
+    background-image: linear-gradient(#8a8989, #333333 60px, transparent 61px);
+    background-color: transparent;
+    box-shadow: none;
+    text-align: left;
+    padding: 0 68px; }
+    #top-toolbar #searchResults {
+      top: 100%; }
+    #top-toolbar #share-panel {
+      background: none;
+      height: auto;
+      min-height: 40px;
+      width: 100%;
+      padding-left: 149px;
+      /* width of logo-panel + search-panel padding */
+      background-color: #616161;
+      background-color: rgba(80, 80, 80, 0.9); }
+      #top-toolbar #share-panel .panel {
+        margin-top: 0; }
+
+  #basic-toolbar,
+  #secondary-toolbar {
+    -webkit-box-shadow: 46px 0 6px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 46px 6px rgba(0, 0, 0, 0.7); } }
+@media screen and (max-width: 600px) {
+  #top-toolbar {
+    height: 140px; }
+    #top-toolbar #logo-panel {
+      padding-left: 20px; }
+    #top-toolbar #search-panel {
+      height: auto;
+      min-height: 40px;
+      width: 100%;
+      background-image: none;
+      background-color: #616161;
+      background-color: rgba(80, 80, 80, 0.9); }
+    #top-toolbar #searchInput,
+    #top-toolbar #searchSubmit {
+      top: 8px; }
+    #top-toolbar #share-panel {
+      padding-left: 10px; }
+
+  #basic-toolbar,
+  #secondary-toolbar {
+    -webkit-box-shadow: 86px 0 6px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 86px 6px rgba(0, 0, 0, 0.7); } }
+html.touch #searchResults a.close {
+  text-indent: 100%; }
+html.touch #searchResults a.close,
+html.touch #searchResults .icon.close {
+  width: 24px;
+  height: 24px; }
+
 /* media query fallback for IE8 */
 .sub850h #layerselector-panel-vector .widget {
   top: auto;
@@ -1762,7 +1843,7 @@ focus for toolbar controls
   .tool.active .widget {
     display: block; }
 
-#share-toolbar .tool {
+#share-panel .tool {
   position: static; }
 
 /***************************
