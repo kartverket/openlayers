@@ -470,10 +470,10 @@ button {
   @extend %shadow;
  
   position: absolute;
-  top: 60px;
+  top: 0;
   bottom: 0;
   width: 68px;
-  padding-top: 13px;
+  padding-top: 73px;
   
   .panel {
     width: 68px;
@@ -490,6 +490,7 @@ button {
 }
 #secondary-toolbar {
   right: 0;
+  z-index: 2002;
 }
 
 
@@ -910,6 +911,27 @@ button {
   transition: -ms-transform .5s ease-in-out;
   transition: transform .5s ease-in-out;
 }
+#searchResults,
+.fullscreen #searchResults {
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  -o-transition: transform .5s ease-in-out;
+  transition: -ms-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+}
+#fullscreen-panel {
+    background-color: rgba(80,80,80,0);
+    -webkit-transition: -webkit-transform .5s ease-in-out, background-color .5s linear;
+    -o-transition: transform .5s ease-in-out, background-color .5s linear;
+    transition: -ms-transform .5s ease-in-out, background-color .5s linear;
+    transition: transform .5s ease-in-out, background-color .5s linear;
+}
+  
+.fullscreen #fullscreen-panel {
+    -webkit-transition: -webkit-transform .5s ease-in-out, background-color .5s step-start;
+    -o-transition: transform .5s ease-in-out, background-color .5s step-start;
+    transition: -ms-transform .5s ease-in-out, background-color .5s step-start;
+    transition: transform .5s ease-in-out, background-color .5s step-start;
+  }
 
 .fullscreen {
   overflow: hidden;
@@ -928,24 +950,23 @@ button {
 
   #search-toolbar,
   #share-toolbar,
-  #top-toolbar
+  #top-toolbar,
+  #searchResults
   {
     -webkit-transform: translate(0, -100%);
     -ms-transform: translate(0, -100%);
     transform: translate(0, -100%);
   }
+  #searchResults {
+    top: 55px;
+  }
 
   #fullscreen-panel {
     @extend %partial-transparent;
 
-    -webkit-transition: -webkit-transform .5s ease-in-out;
-    -o-transition: transform .5s ease-in-out;
-    transition: -ms-transform .5s ease-in-out;
-    transition: transform .5s ease-in-out;
-
-    -webkit-transform: translate(70px, 0);
-    -ms-transform: translate(70px, 0);
-    transform: translate(70px, 0);
+    -webkit-transform: translate(70px, -73px);
+    -ms-transform: translate(70px, -73px);
+    transform: translate(70px, -73px);
 
     @extend %shadow;
   }
@@ -953,7 +974,13 @@ button {
   #overview-container-panel {
     -webkit-transform: translate(70px, 120px);
     -ms-transform: translate(70px, 120px);
-    transform: translate(70px, 120px);    
+    transform: translate(70px, 120px);
+
+    &.maximized-size {
+      -webkit-transform: translate(70px, 300px);
+      -ms-transform: translate(70px, 300px);
+      transform: translate(70px, 300px);
+    }    
   }
 }
 
@@ -2254,8 +2281,8 @@ button:focus .icon {
       background-position: 0 -12px;
     }
   }
-
 }
+
 #secondary-toolbar ~ #overview-container-panel {
   right: 80px;
   bottom: 10px;
@@ -2368,8 +2395,8 @@ button:focus .icon {
   }
   #basic-toolbar,
   #secondary-toolbar {
-    -webkit-box-shadow: 46px 0 6px rgba(0, 0, 0, 0.7);
-    box-shadow: 0 46px 6px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: 106px 0 6px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 106px 6px rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -2400,8 +2427,8 @@ button:focus .icon {
   }
   #basic-toolbar,
   #secondary-toolbar {
-    -webkit-box-shadow: 86px 0 6px rgba(0, 0, 0, 0.7);
-    box-shadow: 0 86px 6px rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: 146px 0 6px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 146px 6px rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -2425,7 +2452,10 @@ html.touch #searchResults {
 .sub750h #zoom-panel .sliderWrapper {
   display: none;
 }
-.sub650h #basic-toolbar .panel, #secondary-toolbar .panel { padding: 15px 0; }
+.sub650h #basic-toolbar .panel, 
+#secondary-toolbar .panel { 
+  padding: 15px 0; 
+}
 
 .sub550w #search-toolbar {
   height: 120px;
@@ -2458,6 +2488,105 @@ focus for toolbar controls
 === tools ===
 ***************************/
 
+#secondary-toolbar {
+  
+  &,
+  &.minified {
+    &,
+    & ~ #overview-container-panel {
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  > .panel-name {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    
+    svg.icon {
+      display: none;
+    }
+  }
+  &.minified > .panel-name {
+    width: auto;
+    text-align: left;
+    left: 0;
+    -webkit-transform: rotate(90deg) translateY(100%);
+    -moz-transform: rotate(90deg) translateY(100%);
+    -ms-transform: rotate(90deg) translateY(100%);
+    -o-transform: rotate(90deg) translateY(100%);
+    transform: rotate(90deg) translateY(100%);
+    -webkit-transform-origin: 0% 100%;
+    -moz-transform-origin: 0% 100%;
+    -ms-transform-origin: 0% 100%;
+    -o-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+
+    position: absolute;
+    padding: 10px 40px 10px 70px;
+    min-height: 37px;
+    font-size: 12px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: rgba(80,80,80,.9);
+      -webkit-transform: perspective(3px) rotateX(-1deg) translateY(1px);
+      -moz-transform: perspective(3px) rotateX(-1deg) translateY(1px);
+      -ms-transform: perspective(3px) rotateX(-1deg) translateY(1px);
+      -o-transform: perspective(3px) rotateX(-1deg) translateY(1px);
+      transform: perspective(3px) rotateX(-1deg) translateY(1px);
+      border-radius: 0 0 10px 10px;
+      /*
+        cancel the box-shadow of the toolbar by an complementary colored inset shadow 
+      */
+      -webkit-box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset; 
+      -moz-box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset; 
+      box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset;  
+    }
+    svg.icon {
+      display: inline;
+      position: absolute;
+      left: 30px;
+      bottom: 7px;
+      width: 26px;
+      height: 26px;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+  }
+  &.minified {
+    width: 5px;
+    .panel + .panel {
+      background-image: none;
+    }
+
+    ~ #overview-container-panel {
+      right: 15px;
+      bottom: 10px;
+    }
+  }
+}
+
 #tools-panel {
   position: relative;
   text-align: center;
@@ -2479,7 +2608,6 @@ focus for toolbar controls
     right: 100%;
     top: 50%;
     margin-top: -5px;
-
   }
 }
 
