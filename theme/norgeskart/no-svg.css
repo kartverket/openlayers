@@ -232,6 +232,18 @@
 .tool.draw .widget button.label {
   background-image: url('img/label-icon.png');
 }
+#secondary-toolbar.minified > .panel-name:after {
+  background-image: url("img/tools-icon.png");
+  background-position: 0;
+  background-repeat: no-repeat;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  margin-top: -13px;
+  width: 26px;
+  height: 26px;
+}
 
 
 /* Point menu items */

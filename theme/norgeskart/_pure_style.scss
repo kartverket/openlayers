@@ -2560,6 +2560,7 @@ focus for toolbar controls
       -moz-box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset; 
       box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset;  
     }
+ 
     svg.icon {
       display: inline;
       position: absolute;
@@ -2585,6 +2586,18 @@ focus for toolbar controls
       bottom: 10px;
     }
   }
+}
+.no-svg #secondary-toolbar.minified > .panel-name:after {
+  background-image: url("img/tools-icon.png");
+  background-position: 0;
+  background-repeat: no-repeat;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  margin-top: -13px;
+  width: 26px;
+  height: 26px;
 }
 
 #tools-panel {

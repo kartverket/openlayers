@@ -1841,7 +1841,8 @@ focus for toolbar controls
   transition: all 0.5s ease-in-out; }
 #secondary-toolbar > .panel-name {
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
   #secondary-toolbar > .panel-name svg.icon {
     display: none; }
 #secondary-toolbar.minified > .panel-name {
@@ -1867,8 +1868,7 @@ focus for toolbar controls
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
-  cursor: pointer; }
+  user-select: none; }
   #secondary-toolbar.minified > .panel-name:before {
     display: block;
     content: '';
@@ -1910,6 +1910,18 @@ focus for toolbar controls
   #secondary-toolbar.minified ~ #overview-container-panel {
     right: 15px;
     bottom: 10px; }
+
+.no-svg #secondary-toolbar.minified > .panel-name:after {
+  background-image: url("img/tools-icon.png");
+  background-position: 0;
+  background-repeat: no-repeat;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  margin-top: -13px;
+  width: 26px;
+  height: 26px; }
 
 #tools-panel {
   position: relative;
