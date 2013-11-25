@@ -387,6 +387,10 @@ body {
   right: 0;
   z-index: 2002; }
 
+.no-svg #top-toolbar {
+  background-image: url("img/top-toolbar-gradient.svg");
+  background-repeat: repeat-x; }
+
 #top-toolbar {
   position: absolute;
   top: 0;

@@ -241,10 +241,14 @@
   top: 50%;
   left: 30px;
   margin-top: -13px;
-  width: 26px;
+  width: 27px;
   height: 26px;
 }
 
+#top-toolbar {
+  background-image: url('img/top-toolbar-gradient.svg');
+  background-repeat: repeat-x;
+}
 
 /* Point menu items */
 #PMinformation { background-image: url('img/pointMenuInformation.png'); }

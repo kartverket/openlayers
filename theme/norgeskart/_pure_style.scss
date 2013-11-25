@@ -492,8 +492,10 @@ button {
   right: 0;
   z-index: 2002;
 }
-
-
+.no-svg #top-toolbar {
+  background-image: url('img/top-toolbar-gradient.svg');
+  background-repeat: repeat-x;
+}
 #top-toolbar {
   position: absolute;
   top: 0;
@@ -2585,6 +2587,10 @@ focus for toolbar controls
       right: 15px;
       bottom: 10px;
     }
+    button,
+    a {
+      display: none;
+    }
   }
 }
 .no-svg #secondary-toolbar.minified > .panel-name:after {
@@ -2596,7 +2602,7 @@ focus for toolbar controls
   top: 50%;
   left: 30px;
   margin-top: -13px;
-  width: 26px;
+  width: 27px;
   height: 26px;
 }
 
