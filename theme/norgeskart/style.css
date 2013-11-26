@@ -1783,6 +1783,10 @@ focus for toolbar controls
     -webkit-box-shadow: 0 6px 6px -6px rgba(175, 175, 175, 0.3) inset;
     -moz-box-shadow: 0 6px 6px -6px rgba(175, 175, 175, 0.3) inset;
     box-shadow: 0 6px 6px -6px rgba(175, 175, 175, 0.3) inset; }
+  #secondary-toolbar.minified > .panel-name span {
+    display: inline-block;
+    -webkit-transform: translateZ(50px);
+    transform: translateZ(50px); }
   #secondary-toolbar.minified > .panel-name svg.icon {
     display: inline;
     position: absolute;
@@ -1790,7 +1794,7 @@ focus for toolbar controls
     bottom: 7px;
     width: 26px;
     height: 26px;
-    -webkit-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg) translateZ(50px);
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
