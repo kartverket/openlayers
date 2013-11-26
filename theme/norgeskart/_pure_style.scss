@@ -2623,7 +2623,7 @@ focus for toolbar controls
       }
       .h,
       dd {
-        margin-bottom: 10px;
+        margin-bottom: 2px;
       }
       dt:after {
         content: ':';
@@ -4218,6 +4218,25 @@ input:disabled {
 @media screen and (max-height: 640px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 14px 0; } }
 @media screen and (max-height: 630px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 13px 0; } }
 
+
+@media screen and (max-height: 700px) {
+  #secondary-toolbar {
+    .draw,
+    .height-profile,
+    .transformations {
+      .widget {
+        position: fixed;
+        top: 60px;
+        right: 68px;
+        left: auto;
+
+        .h {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 550px) {
   #search-toolbar {
