@@ -2290,17 +2290,20 @@ button:focus .icon {
   bottom: 10px;
 }
 
-html.touch #searchResults {
-  a.close {
-    text-indent: 100%;
+html.touch {
+  #heightProfileLightboxCloseBtn,
+  #searchResults a.close {
+      text-indent: 100%;
   }
-  a.close,
-  .icon.close {
-    width: 24px;
-    height: 24px;
+  #heightProfileLightboxCloseBtn,
+  #searchResults a.close {
+    &,
+    .icon.close {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
-
 /* media query fallback for IE8 */
 
 .sub850h #layerselector-panel-vector .widget {
@@ -4222,7 +4225,11 @@ input:disabled {
 @media screen and (max-height: 650px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 15px 0; } }
 @media screen and (max-height: 640px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 14px 0; } }
 @media screen and (max-height: 630px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 13px 0; } }
-
+@media screen and (max-height: 630px) { #basic-toolbar .panel, #secondary-toolbar .panel { padding: 10px 0; }
+  #basic-toolbar #fullscreen-panel {
+    padding-bottom: 0;
+  }
+}
 
 @media screen and (max-height: 700px) {
   #secondary-toolbar {
@@ -4408,6 +4415,31 @@ input:disabled {
       width: 22px;
       height: 22px;
 
+    }
+  }
+}
+@media screen and (max-height: 770px), screen and (max-width: 820px) {
+  .height-profile-lightbox.splashscreen .widget {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 20px;
+
+    .header {
+      padding: 0;
+    }
+
+    .image-wrapper {
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        padding: 20px 15px 125px;
+      }
+    }
+    .button-panel {
+      position: absolute;
+      bottom: 15px;
+      right: 0;
     }
   }
 }
