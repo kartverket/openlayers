@@ -2246,7 +2246,17 @@ button:focus .icon {
     }
   }
 }
-
+.no-svg #overview-container-panel {
+  .olControlOverviewMapExpandableToggleSizeButton {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAYCAMAAAD57OxYAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAA6SURBVHjalc7RCgBQBAPQ+f+fdlva6JayeDhRYCaUH1ww+iRgsIzq2qeWOyOX3zoo34FACZSAl8NvCWoIAK1I4r+CAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+  }
+  &.maximized-size {
+    .olControlOverviewMapExpandableToggleSizeButton {
+      background-position: 0 -12px;
+    }
+  }
+}
 #overview-container-panel {
   position: absolute;
   bottom: 0;
@@ -2266,8 +2276,6 @@ button:focus .icon {
   }
   .olControlOverviewMapExpandableToggleSizeButton {
     background-color: $panel-color-hex;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAYCAMAAAD57OxYAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAA6SURBVHjalc7RCgBQBAPQ+f+fdlva6JayeDhRYCaUH1ww+iRgsIzq2qeWOyOX3zoo34FACZSAl8NvCWoIAK1I4r+CAAAAAElFTkSuQmCC');
-    background-repeat: no-repeat;
     border-bottom: 6px solid $panel-color-hex;
     border-right: 6px solid $panel-color-hex;
     box-sizing: content-box;
@@ -2278,14 +2286,40 @@ button:focus .icon {
     position: absolute;
     top: 8px;
     width: 12px;
+
+    .icon {
+      height: 12px;
+      width: 12px;
+
+      &.minimize {
+        display: none;
+      }
+      &.expand {
+        display: block;
+      }
+
+    }
   }
   &.maximized-size {
     .olControlOverviewMapExpandableToggleSizeButton {
-      background-position: 0 -12px;
+      .icon {
+        &.expand {
+          display: none;
+        }
+        &.minimize {
+          display: block;
+        }
+      }
     }
   }
 }
-
+html.touch #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton {
+  &,
+  .icon {
+    height: 24px;
+    width: 24px;
+  }
+}
 #secondary-toolbar ~ #overview-container-panel {
   right: 80px;
   bottom: 10px;
