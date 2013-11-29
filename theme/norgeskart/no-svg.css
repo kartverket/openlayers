@@ -267,6 +267,14 @@
   background-repeat: repeat-x;
 }
 
+#overview-container-panel .olControlOverviewMapExpandableToggleSizeButton {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAYCAMAAAD57OxYAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAA6SURBVHjalc7RCgBQBAPQ+f+fdlva6JayeDhRYCaUH1ww+iRgsIzq2qeWOyOX3zoo34FACZSAl8NvCWoIAK1I4r+CAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+}
+#overview-container-panel.maximized-size .olControlOverviewMapExpandableToggleSizeButton {
+  background-position: 0 -12px;
+}
+
 /* Point menu items */
 #PMinformation { background-image: url('img/pointMenuInformation.png'); }
 #PMweather     { background-image: url('img/pointMenuWeather.png'); }
