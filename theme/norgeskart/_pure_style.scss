@@ -2692,7 +2692,9 @@ focus for toolbar controls
       margin-top: 20px;
       padding-top: 1em;
     }
-
+    legend {
+      color: #fff;
+    }
     button {
       @extend %blue-one-lined-button;
       padding: 0 12px 0 12px;
@@ -2839,6 +2841,9 @@ focus for toolbar controls
     }
     fieldset {
       margin-top: 20px;
+    }
+    legend {
+      color: #fff;
     }
     input, select {
       margin-bottom: 10px;
@@ -3812,12 +3817,13 @@ $overlayMenuItemMargin: 5px;
   }
 
   a.weatherReference {
-    color: #1122D4;
+    color: #fff;
     display: inline-block;
     font-size: 11px;
     padding: 5px 2px 5px 2px;
     
-    &:hover {
+    &:hover,
+    &:active {
       color: #FFFFFF;
       text-decoration: underline;
     }
