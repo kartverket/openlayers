@@ -13,7 +13,8 @@
 .Draw-button,
 .height-profile-button,
 .make-your-own-button,
-.Transformations-button {
+.Transformations-button,
+.activate-search {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -39,6 +40,10 @@
 
 .-button {
   background-image: url('img/-icon.png');
+}
+.activate-search {
+  background-image: url('img/activate-search-icon.png');
+  text-indent: 100%;
 }
 .point-menu-button {
   background-image: url('img/point-menu-icon.png');
@@ -244,7 +249,19 @@
   width: 27px;
   height: 26px;
 }
-
+@media screen and (max-width: 767px) {
+  #secondary-toolbar > .panel-name {
+    background-image: url("img/tools-icon.png");
+    background-position: 50% 4px;
+    background-repeat: no-repeat;
+    background-size: 22px;
+    font-size: 10px;
+  }
+  #secondary-toolbar > .panel-name:after {
+    content: none;
+    display: none;
+  }
+}
 #top-toolbar {
   background-image: url('img/top-toolbar-gradient.svg');
   background-repeat: repeat-x;

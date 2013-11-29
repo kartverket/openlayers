@@ -1032,14 +1032,14 @@ button {
 
 #services-panel {
   .panel-name {
-    display:block;
-    text-align:center;
-    margin-bottom:5px;
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
   }
   
   button.nkButton {
-    height:auto;
-    min-height:40px;
+    height: auto;
+    min-height: 40px;
   }
 }
 
@@ -2369,6 +2369,7 @@ focus for toolbar controls
     cursor: pointer;
     text-transform: uppercase;
     color: #fff;
+    -webkit-font-smoothing: antialiased;
     
     svg.icon {
       display: none;
@@ -4455,6 +4456,7 @@ input:disabled {
           font-size: 10px;
           text-indent: 200%;
           display: block;
+          -webkit-font-smoothing: antialiased;
         }
 
         &:before {
