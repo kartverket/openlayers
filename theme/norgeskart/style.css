@@ -744,6 +744,19 @@ body {
     font-size: 10px;
     color: white; }
 
+.externalToolbarLink {
+  text-align: center;
+  display: block;
+}
+.externalToolbarLink a {
+  color:#fff;
+  text-decoration: none;
+}
+
+.externalToolbarLink a:hover {
+  text-decoration: underline;
+}
+
 #services-panel .panel-name {
   display: block;
   text-align: center;
