@@ -1,15 +1,15 @@
 function com_test_getRenderedDimensions(t) {
     t.plan(17);
     var content = (new Array(100)).join("foo ");
-    
+
     // test with fixed width
     var fw = OpenLayers.Util.getRenderedDimensions(content, {w: 20});
     t.eq(fw.w, 20, "got the fixed width");
-    
+
     // test with fixed height
     var fh = OpenLayers.Util.getRenderedDimensions(content, {h: 15});
-    t.eq(fh.h, 15, "got the fixed height");        
-    
+    t.eq(fh.h, 15, "got the fixed height");
+
     var size = OpenLayers.Util.getRenderedDimensions("<p>Content</p>");
     var bigger = OpenLayers.Util.getRenderedDimensions("<p>Content</p>", null, {displayClass: 'test_getRenderedDimensions'});
     var overflow = OpenLayers.Util.getRenderedDimensions("<p style='overflow:auto'>Content</p>");
@@ -31,7 +31,7 @@ function com_test_getRenderedDimensions(t) {
     };
     finalSize = OpenLayers.Util.getRenderedDimensions(content, null, optionAbsDiv);
     t.ok(initialSize.w > 0 && initialSize.h > 0, "Has initial size (requires visible test_iframe)");
-    t.eq(finalSize.w, initialSize.w, 
+    t.eq(finalSize.w, initialSize.w,
                 testName + "initial width " + initialSize.w + "px is maintained");
      t.eq(finalSize.h, initialSize.h, 
                 testName + "initial height " + initialSize.h + "px is maintained");
