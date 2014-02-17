@@ -1,57 +1,26 @@
-<html>
-<head>
-<style type="text/css">
- .testDims p{
-    padding: 20px; 
-}     
-</style>
-<script src="../../lib/OpenLayers.js"></script>
-<script>
-function run() {
-    var out = document.getElementById("out");    
+function com_test_getRenderedDimensions(t) {
+    t.plan(17);
+    var content = (new Array(100)).join("foo ");
+
+    // test with fixed width
+    var fw = OpenLayers.Util.getRenderedDimensions(content, {w: 20});
+    t.eq(fw.w, 20, "got the fixed width");
+
+    // test with fixed height
+    var fh = OpenLayers.Util.getRenderedDimensions(content, {h: 15});
+    t.eq(fh.h, 15, "got the fixed height");
+
     var size = OpenLayers.Util.getRenderedDimensions("<p>Content</p>");
-    var bigger = OpenLayers.Util.getRenderedDimensions("<p>Content</p>", null, {displayClass: 'testDims'});
+    var bigger = OpenLayers.Util.getRenderedDimensions("<p>Content</p>", null, {displayClass: 'test_getRenderedDimensions'});
     var overflow = OpenLayers.Util.getRenderedDimensions("<p style='overflow:auto'>Content</p>");
     var width = OpenLayers.Util.getRenderedDimensions("<p>Content</p>", new OpenLayers.Size(250, null));
     var height = OpenLayers.Util.getRenderedDimensions("<p>Content</p>", new OpenLayers.Size(null, 40));
-    if ((size.w + 40) == bigger.w && (size.h + 40) == bigger.h) {
-        out.innerHTML = "bigger Pass:  " + size + ", " + bigger;
-    } else { 
-        out.innerHTML = "bigger Fail:  " + size + ", " + bigger;
-    }
-
-    if (size.w == overflow.w && size.h == overflow.h) {
-        out.innerHTML += "<br/>overflow Pass:  " + size + ", " + overflow;
-    } else {
-        out.innerHTML += "<br/>overflow Fail:  " + size + ", " + overflow;
-    }
-
-    if (width.w == 250 && width.h == size.h) {
-        out.innerHTML += "<br/>width Pass:  " + size + ", " + width;
-    }
-    else {
-        out.innerHTML += "<br/>width Fail:  " + size + ", " + width;
-    }
-
-    if (height.h == 40 && height.w == size.w) {
-        out.innerHTML += "<br/>height Pass:  " + size + ", " + height;
-    }
-    else {
-        out.innerHTML += "<br/>height Fail:  " + size + ", " + height;
-    }
+    t.ok((size.w + 40) == bigger.w && (size.h + 40) == bigger.h, "bigger Pass:  " + size + ", " + bigger);
+    t.ok(size.w == overflow.w && size.h == overflow.h, "overflow Pass:  " + size + ", " + overflow);
+    t.ok(width.w == 250 && width.h == size.h, "width Pass:  " + size + ", " + width);
+    t.ok(height.h == 40 && height.w == size.w, "height Pass:  " + size + ", " + height);
     
-    // To use the same syntax as in "\tests"
-    var t = {eq: function(a, b, msg) {
-            if (a == b) {
-                out.innerHTML += "<br/>ok " + msg;
-            }
-            else {
-                out.innerHTML += "<br/><span style=\"color:red\">Fail (" + a + " not eq " + b + "): " + msg + "<span>";
-            }   
-        }
-    };
-    var text = (new Array(10)).join("foo foo foo <br>"),
-        content = "<div>" + text + "</div>";
+    content = (new Array(10)).join("foo foo foo <br>");
     var testName,
         finalSize,
         initialSize = OpenLayers.Util.getRenderedDimensions(content, null);
@@ -61,7 +30,8 @@ function run() {
         containerElement: document.getElementById("absoluteDiv")
     };
     finalSize = OpenLayers.Util.getRenderedDimensions(content, null, optionAbsDiv);
-    t.eq(finalSize.w, initialSize.w, 
+    t.ok(initialSize.w > 0 && initialSize.h > 0, "Has initial size (requires visible test_iframe)");
+    t.eq(finalSize.w, initialSize.w,
                 testName + "initial width " + initialSize.w + "px is maintained");
      t.eq(finalSize.h, initialSize.h, 
                 testName + "initial height " + initialSize.h + "px is maintained");
@@ -91,12 +61,4 @@ function run() {
     testName = "Absolute without w&h (set width): ";
     finalSize = OpenLayers.Util.getRenderedDimensions(content, {w: 20}, optionAbsDiv00);
     t.eq(finalSize.w, 20, testName + "got the fixed width to 20px");
-} 
-</script>
-</head>
-<body onload="run()">
-<div id="out"></div>
-<div id="absoluteDiv" style="position:absolute; left:10px; width:500px; height: 500px"></div>
-<div id="absoluteDiv00" style="position:absolute; left:10px;"></div>
-</body>
-</html>
+}
