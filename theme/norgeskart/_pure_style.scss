@@ -1817,6 +1817,12 @@ button {
     margin: 0 0 0 -10px;
     text-align: center;
     z-index: 20;
+
+    &:focus, &:hover {
+      @extend %selected-button;
+      width: auto;
+      overflow: hidden;
+    }    
   }
   .olControlZoomIn.olButton {
     top: 0;
