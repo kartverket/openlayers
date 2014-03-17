@@ -1123,9 +1123,89 @@ button {
     }
   }
 }
+/******************************************
+=== geoportal panel ===
+******************************************/
+#geoportal-panel {
+  button {
+    @extend %button;
+  }
+  &.active {
+    > button {
+      @extend %selected-button;
+    }
+    > .widget {
+      width: 475px;
+      display: block;
+      @extend %clearfix;
+      a.external-link {
+        @extend %big-button;
+        height: auto;
+        min-height: 280px;
+        text-align: center;
+        float: left;
+        display: block;
+        text-decoration: none;
+        color: $lightest-color;
+        padding: 15px;
+        + .external-link {
+          float: right;
+        }
+        .illustration {
+          width: 100px;
+          height: 100px;
+          stroke-width: 1.5;
+        }
+        .h {
+          @extend %header-font;
+          font-size: 18px;
+          text-transform: none;
+          margin-bottom: 15px;
+        }
+        span,
+        .h {
+          text-align: left;
+          display: block;
+          text-decoration: none;
+          color: $lightest-color;
+        }
+        span {
+          display: block;
+          margin-top: 10px;
+          font-size: 12px;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+          .h {
+            text-decoration: underline;
+          }
+        }
+      }
+      .h {
+        @extend %widget-main-heading;
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      p {
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .cnt > div {
+        padding: 20px 16px 24px;
+      }
+      form > button {
+        @extend %blue-one-lined-button;
+      }
+    }
+  }
+}
 
 /******************************************
-=== help panel ===
+=== make-your-own-panel panel ===
 ******************************************/
 #make-your-own-panel {
   button {
