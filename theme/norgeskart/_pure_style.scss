@@ -1203,7 +1203,34 @@ button {
     }
   }
 }
-
+.tabs-menu {
+  height: 30px;
+  float: left;
+  clear: both;
+  list-style: none;
+}
+.tabs-menu li {
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  margin-right: 10px;
+  background-color: #ccc;
+}
+.tabs-menu li.current {
+  position: relative;
+  border-bottom: 3px solid #fff;
+  z-index: 5;
+}
+.tabs-menu li a {
+  padding: 0 10px;
+  text-transform: uppercase;
+  color: #2122d4;
+  text-decoration: none;
+}
+.tabs-menu .current a {color: #fff;}
+.tab {float: left;width: auto;}
+.tab-content {padding: 10px 0; display: none;}
+#addLayerTab {display: block; }
 /******************************************
 === make-your-own-panel panel ===
 ******************************************/
