@@ -678,6 +678,20 @@ button {
     display: none;
   }
 }
+#logoGeonorge  {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-top: 25px;
+  text-transform: none;
+  font-size: 14px;
+}
+
+#logoGeonorge a:hover {
+  text-decoration: underline;
+  display: block
+}
 
 .layersDiv {
   position: relative;
