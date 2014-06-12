@@ -1357,6 +1357,19 @@ button {
 .tab {float: left;width: auto;}
 .tab-content {padding: 10px 0; display: none;}
 #addLayerTab {display: block; }
+
+.olControlLoadingPanel {
+  background-image:url("../default/img/loading.gif");
+  margin-left: 40%;
+  margin-top: 40%;
+  position: relative;
+  width: 195px;
+  height: 11px;
+  background-position:center;
+  background-repeat:no-repeat;
+  display: none;
+  z-index: 1000;
+}
 /******************************************
 === make-your-own-panel panel ===
 ******************************************/
