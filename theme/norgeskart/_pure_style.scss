@@ -1218,34 +1218,24 @@ button {
   }
 }
 .tabs-menu {
-  height: 30px;
-  float: left;
-  clear: both;
-  list-style: none;
-}
-.tabs-menu li {
-  height: 30px;
-  line-height: 30px;
-  float: left;
-  margin-right: 10px;
-  background-color: #ccc;
-}
-.tabs-menu li.current {
-  position: relative;
-  border-bottom: 3px solid #fff;
-  z-index: 5;
+  @extend %progress-bullets;
+  color: #fff;
+  right: 20px;
+  top: 20px;
+  li {
+    margin-right: 4em;
+  }
+  @include active-step(tjenesteTab, 1, 3);
+  @include active-step(lagTab, 2, 3);
+  @include active-step(legendTab, 3, 3);
 }
 .tabs-menu li a {
-  padding: 0 10px;
-  text-transform: uppercase;
-  color: #2122d4;
   text-decoration: none;
 }
-.tabs-menu .current a {color: #fff;}
-.tab {float: left;width: auto;}
+.tabs-menu .current a {color: #fff; background-color: blue;}
+.tab {width: auto; }
 .tab-content {padding: 10px 0; display: none;}
 #addLayerTab {display: block; }
-
 .olControlLoadingPanel {
   background-image:url("../default/img/loading.gif");
   margin-left: 40%;
