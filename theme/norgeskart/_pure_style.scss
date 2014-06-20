@@ -1297,6 +1297,10 @@ button {
         font-size: 12px;
         text-transform: uppercase;
         margin-bottom: 10px;
+        padding: 10px 10px 10px;
+      }
+      .h:hover {
+        background-color: #3A80BB;
       }
       p {
         margin-bottom: 10px;
@@ -1305,7 +1309,7 @@ button {
         }
       }
       .cnt > div {
-        padding: 20px 16px 24px;
+        //padding: 10px 10px 10px;
       }
       table {
         width: 100%;
@@ -1320,6 +1324,12 @@ button {
     }
     .shortcuts-panel {
       @extend %horizontal-divider;
+      padding: 10px 10px 10px;
+    }
+    .legend-panel {
+      @extend %horizontal-divider;
+      height: 300px; overflow-y: scroll;
+      padding: 10px 10px 10px;
     }
   }
 }
