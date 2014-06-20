@@ -1232,7 +1232,7 @@ button {
 .tabs-menu li a {
   text-decoration: none;
 }
-.tabs-menu .current a {color: #fff; background-color: blue;}
+.tabs-menu .current {background-color: #fff;}
 .tab {width: auto; }
 .tab-content {padding: 10px 0; display: none;}
 #addLayerTab {display: block; }
