@@ -1444,7 +1444,9 @@ button {
       @extend %selected-button;
     }
     > .widget {
+      /*
       width: 307px;
+      */
       display: block;
 
       .h {
