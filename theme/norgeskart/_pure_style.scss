@@ -554,7 +554,7 @@ button {
   background-image: linear-gradient(#9e9e9e, #505050);
 }
 
-#share-panel {
+#del-panel {
 
   position: relative;
   height: 40px;
@@ -582,7 +582,7 @@ button {
   @extend %horizontal-divider;
 }
 
-#share-panel .panel + .panel {
+#del-panel .panel + .panel {
   @extend %vertical-divider-inverted;
 }
 
@@ -1090,7 +1090,7 @@ button {
   }
 }
 
-#share-panel .nkButton {
+#del-panel .nkButton {
   @extend %button;
   width: 30px;
   height: 30px;
@@ -1137,7 +1137,7 @@ button {
 === share toolbar ===
 ******************************************/
 
-#share-panel {
+#del-panel {
   .panel {
     &.active,
     .tool.active {
@@ -2737,7 +2737,7 @@ focus for toolbar controls
     }
   }
 }
-#share-panel {
+#del-panel {
   .tool {
     position: static;
   }
@@ -4600,7 +4600,7 @@ input:disabled {
       }
     }
 
-    #share-panel {
+    #del-panel {
 
       min-height: 40px;
 /*      padding-left: 149px; /* width of logo-panel + search-panel padding */ 
@@ -4699,7 +4699,7 @@ input:disabled {
 
 @media screen and (max-width: 600px) {
   #top-toolbar {
-    #share-panel {
+    #del-panel {
       min-height: 40px;
       position: fixed;
       left: $toolbar-width;
@@ -4713,7 +4713,7 @@ input:disabled {
         margin-top: 0;
       }
     }
-    #search-panel.active + #share-panel {
+    #search-panel.active + #del-panel {
       top: 100px;
     }
 
@@ -4735,7 +4735,7 @@ input:disabled {
 }
 @media screen and (max-width: 449px) {
   #top-toolbar {
-    #share-panel {
+    #del-panel {
       display: none;
     }
     #search-panel.active .searchDiv {
