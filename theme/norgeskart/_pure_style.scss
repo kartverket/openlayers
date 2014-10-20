@@ -1625,6 +1625,10 @@ button {
     @include active-step(descriptions, 5, 7);
     @include active-step(preview, 6, 7);
     @include active-step(output, 7, 7);
+
+    @include active-step(info, 1, 3);
+    @include active-step(edraw, 2, 3);
+    @include active-step(format, 3, 3);
   }
 
   .buttons-panel {
@@ -2181,6 +2185,24 @@ html.touch {
 }
 .lt-ie9 #searchSubmit {
   top: 23px;
+}
+
+/*****************************
+=== status bar ===
+*****************************/
+
+#status {
+  position:absolute;
+  display:block;
+  bottom:0;
+  left:25%;
+  width:50%;
+  max-height:0;
+}
+
+.statusmsg {
+  text-transform: none;
+  width: inherit;
 }
 
 
@@ -4628,7 +4650,8 @@ input:disabled {
     right: 10px;
   }
   #search-toolbar .panel + .panel {
-    @extend %horizontal-divider;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC');
+    background-repeat: repeat-x;
   }
  
 }
