@@ -717,6 +717,7 @@ button {
 }
 #logo-panel {
   padding: 0 20px 0 0;
+  float: left;
 
   svg.kartverket.logo {
     height: 42px;
@@ -2038,6 +2039,7 @@ html.touch {
 *****************************/
 #search-panel {
   padding: 0 20px;
+  float: left;
   position: relative;
 }
 
