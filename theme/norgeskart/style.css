@@ -13,8 +13,8 @@
   clear: both;
 }
 
-.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #share-panel .panel.active .widget,
-#share-panel .panel .tool.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .overlay-group-panel .widget .cnt > ul > li ul, .emergency-poster-popup {
+.toolbar, .layersDiv .widget, .fullscreen #fullscreen-panel, #del-panel .panel.active .widget,
+#del-panel .panel .tool.active .widget, #zoom-panel .slider span, #searchResults, .tool .widget, .overlay-group-panel .widget .cnt > ul > li ul, .emergency-poster-popup {
   background-color: #606161;
   background-color: rgba(80, 80, 80, 0.9);
 }
@@ -32,7 +32,7 @@
 
 button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList label,
-.vectorLayerList label, .toolbar .nkButton, #share-panel .nkButton, #geoportal-panel button, #make-your-own-panel button, #help-panel button, .zoom-to-selection-button, .overlay-group-panel a.active, .toolbar button.btnPointMenu {
+.vectorLayerList label, .toolbar .nkButton, #del-panel .nkButton, #geoportal-panel button, #make-your-own-panel button, #help-panel button, .zoom-to-selection-button, .overlay-group-panel a.active, .toolbar button.btnPointMenu {
   border-radius: 3px;
   cursor: pointer;
 }
@@ -52,8 +52,8 @@ button, .layersDiv .vectorWidgetToggleBtn,
 }
 
 #geoportal-panel.active > .widget a.external-link, #make-your-own-panel.active > .widget a.external-link, .embedContent .step-specific.type button, #embed-basic-toolbar, #embed-basic-toolbar .collapse-toolbar-toggle.on, #basic-toolbar,
-#secondary-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #share-panel .panel.active .widget,
-#share-panel .panel .tool.active .widget, .embedContent .step-specific.descriptions #long-desc-explanation,
+#secondary-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #del-panel .panel.active .widget,
+#del-panel .panel .tool.active .widget, .embedContent .step-specific.descriptions #long-desc-explanation,
 .embedContent .step-specific.descriptions #short-desc-explanation, #searchResults, .user-marker,
 #nk-selected-feature,
 #nk-selected-coverage-map, #overview-container-panel, .emergency-poster-popup {
@@ -75,7 +75,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   background-repeat: repeat-y;
 }
 
-#share-panel .panel + .panel, .overlay-group-panel .widget .cnt > ul > li {
+#del-panel .panel + .panel, .overlay-group-panel .widget .cnt > ul > li {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAAD0lEQVQI12NgZmaePGkSAAOjAcFz13/MAAAAAElFTkSuQmCC");
   background-repeat: repeat-y;
 }
@@ -84,8 +84,8 @@ body, #map {
   height: 100%;
 }
 
-#share-panel .panel.active .widget:after,
-#share-panel .panel .tool.active .widget:after, .olPopup.positioned .arrow-anchor:after {
+#del-panel .panel.active .widget:after,
+#del-panel .panel .tool.active .widget:after, .olPopup.positioned .arrow-anchor:after {
   content: '';
   border: 7px solid transparent;
   width: 0;
@@ -242,7 +242,7 @@ body, #map {
   font-weight: 300;
 }
 
-.tabs-menu, .embedContent .progress, .emergency-poster-popup .progress,
+.embedContent .progress, .emergency-poster-popup .progress,
 .emergency-poster-preview-popup.splashscreen .progress {
   list-style: none;
   background-image: -webkit-linear-gradient(left, rgba(127, 127, 127, 0), #7f7f7f);
@@ -256,7 +256,7 @@ body, #map {
   display: inline-block;
   position: absolute;
 }
-.tabs-menu li, .embedContent .progress li, .emergency-poster-popup .progress li,
+.embedContent .progress li, .emergency-poster-popup .progress li,
 .emergency-poster-preview-popup.splashscreen .progress li {
   display: inline-block;
   position: relative;
@@ -264,16 +264,16 @@ body, #map {
   margin-right: 2em;
   width: 20px;
 }
-.tabs-menu li:last-child, .embedContent .progress li:last-child, .emergency-poster-popup .progress li:last-child,
+.embedContent .progress li:last-child, .emergency-poster-popup .progress li:last-child,
 .emergency-poster-preview-popup.splashscreen .progress li:last-child {
   margin-right: 0;
 }
-.tabs-menu li.disabled, .embedContent .progress li.disabled, .emergency-poster-popup .progress li.disabled,
+.embedContent .progress li.disabled, .emergency-poster-popup .progress li.disabled,
 .emergency-poster-preview-popup.splashscreen .progress li.disabled {
   opacity: 0.2;
   filter: alpha(opacity=20);
 }
-.tabs-menu .step-number, .embedContent .progress .step-number, .emergency-poster-popup .progress .step-number,
+.embedContent .progress .step-number, .emergency-poster-popup .progress .step-number,
 .emergency-poster-preview-popup.splashscreen .progress .step-number {
   position: absolute;
   display: block;
@@ -288,7 +288,7 @@ body, #map {
   text-align: center;
   line-height: 20px;
 }
-.tabs-menu .step-label, .embedContent .progress .step-label, .emergency-poster-popup .progress .step-label,
+.embedContent .progress .step-label, .emergency-poster-popup .progress .step-label,
 .emergency-poster-preview-popup.splashscreen .progress .step-label {
   position: absolute;
   top: 24px;
@@ -492,20 +492,20 @@ body {
   background-image: linear-gradient(#9e9e9e, #505050);
 }
 
-#share-panel {
+#del-panel {
   position: relative;
   height: 40px;
   padding-left: 0;
   padding: 0;
 }
-#share-panel .panel {
+#del-panel .panel {
   margin-top: 10px;
   width: 60px;
   height: 39px;
   text-align: center;
   display: inline-block;
 }
-#share-panel .icon {
+#del-panel .icon {
   width: 26px;
   height: 26px;
 }
@@ -980,7 +980,7 @@ body {
   min-height: 40px;
 }
 
-#share-panel .nkButton {
+#del-panel .nkButton {
   width: 30px;
   height: 30px;
   padding: 2px;
@@ -1024,8 +1024,8 @@ body {
 /******************************************
 === share toolbar ===
 ******************************************/
-#share-panel .panel.active .widget,
-#share-panel .panel .tool.active .widget {
+#del-panel .panel.active .widget,
+#del-panel .panel .tool.active .widget {
   right: 0;
   top: 100%;
   left: auto;
@@ -1038,27 +1038,27 @@ body {
   text-align: left;
   text-transform: none;
 }
-#share-panel .panel.active .widget:after,
-#share-panel .panel .tool.active .widget:after {
+#del-panel .panel.active .widget:after,
+#del-panel .panel .tool.active .widget:after {
   top: -14px;
   border-bottom-color: rgba(80, 80, 80, 0.9);
 }
-#share-panel .panel:nth-last-child(1) .widget:after {
+#del-panel .panel:nth-last-child(1) .widget:after {
   right: 23px;
 }
-#share-panel .panel:nth-last-child(2) .widget:after {
+#del-panel .panel:nth-last-child(2) .widget:after {
   right: 83px;
 }
-#share-panel .panel:nth-last-child(3) .widget:after {
+#del-panel .panel:nth-last-child(3) .widget:after {
   right: 143px;
 }
-#share-panel .panel:nth-last-child(4) .widget:after {
+#del-panel .panel:nth-last-child(4) .widget:after {
   right: 203px;
 }
-#share-panel .panel:nth-last-child(5) .widget:after {
+#del-panel .panel:nth-last-child(5) .widget:after {
   right: 263px;
 }
-#share-panel .panel:nth-last-child(6) .widget:after {
+#del-panel .panel:nth-last-child(6) .widget:after {
   right: 323px;
 }
 
@@ -1108,147 +1108,6 @@ body {
 
 /******************************************
 === geoportal panel ===
-******************************************/
-#geoportal-panel.active > .widget {
-  width: 475px;
-  display: block;
-}
-#geoportal-panel.active > .widget a.external-link {
-  height: auto;
-  min-height: 280px;
-  text-align: center;
-  float: left;
-  display: block;
-  text-decoration: none;
-  color: #fff;
-  padding: 15px;
-}
-#geoportal-panel.active > .widget a.external-link + .external-link {
-  float: right;
-}
-#geoportal-panel.active > .widget a.external-link .illustration {
-  width: 100px;
-  height: 100px;
-  stroke-width: 1.5;
-}
-#geoportal-panel.active > .widget a.external-link .h {
-  font-size: 18px;
-  text-transform: none;
-  margin-bottom: 15px;
-}
-#geoportal-panel.active > .widget a.external-link span,
-#geoportal-panel.active > .widget a.external-link .h {
-  text-align: left;
-  display: block;
-  text-decoration: none;
-  color: #fff;
-}
-#geoportal-panel.active > .widget a.external-link span {
-  display: block;
-  margin-top: 10px;
-  font-size: 12px;
-}
-#geoportal-panel.active > .widget a.external-link:hover .h, #geoportal-panel.active > .widget a.external-link:focus .h, #geoportal-panel.active > .widget a.external-link:active .h {
-  text-decoration: underline;
-}
-#geoportal-panel.active > .widget .h {
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-#geoportal-panel.active > .widget p {
-  margin-bottom: 10px;
-}
-#geoportal-panel.active > .widget p:last-child {
-  margin-bottom: 0;
-}
-#geoportal-panel.active > .widget .cnt > div {
-  padding: 20px 16px 24px;
-}
-
-.tabs-menu {
-  color: #fff;
-  right: 20px;
-  top: 20px;
-}
-.tabs-menu li {
-  margin-right: 4em;
-}
-.tabs-menu.tjenesteTab-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f -50%, #fff 0%, #7f7f7f 50%);
-  background-image: -moz-linear-gradient(left, #7f7f7f -50%, #fff 0%, #7f7f7f 50%);
-  background-image: -ms-linear-gradient(left, #7f7f7f -50%, #fff 0%, #7f7f7f 50%);
-  background-image: -o-linear-gradient(left, #7f7f7f -50%, #fff 0%, #7f7f7f 50%);
-  background-image: linear-gradient(left, #7f7f7f -50%, #fff 0%, #7f7f7f 50%);
-}
-.tabs-menu.tjenesteTab-active .tjenesteTab .step-label {
-  color: #fff;
-}
-.tabs-menu.tjenesteTab-active .tjenesteTab .step-number {
-  background-color: #fff;
-}
-.tabs-menu.lagTab-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f 0%, #fff 50%, #7f7f7f 100%);
-  background-image: -moz-linear-gradient(left, #7f7f7f 0%, #fff 50%, #7f7f7f 100%);
-  background-image: -ms-linear-gradient(left, #7f7f7f 0%, #fff 50%, #7f7f7f 100%);
-  background-image: -o-linear-gradient(left, #7f7f7f 0%, #fff 50%, #7f7f7f 100%);
-  background-image: linear-gradient(left, #7f7f7f 0%, #fff 50%, #7f7f7f 100%);
-}
-.tabs-menu.lagTab-active .lagTab .step-label {
-  color: #fff;
-}
-.tabs-menu.lagTab-active .lagTab .step-number {
-  background-color: #fff;
-}
-.tabs-menu.legendTab-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f 50%, #fff 100%, #7f7f7f 150%);
-  background-image: -moz-linear-gradient(left, #7f7f7f 50%, #fff 100%, #7f7f7f 150%);
-  background-image: -ms-linear-gradient(left, #7f7f7f 50%, #fff 100%, #7f7f7f 150%);
-  background-image: -o-linear-gradient(left, #7f7f7f 50%, #fff 100%, #7f7f7f 150%);
-  background-image: linear-gradient(left, #7f7f7f 50%, #fff 100%, #7f7f7f 150%);
-}
-.tabs-menu.legendTab-active .legendTab .step-label {
-  color: #fff;
-}
-.tabs-menu.legendTab-active .legendTab .step-number {
-  background-color: #fff;
-}
-
-.tabs-menu li a {
-  text-decoration: none;
-}
-
-.tabs-menu .current {
-  background-color: #fff;
-}
-
-.tab {
-  width: auto;
-}
-
-.tab-content {
-  padding: 10px 0;
-}
-
-#addLayerTab {
-  display: block;
-}
-
-.olControlLoadingPanel {
-  background-image: url("../default/img/loading.gif");
-  margin-left: 40%;
-  margin-top: 40%;
-  position: relative;
-  width: 195px;
-  height: 11px;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: none;
-  z-index: 1000;
-}
-
-/******************************************
-=== make-your-own-panel panel ===
 ******************************************/
 #geoportal-panel.active > .widget {
   width: 475px;
@@ -1454,11 +1313,11 @@ body {
   margin-right: 1em;
 }
 .embedContent .progress.type-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f -16.6666666667%, #fff 0%, #7f7f7f 16.6666666667%);
-  background-image: -moz-linear-gradient(left, #7f7f7f -16.6666666667%, #fff 0%, #7f7f7f 16.6666666667%);
-  background-image: -ms-linear-gradient(left, #7f7f7f -16.6666666667%, #fff 0%, #7f7f7f 16.6666666667%);
-  background-image: -o-linear-gradient(left, #7f7f7f -16.6666666667%, #fff 0%, #7f7f7f 16.6666666667%);
-  background-image: linear-gradient(left, #7f7f7f -16.6666666667%, #fff 0%, #7f7f7f 16.6666666667%);
+  background-image: -webkit-linear-gradient(left, #7f7f7f -16.66667%, #fff 0%, #7f7f7f 16.66667%);
+  background-image: -moz-linear-gradient(left, #7f7f7f -16.66667%, #fff 0%, #7f7f7f 16.66667%);
+  background-image: -ms-linear-gradient(left, #7f7f7f -16.66667%, #fff 0%, #7f7f7f 16.66667%);
+  background-image: -o-linear-gradient(left, #7f7f7f -16.66667%, #fff 0%, #7f7f7f 16.66667%);
+  background-image: linear-gradient(left, #7f7f7f -16.66667%, #fff 0%, #7f7f7f 16.66667%);
 }
 .embedContent .progress.type-active .type .step-label {
   color: #fff;
@@ -1467,11 +1326,11 @@ body {
   background-color: #fff;
 }
 .embedContent .progress.terms-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f 0%, #fff 16.6666666667%, #7f7f7f 33.3333333333%);
-  background-image: -moz-linear-gradient(left, #7f7f7f 0%, #fff 16.6666666667%, #7f7f7f 33.3333333333%);
-  background-image: -ms-linear-gradient(left, #7f7f7f 0%, #fff 16.6666666667%, #7f7f7f 33.3333333333%);
-  background-image: -o-linear-gradient(left, #7f7f7f 0%, #fff 16.6666666667%, #7f7f7f 33.3333333333%);
-  background-image: linear-gradient(left, #7f7f7f 0%, #fff 16.6666666667%, #7f7f7f 33.3333333333%);
+  background-image: -webkit-linear-gradient(left, #7f7f7f 0%, #fff 16.66667%, #7f7f7f 33.33333%);
+  background-image: -moz-linear-gradient(left, #7f7f7f 0%, #fff 16.66667%, #7f7f7f 33.33333%);
+  background-image: -ms-linear-gradient(left, #7f7f7f 0%, #fff 16.66667%, #7f7f7f 33.33333%);
+  background-image: -o-linear-gradient(left, #7f7f7f 0%, #fff 16.66667%, #7f7f7f 33.33333%);
+  background-image: linear-gradient(left, #7f7f7f 0%, #fff 16.66667%, #7f7f7f 33.33333%);
 }
 .embedContent .progress.terms-active .terms .step-label {
   color: #fff;
@@ -1480,11 +1339,11 @@ body {
   background-color: #fff;
 }
 .embedContent .progress.area-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f 16.6666666667%, #fff 33.3333333333%, #7f7f7f 50%);
-  background-image: -moz-linear-gradient(left, #7f7f7f 16.6666666667%, #fff 33.3333333333%, #7f7f7f 50%);
-  background-image: -ms-linear-gradient(left, #7f7f7f 16.6666666667%, #fff 33.3333333333%, #7f7f7f 50%);
-  background-image: -o-linear-gradient(left, #7f7f7f 16.6666666667%, #fff 33.3333333333%, #7f7f7f 50%);
-  background-image: linear-gradient(left, #7f7f7f 16.6666666667%, #fff 33.3333333333%, #7f7f7f 50%);
+  background-image: -webkit-linear-gradient(left, #7f7f7f 16.66667%, #fff 33.33333%, #7f7f7f 50%);
+  background-image: -moz-linear-gradient(left, #7f7f7f 16.66667%, #fff 33.33333%, #7f7f7f 50%);
+  background-image: -ms-linear-gradient(left, #7f7f7f 16.66667%, #fff 33.33333%, #7f7f7f 50%);
+  background-image: -o-linear-gradient(left, #7f7f7f 16.66667%, #fff 33.33333%, #7f7f7f 50%);
+  background-image: linear-gradient(left, #7f7f7f 16.66667%, #fff 33.33333%, #7f7f7f 50%);
 }
 .embedContent .progress.area-active .area .step-label {
   color: #fff;
@@ -1493,11 +1352,11 @@ body {
   background-color: #fff;
 }
 .embedContent .progress.markers-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f 33.3333333333%, #fff 50%, #7f7f7f 66.6666666667%);
-  background-image: -moz-linear-gradient(left, #7f7f7f 33.3333333333%, #fff 50%, #7f7f7f 66.6666666667%);
-  background-image: -ms-linear-gradient(left, #7f7f7f 33.3333333333%, #fff 50%, #7f7f7f 66.6666666667%);
-  background-image: -o-linear-gradient(left, #7f7f7f 33.3333333333%, #fff 50%, #7f7f7f 66.6666666667%);
-  background-image: linear-gradient(left, #7f7f7f 33.3333333333%, #fff 50%, #7f7f7f 66.6666666667%);
+  background-image: -webkit-linear-gradient(left, #7f7f7f 33.33333%, #fff 50%, #7f7f7f 66.66667%);
+  background-image: -moz-linear-gradient(left, #7f7f7f 33.33333%, #fff 50%, #7f7f7f 66.66667%);
+  background-image: -ms-linear-gradient(left, #7f7f7f 33.33333%, #fff 50%, #7f7f7f 66.66667%);
+  background-image: -o-linear-gradient(left, #7f7f7f 33.33333%, #fff 50%, #7f7f7f 66.66667%);
+  background-image: linear-gradient(left, #7f7f7f 33.33333%, #fff 50%, #7f7f7f 66.66667%);
 }
 .embedContent .progress.markers-active .markers .step-label {
   color: #fff;
@@ -1506,11 +1365,11 @@ body {
   background-color: #fff;
 }
 .embedContent .progress.descriptions-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f 50%, #fff 66.6666666667%, #7f7f7f 83.3333333333%);
-  background-image: -moz-linear-gradient(left, #7f7f7f 50%, #fff 66.6666666667%, #7f7f7f 83.3333333333%);
-  background-image: -ms-linear-gradient(left, #7f7f7f 50%, #fff 66.6666666667%, #7f7f7f 83.3333333333%);
-  background-image: -o-linear-gradient(left, #7f7f7f 50%, #fff 66.6666666667%, #7f7f7f 83.3333333333%);
-  background-image: linear-gradient(left, #7f7f7f 50%, #fff 66.6666666667%, #7f7f7f 83.3333333333%);
+  background-image: -webkit-linear-gradient(left, #7f7f7f 50%, #fff 66.66667%, #7f7f7f 83.33333%);
+  background-image: -moz-linear-gradient(left, #7f7f7f 50%, #fff 66.66667%, #7f7f7f 83.33333%);
+  background-image: -ms-linear-gradient(left, #7f7f7f 50%, #fff 66.66667%, #7f7f7f 83.33333%);
+  background-image: -o-linear-gradient(left, #7f7f7f 50%, #fff 66.66667%, #7f7f7f 83.33333%);
+  background-image: linear-gradient(left, #7f7f7f 50%, #fff 66.66667%, #7f7f7f 83.33333%);
 }
 .embedContent .progress.descriptions-active .descriptions .step-label {
   color: #fff;
@@ -1519,11 +1378,11 @@ body {
   background-color: #fff;
 }
 .embedContent .progress.preview-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f 66.6666666667%, #fff 83.3333333333%, #7f7f7f 100%);
-  background-image: -moz-linear-gradient(left, #7f7f7f 66.6666666667%, #fff 83.3333333333%, #7f7f7f 100%);
-  background-image: -ms-linear-gradient(left, #7f7f7f 66.6666666667%, #fff 83.3333333333%, #7f7f7f 100%);
-  background-image: -o-linear-gradient(left, #7f7f7f 66.6666666667%, #fff 83.3333333333%, #7f7f7f 100%);
-  background-image: linear-gradient(left, #7f7f7f 66.6666666667%, #fff 83.3333333333%, #7f7f7f 100%);
+  background-image: -webkit-linear-gradient(left, #7f7f7f 66.66667%, #fff 83.33333%, #7f7f7f 100%);
+  background-image: -moz-linear-gradient(left, #7f7f7f 66.66667%, #fff 83.33333%, #7f7f7f 100%);
+  background-image: -ms-linear-gradient(left, #7f7f7f 66.66667%, #fff 83.33333%, #7f7f7f 100%);
+  background-image: -o-linear-gradient(left, #7f7f7f 66.66667%, #fff 83.33333%, #7f7f7f 100%);
+  background-image: linear-gradient(left, #7f7f7f 66.66667%, #fff 83.33333%, #7f7f7f 100%);
 }
 .embedContent .progress.preview-active .preview .step-label {
   color: #fff;
@@ -1532,55 +1391,16 @@ body {
   background-color: #fff;
 }
 .embedContent .progress.output-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f 83.3333333333%, #fff 100%, #7f7f7f 116.6666666667%);
-  background-image: -moz-linear-gradient(left, #7f7f7f 83.3333333333%, #fff 100%, #7f7f7f 116.6666666667%);
-  background-image: -ms-linear-gradient(left, #7f7f7f 83.3333333333%, #fff 100%, #7f7f7f 116.6666666667%);
-  background-image: -o-linear-gradient(left, #7f7f7f 83.3333333333%, #fff 100%, #7f7f7f 116.6666666667%);
-  background-image: linear-gradient(left, #7f7f7f 83.3333333333%, #fff 100%, #7f7f7f 116.6666666667%);
+  background-image: -webkit-linear-gradient(left, #7f7f7f 83.33333%, #fff 100%, #7f7f7f 116.66667%);
+  background-image: -moz-linear-gradient(left, #7f7f7f 83.33333%, #fff 100%, #7f7f7f 116.66667%);
+  background-image: -ms-linear-gradient(left, #7f7f7f 83.33333%, #fff 100%, #7f7f7f 116.66667%);
+  background-image: -o-linear-gradient(left, #7f7f7f 83.33333%, #fff 100%, #7f7f7f 116.66667%);
+  background-image: linear-gradient(left, #7f7f7f 83.33333%, #fff 100%, #7f7f7f 116.66667%);
 }
 .embedContent .progress.output-active .output .step-label {
   color: #fff;
 }
 .embedContent .progress.output-active .output .step-number {
-  background-color: #fff;
-}
-.embedContent .progress.info-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f -50%, #fff 0%, #7f7f7f 50%);
-  background-image: -moz-linear-gradient(left, #7f7f7f -50%, #fff 0%, #7f7f7f 50%);
-  background-image: -ms-linear-gradient(left, #7f7f7f -50%, #fff 0%, #7f7f7f 50%);
-  background-image: -o-linear-gradient(left, #7f7f7f -50%, #fff 0%, #7f7f7f 50%);
-  background-image: linear-gradient(left, #7f7f7f -50%, #fff 0%, #7f7f7f 50%);
-}
-.embedContent .progress.info-active .info .step-label {
-  color: #fff;
-}
-.embedContent .progress.info-active .info .step-number {
-  background-color: #fff;
-}
-.embedContent .progress.edraw-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f 0%, #fff 50%, #7f7f7f 100%);
-  background-image: -moz-linear-gradient(left, #7f7f7f 0%, #fff 50%, #7f7f7f 100%);
-  background-image: -ms-linear-gradient(left, #7f7f7f 0%, #fff 50%, #7f7f7f 100%);
-  background-image: -o-linear-gradient(left, #7f7f7f 0%, #fff 50%, #7f7f7f 100%);
-  background-image: linear-gradient(left, #7f7f7f 0%, #fff 50%, #7f7f7f 100%);
-}
-.embedContent .progress.edraw-active .edraw .step-label {
-  color: #fff;
-}
-.embedContent .progress.edraw-active .edraw .step-number {
-  background-color: #fff;
-}
-.embedContent .progress.format-active {
-  background-image: -webkit-linear-gradient(left, #7f7f7f 50%, #fff 100%, #7f7f7f 150%);
-  background-image: -moz-linear-gradient(left, #7f7f7f 50%, #fff 100%, #7f7f7f 150%);
-  background-image: -ms-linear-gradient(left, #7f7f7f 50%, #fff 100%, #7f7f7f 150%);
-  background-image: -o-linear-gradient(left, #7f7f7f 50%, #fff 100%, #7f7f7f 150%);
-  background-image: linear-gradient(left, #7f7f7f 50%, #fff 100%, #7f7f7f 150%);
-}
-.embedContent .progress.format-active .format .step-label {
-  color: #fff;
-}
-.embedContent .progress.format-active .format .step-number {
   background-color: #fff;
 }
 .embedContent .buttons-panel {
@@ -2025,23 +1845,6 @@ html.touch #pan-panel {
 
 .lt-ie9 #searchSubmit {
   top: 23px;
-}
-
-/*****************************
-=== status bar ===
-*****************************/
-#status {
-  position: absolute;
-  display: block;
-  bottom: 0;
-  left: 25%;
-  width: 50%;
-  max-height: 0;
-}
-
-.statusmsg {
-  text-transform: none;
-  width: inherit;
 }
 
 /**************************************
@@ -2612,7 +2415,7 @@ focus for toolbar controls
   display: block;
 }
 
-#share-panel .tool {
+#del-panel .tool {
   position: static;
 }
 
@@ -4213,7 +4016,7 @@ input:disabled {
   #top-toolbar #search-panel.active #searchResults {
     top: 100px;
   }
-  #top-toolbar #share-panel {
+  #top-toolbar #del-panel {
     min-height: 40px;
     /*      padding-left: 149px; /* width of logo-panel + search-panel padding */
     /*
@@ -4227,7 +4030,7 @@ input:disabled {
           background-color: rgba(80,80,80,.9);
     */
   }
-  #top-toolbar #share-panel .widget {
+  #top-toolbar #del-panel .widget {
     position: fixed;
     left: 68px;
     width: auto;
@@ -4235,7 +4038,7 @@ input:disabled {
     top: 60px;
     right: 68px;
   }
-  #top-toolbar #share-panel .widget:after {
+  #top-toolbar #del-panel .widget:after {
     display: none;
   }
 
@@ -4302,7 +4105,7 @@ input:disabled {
   }
 }
 @media screen and (max-width: 600px) {
-  #top-toolbar #share-panel {
+  #top-toolbar #del-panel {
     min-height: 40px;
     position: fixed;
     left: 68px;
@@ -4313,10 +4116,10 @@ input:disabled {
     background-color: #616161;
     background-color: rgba(80, 80, 80, 0.9);
   }
-  #top-toolbar #share-panel .panel {
+  #top-toolbar #del-panel .panel {
     margin-top: 0;
   }
-  #top-toolbar #search-panel.active + #share-panel {
+  #top-toolbar #search-panel.active + #del-panel {
     top: 100px;
   }
   #top-toolbar #search-panel {
@@ -4334,7 +4137,7 @@ input:disabled {
   }
 }
 @media screen and (max-width: 449px) {
-  #top-toolbar #share-panel {
+  #top-toolbar #del-panel {
     display: none;
   }
   #top-toolbar #search-panel.active .searchDiv {
