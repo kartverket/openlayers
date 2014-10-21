@@ -1024,6 +1024,9 @@ body {
 /******************************************
 === share toolbar ===
 ******************************************/
+#del-panel {
+  float: right;
+}
 #del-panel .panel.active .widget,
 #del-panel .panel .tool.active .widget {
   right: 0;

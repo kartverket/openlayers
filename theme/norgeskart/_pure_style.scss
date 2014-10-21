@@ -1138,6 +1138,7 @@ button {
 ******************************************/
 
 #del-panel {
+  float: right;
   .panel {
     &.active,
     .tool.active {
