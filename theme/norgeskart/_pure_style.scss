@@ -4537,7 +4537,8 @@ input:disabled {
     right: 10px;
   }
   #search-toolbar .panel + .panel {
-    @extend %horizontal-divider;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC');
+    background-repeat: repeat-x;
   }
  
 }
