@@ -704,7 +704,7 @@ button {
   width: $toolbar-width;
 }
 #basic-toolbar .olButton {
-  margin: 10px 0 0 0;
+  margin: 0;
 }
 
 #basic-toolbar .rasterLayerList li:first-child .olButton {
@@ -757,7 +757,7 @@ button {
 }
 
 .layersDiv .vectorWidgetToggleBtn {
-  margin: 0 3px 0 3px;
+  margin: 10 3px 0 3px;
 }
 
 .layersDiv .widget {
