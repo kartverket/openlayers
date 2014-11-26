@@ -1,16 +1,20 @@
 .olMapViewport {
-	overflow: visible !important;
+  overflow: visible !important;
 }
+
 #map {
-	max-height: 100%;
+  max-height: 100%;
 }
-.toolbar, 
+
+.toolbar,
 .splashscreen {
-	display: none;
+  display: none;
 }
+
 body {
-	width: 1000px;
- }
+  width: auto;
+}
+
 #search-toolbar {
   &.toolbar {
     background: #FFFFFF none repeat 0 0;
@@ -19,9 +23,116 @@ body {
     top: 100%;
     left: 10px;
     display: block;
- 
     #search-panel {
       display: none;
-    }		  
+    }
+  }
+}
+
+$panel-color: rgba(80,80,80,.9);
+$panel-color-hex: #606161;
+
+%shadow {
+  -webkit-box-shadow: 0 0 6px rgba(0,0,0,.7);
+  box-shadow: 0 0 6px rgba(0,0,0,.7);
+}
+%horizontal-divider {
+  /* v-divider.png base64-encoded */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC');
+  background-repeat: repeat-x;
+}
+
+/***************************
+  emergency poster control
+***************************/
+#map.select-emergency-poster-point {
+  cursor: url('img/emergency-marker.png') 17 51, default !important;
+}
+.emergency-poster-preview-popup.splashscreen {
+  .widget {
+    width: auto;
+    padding: 0;
+    margin: auto;
+    .header {
+      a.close {
+        position: absolute;
+        top: 4px;
+        right: -12px;
+      }
+      h1.h {
+        font-family: Metabook, Arial, sans-serif;
+        font-size: 30px;
+        line-height: 34px;
+        font-weight: normal;
+      }
+    }
+    .preview-container {
+      overflow: hidden;
+      height: auto;
+      .preview {
+        color: black;
+        .header {
+          padding: 0 0 0 0;
+          background: none;
+          margin-bottom: 20px;
+          h1 {
+            font-size: 40px;
+            line-height: 30px;
+            font-weight: normal;
+            padding: 20px 0 0 35px;
+          }
+          img {
+            width: 100%;
+          }
+        }
+        p.semi-header {
+          font-size: 12px;
+          font-weight: bold;
+          padding: 10px 0 0 35px;
+          margin-bottom: 0;
+        }
+        .location-details-wrapper {
+          margin-bottom: 30px;
+          padding: 0 0 0 35px;
+          .location-details-header {
+            padding: 15px 0 0 0;
+            p {
+              font-size: 12px;
+              padding: 0 0 0 20px;
+              margin-bottom: 0;
+              line-height: 17px;
+            }
+            h2 {
+              font-size: 22px;
+              line-height: 26px;
+              font-weight: bold;
+              padding: 0;
+              margin-bottom: 15px;
+            }
+            img {
+              width: 15px;
+              height: 15px;
+              float: left;
+            }
+          }
+          .location-details-iframe-container {
+            margin-bottom: 15px;
+            iframe {
+              width: 100%;
+              height: 350px;
+              border: 1px solid grey;
+              margin-top: 20px;
+            }
+          }
+          .location-details-coords {
+            padding: 0 20px 20px 20px;
+            font-size: 12px;
+          }
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
