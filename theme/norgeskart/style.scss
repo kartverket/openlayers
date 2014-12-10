@@ -8,16 +8,18 @@
 
 $base-color: #606060;
 $dark-color: #000;
-$button-light-blue: #408ccd;
+$button-light-blue: rgb(222, 220, 220);
 $button-dark-blue: #0058a3;
 $button-darkest-blue: rgba($button-dark-blue, .82);
 $button-darkest-blue-hex: $button-dark-blue;
 $another-blue: $button-dark-blue;
-$grey: rgba(lighten($base-color, 11), 1);
+$grey: rgba(127, 127, 127, 1);
+/*$grey: rgba(lighten($base-color, 11), 1);*/
+$white: #fff;
 $lightest-color: #fff;
 $lightest-color-gradient: darken($lightest-color, 15);
 $toolbar-width: 68px;
-$panel-color: rgba(80,80,80,.9);
+$panel-color: rgba(220,220,220,.85);
 $panel-color-hex: #606161;
 $share-toolbar-panel-width: 60px;
 $share-toolbar-panel-height: 39px;
@@ -56,15 +58,13 @@ $button-background-color: $panel-color;
 }
 
 %button {
-  border-radius: 3px;
   cursor: pointer;
 }
 
 %selected-button {
-  background-color: #333333;
-  background-color: rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
-  box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
+  background-color: #fafafa;
+  background-color: rgba(255, 255, 255, .6);
+  /*padding-left:10px;*/
 }
 
 %shadow {
@@ -74,16 +74,16 @@ $button-background-color: $panel-color;
 
 %horizontal-divider {
   /* v-divider.png base64-encoded */
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC');
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACAQMAAACjTyRkAAAABlBMVEW8vLzR0dGvQDftAAAAE0lEQVR4XgXAAQ0AAABAsEcX3dAAhACB8s4K/AAAAABJRU5ErkJggg==');
   background-repeat: repeat-x;
 }
 %vertical-divider {
   /* h-divider.png base64-encoded */
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAAD0lEQVQI12OYPGkSMzMzAAitAcGVxxKdAAAAAElFTkSuQmCC');
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABAQMAAADO7O3JAAAABlBMVEW1tbWTkpK/yB6cAAAAFElEQVR4XgXAgQwAAACAsNDyp/oaAEIAQbGJB/YAAAAASUVORK5CYII=');
   background-repeat: repeat-y;
 }
 %vertical-divider-inverted {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAAD0lEQVQI12NgZmaePGkSAAOjAcFz13/MAAAAAElFTkSuQmCC');
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABAQMAAADO7O3JAAAABlBMVEW8vLzR0dGvQDftAAAAFElEQVR4XgXAgQwAAACAsNDyp/oaAEIAQbGJB/YAAAAASUVORK5CYII=');
   background-repeat: repeat-y;
 }
 
@@ -106,18 +106,9 @@ $button-background-color: $panel-color;
 }
 
 %button-style {
-  border: 1px solid #003c6f;
-  border-color: rgba(0, 60, 111, .82);
+  border: 1px solid #898d8d;
   cursor: pointer;
-  border-radius: 12px;
-  color: #fff;
-  text-transform: uppercase;
 }
-
-$button-light-blue: #408ccd;
-$button-dark-blue: #0058a3;
-$grey: rgba(127, 127, 127, 1);
-$white: #fff;
 
 @mixin active-step($name, $step, $stepCount) {
   &.#{$name}-active {
@@ -132,11 +123,13 @@ $white: #fff;
     background-image: linear-gradient(left, $firstStop, $midStop, $lastStop);
 
     .#{$name} .step-label {
-      color:#fff;
+      color:#999;
     }
 
     .#{$name} .step-number {
-      background-color: #fff;
+      background-color: #000;
+        box-shadow: 0px 0px 10px 10px rgba(255,255,255,.5);
+        color: #fff;
     }
   }
 }
@@ -183,7 +176,8 @@ $white: #fff;
 }
 
 %blue-button-gradient {
-  @include button-gradient($button-light-blue, $button-dark-blue);
+  
+    /*@include button-gradient($button-light-blue, $button-dark-blue);*/
 }
 
 %grey-button-gradient {
@@ -206,6 +200,7 @@ $white: #fff;
   &:focus {
     background-position: 0 0%;
     text-decoration: underline;
+    background-color: #fafafa;
   }
 }
 
@@ -230,24 +225,30 @@ $white: #fff;
   text-align: left;
 }
 
+%super-one-lined-button {
+  @extend %button-style;
+  background-color: rgb(222, 220, 220);
+  border-right: solid 8px #898d8d;
+  box-shadow: 0 -2px 0px 0px rgba(137,141,141,.41) inset;
+    padding: 0 24px 0 12px;
+  text-align: left;
+    height:24px;
+}
+
 %grey-one-lined-button {
   @extend %grey-button-gradient;
   @extend %terms-accept-button-style;
   @extend %one-lined-button;
-  border: 1px solid #01437c;
+  border: 1px solid #898d8d;
   padding: 0 12px;
   text-align: left;
 }
 
-
 %search-button-style {
   @extend %button-style;
-  background-color: #4b8bc2;
-  background-image: -webkit-linear-gradient(bottom, #01457f, #5998ce 50%);
-  background-image: -moz-linear-gradient(bottom, #01457f, #5998ce 50%);
-  background-image: -ms-linear-gradient(bottom, #01457f, #5998ce 50%);
-  background-image: -o-linear-gradient(bottom, #01457f, #5998ce 50%);
-  background-image: linear-gradient(bottom, #01457f, #5998ce 50%);
+  background-color: rgb(222, 220, 220);
+  border-right: solid 8px #898d8d;
+  box-shadow: 0 -2px 0px 0px rgba(137,141,141,.41) inset;
 }
 
 %close-cross {
@@ -263,7 +264,7 @@ $white: #fff;
 %output {
   font-family: monospace;
   color: $panel-color-hex;
-  color: $panel-color;
+  color: #666;
   background-color: #fff;
   padding: 8px; 
   word-break: break-all;
@@ -314,7 +315,7 @@ $white: #fff;
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background-color: #aaa;
+    background-color: #666;
     color: $panel-color;
     text-indent: 0;
     text-align: center;
@@ -386,7 +387,7 @@ button {
   font-size: 10px;
   z-index: 2000;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
 
   .panel {
     background-position: left top;
@@ -516,12 +517,12 @@ button {
   top: 0;
   left: 0;
   right: 0;
-  background-image: -webkit-linear-gradient(#8a8989, #333);
-  background-image: -moz-linear-gradient(#8a8989, #333);
-  background-image: -ms-linear-gradient(#8a8989, #333);
-  background-image: -o-linear-gradient(#8a8989, #333);
-  background-image: linear-gradient(#8a8989, #333);
-  box-shadow: 2px 0 2px rgba(0,0,0,.25);
+  background-image:-webkit-linear-gradient(#ededed, #dedcdc);
+	background-image:-moz-linear-gradient(#ededed, #dedcdc);
+	background-image:-ms-linear-gradient(#ededed, #dedcdc);
+	background-image:-o-linear-gradient(#ededed, #dedcdc);
+	background-image: linear-gradient(#ededed, #dedcdc);
+	box-shadow: 0px 0px 13px rgba(0,0,0,0.25);
   padding: 0 $toolbar-width;
   z-index: 4000;
 
@@ -576,19 +577,6 @@ button {
 
 }
 
-.star {
-  width: 18px;
-  height: 18px;
-  stroke: #fff;
-  stroke-width: 4;
-  fill: none;
-  
-  &.selected,
-  .selected {
-    fill: #fff;
-  }
-}
-
 #basic-toolbar .panel + .panel,
 #secondary-toolbar .panel + .panel,
 #embed-basic-toolbar .panel + .panel {
@@ -615,13 +603,13 @@ button {
   }
 }
 .icon {
-  fill: #fff;
+  fill: #333;
   -webkit-transition-property: fill;
   -webkit-transition-duration: .2s;
 
   &.stroked,
   .stroked {
-    stroke: #fff;
+    stroke: #000;
     stroke-width: 4;
   }
 
@@ -653,7 +641,6 @@ button {
 .rasterLayerList label, 
 .vectorLayerList label {
   @extend %button;
-  color: #fff;
   padding: 7px 3px;
   display: block;
   cursor: pointer;
@@ -683,10 +670,10 @@ button {
   position: absolute;
   border: 7px solid transparent;
   border-left-color: $panel-color-hex;
-  border-left-color: $panel-color;
+  /*border-left-color: $panel-color;*/
   width: 0;
   height: 0;
-  right: -13px;
+  right: -14px;
   top: 6px;
 }
 .rasterLayerList .hidden {
@@ -717,7 +704,7 @@ button {
   width: $toolbar-width;
 }
 #basic-toolbar .olButton {
-  margin: 10px 0 0 0;
+  margin: 0;
 }
 
 #basic-toolbar .rasterLayerList li:first-child .olButton {
@@ -730,7 +717,6 @@ button {
 }
 #logo-panel {
   padding: 0 20px 0 0;
-  float: left;
 
   svg.kartverket.logo {
     height: 42px;
@@ -739,7 +725,7 @@ button {
 
     .outline,
     .text {
-      fill: #ffffff;
+      fill: #000000;
     }
   }
   img {
@@ -753,7 +739,7 @@ button {
 }
 #logoGeonorge  {
   text-align: center;
-  color: #fff;
+  color: #000;
   text-decoration: none;
   display: block;
   margin-top: 25px;
@@ -771,7 +757,7 @@ button {
 }
 
 .layersDiv .vectorWidgetToggleBtn {
-  margin: 0 3px 0 3px;
+  margin: 10 3px 0 3px;
 }
 
 .layersDiv .widget {
@@ -852,7 +838,7 @@ button {
   top: 0;
   left: 100%;
   border: 2px solid $panel-color-hex;
-  border: 2px solid $panel-color;
+  /*border: 2px solid $panel-color;*/
   border-left: none;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -926,6 +912,9 @@ button {
   -o-transition: transform .5s ease-in-out;
   transition: -ms-transform .5s ease-in-out;
   transition: transform .5s ease-in-out;
+    background-color: rgba(255,255,255,.5);
+padding: 8px;
+    border-radius:2px;
 }
 
 .fullscreen,
@@ -1069,7 +1058,6 @@ button {
   text-transform: none;
   span {
     font-size:10px;
-    color:white;
   }
 }
 
@@ -1152,7 +1140,6 @@ button {
 ******************************************/
 
 #del-panel {
-  float: right;
   .panel {
     &.active,
     .tool.active {
@@ -1176,7 +1163,7 @@ button {
         @extend %arrow;
         &:after {
           top: -14px;
-          border-bottom-color: $panel-color;
+          border-bottom-color: $panel-color-hex;
         }
 
       }
@@ -1231,7 +1218,7 @@ button {
   padding: 20px 20px 25px;
   text-transform: none;
   text-align: left;
-  color: #FFFFFF;
+  color: #000000;
 
   .page-url {
     @extend %output;
@@ -1269,6 +1256,7 @@ button {
 #geoportal-panel {
   button {
     @extend %button;
+    /*box-shadow: 0 -2px 0px 0px rgba(137, 141, 141, 0.41) inset;*/
   }
   &.active {
     > button {
@@ -1338,49 +1326,46 @@ button {
         padding: 20px 16px 24px;
       }
       form > button {
-        @extend %blue-one-lined-button;
+        @extend %super-one-lined-button;
       }
     }
   }
 }
 .tabs-menu {
-  @extend %progress-bullets;
-  color: #fff;
-  right: 20px;
-  top: 20px;
-  li {
-    margin-right: 4em;
-  }
-  @include active-step(tjenesteTab, 1, 3);
-  @include active-step(lagTab, 2, 3);
-  @include active-step(legendTab, 3, 3);
+  height: 30px;
+  float: left;
+  clear: both;
+  list-style: none;
+}
+.tabs-menu li {
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  margin-right: 10px;
+  background-color: #ccc;
+}
+.tabs-menu li.current {
+  position: relative;
+  border-bottom: 3px solid #fff;
+  z-index: 5;
 }
 .tabs-menu li a {
+  padding: 0 10px;
+  text-transform: uppercase;
+  color: #2122d4;
   text-decoration: none;
 }
-.tabs-menu .current {background-color: #fff;}
-.tab {width: auto; }
-.tab-content {padding: 10px 0; }
+.tabs-menu .current a {color: #fff;}
+.tab {float: left;width: auto;}
+.tab-content {padding: 10px 0; display: none;}
 #addLayerTab {display: block; }
-
-.olControlLoadingPanel {
-  background-image:url("img/loading.gif");
-  margin-left: 40%;
-  margin-top: 40%;
-  position: relative;
-  width: 195px;
-  height: 11px;
-  background-position:center;
-  background-repeat:no-repeat;
-  display: none;
-  z-index: 1000;
-}
 /******************************************
 === make-your-own-panel panel ===
 ******************************************/
 #make-your-own-panel {
   button {
     @extend %button;
+      background-color: #dedcdc;
   }
   &.active {
     > button {
@@ -1534,10 +1519,6 @@ button {
     @include active-step(descriptions, 5, 7);
     @include active-step(preview, 6, 7);
     @include active-step(output, 7, 7);
-
-    @include active-step(info, 1, 3);
-    @include active-step(earea, 2, 3);
-    @include active-step(format, 3, 3);
   }
 
   .buttons-panel {
@@ -1550,6 +1531,8 @@ button {
       @extend %blue-terms-accept-button-style;
       padding: 3px 10px;
       position: relative;
+        background-color: #dedcdc;
+        
 
       &.next:after,
       &.back:before {
@@ -1567,21 +1550,27 @@ button {
       &.next {
         float: right;
         padding-right: 26px;
+          padding-bottom: 5px;
+          border-right: solid 8px #898d8d;
+box-shadow: 0 -2px 0px 0px rgba(137, 141, 141, 0.41) inset;
 
         &:after {
           border-right-width: 0;
-          border-left-color: #fff;
+          border-left-color: #666;
           right: 10px;
         }
       }
       &.back {
         position: relative;
         padding-left: 26px;
+          padding-bottom: 5px;
+          border-left: solid 8px #898d8d;
+box-shadow: 0 -2px 0px 0px rgba(137, 141, 141, 0.41) inset;
 
         &:before {
           left: 10px;
           border-left-width: 0;
-          border-right-color: #fff;
+          border-right-color: #666;
         }
       }
     }
@@ -1791,7 +1780,7 @@ button {
         }
       }
       a {
-        color: #fff;
+        color: #666;
       }
       input, textarea {
         display: block;
@@ -1938,7 +1927,7 @@ button {
 .embed-cancel-marker,
 .embed-add-marker {
   @extend %grey-one-lined-button;
-  color: $panel-color;
+  color: $dark-color;
   font-weight: bold;
 }
 .embed-add-marker {
@@ -1972,7 +1961,7 @@ button {
   .slider {
     margin: 0 0 0 2px;
     border: 1px solid #999999;
-    background: #FFFFFF none repeat 0 0;      
+    background: #898d8d none repeat 0 0;      
   }
 
   .slider > img {
@@ -2011,7 +2000,8 @@ button {
   .slider span {
     @extend %partial-transparent;
     display: none;
-    color: #ffffff;
+    color: #000000;
+    font-size: 1.5em;
     box-shadow: 0 0 6px rgba(0, 0, 0, .7);
   }
   //.slider:hover span {
@@ -2052,7 +2042,6 @@ html.touch {
 *****************************/
 #search-panel {
   padding: 0 20px;
-  float: left;
   position: relative;
 }
 
@@ -2060,31 +2049,31 @@ html.touch {
   width: 220px;
   border: none;
   margin: 0;
-  top: 21px;
+  top: 18px;
   position: relative;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-  height: 24px;
+  /*border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;*/
+  height: 30px;
   font-size: 12px;
   line-height: 18px;
-  padding: 0 12px;
+  padding: 0 6px;
   color: #787878;
-  box-shadow: 0 3px 3px rgba(0,0,0,.2) inset;
+  box-shadow: 0 -2px 0px 0px rgba(137,141,141,.41) inset;
   border: 1px solid grey;
 }
 
 #searchSubmit {
   @extend %search-button-style;
   position: relative;
-  top: 21px;
-  right: 12px;
-  height: 24px;
+  top: 18px;
+  right: 2px;
+  height: 30px;
   margin: 0;
 
   span {
     text-transform: uppercase;
     margin: 0 12px;
-    color: #fff;
+    color: #000;
   }
 
   .icon {
@@ -2111,6 +2100,7 @@ html.touch {
 }
 
 .statusmsg {
+  font-size: 150%;
   text-transform: none;
   width: inherit;
 }
@@ -2133,7 +2123,7 @@ html.touch {
   left: 0;
   right: 0;
   position: absolute;
-  color: #fff;
+  color: #000;
   overflow-y:auto;
   overflow-x:hidden;
   min-height: 28px;
@@ -2257,7 +2247,7 @@ html.svg {
 .icon.close {
   fill: transparent;
   stroke-width: 3px;
-  stroke: #fff;
+  stroke: #000;
   width: 12px;
   height: 12px;
 }
@@ -2363,7 +2353,7 @@ button:focus .icon {
 
   background-color: $panel-color-hex !important;
   background-color: $panel-color !important;
-  color: #fff;
+  color: $dark-color;
   font-size: 12px;
   text-transform: none;
   font-family: Arial, sans-serif;
@@ -2781,6 +2771,7 @@ focus for toolbar controls
 
     width: 92px;
     padding: 10px;
+    box-shadow: -5px 4px 10px -2px rgba(0, 0, 0, 0.5);
 
     .h {
       @extend %widget-main-heading;
@@ -2793,7 +2784,7 @@ focus for toolbar controls
       left: -5px;
 
       button {
-        color: #fff;
+        color: #000;
         position: relative;
         overflow: hidden;
 
@@ -2929,7 +2920,8 @@ focus for toolbar controls
       padding-top: 1em;
     }
     legend {
-      color: #fff;
+      color: #000;
+    font-weight:700;
     }
     .fileUpload {
       position: relative;
@@ -3077,14 +3069,15 @@ focus for toolbar controls
   .widget {
     width: 300px;
     padding: 10px 50px 10px 10px;
+    box-shadow: -5px 4px 10px -2px rgba(0, 0, 0, 0.5);
 
     h1 {
       @extend %widget-main-heading;
     }
 
     button {
-      @extend %blue-one-lined-button;
-      margin-top: 30px;
+      @extend %super-one-lined-button;
+      margin-top: 25px;
     }
     label {
       @extend %break-before;
@@ -3096,7 +3089,8 @@ focus for toolbar controls
       margin-top: 20px;
     }
     legend {
-      color: #fff;
+      color: #000;
+        font-weight:700;
     }
     input, select {
       margin-bottom: 10px;
@@ -4122,7 +4116,7 @@ $overlayMenuItemMargin: 5px;
       padding: 5px;
       
       &:hover {
-        background-color: #3A80BB;
+        background-color: #666;
       }
     }
   }
@@ -4581,10 +4575,11 @@ input:disabled {
 @media screen and (max-width: 767px) {
   #top-toolbar {
     height: 100px;
-    background-image: -moz-linear-gradient(#8a8989, #333333 60px,rgba(80, 80, 80, 0.9) 60px);
-    background-image: -ms-linear-gradient(#8a8989, #333333 60px,rgba(80, 80, 80, 0.9) 60px);
-    background-image: -o-linear-gradient(#8a8989, #333333 60px,rgba(80, 80, 80, 0.9) 60px);
-    background-image: linear-gradient(#8a8989, #333333 60px,transparent 61px);
+    background-image:-webkit-linear-gradient(#ededed, #dedcdc);
+	background-image:-moz-linear-gradient(#ededed, #dedcdc);
+	background-image:-ms-linear-gradient(#ededed, #dedcdc);
+	background-image:-o-linear-gradient(#ededed, #dedcdc);
+	background-image: linear-gradient(#ededed, #dedcdc);
     background-color: transparent;
     box-shadow: none;
     text-align: left;
@@ -4736,9 +4731,9 @@ input:disabled {
       right: $toolbar-width;
       top: 60px;
       height: auto;
-      background: green;
+      /*background: green;
       background-color: #616161;
-      background-color: rgba(80,80,80,.9);
+      background-color: rgba(80,80,80,.9);*/
       .panel {
         margin-top: 0;
       }
@@ -4814,7 +4809,7 @@ input:disabled {
   z-index: 9999;
   top: 0;
   left: -100%;
-  width: 100%;
+  width: 101%;
   height: 100%;
   display: none;
   font: normal 14px/1.3em Arial, sans-serif;
