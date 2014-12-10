@@ -3522,7 +3522,7 @@ $overlayMenuItemMargin: 5px;
         right:-12px;
       }
       h1.h {
-        font-family: Metabook, Arial, sans-serif;
+        font-family: verdana, sans-serif;
         font-size:30px;
         line-height:34px;
         font-weight: normal;
@@ -3546,32 +3546,45 @@ $overlayMenuItemMargin: 5px;
             line-height:30px;
             font-weight:normal;
             padding: 20px 0 0 35px;
+            color: rgb(212, 120, 34);
+          }
+          h3 {
+            font-size: 11pt;
+            float: right;
+            line-height: 30px;
+            font-weight: normal;
+            margin: 10px 40px 0 0;
           }
           img {
             width: 573px;
-            //height: 100%;
           }
         }
         p.semi-header {
-          font-size:12px;
+          font-size:12pt;
           font-weight:bold;
           padding:10px 0 0 35px;
           margin-bottom: 0;
         }
         .location-details-wrapper {
+          font-size:14pt;
           margin-bottom:30px;
           padding: 0 0 0 35px;
+          p {
+            font-size:14pt;
+            line-height: 120%;
+            padding: 0;
+          }
           .location-details-header {
-            padding:15px 0 0 0;
+            padding:15px 0 15px 0;
             p {
-              font-size:12px;
+              font-size:14pt;
               padding:0 0 0 20px;
               margin-bottom:0;
-              line-height: 17px;
+              line-height: 120%;
             }
             h2 {
               font-size:22px;
-              line-height:26px;
+              line-height:130%;
               font-weight:bold;
               padding:0;
               margin-bottom:15px;
@@ -3593,7 +3606,7 @@ $overlayMenuItemMargin: 5px;
           }
           .location-details-coords {
             padding:0px 20px 20px 20px;
-            font-size:11px;
+            font-size:14pt;
             table.emergency-details-coordsinfo {
               tr {
                 td {
@@ -3614,12 +3627,7 @@ $overlayMenuItemMargin: 5px;
         }
         img {
           width: 573px;
-          //height: 100%;
         }
-      }
-      .emergencyKV{
-        //background-image: url('img/KV_nodplakat.png');
-        //background-size: 100%;
       }
     }
 
