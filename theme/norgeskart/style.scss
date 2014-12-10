@@ -1331,34 +1331,46 @@ padding: 8px;
     }
   }
 }
+
 .tabs-menu {
-  height: 30px;
-  float: left;
-  clear: both;
-  list-style: none;
-}
-.tabs-menu li {
-  height: 30px;
-  line-height: 30px;
-  float: left;
-  margin-right: 10px;
-  background-color: #ccc;
-}
-.tabs-menu li.current {
-  position: relative;
-  border-bottom: 3px solid #fff;
-  z-index: 5;
+  @extend %progress-bullets;
+  color: #fff;
+  right: 20px;
+  top: 20px;
+  li {
+    margin-right: 4em;
+  }
+  @include active-step(tjenesteTab, 1, 3);
+  @include active-step(lagTab, 2, 3);
+  @include active-step(legendTab, 3, 3);
 }
 .tabs-menu li a {
-  padding: 0 10px;
-  text-transform: uppercase;
-  color: #2122d4;
   text-decoration: none;
+  color: rgba(220, 220, 220, 0.85);
 }
-.tabs-menu .current a {color: #fff;}
-.tab {float: left;width: auto;}
-.tab-content {padding: 10px 0; display: none;}
+.tabs-menu .current {
+  background-color: #000;
+}
+.tabs-menu .current li a {
+  color: #fff;
+}
+.tab {width: auto; }
+.tab-content {padding: 10px 0; }
 #addLayerTab {display: block; }
+
+.olControlLoadingPanel {
+  background-image:url("img/loading.gif");
+  margin-left: 40%;
+  margin-top: 40%;
+  position: relative;
+  width: 195px;
+  height: 11px;
+  background-position:center;
+  background-repeat:no-repeat;
+  display: none;
+  z-index: 1000;
+}
+
 /******************************************
 === make-your-own-panel panel ===
 ******************************************/
