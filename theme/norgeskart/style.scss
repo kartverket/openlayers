@@ -1262,8 +1262,21 @@ padding: 8px;
     > button {
       @extend %selected-button;
     }
-    > .widget {
+    .widget {
+      /* unsetting some widget properties to make this a right-aligned frame */
+      position: fixed;
+      right: 68px !important;
+      top: 60px !important;
       width: 475px;
+      height: 100% !important;
+      margin-top: 0 !important;
+      border-bottom-color: transparent;
+      box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      border-right: gray solid 1px;
+      border-top: gray solid 1px;
+      
+     
       display: block;
       @extend %clearfix;
       a.external-link {
