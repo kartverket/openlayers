@@ -1823,7 +1823,7 @@ box-shadow: 0 -2px 0px 0px rgba(137, 141, 141, 0.41) inset;
       #short-desc-explanation {
         display: none;
         @extend %shadow;
-        color: $panel-color;
+        color: black;
         background-color: #fff;
         position: absolute;
         width: 200px;
@@ -1856,7 +1856,7 @@ box-shadow: 0 -2px 0px 0px rgba(137, 141, 141, 0.41) inset;
         .h {
           position: absolute;
           top: 8px;
-          color: $panel-color;
+          color: black;
         }
         .close {
           @extend %close-cross-grey;
