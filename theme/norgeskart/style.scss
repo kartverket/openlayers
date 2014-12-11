@@ -4556,10 +4556,24 @@ input:disabled {
   }
 }
 
+@media screen and (max-width: 900px) {
+  #logo-panel {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .getURLcontent {
     width: auto;
+  }  
+  
+  #secondary-toolbar {
+    display: none !important;
   }
+  #del-panel {
+    display: none !important;
+  }
+
   #search-panel {
     &.active {
       .searchDiv {
@@ -4605,11 +4619,11 @@ input:disabled {
   }
   #search-panel {
     padding: 0 10px;
+    display: block !important;
   }
 }
 @media screen and (max-width: 767px) {
   #top-toolbar {
-    height: 100px;
     background-image:-webkit-linear-gradient(#ededed, #dedcdc);
 	background-image:-moz-linear-gradient(#ededed, #dedcdc);
 	background-image:-ms-linear-gradient(#ededed, #dedcdc);
@@ -4620,9 +4634,6 @@ input:disabled {
     text-align: left;
     padding: 0 $toolbar-width 0 20px;
 
-    .searchDiv {
-      display: none;
-    }
     #searchResults {
       position: fixed;
       top: 60px;
