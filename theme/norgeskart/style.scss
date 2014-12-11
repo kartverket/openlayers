@@ -2491,9 +2491,6 @@ button:focus .icon {
     background-clip: padding-box;
   }
   .olControlOverviewMapExpandableToggleSizeButton {
-    background-color: $panel-color-hex;
-    border-bottom: 6px solid $panel-color-hex;
-    border-right: 6px solid $panel-color-hex;
     box-sizing: content-box;
     cursor: pointer;
     height: 12px;
