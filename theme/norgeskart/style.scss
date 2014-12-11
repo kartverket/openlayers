@@ -1153,6 +1153,7 @@ padding: 8px;
 ******************************************/
 
 #del-panel {
+  float:right;
   .panel {
     &.active,
     .tool.active {
