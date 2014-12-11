@@ -79,11 +79,11 @@ $button-background-color: $panel-color;
 }
 %vertical-divider {
   /* h-divider.png base64-encoded */
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABAQMAAADO7O3JAAAABlBMVEW1tbWTkpK/yB6cAAAAFElEQVR4XgXAgQwAAACAsNDyp/oaAEIAQbGJB/YAAAAASUVORK5CYII=');
+  // background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABAQMAAADO7O3JAAAABlBMVEW1tbWTkpK/yB6cAAAAFElEQVR4XgXAgQwAAACAsNDyp/oaAEIAQbGJB/YAAAAASUVORK5CYII=');
   background-repeat: repeat-y;
 }
 %vertical-divider-inverted {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABAQMAAADO7O3JAAAABlBMVEW8vLzR0dGvQDftAAAAFElEQVR4XgXAgQwAAACAsNDyp/oaAEIAQbGJB/YAAAAASUVORK5CYII=');
+  // background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABAQMAAADO7O3JAAAABlBMVEW8vLzR0dGvQDftAAAAFElEQVR4XgXAgQwAAACAsNDyp/oaAEIAQbGJB/YAAAAASUVORK5CYII=');
   background-repeat: repeat-y;
 }
 
@@ -529,7 +529,6 @@ button {
   .panel {
     vertical-align: top;
     display: inline-block;
-    
     + .panel {
         @extend %vertical-divider;
     }
@@ -1153,7 +1152,8 @@ padding: 8px;
 ******************************************/
 
 #del-panel {
-  float:right;
+  position: absolute;
+  right: 70px;
   .panel {
     &.active,
     .tool.active {
