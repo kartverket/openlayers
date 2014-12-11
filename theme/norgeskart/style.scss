@@ -4611,7 +4611,6 @@ input:disabled {
 @media screen and (max-width: 900px) {
   #top-toolbar {
     padding: 0 8px;
-    text-align: center;
 
     > .panel {
       text-align: left;
@@ -4619,7 +4618,6 @@ input:disabled {
   }
   #search-panel {
     padding: 0 10px;
-    display: block !important;
   }
 }
 @media screen and (max-width: 767px) {
