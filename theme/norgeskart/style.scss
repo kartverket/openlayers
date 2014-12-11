@@ -577,6 +577,19 @@ button {
 
 }
 
+.star {
+  width: 18px;
+  height: 18px;
+  stroke: #333;
+  stroke-width: 4;
+  fill: none;
+  
+  &.selected,
+  .selected {
+    fill: #333;
+  }
+}
+
 #basic-toolbar .panel + .panel,
 #secondary-toolbar .panel + .panel,
 #embed-basic-toolbar .panel + .panel {
