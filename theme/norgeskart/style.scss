@@ -4556,8 +4556,8 @@ input:disabled {
   }
 }
 
-@media screen and (max-width: 900px) {
-  #logo-panel {
+@media screen and (max-width: 1110px) {
+  .logoDiv {
     display: none !important;
   }
 }
@@ -4950,3 +4950,33 @@ r {
     }
   }
 }
+
+.navbar-title {
+  color: #333;
+  display: block;
+  width: 14em;
+  margin: 4px auto;
+  text-align: center;
+  line-height: 1.1;
+  font-family: Arial, sans-serif;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: none;
+}
+.navbar-title .navbar-headline {
+  font-size: 2.7em;
+  font-weight: 700;
+}
+.navbar-title .navbar-subline {
+  font-size: 1.3em;
+}
+#geonorge-logo-panel {
+  padding-top: 5px;
+  padding-left: 20px;
+  
+}
+
