@@ -3336,7 +3336,7 @@ $overlayMenuItemMargin: 5px;
       }
     }
     .step-body {
-      padding: 0 24px 24px 24px;
+      padding: 0 24px 1px 24px;
       &, .h {
         font-size: 12px;
         line-height: 1.5;
@@ -3425,7 +3425,7 @@ $overlayMenuItemMargin: 5px;
 .emergency-poster-popup .contentContainer.location {
 
   .emergency-point-name-input-wrapper {
-    margin-bottom:20px;
+    margin-bottom:8px;
 
     label[for="emergencyPointNameInput"] {
       display:block;
@@ -3456,12 +3456,12 @@ $overlayMenuItemMargin: 5px;
       font-weight:bold;
     }
     h3 {
-      font-size:20px;
       font-weight:bold;
       line-height:1em;
     }
     .altPointListContainer {
-      margin-top:5px;
+      margin-top:3px;
+      margin-bottom: 10px;
       #emergencyPointAltLocationMenu {
         display:block;
       }
@@ -3469,7 +3469,7 @@ $overlayMenuItemMargin: 5px;
   }
   .iframe-container {
     @extend %horizontal-divider;
-    padding:24px;
+    padding:5px 5px 0 24px;
   }
   .button-panel {
     button {
