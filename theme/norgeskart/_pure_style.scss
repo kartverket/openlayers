@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'MetaBook';
   src: url("/fonts/MetaWeb-Book.eot");
-  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); 
+  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
 }
 
 $base-color: #606060;
@@ -33,7 +33,7 @@ $button-background-color: $panel-color;
     display: table;
   }
   &:after {
-      clear: both;
+    clear: both;
   }
 }
 
@@ -96,7 +96,7 @@ $button-background-color: $panel-color;
 }
 
 %arrow {
-   &:after {
+  &:after {
     content: '';
     border: 7px solid transparent;
     width: 0;
@@ -211,7 +211,7 @@ $white: #fff;
 
 %blue-terms-accept-button-style {
   @extend %terms-accept-button-style;
-  @extend %blue-button-gradient; 
+  @extend %blue-button-gradient;
 }
 
 %one-lined-button {
@@ -265,7 +265,7 @@ $white: #fff;
   color: $panel-color-hex;
   color: $panel-color;
   background-color: #fff;
-  padding: 8px; 
+  padding: 8px;
   word-break: break-all;
 
   margin-bottom: 20px;
@@ -340,13 +340,13 @@ html {
   background-color: transparent;
 }
 
-body { 
+body {
   @extend %full-height;
-  margin: 0; 
+  margin: 0;
   padding: 0;
 
- -webkit-font-smoothing: antialiased;
- 
+  -webkit-font-smoothing: antialiased;
+
   /**
    * Overflow as hidden will hide the meny options,
    * when the window's size is small.
@@ -360,14 +360,14 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
-  padding: 0; 
+  padding: 0;
   margin: 0;
 }
-html, 
+html,
 body {
   /* remove annoying white line at the bottom, iOS */
-    overflow-x: hidden !important;
-    position: relative !important;
+  overflow-x: hidden !important;
+  position: relative !important;
 }
 #map {
   @extend %full-height;
@@ -390,7 +390,7 @@ button {
 
   .panel {
     background-position: left top;
-/*    display: inline-block; */
+    /*    display: inline-block; */
   }
 
   button {
@@ -483,13 +483,13 @@ button {
 #basic-toolbar,
 #secondary-toolbar {
   @extend %shadow;
- 
+
   position: absolute;
   top: 0;
   bottom: 0;
   width: $toolbar-width;
   padding-top: 73px;
-  
+
   .panel {
     width: $toolbar-width;
     padding: 20px 0;
@@ -528,9 +528,9 @@ button {
   .panel {
     vertical-align: top;
     display: inline-block;
-    
+
     + .panel {
-        @extend %vertical-divider;
+      @extend %vertical-divider;
     }
   }
 
@@ -637,7 +637,7 @@ button {
 }
 
 .layersDiv .vectorWidgetToggleBtn,
-.rasterLayerList label, 
+.rasterLayerList label,
 .vectorLayerList label {
   @extend %button;
   color: #fff;
@@ -655,16 +655,16 @@ button {
   @extend %selected-button;
 }
 
-.layersDiv.active .vectorWidgetToggleBtn:after, 
-.layersDiv.show .vectorWidgetToggleBtn:after, 
+.layersDiv.active .vectorWidgetToggleBtn:after,
+.layersDiv.show .vectorWidgetToggleBtn:after,
 .rasterLayerList input.is-checked + label:after,
 .rasterLayerList label.for-checked:after,
 .vectorLayerList input.is-checked + label:after,
 .vectorLayerList label.for-checked:after {
-/*
-.rasterLayerList input:checked + label:after,
-.vectorLayerList input:checked + label:after {
-*/
+  /*
+  .rasterLayerList input:checked + label:after,
+  .vectorLayerList input:checked + label:after {
+  */
   content: '';
   display: block;
   position: absolute;
@@ -688,9 +688,9 @@ button {
 }
 */
 #layerselector-panel-vector .widget {
-/*
-  margin-left: 15px;
-*/
+  /*
+    margin-left: 15px;
+  */
   margin-left: 7px;
   @extend %shadow;
 }
@@ -761,7 +761,7 @@ button {
 }
 
 .layersDiv .widget {
-  @extend %partial-transparent;       
+  @extend %partial-transparent;
   margin: -10px 0 0 10px;
   width: 125px;
   overflow: hidden;
@@ -774,12 +774,12 @@ button {
 }
 
 .layersDiv.displayHorizontal .widget {
-   width: 812px;
-   margin-top: 0;
+  width: 812px;
+  margin-top: 0;
 }
 
 .layersDiv.displayHorizontal .widget > .arrow {
-   top: 12px;
+  top: 12px;
 }
 
 .layersDiv.displayHorizontal .widget .vectorLayerList li {
@@ -796,7 +796,7 @@ button {
 .layersDiv.displayHorizontal .widget .vectorLayerList input {
   display: none;
 }
- 
+
 .layersDiv.displayHorizontal .vectorLayerList input:checked + label:after,
 .layersDiv.displayHorizontal .vectorLayerList input.is-checked + label:after  {
   border-color: transparent transparent $panel-color-hex transparent;
@@ -846,7 +846,7 @@ button {
   background-repeat: no-repeat;
 }
 .raster-layer-selector-item:hover:after {
-  background-image: url('img/raster-thumbs.png');  
+  background-image: url('img/raster-thumbs.png');
 }
 .vector-layer-selector-item:hover:after {
   background-image: url('img/coverage-thumbs.png');
@@ -892,7 +892,7 @@ button {
 
   .icon.fullscreen {
     display: inline;
-  }      
+  }
   &.fullscreen-active .icon {
     &.windowed {
       display: inline;
@@ -938,7 +938,7 @@ button {
 .fullscreen #top-toolbar
 {
   -webkit-transition: -webkit-transform .5s ease-in-out;
-  -o-transition: transform .5s ease-in-out;  
+  -o-transition: transform .5s ease-in-out;
   transition: -ms-transform .5s ease-in-out;
   transition: transform .5s ease-in-out;
 }
@@ -950,23 +950,23 @@ button {
   transition: transform .5s ease-in-out;
 }
 #fullscreen-panel {
-    background-color: rgba(80,80,80,0);
-    -webkit-transition: -webkit-transform .5s ease-in-out, background-color .5s linear;
-    -o-transition: transform .5s ease-in-out, background-color .5s linear;
-    transition: -ms-transform .5s ease-in-out, background-color .5s linear;
-    transition: transform .5s ease-in-out, background-color .5s linear;
+  background-color: rgba(80,80,80,0);
+  -webkit-transition: -webkit-transform .5s ease-in-out, background-color .5s linear;
+  -o-transition: transform .5s ease-in-out, background-color .5s linear;
+  transition: -ms-transform .5s ease-in-out, background-color .5s linear;
+  transition: transform .5s ease-in-out, background-color .5s linear;
 }
-  
+
 .fullscreen #fullscreen-panel {
-    -webkit-transition: -webkit-transform .5s ease-in-out, background-color .5s step-start;
-    -o-transition: transform .5s ease-in-out, background-color .5s step-start;
-    transition: -ms-transform .5s ease-in-out, background-color .5s step-start;
-    transition: transform .5s ease-in-out, background-color .5s step-start;
-  }
+  -webkit-transition: -webkit-transform .5s ease-in-out, background-color .5s step-start;
+  -o-transition: transform .5s ease-in-out, background-color .5s step-start;
+  transition: -ms-transform .5s ease-in-out, background-color .5s step-start;
+  transition: transform .5s ease-in-out, background-color .5s step-start;
+}
 
 .fullscreen {
   overflow: hidden;
-  
+
   #basic-toolbar {
     -webkit-transform: translate(-70px, 0);
     -ms-transform: translate(-70px, 0);
@@ -1011,7 +1011,7 @@ button {
       -webkit-transform: translate(70px, 300px);
       -ms-transform: translate(70px, 300px);
       transform: translate(70px, 300px);
-    }    
+    }
   }
 }
 
@@ -1083,7 +1083,7 @@ button {
     text-align: center;
     margin-bottom: 5px;
   }
-  
+
   button.nkButton {
     height: auto;
     min-height: 40px;
@@ -1095,7 +1095,7 @@ button {
   width: 30px;
   height: 30px;
   padding: 2px;
-  margin: 5px; 
+  margin: 5px;
 }
 
 .widget {
@@ -1126,8 +1126,8 @@ button {
   position: relative;
 }
 
-.arrow > .arrow { 
-  border-right-color: $panel-color-hex;  
+.arrow > .arrow {
+  border-right-color: $panel-color-hex;
   position: absolute;
   top: -8px;
   left: -7px;
@@ -1170,11 +1170,11 @@ button {
     @mixin share-widget-positioning($nth_last) {
       &:nth-last-child(#{$nth_last}) {
         .widget {
-//            right: -#{$share-toolbar-panel-width * ($nth_last - 1)};
+          //            right: -#{$share-toolbar-panel-width * ($nth_last - 1)};
 
           &:after {
             right: #{$share-toolbar-panel-width * ($nth_last - 0.5) - 7px};
-          }        
+          }
         }
       }
     }
@@ -1231,7 +1231,7 @@ button {
     height: 20px;
     width: 20px;
   }
-    
+
   > span {
     vertical-align: top;
   }
@@ -1530,15 +1530,15 @@ button {
 
       &.next:after,
       &.back:before {
-          content: '';
-          width: 0;
-          height: 0;
-          display: block;
-          border-width: 6px;
-          border-style: solid;
-          border-color: transparent;
-          position: absolute;
-          top: 5px;
+        content: '';
+        width: 0;
+        height: 0;
+        display: block;
+        border-width: 6px;
+        border-style: solid;
+        border-color: transparent;
+        position: absolute;
+        top: 5px;
       }
 
       &.next {
@@ -1567,7 +1567,7 @@ button {
   .step-specific {
 
     @extend %horizontal-divider;
-    padding: 25px;    
+    padding: 25px;
 
     .h {
       font-size: 11px;
@@ -1611,7 +1611,7 @@ button {
       background-position:0px 25px;
 
       .h {
-        
+
         padding-bottom:25px;
         line-height:25px;
       }
@@ -1624,7 +1624,7 @@ button {
       */
 
       .mode-options-container {
-        
+
         position:relative;
         margin-bottom:5px;
 
@@ -1757,7 +1757,7 @@ button {
           width: 12px;
           height: 12px;
         }
-      }    
+      }
     }
 
     &.descriptions {
@@ -1846,9 +1846,9 @@ button {
         &.map-container {
           padding-bottom:0px;
         }
-          
+
         .h {
-          padding-bottom: 5px;        
+          padding-bottom: 5px;
         }
       }
       &.limit-height {
@@ -1924,7 +1924,7 @@ button {
 
 /******************************************
 === get Zoom panel ===
-******************************************/      
+******************************************/
 #zoom-panel {
   margin-left: -4px;
 
@@ -1949,7 +1949,7 @@ button {
   .slider {
     margin: 0 0 0 2px;
     border: 1px solid #999999;
-    background: #FFFFFF none repeat 0 0;      
+    background: #FFFFFF none repeat 0 0;
   }
 
   .slider > img {
@@ -1976,7 +1976,7 @@ button {
       @extend %selected-button;
       width: auto;
       overflow: hidden;
-    }    
+    }
   }
   .olControlZoomIn.olButton {
     top: 0;
@@ -2155,7 +2155,7 @@ html.touch {
   .areas span,
   .addresses .municipality-name,
   .objects span {
-      font-weight: bolder;    
+    font-weight: bolder;
   }
   .addresses select,
   .addresses .selector {
@@ -2165,14 +2165,14 @@ html.touch {
     top: -.5em;
   }
   ul li {
-      list-style-type: none;
-      text-transform: none;
-      font-size: 12px;
-      text-transform: none;
-      font-family: Arial, sans-serif;
-      line-height: 14px;
-      margin-top: 10px;
-      clear: right;
+    list-style-type: none;
+    text-transform: none;
+    font-size: 12px;
+    text-transform: none;
+    font-family: Arial, sans-serif;
+    line-height: 14px;
+    margin-top: 10px;
+    clear: right;
   }
 }
 
@@ -2195,7 +2195,7 @@ html.touch {
   right: 8px;
   top: 8px;
   overflow: hidden;
-  text-indent: 12px;    
+  text-indent: 12px;
   @extend %close-cross;
 }
 #searchResults,
@@ -2269,19 +2269,19 @@ html.svg {
   }
 
   .olControlPanNorthItemInactive {
-    background-image: url('img/north-arrow.png');  
+    background-image: url('img/north-arrow.png');
     top: 14px;
   }
   .olButton.olControlPanSouthItemInactive {
-    background-image: url('img/south-arrow.png');  
+    background-image: url('img/south-arrow.png');
     bottom: 16px;
   }
   .olControlPanEastItemInactive {
-    background-image: url('img/east-arrow.png');  
+    background-image: url('img/east-arrow.png');
     right: 9px;
   }
   .olControlPanWestItemInactive {
-    background-image: url('img/west-arrow.png');  
+    background-image: url('img/west-arrow.png');
     left: 7px;
   }
   .olControlPanNorthItemInactive,
@@ -2420,7 +2420,7 @@ button:focus .icon {
       }
       &.cc:after {
         display: none;
-      }      
+      }
 
     }
   }
@@ -2450,7 +2450,7 @@ button:focus .icon {
     border: 2px dotted #e57231;
     background-color: rgba(229, 114, 49, .5);
     -webkit-background-clip: padding-box;
-    -moz-background-clip: padding-box;    
+    -moz-background-clip: padding-box;
     background-clip: padding-box;
   }
   .olControlOverviewMapExpandableToggleSizeButton {
@@ -2507,7 +2507,7 @@ html.touch #overview-container-panel .olControlOverviewMapExpandableToggleSizeBu
 html.touch {
   #heightProfileLightboxCloseBtn,
   #searchResults a.close {
-      text-indent: 100%;
+    text-indent: 100%;
   }
   #heightProfileLightboxCloseBtn,
   #searchResults a.close {
@@ -2527,9 +2527,9 @@ html.touch {
 .sub750h #zoom-panel .sliderWrapper {
   display: none;
 }
-.sub650h #basic-toolbar .panel, 
-#secondary-toolbar .panel { 
-  padding: 15px 0; 
+.sub650h #basic-toolbar .panel,
+#secondary-toolbar .panel {
+  padding: 15px 0;
 }
 
 .sub550w #search-toolbar {
@@ -2537,7 +2537,7 @@ html.touch {
   right: 10px;
 }
 .sub550w #search-toolbar .panel + .panel {
-    @extend %horizontal-divider;
+  @extend %horizontal-divider;
 }
 .sub550w #search-panel {
   width: 100%;
@@ -2549,7 +2549,7 @@ focus for toolbar controls
 
 .fullscreen-button:focus,
 .olControlZoomIn:focus,
-.olControlZoomOut:focus, 
+.olControlZoomOut:focus,
 .zoom-to-selection-button:focus,
 .getURL-button:focus,
 #layerselector-panel input:focus + label,
@@ -2564,7 +2564,7 @@ focus for toolbar controls
 ***************************/
 
 #secondary-toolbar {
-  
+
   &,
   &.minified {
     &,
@@ -2583,7 +2583,7 @@ focus for toolbar controls
     text-transform: uppercase;
     color: #fff;
     -webkit-font-smoothing: antialiased;
-    
+
     svg.icon {
       display: none;
     }
@@ -2635,9 +2635,9 @@ focus for toolbar controls
       /*
         cancel the box-shadow of the toolbar by an complementary colored inset shadow 
       */
-      -webkit-box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset; 
-      -moz-box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset; 
-      box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset;  
+      -webkit-box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset;
+      -moz-box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset;
+      box-shadow: 0 6px 6px -6px rgba(175,175,175,0.3) inset;
     }
     span {
       display: inline-block;
@@ -2725,7 +2725,7 @@ focus for toolbar controls
     font-size: 12px;
     text-align: left;
     text-transform: none;
-  }  
+  }
 
   &.active {
     > button {
@@ -2811,7 +2811,7 @@ focus for toolbar controls
       li {
         margin-top: 5px;
         overflow: hidden;
-        
+
         &.text-only {
 
           button {
@@ -2826,7 +2826,7 @@ focus for toolbar controls
     }
 
     .measures {
-  
+
       &.point {
         .length,
         .area {
@@ -2964,7 +2964,7 @@ focus for toolbar controls
 }
 .height-profile-lightbox.splashscreen {
   .widget {
-    
+
     .loadingNotice {
       display:none;
     }
@@ -2977,14 +2977,14 @@ focus for toolbar controls
         padding:25px;
       }
     }
-    
+
     width:820px;
     padding:0px;
     margin:25px auto 0;
 
     .header {
       padding: 24px 15px 24px 24px;
-      
+
       a.close {
         position:absolute;
         top:4px;
@@ -3004,7 +3004,7 @@ focus for toolbar controls
     }
 
     .button-panel {
-      
+
       background-position: 0 0;
       padding: 15px;
       text-align:right;
@@ -3097,7 +3097,7 @@ focus for toolbar controls
       margin-top: 15px;
       display: block;
     }
-    h2, 
+    h2,
     .output-label {
       &:after {
         content: ':';
@@ -3116,7 +3116,7 @@ focus for toolbar controls
         color: #aaa;
       }
 
-      input, 
+      input,
       select {
         background-color: #aaa;
       }
@@ -3145,7 +3145,7 @@ $overlayMenuItemMargin: 5px;
   text-align: center;
 
   .widget {
-//    @extend %shadow;
+    //    @extend %shadow;
     top: 0;
 
     .cnt {
@@ -3177,11 +3177,11 @@ $overlayMenuItemMargin: 5px;
           }
 
           ul {
-              @extend %partial-transparent;
-              padding: 5px 0 0 0;
-              li {
-                overflow: hidden;
-              }
+            @extend %partial-transparent;
+            padding: 5px 0 0 0;
+            li {
+              overflow: hidden;
+            }
           }
           a, header {
             margin: $overlayMenuItemMargin;
@@ -3254,7 +3254,7 @@ $overlayMenuItemMargin: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 900;  
+  z-index: 900;
   display: none;
   overflow: visible;
   /*background: transparent url('img/emergency-marker.png') no-repeat 0 0;*/
@@ -3263,7 +3263,7 @@ $overlayMenuItemMargin: 5px;
 
   &.active {
     display: block;
-  } 
+  }
 
   > .arrow {
     position: absolute;
@@ -3272,9 +3272,9 @@ $overlayMenuItemMargin: 5px;
     z-index: 1000;
     border: 7px solid transparent;
     border-top-color: #555555;
-    margin: 0 0 -11px -18px;      
-    opacity: 0.7; 
-    filter: alpha(opacity=70);    
+    margin: 0 0 -11px -18px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
   }
 
   .emergency-poster-popup {
@@ -3282,7 +3282,7 @@ $overlayMenuItemMargin: 5px;
     right: auto;
     bottom: 100%;
     left : -165px;
-    width: 400px; 
+    width: 400px;
     margin-bottom: 3px;
   }
 }
@@ -3356,22 +3356,25 @@ $overlayMenuItemMargin: 5px;
     .button-panel {
       @extend %horizontal-divider;
       background-position: 0 0;
-      padding: 24px;
+      padding: 12px 24px;
     }
     .h {
       margin: 0;
     }
   }
 }
+span#star {
+  /*color: red;*/
+}
 
-.emergency-poster-popup, 
+.emergency-poster-popup,
 .emergency-poster-preview-popup.splashscreen {
   .loadingNotice {
     display:none;
   }
   &.loading {
-    .header, 
-    .step-body, 
+    .header,
+    .step-body,
     .button-panel {
       display:none;
     }
@@ -3408,7 +3411,7 @@ $overlayMenuItemMargin: 5px;
     button {
       @extend %blue-one-lined-button;
       width:100%;
-      
+
       &:after {
         content: '';
         display: block;
@@ -3420,7 +3423,7 @@ $overlayMenuItemMargin: 5px;
       }
     }
   }
-} 
+}
 
 .emergency-poster-popup .contentContainer.location {
 
@@ -3460,8 +3463,9 @@ $overlayMenuItemMargin: 5px;
       line-height:1em;
     }
     .altPointListContainer {
-      margin-top:3px;
-      margin-bottom: 10px;
+      margin-top:5px;
+      margin-bottom: 6px;
+
       #emergencyPointAltLocationMenu {
         display:block;
       }
@@ -3528,13 +3532,13 @@ $overlayMenuItemMargin: 5px;
         font-weight: normal;
       }
     }
-    
+
     .preview-container {
       background:white;
       margin:0 15px;
       overflow:scroll;
       height:500px;
-      
+
       .preview {
         color:black;
         .header {
@@ -3554,11 +3558,11 @@ $overlayMenuItemMargin: 5px;
             line-height: 30px;
             font-weight: normal;
             margin: 10px 40px 0 0;
-          }
+        }
           img {
             width: 573px;
+            }
           }
-        }
         p.semi-header {
           font-size:12pt;
           font-weight:bold;
@@ -3747,17 +3751,17 @@ $overlayMenuItemMargin: 5px;
   display: none;
 
   &.bySearch {
-    margin: -78px 0 0 -78px;      
+    margin: -78px 0 0 -78px;
   }
 
   &.active {
-    display: block;    
+    display: block;
   }
-  
+
   &.display {
     background: transparent url('img/pointMenuSelectedSector.png') no-repeat scroll center 3px;
 
-    #PMarrow, 
+    #PMarrow,
     #PMwidget {
       display: block;
     }
@@ -3779,7 +3783,7 @@ $overlayMenuItemMargin: 5px;
       display: none;
     }
 
-    #PMcloser { 
+    #PMcloser {
       z-index: 1;
       -moz-transform: rotateY(180deg);
       -webkit-transform: rotateY(180deg);
@@ -3787,15 +3791,15 @@ $overlayMenuItemMargin: 5px;
       transform: rotateY(180deg);
       visibility: hidden;
     }
-    
-     #PMopener { 
-       -moz-transform: rotateY(0);
-       -webkit-transform: rotateY(0);
-       -o-transform: rotateY(0);
-       transform: rotateY(0);
-     }
+
+    #PMopener {
+      -moz-transform: rotateY(0);
+      -webkit-transform: rotateY(0);
+      -o-transform: rotateY(0);
+      transform: rotateY(0);
+    }
   }
-  
+
   &.onOpen {
     #PMmenu .item {
       display: none;
@@ -3809,39 +3813,39 @@ $overlayMenuItemMargin: 5px;
     outline-style: none;
   }
 
-  a:hover, 
-  a:visited, 
+  a:hover,
+  a:visited,
   a {
     text-decoration: none;
     color: #FFFFFF;
   }
 
-  #PMmenu, 
-  #PMtool, 
+  #PMmenu,
+  #PMtool,
   .item {
     margin: 0;
     padding: 0;
-    
+
     -moz-transition: all 1s ease;
     -webkit-transition: all 1s ease;
     -o-transition: all 1s ease;
     transition: all 1s ease;
-    
+
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0) scale(1.0, 1.0);
     -moz-backface-visibility: hidden;
     -moz-transform: translateZ(0) scale(1.0, 1.0);
     backface-visibility: hidden;
-    
+
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    
+
     transform-style: preserve-3d;
   }
 
-  #PMtool, 
+  #PMtool,
   .item {
     position: absolute;
     width: 30px;
@@ -3858,7 +3862,7 @@ $overlayMenuItemMargin: 5px;
     overflow: hidden;
   }
 
-  #PMtool {  
+  #PMtool {
     top: 50%;
     left: 50%;
     margin: -12px 0 0 -12px;
@@ -3883,7 +3887,7 @@ $overlayMenuItemMargin: 5px;
   #PMcloser {
     background-position: 0 -24px;
   }
-  #PMopener { 
+  #PMopener {
     -moz-transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
@@ -3891,7 +3895,7 @@ $overlayMenuItemMargin: 5px;
     z-index: 2;
   }
 
-  #PMcloser { 
+  #PMcloser {
     -moz-transform: rotateY(0);
     -webkit-transform: rotateY(0);
     -o-transform: rotateY(0);
@@ -3901,7 +3905,7 @@ $overlayMenuItemMargin: 5px;
 }
 .no-svg #pointMenu {
   #PMopener,
-  #PMcloser  { 
+  #PMcloser  {
     background-image: url('img/point-menu-icon-sprite.png');
   }
 }
@@ -3930,8 +3934,8 @@ $overlayMenuItemMargin: 5px;
   .icon6 { top: 37px;  left: 20px;  }
 
   .item {
-    opacity: 0.7; 
-    filter: alpha(opacity=70);  
+    opacity: 0.7;
+    filter: alpha(opacity=70);
 
     svg.icon {
       height: 26px;
@@ -3951,10 +3955,10 @@ $overlayMenuItemMargin: 5px;
       }
     }
 
-    &.active, 
+    &.active,
     &:hover {
-      opacity: 1; 
-      filter: alpha(opacity=100);  
+      opacity: 1;
+      filter: alpha(opacity=100);
     }
   }
 }
@@ -3993,8 +3997,8 @@ $overlayMenuItemMargin: 5px;
   color: #FFFFFF;
   font-size: 11px;
 
-  &.embedContent { 
-    .progress { 
+  &.embedContent {
+    .progress {
       li {
         margin-bottom: 5px;
       }
@@ -4006,7 +4010,7 @@ $overlayMenuItemMargin: 5px;
     display: inline-block;
     font-size: 11px;
     padding: 5px 2px 5px 2px;
-    
+
     &:hover,
     &:active {
       color: #FFFFFF;
@@ -4020,7 +4024,7 @@ $overlayMenuItemMargin: 5px;
     padding: 5px;
   }
 
-  .getURLcontent { 
+  .getURLcontent {
     width: auto;
   }
 
@@ -4034,57 +4038,57 @@ $overlayMenuItemMargin: 5px;
   &.displayPMsun,
   &.displayPMweather {
     width: 300px;
-    margin-left: -150px; 
+    margin-left: -150px;
   }
 
   &.displayPMmaid {
     width: 400px;
-    margin-left: -200px; 
+    margin-left: -200px;
     background-color: transparent;
   }
 
   &.displayPMinformation {
     width: 280px;
-    margin-left: -140px; 
+    margin-left: -140px;
   }
 
   .shareContent {
     a {
       display: block;
       padding: 5px;
-      
+
       &:hover {
         background-color: #3A80BB;
       }
     }
   }
-  
+
   .measureContent {
-      li {
-        display: block;
-        padding: 0 5px 5px 5px;
+    li {
+      display: block;
+      padding: 0 5px 5px 5px;
 
-        &:first-child {
-          padding-top: 5px;
-        }	
+      &:first-child {
+        padding-top: 5px;
       }
+    }
 
-      .label, .value {
-        display: inline-block;
-        padding: 0 5px 0 0;  
-      }
+    .label, .value {
+      display: inline-block;
+      padding: 0 5px 0 0;
+    }
   }
 
 
   .emergency-poster-popup {
-     top: auto;
-     right: auto;
-     bottom: auto;
-     left : auto;
-     margin: 0;
-     width: auto;       
-     max-width: none;
-     position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left : auto;
+    margin: 0;
+    width: auto;
+    max-width: none;
+    position: relative;
   }
 
   .goBackButton {
@@ -4097,12 +4101,12 @@ $overlayMenuItemMargin: 5px;
     border-style: solid;
     border-width: 7px;
 
-    opacity: 0.7; 
-    filter: alpha(opacity=70);    
-    
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+
     &:hover {
-      opacity: 1; 
-      filter: alpha(opacity=100); 
+      opacity: 1;
+      filter: alpha(opacity=100);
     }
   }
 }
@@ -4118,7 +4122,7 @@ $overlayMenuItemMargin: 5px;
     display: block;
     overflow: hidden;
     padding: 20px 0 0 0;
-  
+
     &:first-child {
       padding: 0;
     }
@@ -4128,28 +4132,28 @@ $overlayMenuItemMargin: 5px;
         &.external-link {
           text-decoration: underline;
         }
-      	font-size: 18px;
-      	font-weight: bold;
+        font-size: 18px;
+        font-weight: bold;
       }
     }
-    
-    &.coordinate { 
+
+    &.coordinate {
       .name {
-      	font-weight: bold;
+        font-weight: bold;
       }
-      .value, 
+      .value,
       .description,
       dt,
       dd {
-      	font-size: 13px;
+        font-size: 13px;
       }
-      
+
       label,
       select {
-      	display: block;
-      	font-size: 13px;
+        display: block;
+        font-size: 13px;
       }
-      label, 
+      label,
       dl {
         margin-left: 10px;
       }
@@ -4160,7 +4164,7 @@ $overlayMenuItemMargin: 5px;
       label {
         margin-top: 5px;
       }
-      
+
     }
 
     .label, .value {
@@ -4172,7 +4176,7 @@ $overlayMenuItemMargin: 5px;
     }
 
     .label.description, .value {
-       padding-left: 10px;
+      padding-left: 10px;
     }
   }
 }
@@ -4196,11 +4200,11 @@ $overlayMenuItemMargin: 5px;
 
     &.temperature {
       img {
-	 margin: 0 5px -9px 0;
+        margin: 0 5px -9px 0;
       }
 
       .number {
-	font-size: 28px;
+        font-size: 28px;
       }
     }
   }
@@ -4216,7 +4220,7 @@ $overlayMenuItemMargin: 5px;
     width: 50%;
     padding: 60px 0 10px 0;
     text-align: center;
-    
+
     &.sunRiseAndSetWrapper {
       background: transparent url('img/pointMenuSunRise.png') no-repeat scroll center 15px;
     }
@@ -4244,8 +4248,8 @@ $overlayMenuItemMargin: 5px;
 }
 
 input:disabled {
-  opacity: 0.7; 
-  filter: alpha(opacity=70);    
+  opacity: 0.7;
+  filter: alpha(opacity=70);
 }
 
 
@@ -4258,7 +4262,7 @@ input:disabled {
   left: 0;
   z-index: 800;
   background: rgba(0,0,0,0.5);
-  
+
   .tool {
     position: absolute;
     border: 1px solid #000000;
@@ -4277,14 +4281,14 @@ input:disabled {
 #embedLightOFbase {
   bottom: 0;
   right: 0;
-  opacity: 0.7; 
-  filter: alpha(opacity=70);    
+  opacity: 0.7;
+  filter: alpha(opacity=70);
   background: #F0F0F0 none repeat 0 0;
 
   &.adjust {
     display: none;
   }
-  
+
   .tool {
     display: none;
   }
@@ -4313,11 +4317,11 @@ input:disabled {
 
 #embedLightOFtop {
   z-index: 810;
- 
- .left {
+
+  .left {
     bottom: 0;
     right: 100%;
-    margin: 0 -5px -5px 0;      
+    margin: 0 -5px -5px 0;
     cursor: nw-resize;
   }
 
@@ -4351,14 +4355,14 @@ input:disabled {
   propertyTable
 *********************************/
 #propertyTable {
-   td {
-     padding: 3px;
-     vertical-align: top;
-     
-     &:first-child {
-       color: #D0D0D0;
-     }
-   }
+  td {
+    padding: 3px;
+    vertical-align: top;
+
+    &:first-child {
+      color: #D0D0D0;
+    }
+  }
 }
 .illustration {
 
@@ -4407,9 +4411,9 @@ input:disabled {
     }
   }
 }
-@media screen and (max-height: 600px) { 
-  #pan-panel { 
-    display: none; 
+@media screen and (max-height: 600px) {
+  #pan-panel {
+    display: none;
   }
 }
 
@@ -4495,7 +4499,7 @@ input:disabled {
     background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAIAAAAW4yFwAAAAD0lEQVQIHWNmBoJJEycCAAPLAcSTth01AAAAAElFTkSuQmCC');
     background-repeat: repeat-x;
   }
- 
+
 }
 @media screen and (max-width: 900px) {
   #top-toolbar {
@@ -4565,17 +4569,17 @@ input:disabled {
     #del-panel {
 
       min-height: 40px;
-/*      padding-left: 149px; /* width of logo-panel + search-panel padding */ 
-/*
-      -webkit-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.7);
-      box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.7);
+      /*      padding-left: 149px; /* width of logo-panel + search-panel padding */
+      /*
+            -webkit-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.7);
 
-      height: auto;
-      background: none; 
-      width: 100%; 
-      background-color: #616161;
-      background-color: rgba(80,80,80,.9);
-*/
+            height: auto;
+            background: none;
+            width: 100%;
+            background-color: #616161;
+            background-color: rgba(80,80,80,.9);
+      */
       .widget {
         position: fixed;
         left: $toolbar-width;
@@ -4590,19 +4594,19 @@ input:disabled {
       }
     }
   }
-/*
-  #basic-toolbar {
-    -webkit-box-shadow: 106px 0 6px rgba(0, 0, 0, 0.7);
-    box-shadow: 0 106px 6px rgba(0, 0, 0, 0.7);
-  }
-*/
+  /*
+    #basic-toolbar {
+      -webkit-box-shadow: 106px 0 6px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 106px 6px rgba(0, 0, 0, 0.7);
+    }
+  */
   #secondary-toolbar {
     top: 60px;
     z-index: 4000;
-/*
-    -webkit-box-shadow: 46px 0 6px rgba(0, 0, 0, 0.7);
-    box-shadow: 0 46px 6px rgba(0, 0, 0, 0.7);
-*/
+    /*
+        -webkit-box-shadow: 46px 0 6px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 46px 6px rgba(0, 0, 0, 0.7);
+    */
     padding-top: 13px;
     transition: none;
 
@@ -4680,13 +4684,13 @@ input:disabled {
     }
 
     #search-panel {
-/*      height: auto;
-      min-height: 40px;
-      width: 100%;
-      background-image: none;
-      background-color: #616161;
-      background-color: rgba(80,80,80,.9);
-*/
+      /*      height: auto;
+            min-height: 40px;
+            width: 100%;
+            background-image: none;
+            background-color: #616161;
+            background-color: rgba(80,80,80,.9);
+      */
     }
     #searchInput,
     #searchSubmit {
