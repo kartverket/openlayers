@@ -2033,7 +2033,7 @@ html.touch {
 }
 
 #searchInput {
-  width: 220px;
+  width: 240px;
   border: none;
   margin: 0;
   top: 21px;
@@ -2053,7 +2053,7 @@ html.touch {
   @extend %search-button-style;
   position: relative;
   top: 21px;
-  right: 12px;
+  right: 30px;
   height: 24px;
   margin: 0;
 
@@ -2071,6 +2071,13 @@ html.touch {
 }
 .lt-ie9 #searchSubmit {
   top: 23px;
+}
+.keyboard-button {
+  position: relative;
+  top: 24px;
+  right: 44px;
+  height: 24px;
+  margin: 0;
 }
 
 /*****************************
