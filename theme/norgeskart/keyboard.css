@@ -1,3 +1,21 @@
+.ui-widget { border: 1px solid #666666; background: #555555; color: #ffffff; }
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl { border-top-left-radius: 6px; }
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr { border-top-right-radius: 6px; }
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl { border-bottom-left-radius: 6px; }
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br { border-bottom-right-radius: 6px; }
 /* keyboard - jQuery UI Widget */
 .ui-keyboard { padding: .3em; position: absolute; left: 0; top: 0; z-index: 16000; }
 .ui-keyboard-has-focus { z-index: 16001; }
@@ -8,7 +26,7 @@
 .ui-keyboard-space { width: 15em; }
 .ui-keyboard-space span, .ui-keyboard-empty span { font: 0/0 a; text-shadow: none; color: transparent; } /* see http://nicolasgallagher.com/another-css-image-replacement-technique/ */
 .ui-keyboard-preview-wrapper { text-align: center; }
-.ui-keyboard-preview { text-align: left; margin: 0 0 3px 0; display: inline; width: 99%;} /* width is calculated in IE, since 99% = 99% full browser width =( */ 
+.ui-keyboard-preview { text-align: left; margin: 0 0 3px 0; display: inline; width: 99%;} /* width is calculated in IE, since 99% = 99% full browser width =( */
 .ui-keyboard-keyset { text-align: center; white-space: nowrap; }
 .ui-keyboard-input { text-align: left; }
 .ui-keyboard-input-current { -moz-box-shadow: 1px 1px 10px #00f; -webkit-box-shadow: 1px 1px 10px #00f; box-shadow: 1px 1px 10px #00f; }
@@ -16,16 +34,13 @@
 .ui-keyboard-nokeyboard { color: #888; border-color: #888; } /* disabled or readonly inputs, or use input[disabled='disabled'] { color: #f00; } */
 .ui-keyboard-button.disabled { opacity: 0.5; filter: alpha(opacity=50); } /* used by the acceptValid option to make the accept button appear faded */
 .ui-keyboard-spacer { display: inline-block; width: 1px; height: 0; }
-
 /* combo key styling - toggles diacritics on/off */
 .ui-keyboard-button.ui-keyboard-combo.ui-state-default { border-color: #ffaf0f; }
-
 /* (in)valid inputs */
 button.ui-keyboard-accept.ui-keyboard-valid-input { border-color: #0c0; background: #080; color: #fff; }
 button.ui-keyboard-accept.ui-keyboard-valid-input:hover { background: #0a0; }
 button.ui-keyboard-accept.ui-keyboard-invalid-input { border-color: #c00; background: #800; color: #fff; }
 button.ui-keyboard-accept.ui-keyboard-invalid-input:hover { background: #a00; }
-
 /*** jQuery Mobile definitions ***/
 /* jQuery Mobile styles - need wider buttons because of font size and text-overflow:ellipsis */
 .ui-bar .ui-keyboard-button { width: 3em; display: inline-block; }
