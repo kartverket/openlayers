@@ -228,11 +228,11 @@ $button-background-color: $panel-color;
 %super-one-lined-button {
   @extend %button-style;
   background-color: rgb(222, 220, 220);
-  border-right: solid 8px #898d8d;
-  box-shadow: 0 -2px 0px 0px rgba(137,141,141,.41) inset;
-    padding: 0 24px 0 12px;
+  border-right: solid 1px #898d8d;
+  box-shadow: 0 2px 6px #898d8d;
+  padding: 0 24px 0 12px;
   text-align: left;
-    height:24px;
+   height:24px;
 }
 
 %grey-one-lined-button {
@@ -247,8 +247,8 @@ $button-background-color: $panel-color;
 %search-button-style {
   @extend %button-style;
   background-color: rgb(222, 220, 220);
-  border-right: solid 8px #898d8d;
-  box-shadow: 0 -2px 0px 0px rgba(137,141,141,.41) inset;
+  border-right: solid 1px #898d8d;
+  box-shadow: 0 2px 6px rgba(137,141,141,.41);
 }
 
 %close-cross {
@@ -1285,8 +1285,6 @@ padding: 8px;
       height: 96% !important;
       margin-top: 0 !important;
       border-bottom-color: transparent;
-      box-shadow: none !important;
-      -webkit-box-shadow: none !important;
       border-right: gray solid 1px;
       border-top: gray solid 1px;
       
@@ -1588,9 +1586,9 @@ padding: 8px;
       &.next {
         float: right;
         padding-right: 26px;
-          padding-bottom: 5px;
-          border-right: solid 8px #898d8d;
-box-shadow: 0 -2px 0px 0px rgba(137, 141, 141, 0.41) inset;
+        padding-bottom: 5px;
+        border-right: solid 1px #898d8d;
+        box-shadow: 0 2px 6px rgba(137, 141, 141, 0.41);
 
         &:after {
           border-right-width: 0;
@@ -1601,9 +1599,9 @@ box-shadow: 0 -2px 0px 0px rgba(137, 141, 141, 0.41) inset;
       &.back {
         position: relative;
         padding-left: 26px;
-          padding-bottom: 5px;
-          border-left: solid 8px #898d8d;
-box-shadow: 0 -2px 0px 0px rgba(137, 141, 141, 0.41) inset;
+        padding-bottom: 5px;
+        border-left: solid 1px #898d8d;
+        box-shadow: 0 2px 6px rgba(137, 141, 141, 0.41);
 
         &:before {
           left: 10px;
@@ -2085,7 +2083,6 @@ html.touch {
 
 #searchInput {
   width: 220px;
-  border: none;
   margin: 0;
   top: 18px;
   position: relative;
@@ -2096,7 +2093,7 @@ html.touch {
   line-height: 18px;
   padding: 0 6px;
   color: #787878;
-  box-shadow: 0 -2px 0px 0px rgba(137,141,141,.41) inset;
+  box-shadow: 0 2px 6px rgba(137,141,141,.41);
   border: 1px solid grey;
 }
 
@@ -3131,10 +3128,9 @@ focus for toolbar controls
       margin-bottom: 10px;
     }
     input {
-      border: 1px solid black;
+      border: 1px solid $base-color;
       height: 24px;
       padding: 5px;
-      box-shadow: 3px 0 4px -2px rgba(0,0,0,0.5) inset;
       width: 200px;
     }
     h2 {
