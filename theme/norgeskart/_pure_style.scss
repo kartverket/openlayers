@@ -2883,6 +2883,24 @@ focus for toolbar controls
 /***************************
   height profile control
 ***************************/
+.widget {
+    .fileUpload {
+      position: relative;
+      overflow: hidden;
+    }
+    .fileUpload input.upload {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+}
+
 .tool.height-profile {
   .widget {
     padding: 10px;
@@ -2907,23 +2925,6 @@ focus for toolbar controls
     }
     legend {
       color: #fff;
-    }
-    .fileUpload {
-      position: relative;
-      overflow: hidden;
-      margin: 10px;
-      width: 80px;
-    }
-    .fileUpload input.upload {
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin: 0;
-      padding: 0;
-      font-size: 20px;
-      cursor: pointer;
-      opacity: 0;
-      filter: alpha(opacity=0);
     }
     button {
       @extend %blue-one-lined-button;
