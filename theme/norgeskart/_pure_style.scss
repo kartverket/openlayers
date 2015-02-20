@@ -2033,8 +2033,7 @@ html.touch {
 }
 
 #searchInput {
-  width: 220px;
-  border: none;
+  width: 240px;
   margin: 0;
   top: 21px;
   position: relative;
@@ -2053,7 +2052,7 @@ html.touch {
   @extend %search-button-style;
   position: relative;
   top: 21px;
-  right: 12px;
+  right: 30px;
   height: 24px;
   margin: 0;
 
@@ -2071,6 +2070,13 @@ html.touch {
 }
 .lt-ie9 #searchSubmit {
   top: 23px;
+}
+.keyboard-button {
+  position: relative;
+  top: 24px;
+  right: 50px;
+  height: 24px;
+  margin: 0;
 }
 
 /*****************************
@@ -2166,7 +2172,6 @@ html.touch {
   }
   ul li {
       list-style-type: none;
-      text-transform: none;
       font-size: 12px;
       text-transform: none;
       font-family: Arial, sans-serif;
@@ -3169,7 +3174,7 @@ $overlayMenuItemMargin: 5px;
           float: left;
           height: 40px;
           width: $overlayMenuItemWidth + $overlayMenuItemMargin * 4;
-          text-transform: uppercase;
+          //text-transform: uppercase;
           position: relative;
 
           &:first-child {
@@ -3259,7 +3264,6 @@ $overlayMenuItemMargin: 5px;
   display: none;
   overflow: visible;
   /*background: transparent url('img/emergency-marker.png') no-repeat 0 0;*/
-  margin: -52px 0 0 -17px;
   margin: -44px 0 0 -9px;
 
   &.active {
