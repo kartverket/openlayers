@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'MetaBook';
   src: url("/fonts/MetaWeb-Book.eot");
-  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); 
+  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
 }
 
 $base-color: #606060;
@@ -33,7 +33,7 @@ $button-background-color: $panel-color;
     display: table;
   }
   &:after {
-      clear: both;
+    clear: both;
   }
 }
 
@@ -1444,13 +1444,19 @@ button {
       @extend %selected-button;
     }
     > .widget {
+      /*
       width: 307px;
+      */
       display: block;
 
       .h {
         font-size: 12px;
-        text-transform: uppercase;
         margin-bottom: 10px;
+        padding: 10px 10px 10px;
+      }
+      .h:hover {
+        background-color: #3A80BB;
+        cursor: pointer;
       }
       p {
         margin-bottom: 10px;
@@ -1459,7 +1465,7 @@ button {
         }
       }
       .cnt > div {
-        padding: 20px 16px 24px;
+        //padding: 10px 10px 10px;
       }
       table {
         width: 100%;
@@ -1474,10 +1480,40 @@ button {
     }
     .shortcuts-panel {
       @extend %horizontal-divider;
+      padding: 10px 10px 10px;
     }
   }
 }
-
+#faqBox {
+  margin: 5px;
+}
+.ui-accordion-content-1 {
+  display: block;
+  height: 90px;
+  overflow: auto;
+  background-color: #ffe;
+  color: black;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+  padding: 5px;
+}
+.ui-accordion-header-1 {
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0.34);
+  margin: 2px;
+  border-radius: 5px;
+  padding: 2px;
+  font-style: italic;
+  font-weight: lighter;
+  :hover {
+    background-color: #3A80BB;
+    cursor: pointer;
+  }
+}
+.ui-accordion-header-1:hover {
+  background-color: #3A80BB;
+  cursor: pointer;
+}
 /******************************************
 === embed panel ===
 ******************************************/
@@ -3264,6 +3300,7 @@ $overlayMenuItemMargin: 5px;
   display: none;
   overflow: visible;
   /*background: transparent url('img/emergency-marker.png') no-repeat 0 0;*/
+  margin: -52px 0 0 -17px;
   margin: -44px 0 0 -9px;
 
   &.active {
@@ -3673,6 +3710,9 @@ $overlayMenuItemMargin: 5px;
               }
             }
           }
+        }
+        img {
+          width: 573px;
         }
       }
 
