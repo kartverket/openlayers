@@ -5028,3 +5028,33 @@ input:disabled {
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  #top-toolbar {
+    right:inherit;
+    width:inherit;
+  }
+  .zoombar-and-buttons-wrapper+.zoom-to-selection-button {
+    margin-top: -30px;
+    visibility: hidden;
+  }
+  #secondary-toolbar ~ #overview-container-panel {
+    visibility: hidden;
+  }
+  #layerselector-panel.active>.widget {
+    top: 0;
+    width: auto;
+  }
+  #searchInput {
+    min-width: 0;
+  }
+  #top-toolbar #searchSubmit {
+    right: 0;
+  }
+  .topnavpanel {
+    margin-top: 0;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+}
