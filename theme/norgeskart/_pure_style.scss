@@ -3291,7 +3291,7 @@ $overlayMenuItemMargin: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 900;
+  z-index: 6000;
   display: none;
   overflow: visible;
   /*background: transparent url('img/emergency-marker.png') no-repeat 0 0;*/
@@ -3574,7 +3574,7 @@ span#star {
       background:white;
       margin:0 15px;
       overflow:scroll;
-      height:500px;
+      height:400px;
 
       .preview {
         color:black;
