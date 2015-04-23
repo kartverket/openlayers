@@ -554,6 +554,23 @@ label {
     height: 60px;
   }
 }
+#top-toolbar-m {
+  position: absolute;
+  top: 0;
+  left: $toolbar-width * 1.1;
+  z-index: 4000;
+  background-color: transparent;
+  .panel {
+    vertical-align: top;
+    display: inline-block;
+    + .panel {
+      @extend %vertical-divider;
+    }
+  }
+  > .panel {
+    height: 60px;
+  }
+}
 .topnavpanel{
   margin-top: 12px;
 }
@@ -2297,7 +2314,7 @@ html.touch {
   overflow-y: auto;
   overflow-x: hidden;
   min-height: 28px;
-  max-height: 450px;
+  max-height: 340px;
 
   .result-paging {
     margin: 0 40px 0 8px;
@@ -2707,6 +2724,7 @@ html.touch {
   #searchResults a.close {
     &,
     .icon.close {
+      background-size: 24px;
       width: 24px;
       height: 24px;
     }
@@ -4987,6 +5005,14 @@ input:disabled {
 }
 
 @media screen and (max-width: 449px) {
+  #basic-toolbar, #secondary-toolbar {
+    top: 0;
+  }
+  #basic-toolbar #fullscreen-panel {
+    padding-bottom: 0;
+    visibility: hidden;
+    height: 0;
+  }
   #top-toolbar {
     #del-panel {
       display: none;
