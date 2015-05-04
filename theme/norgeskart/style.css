@@ -232,7 +232,6 @@ body, #map {
 }
 
 #geoportal-panel.active .widget .h, #addlayer.active .widget .h, #make-your-own-panel.active > .widget .h, .tool.draw .widget .h, .tool.height-profile .widget .h, .tool.transformations .widget h1 {
-  text-transform: uppercase;
   font-size: 12px;
   font-weight: 300;
 }
