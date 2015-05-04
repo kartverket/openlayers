@@ -6,11 +6,11 @@
   src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
 }
 /*$grey: rgba(lighten($base-color, 11), 1);*/
-#geoportal-panel.active .widget:before, #addlayer-panel.active .widget:before, #make-your-own-panel.active > .widget:before, .embedContent .step-specific.type button.static-button:before, .embedContent .step-specific.area:before, .embedContent .step-specific.markers .instructions:before, #geoportal-panel.active .widget:after, #addlayer-panel.active .widget:after, #make-your-own-panel.active > .widget:after, .embedContent .step-specific.type button.static-button:after, .embedContent .step-specific.area:after, .embedContent .step-specific.markers .instructions:after {
+#geoportal-panel.active .widget:before, #addlayer.active .widget:before, #make-your-own-panel.active > .widget:before, .embedContent .step-specific.type button.static-button:before, .embedContent .step-specific.area:before, .embedContent .step-specific.markers .instructions:before, #geoportal-panel.active .widget:after, #addlayer.active .widget:after, #make-your-own-panel.active > .widget:after, .embedContent .step-specific.type button.static-button:after, .embedContent .step-specific.area:after, .embedContent .step-specific.markers .instructions:after {
   content: '';
   display: table;
 }
-#geoportal-panel.active .widget:after, #addlayer-panel.active .widget:after, #make-your-own-panel.active > .widget:after, .embedContent .step-specific.type button.static-button:after, .embedContent .step-specific.area:after, .embedContent .step-specific.markers .instructions:after {
+#geoportal-panel.active .widget:after, #addlayer.active .widget:after, #make-your-own-panel.active > .widget:after, .embedContent .step-specific.type button.static-button:after, .embedContent .step-specific.area:after, .embedContent .step-specific.markers .instructions:after {
   clear: both;
 }
 
@@ -20,7 +20,7 @@
   background-color: rgba(220, 220, 220, 0.85);
 }
 
-.getURLcontent .h, #geoportal-panel.active .widget a.external-link .h, #addlayer-panel.active .widget a.external-link .h, #make-your-own-panel.active > .widget a.external-link .h, .embedContent header .h, .map-load-error h1 {
+.getURLcontent .h, #geoportal-panel.active .widget a.external-link .h, #addlayer.active .widget a.external-link .h, #make-your-own-panel.active > .widget a.external-link .h, .embedContent header .h, .map-load-error h1 {
   font-family: MetaBook, Arial, sans-serif;
   font-size: 30px;
   font-weight: normal;
@@ -33,7 +33,7 @@
 
 button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList label,
-.vectorLayerList label, .toolbar .nkButton, #del-panel .nkButton, #geoportal-panel button, #addlayer-panel button, #make-your-own-panel button, #help-panel button, .zoom-to-selection-button, .overlay-group-panel a.active, .toolbar button.btnPointMenu {
+.vectorLayerList label, .toolbar .nkButton, #del-panel .nkButton, #geoportal-panel button, #addlayer button, #make-your-own-panel button, #help-panel button, .zoom-to-selection-button, .overlay-group-panel a.active, .toolbar button.btnPointMenu {
   cursor: pointer;
 }
 
@@ -42,7 +42,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
 .rasterLayerList input.is-checked + label,
 .rasterLayerList label.for-checked,
 .vectorLayerList input.is-checked + label,
-.vectorLayerList label.for-checked, #getURL-panel.active > .nkButton, #geoportal-panel.active > button, #addlayer-panel.active > button, #make-your-own-panel.active > button, #help-panel.active > button, #zoom-panel .olControlZoomIn.olButton:focus, #zoom-panel .olControlZoomIn.olButton:hover,
+.vectorLayerList label.for-checked, #getURL-panel.active > .nkButton, #geoportal-panel.active > button, #addlayer.active > button, #make-your-own-panel.active > button, #help-panel.active > button, #zoom-panel .olControlZoomIn.olButton:focus, #zoom-panel .olControlZoomIn.olButton:hover,
 #zoom-panel .olControlZoomOut.olButton:focus,
 #zoom-panel .olControlZoomOut.olButton:hover, .zoom-to-selection-selected .zoom-to-selection-button, .tool.active > button, .tool.draw .widget ul button.active, .tool.draw .widget ul button:active, .overlay-group-panel a.active, .toolbar button.btnPointMenu.active {
   background-color: #fafafa;
@@ -50,7 +50,7 @@ button, .layersDiv .vectorWidgetToggleBtn,
   /*padding-left:10px;*/
 }
 
-#geoportal-panel.active .widget a.external-link, #addlayer-panel.active .widget a.external-link, #make-your-own-panel.active > .widget a.external-link, .embedContent .step-specific.type button, #embed-basic-toolbar, #embed-basic-toolbar .collapse-toolbar-toggle.on, #basic-toolbar,
+#geoportal-panel.active .widget a.external-link, #addlayer.active .widget a.external-link, #make-your-own-panel.active > .widget a.external-link, .embedContent .step-specific.type button, #embed-basic-toolbar, #embed-basic-toolbar .collapse-toolbar-toggle.on, #basic-toolbar,
 #secondary-toolbar, #layerselector-panel-vector .widget, .fullscreen #fullscreen-panel, #del-panel .panel.active .widget,
 #del-panel .panel .tool.active .widget, .embedContent .step-specific.descriptions #long-desc-explanation,
 .embedContent .step-specific.descriptions #short-desc-explanation, #searchResults, .user-marker,
@@ -93,12 +93,12 @@ body, #map {
 .embedContent .buttons-panel button, .splashscreen .widget .splash-button, .update-feature-label,
 .cancel-feature-label, .tool.height-profile .widget button, .emergency-poster-popup .contentContainer.terms .button-panel button, .embed-cancel-marker,
 .embed-add-marker, .update-feature-label:disabled,
-.cancel-feature-label:disabled, .tool.height-profile .widget button:disabled, .tool.height-profile .widget .popular-route, .height-profile-lightbox.splashscreen .widget .button-panel button, .emergency-poster-popup .contentContainer.location .button-panel button, .emergency-poster-preview-popup.splashscreen .widget .button-panel button, #geoportal-panel.active .widget form > button, #addlayer-panel.active .widget form > button, .tool.transformations .widget button, #searchSubmit {
+.cancel-feature-label:disabled, .tool.height-profile .widget button:disabled, .tool.height-profile .widget .popular-route, .height-profile-lightbox.splashscreen .widget .button-panel button, .emergency-poster-popup .contentContainer.location .button-panel button, .emergency-poster-preview-popup.splashscreen .widget .button-panel button, #geoportal-panel.active .widget form > button, #addlayer.active .widget form > button, .tool.transformations .widget button, #searchSubmit {
   border: 1px solid #898d8d;
   cursor: pointer;
 }
 
-#geoportal-panel.active .widget a.external-link, #addlayer-panel.active .widget a.external-link, #make-your-own-panel.active > .widget a.external-link, .embedContent .step-specific.type button {
+#geoportal-panel.active .widget a.external-link, #addlayer.active .widget a.external-link, #make-your-own-panel.active > .widget a.external-link, .embedContent .step-specific.type button {
   background-image: -webkit-linear-gradient(top, #5a5951, #3b3b3b);
   background-image: -moz-linear-gradient(top, #5a5951, #3b3b3b);
   background-image: -ms-linear-gradient(top, #5a5951, #3b3b3b);
@@ -111,11 +111,11 @@ body, #map {
   width: 210px;
   height: 210px;
 }
-#geoportal-panel.active .widget a.active.external-link, #addlayer-panel.active .widget a.active.external-link, #make-your-own-panel.active > .widget a.active.external-link, .embedContent .step-specific.type button.active {
+#geoportal-panel.active .widget a.active.external-link, #addlayer.active .widget a.active.external-link, #make-your-own-panel.active > .widget a.active.external-link, .embedContent .step-specific.type button.active {
   border: none;
   box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
 }
-#geoportal-panel.active .widget a.external-link span, #addlayer-panel.active .widget a.external-link span, #make-your-own-panel.active > .widget a.external-link span, .embedContent .step-specific.type button span {
+#geoportal-panel.active .widget a.external-link span, #addlayer.active .widget a.external-link span, #make-your-own-panel.active > .widget a.external-link span, .embedContent .step-specific.type button span {
   text-align: left;
   color: #fff;
   font-family: MetaBook, Arial, sans-serif;
@@ -184,7 +184,7 @@ body, #map {
   text-align: left;
 }
 
-#geoportal-panel.active .widget form > button, #addlayer-panel.active .widget form > button, .tool.transformations .widget button {
+#geoportal-panel.active .widget form > button, #addlayer.active .widget form > button, .tool.transformations .widget button {
   background-color: #dedcdc;
   border-right: solid 1px #898d8d;
   box-shadow: 0 2px 6px #898d8d;
@@ -231,7 +231,7 @@ body, #map {
   margin-bottom: 20px;
 }
 
-#geoportal-panel.active .widget .h, #addlayer-panel.active .widget .h, #make-your-own-panel.active > .widget .h, .tool.draw .widget .h, .tool.height-profile .widget .h, .tool.transformations .widget h1 {
+#geoportal-panel.active .widget .h, #addlayer.active .widget .h, #make-your-own-panel.active > .widget .h, .tool.draw .widget .h, .tool.height-profile .widget .h, .tool.transformations .widget h1 {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 300;
@@ -1190,16 +1190,16 @@ body {
 }
 
 /** clone of #geoportal-panel, split in two controls **/
-#addlayer-panel button {
+#addlayer button {
   /*box-shadow: 0 -2px 0px 0px rgba(137, 141, 141, 0.41) inset;*/
 }
-#addlayer-panel.active .widget {
+#addlayer.active .widget {
   /* unsetting some widget properties to make this a right-aligned frame */
   width: 475px;
   height: 95px;
   display: block;
 }
-#addlayer-panel.active .widget a.external-link {
+#addlayer.active .widget a.external-link {
   height: auto;
   min-height: 280px;
   text-align: center;
@@ -1209,45 +1209,45 @@ body {
   color: #fff;
   padding: 15px;
 }
-#addlayer-panel.active .widget a.external-link + .external-link {
+#addlayer.active .widget a.external-link + .external-link {
   float: right;
 }
-#addlayer-panel.active .widget a.external-link .illustration {
+#addlayer.active .widget a.external-link .illustration {
   width: 100px;
   height: 100px;
   stroke-width: 1.5;
 }
-#addlayer-panel.active .widget a.external-link .h {
+#addlayer.active .widget a.external-link .h {
   font-size: 18px;
   text-transform: none;
   margin-bottom: 15px;
 }
-#addlayer-panel.active .widget a.external-link span,
-#addlayer-panel.active .widget a.external-link .h {
+#addlayer.active .widget a.external-link span,
+#addlayer.active .widget a.external-link .h {
   text-align: left;
   display: block;
   text-decoration: none;
   color: #fff;
 }
-#addlayer-panel.active .widget a.external-link span {
+#addlayer.active .widget a.external-link span {
   display: block;
   margin-top: 10px;
   font-size: 12px;
 }
-#addlayer-panel.active .widget a.external-link:hover .h, #addlayer-panel.active .widget a.external-link:focus .h, #addlayer-panel.active .widget a.external-link:active .h {
+#addlayer.active .widget a.external-link:hover .h, #addlayer.active .widget a.external-link:focus .h, #addlayer.active .widget a.external-link:active .h {
   text-decoration: underline;
 }
-#addlayer-panel.active .widget .h {
+#addlayer.active .widget .h {
   font-size: 30px;
   margin-bottom: 10px;
 }
-#addlayer-panel.active .widget p {
+#addlayer.active .widget p {
   margin-bottom: 10px;
 }
-#addlayer-panel.active .widget p:last-child {
+#addlayer.active .widget p:last-child {
   margin-bottom: 0;
 }
-#addlayer-panel.active .widget .cnt > div {
+#addlayer.active .widget .cnt > div {
   padding: 20px 16px 24px;
 }
 

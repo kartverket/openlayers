@@ -1356,7 +1356,7 @@ padding: 8px;
   }
 }
 /** clone of #geoportal-panel, split in two controls **/
-#addlayer-panel {
+#addlayer {
   button {
     @extend %button;
     /*box-shadow: 0 -2px 0px 0px rgba(137, 141, 141, 0.41) inset;*/
