@@ -1367,16 +1367,8 @@ padding: 8px;
     }
     .widget {
       /* unsetting some widget properties to make this a right-aligned frame */
-      position: fixed;
-      right: 68px !important;
-      top: 60px !important;
-      bottom: 5px !important;
       width: 475px;
-      margin-top: 0 !important;
-      border-bottom-color: transparent;
-      border-right: gray solid 1px;
-      border-top: gray solid 1px;
-
+      height: 95px;
 
       display: block;
       @extend %clearfix;
