@@ -224,7 +224,7 @@ $link-background-color: #3A80BB;
 }
 
 %close-cross {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAYCAYAAADOMhxqAAAAT0lEQVR42r2RUQoAMAhCPWL3v4z7in2VE2GBBMETJdAc3K2VAQvMEZAGwrXvEaAjRaV//cEcVBUdNYAXxcAEcwOUAUfXvqeAjhSV/vgHRwe/QqT/idrCCQAAAABJRU5ErkJggg==');
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAYCAYAAADOMhxqAAAAT0lEQVR42r2RUQoAMAhCPWL3v4z7in2VE2GBBMETJdAc3K2VAQvMEZAGwrXvEaAjRaV//cEcVBUdNYAXxcAEcwOUAUfXvqeAjhSV/vgHRwe/QqT/idrCCQAAAABJRU5ErkJggg==') !important;
 }
 
 %close-cross-grey {
@@ -1336,10 +1336,10 @@ input[type=radio], input[type=checkbox] {
 }
 
 /******************************************
-=== help panel ===
+=== Info panel ===
 ******************************************/
 
-#help-panel {
+#info-panel {
   button {
     @extend %button;
   }
@@ -2046,6 +2046,14 @@ html.touch {
     &:active {
       @extend %close-cross-container;
     }
+  }
+}
+.close {
+  &,
+  &:hover,
+  &:visited,
+  &:active {
+    @extend %close-cross-container;
   }
 }
 
@@ -2852,12 +2860,6 @@ focus for toolbar controls
     width: 400px;
     padding: 0 10px 10px 10px;
     top: -210px;
-    button {
-      margin-top: 20px;
-      width: 48%;
-      margin-right: 4px;
-      background-color: $bootstrap-blue;
-    }
     label {
       &:before {
         content: '\a';
@@ -4410,7 +4412,7 @@ input:disabled {
       top: 8px;
     }
     #searchSubmit {
-      right: 68px;
+      right: 10px;
     }
   }
 }
