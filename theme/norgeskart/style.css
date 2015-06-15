@@ -803,6 +803,48 @@ body {
   background-position: 0 -200px;
 }
 
+#svalbard-selector:hover:after,
+#dekning-sjo-fi-selector:hover:after {
+  background-position: 0 -250px;
+}
+
+#janmayen-selector:hover:after,
+#dekning-sjo-fi-selector:hover:after {
+  background-position: 0 -300px;
+}
+
+
+/**********************************
+=== Full screen ===
+**********************************/
+.fullscreen-button .icon.windowed {
+  display: none;
+}
+.fullscreen-button .icon.fullscreen {
+  display: inline;
+}
+.fullscreen-button.fullscreen-active .icon.windowed {
+  display: inline;
+}
+.fullscreen-button.fullscreen-active .icon.fullscreen {
+  display: none;
+}
+
+.olControlScaleLine {
+  -webkit-transform: translate(75px, 0);
+  -ms-transform: translate(75px, 0);
+  transform: translate(75px, 0);
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  -o-transition: transform .5s ease-in-out;
+  transition: -ms-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  border-radius: 2px;
+}
+
+.fullscreen .olControlScaleLine,
+
 /**********************************
 === Full screen ===
 **********************************/
