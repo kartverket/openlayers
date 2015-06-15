@@ -960,7 +960,9 @@ input[type=radio], input[type=checkbox] {
 .nkButton :hover {
   text-decoration: underline;
 }
-
+img.btnIcon{
+  width: 50px;
+}
 .externalToolbarLink {
   text-align: center;
   display: block;
