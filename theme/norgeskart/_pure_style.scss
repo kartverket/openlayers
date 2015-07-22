@@ -584,8 +584,14 @@ label {
 .wrapper {
 }
 #map_chooser {
-  display: table;
+  width: 50%;
+  float: left;
 }
+#layer_chooser {
+  width: 50%;
+  float: left;
+}
+
 
 #getURL-panel.active:after {
   top: 50%;
@@ -1013,6 +1019,7 @@ input[type=radio], input[type=checkbox] {
 
 .dataLayersDiv {
   line-height: 0.5;
+  margin-left: 10px;
 }
 /******************************************
 === share toolbar ===
