@@ -588,8 +588,10 @@ label {
   float: left;
 }
 #layer_chooser {
-  width: 50%;
+  width: 46%;
   float: left;
+  background-color: rgba(150,150,150,0.5);
+  margin-left: 10px;
 }
 
 
@@ -1019,7 +1021,6 @@ input[type=radio], input[type=checkbox] {
 
 .dataLayersDiv {
   line-height: 0.5;
-  margin-left: 10px;
 }
 /******************************************
 === share toolbar ===
