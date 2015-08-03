@@ -361,7 +361,6 @@ label {
   @extend %partial-transparent;
   z-index: 2000;
   color: $lightest-color;
-  text-transform: capitalize;
   button {
     background-color: transparent;
     border: none;
@@ -585,8 +584,16 @@ label {
 .wrapper {
 }
 #map_chooser {
-  display: table;
+  width: 50%;
+  float: left;
 }
+#layer_chooser {
+  width: 46%;
+  float: left;
+  background-color: rgba(150,150,150,0.5);
+  margin-left: 10px;
+}
+
 
 #getURL-panel.active:after {
   top: 50%;
@@ -2874,10 +2881,6 @@ focus for toolbar controls
     legend {
       color: $lightest-color;
     }
-    h2 {
-      font-weight: bold;
-      margin: 15px 0 0;
-    }
     .output-value {
       font-weight: bold;
     }
@@ -2885,25 +2888,36 @@ focus for toolbar controls
       margin-top: 15px;
       display: block;
     }
-    h2,
+    h3,
     .output-label {
       &:after {
         content: ':';
       }
     }
-  }
-  form {
-    &.disabled {
-      label,
-      legend {
-        color: lighten($base-color, 25);
+    .wrapper .cnt {
+      h3 {
+        margin: 15px 0 0;
       }
-      input,
-      select {
-        background-color: lighten($base-color, 25);
+      form {
+      &.disabled {
+        label,
+        legend {
+          color: lighten($base-color, 25);
+        }
+        input,
+        select {
+          background-color: lighten($base-color, 25);
+        }
+        button {
+          display: none;
+        }
       }
-      button {
-        display: none;
+      .buttonWrapper{
+        button{
+          margin: 5px 5px 5px 0;
+          background-color: #337ab7;
+        }
+      }
       }
     }
   }
