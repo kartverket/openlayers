@@ -2582,7 +2582,6 @@ focus for toolbar controls
     @extend %partial-transparent;
     position: absolute;
     left: auto;
-    top: 25%;
     height: auto;
     text-align: left;
     text-transform: none;
@@ -2737,8 +2736,6 @@ focus for toolbar controls
   .widget {
     padding: 10px;
     min-width: 290px;
-    top: -160px;
-
     input {
       width: 100%;
     }
@@ -2867,9 +2864,8 @@ focus for toolbar controls
 ***************************/
 .tool.transformations {
   .widget {
-    width: 400px;
+    width: 380px;
     padding: 0 10px 10px 10px;
-    top: -210px;
     label {
       &:before {
         content: '\a';
@@ -2943,27 +2939,17 @@ $overlayMenuItemMargin: 5px;
   text-align: center;
   .widget {
     top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 250px;
     .cnt {
       ul {
         list-style: none;
       }
       > ul {
-        @include overlayMenuWidth(1);
-        @include overlayMenuWidth(2);
-        @include overlayMenuWidth(3);
-        @include overlayMenuWidth(4);
-        @include overlayMenuWidth(5);
-        @include overlayMenuWidth(6);
-        @include overlayMenuWidth(7);
-        @include overlayMenuWidth(8);
-
         > li {
-          @extend %vertical-divider-inverted;
-          font-size: 12px;
-          display: block;
-          float: left;
           height: 40px;
-          width: $overlayMenuItemWidth + $overlayMenuItemMargin * 4;
+          width: $overlayMenuItemWidth *2 + $overlayMenuItemMargin;
           position: relative;
           &:first-child {
             background-image: none;
