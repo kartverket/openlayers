@@ -979,7 +979,9 @@ input[type=radio], input[type=checkbox] {
 .externalToolbarLink a {
   color: $lightest-color;
 }
-
+.panel-name {
+  font-weight: bold;
+}
 #services-panel {
   .panel-name {
     display: block;
@@ -988,9 +990,13 @@ input[type=radio], input[type=checkbox] {
     text-transform: uppercase;
   }
   button.nkButton {
+    //@extend %horizontal-divider;
     height: auto;
     min-height: 40px;
     width: $toolbar-width;
+    border-top: 1px solid grey;
+    padding: 6px 0px 6px 0px;
+    box-shadow: 0 1px 0.5em grey;
   }
 }
 
@@ -2616,8 +2622,8 @@ focus for toolbar controls
 
 .tool.draw {
   .widget {
-    width: 98px;
-    padding: 10px;
+    width: 198px;
+    padding: 0 0 0 10px;
     ul {
       list-style: none;
       text-align: center;
@@ -2676,7 +2682,6 @@ focus for toolbar controls
         }
       }
     }
-
     .measures {
       &.point {
         .length,
@@ -2692,14 +2697,12 @@ focus for toolbar controls
       .h {
         @extend %horizontal-divider;
         background-position: 0 top;
-        margin: 10px -10px;
-        padding: 10px 10px 0 10px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        margin-right: 10px;
       }
       dl {
-      }
-      .h,
-      dd {
-        margin-bottom: 2px;
+        margin-right: 10px;
       }
       dt:after {
         content: ':';
