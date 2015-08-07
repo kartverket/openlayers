@@ -990,9 +990,7 @@ input[type=radio], input[type=checkbox] {
     text-transform: uppercase;
   }
   button.nkButton {
-    //@extend %horizontal-divider;
     height: auto;
-    min-height: 40px;
     width: $toolbar-width;
     border-top: 1px solid grey;
     padding: 6px 0px 6px 0px;
@@ -1106,9 +1104,6 @@ input[type=radio], input[type=checkbox] {
       display: block;
       height: auto;
       margin-top: 15px;
-      line-height: 18px;
-      text-align: left;
-      text-transform: none;
       background-color: $panel-color;
     }
   }
@@ -1557,6 +1552,7 @@ input[type=radio], input[type=checkbox] {
           position: absolute;
           top: 2px;
           right: 0;
+          visibility: visible;
         }
         label[for="include-map-tools"] {
           position: absolute;
@@ -4354,8 +4350,8 @@ input:disabled {
       position: fixed;
       top: 165px;
       bottom: 0;
-      left: $toolbar-width;
-      right: $toolbar-width;
+      left: $toolbar-width + 2;
+      right: $toolbar-width + 2;
       max-height: none;
 
       -webkit-column-width: 187px;
@@ -4400,6 +4396,37 @@ input:disabled {
         }
       }
     }
+  }
+  #getURL-panel.active>.widget {
+    position: fixed;
+    top: 370px;
+    left: $toolbar-width + 2;
+    right: $toolbar-width + 2;
+    display: block;
+    height: auto;
+    margin-top: 15px;
+    background-color: $panel-color;
+  }
+  #embed-panel.active>.widget {
+    position: fixed;
+    left: $toolbar-width + 2;
+    top: 370px;
+    bottom: auto;
+    display: block;
+    height: auto;
+    margin-top: 15px;
+    background-color: $panel-color;
+  }
+  #info-panel.active>.widget {
+    position: fixed;
+    top: 370px;
+    left: $toolbar-width + 2;
+    bottom: auto;
+    display: block;
+    height: auto;
+    margin-top: 15px;
+    background-color: $panel-color;
+    width: 400px;
   }
 }
 
