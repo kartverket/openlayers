@@ -38,9 +38,7 @@ $link-background-color: #3A80BB;
 }
 
 %header-font {
-  font-family: MetaBook, Arial, sans-serif;
   font-size: 30px;
-  font-weight: normal;
 }
 
 %break-before {
@@ -52,12 +50,11 @@ $link-background-color: #3A80BB;
 
 %button {
   border-radius: 3px;
+  font-size: small;
 }
 
 %selected-button {
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
-  box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
 }
 
 %shadow {
@@ -992,7 +989,7 @@ input[type=radio], input[type=checkbox] {
     height: auto;
     width: $toolbar-width;
     border-top: 1px solid grey;
-    padding: 6px 0px 6px 0px;
+    padding: 6px 0 6px 0;
   }
 }
 
