@@ -38,9 +38,7 @@ $link-background-color: #3A80BB;
 }
 
 %header-font {
-  font-family: MetaBook, Arial, sans-serif;
   font-size: 30px;
-  font-weight: normal;
 }
 
 %break-before {
@@ -52,12 +50,11 @@ $link-background-color: #3A80BB;
 
 %button {
   border-radius: 3px;
+  font-size: small;
 }
 
 %selected-button {
   background-color: rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
-  box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5) inset;
 }
 
 %shadow {
@@ -502,9 +499,8 @@ label {
       display: table;
       height: auto;
       background-color: $panel-color;
-      width: 300px;
+      width: 270px;
       h3 {
-        margin-bottom: 10px;
         padding: 8px;
       }
       p {
@@ -520,7 +516,7 @@ label {
   }
 }
 .wrapperHeader{
-  display: table-header-group;
+  border-bottom: 1px solid rgba(150,150,150,0.5);
 }
 .rasterLayerList,
 .vectorLayerList {
@@ -644,7 +640,7 @@ svg.kartverket.logo {
 }
 
 .vectorWidgetToggleBtn {
-  margin: 0 3px 0 3px;
+  margin: 0 2px 0 0;
 }
 .layersDiv .widget {
   width: 125px;
@@ -979,7 +975,9 @@ input[type=radio], input[type=checkbox] {
 .externalToolbarLink a {
   color: $lightest-color;
 }
-
+.panel-name {
+  font-weight: bold;
+}
 #services-panel {
   .panel-name {
     display: block;
@@ -989,8 +987,9 @@ input[type=radio], input[type=checkbox] {
   }
   button.nkButton {
     height: auto;
-    min-height: 40px;
     width: $toolbar-width;
+    border-top: 1px solid grey;
+    padding: 6px 0 6px 0;
   }
 }
 
@@ -1100,9 +1099,6 @@ input[type=radio], input[type=checkbox] {
       display: block;
       height: auto;
       margin-top: 15px;
-      line-height: 18px;
-      text-align: left;
-      text-transform: none;
       background-color: $panel-color;
     }
   }
@@ -1382,6 +1378,13 @@ input[type=radio], input[type=checkbox] {
     }
   }
 }
+#infoBox{
+  padding: 10px;
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
 
 #faqBox {
   margin: 1px;
@@ -1508,6 +1511,9 @@ input[type=radio], input[type=checkbox] {
 
     /* elements present at step 1 (type) */
     &.type {
+      .h {
+        margin-bottom: 10px;
+      }
       button {
         @extend %big-button;
         &.static-button {
@@ -1551,6 +1557,7 @@ input[type=radio], input[type=checkbox] {
           position: absolute;
           top: 2px;
           right: 0;
+          visibility: visible;
         }
         label[for="include-map-tools"] {
           position: absolute;
@@ -2576,7 +2583,6 @@ focus for toolbar controls
     @extend %partial-transparent;
     position: absolute;
     left: auto;
-    top: 25%;
     height: auto;
     text-align: left;
     text-transform: none;
@@ -2616,8 +2622,8 @@ focus for toolbar controls
 
 .tool.draw {
   .widget {
-    width: 98px;
-    padding: 10px;
+    width: 198px;
+    padding: 0 0 0 10px;
     ul {
       list-style: none;
       text-align: center;
@@ -2676,7 +2682,6 @@ focus for toolbar controls
         }
       }
     }
-
     .measures {
       &.point {
         .length,
@@ -2692,14 +2697,12 @@ focus for toolbar controls
       .h {
         @extend %horizontal-divider;
         background-position: 0 top;
-        margin: 10px -10px;
-        padding: 10px 10px 0 10px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        margin-right: 10px;
       }
       dl {
-      }
-      .h,
-      dd {
-        margin-bottom: 2px;
+        margin-right: 10px;
       }
       dt:after {
         content: ':';
@@ -2734,8 +2737,6 @@ focus for toolbar controls
   .widget {
     padding: 10px;
     min-width: 290px;
-    top: -160px;
-
     input {
       width: 100%;
     }
@@ -2864,9 +2865,8 @@ focus for toolbar controls
 ***************************/
 .tool.transformations {
   .widget {
-    width: 400px;
+    width: 380px;
     padding: 0 10px 10px 10px;
-    top: -210px;
     label {
       &:before {
         content: '\a';
@@ -2940,27 +2940,17 @@ $overlayMenuItemMargin: 5px;
   text-align: center;
   .widget {
     top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 130px;
     .cnt {
       ul {
         list-style: none;
       }
       > ul {
-        @include overlayMenuWidth(1);
-        @include overlayMenuWidth(2);
-        @include overlayMenuWidth(3);
-        @include overlayMenuWidth(4);
-        @include overlayMenuWidth(5);
-        @include overlayMenuWidth(6);
-        @include overlayMenuWidth(7);
-        @include overlayMenuWidth(8);
-
         > li {
-          @extend %vertical-divider-inverted;
-          font-size: 12px;
-          display: block;
-          float: left;
           height: 40px;
-          width: $overlayMenuItemWidth + $overlayMenuItemMargin * 4;
+          width: $overlayMenuItemWidth *2 + $overlayMenuItemMargin;
           position: relative;
           &:first-child {
             background-image: none;
@@ -4190,7 +4180,7 @@ input:disabled {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .getURLcontent {
     width: auto;
   }
@@ -4230,7 +4220,7 @@ input:disabled {
       right: $toolbar-width;
       padding: 34px 15px 15px;
       max-height: none;
-
+      width: auto;
       -webkit-column-width: 187px;
       -webkit-column-gap: 30px;
       -webkit-column-rule: 2px groove #888;
@@ -4333,7 +4323,11 @@ input:disabled {
     }
   }
 }
-
+@media screen and (max-width: 1024px) {
+  #top-toolbar {
+    left: 30px;
+  }
+}
 @media screen and (max-width: 900px) {
   #search-panel {
     &.active {
@@ -4363,10 +4357,10 @@ input:disabled {
     }
     #searchResults {
       position: fixed;
-      top: 165px;
+      top: 185px;
       bottom: 0;
-      left: $toolbar-width;
-      right: $toolbar-width;
+      left: $toolbar-width + 2;
+      right: $toolbar-width + 2;
       max-height: none;
 
       -webkit-column-width: 187px;
@@ -4411,6 +4405,37 @@ input:disabled {
         }
       }
     }
+  }
+  #getURL-panel.active>.widget {
+    position: fixed;
+    top: 370px;
+    left: $toolbar-width + 2;
+    right: $toolbar-width + 2;
+    display: block;
+    height: auto;
+    margin-top: 15px;
+    background-color: $panel-color;
+  }
+  #embed-panel.active>.widget {
+    position: fixed;
+    left: $toolbar-width + 2;
+    top: 370px;
+    bottom: auto;
+    display: block;
+    height: auto;
+    margin-top: 15px;
+    background-color: $panel-color;
+  }
+  #info-panel.active>.widget {
+    position: fixed;
+    top: 370px;
+    left: $toolbar-width + 2;
+    bottom: auto;
+    display: block;
+    height: auto;
+    margin-top: 15px;
+    background-color: $panel-color;
+    width: 400px;
   }
 }
 
