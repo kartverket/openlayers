@@ -3674,12 +3674,9 @@ $overlayMenuItemMargin: 5px;
 #PMwidget {
   width: 140px;
   margin: 0 0 7px -70px;
-  padding: 0;
-  border: 1px solid #666666;
+  padding: 5px;
   background: rgba(80, 80, 80, 0.9);
   color: $lightest-color;
-  font-size: 11px;
-
   &.embedContent {
     .progress {
       li {
@@ -3729,15 +3726,14 @@ $overlayMenuItemMargin: 5px;
   }
 
   &.displayPMinformation {
-    width: 280px;
-    margin-left: -140px;
+    width: 300px;
+    margin-left: -150px;
   }
 
   .shareContent {
     a {
       display: block;
       padding: 5px;
-
       &:hover {
         background-color: $link-background-color;
       }
@@ -3779,7 +3775,6 @@ $overlayMenuItemMargin: 5px;
     margin: 0;
     border: 7px solid transparent;
     border-right-color: $lightest-color;
-
     opacity: 0.7;
     filter: alpha(opacity=70);
 
@@ -3795,12 +3790,10 @@ $overlayMenuItemMargin: 5px;
 *********************************/
 #locationWrapper {
   display: block;
-  padding: 5px 20px 10px 20px;
-
   .data {
     display: block;
     overflow: hidden;
-    padding: 20px 0 0 0;
+    padding: 10px 0 0 0;
 
     &:first-child {
       padding: 0;
@@ -3836,7 +3829,6 @@ $overlayMenuItemMargin: 5px;
         margin-left: 10px;
       }
       select {
-        margin-left: 20px;
       }
       dt,
       label {
@@ -3845,10 +3837,9 @@ $overlayMenuItemMargin: 5px;
     }
 
     .label, .value {
-      display: block;
       overflow: hidden;
-      padding: 2px 0 0 0;
       white-space: nowrap;
+      font-size: 90%;
     }
 
     .label.description, .value {
