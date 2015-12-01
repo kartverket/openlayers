@@ -382,9 +382,9 @@ label {
 }
 
 #basic-toolbar {
-  left: 0;
+  right: 0;
   z-index: 2001;
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px 0 0 10px;
 }
 
 #secondary-toolbar {
@@ -405,7 +405,7 @@ label {
   box-shadow: 2px 0 2px rgba(0, 0, 0, .25);
   z-index: 4000;
   border-radius: 0 0 10px 10px;
-  width: 960px;
+  width: 660px;
   .panel {
     vertical-align: top;
     display: inline-block;
@@ -1362,6 +1362,45 @@ input[type=radio], input[type=checkbox] {
       text-transform: none;
       background-color: $panel-color;
       width: 300px;
+
+      .h {
+        padding: 10px 10px 10px;
+      }
+      .h:hover {
+        background-color: $link-background-color;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+    .shortcuts-panel {
+      @extend %horizontal-divider;
+      padding: 10px 10px 10px;
+    }
+  }
+}
+#print-panel {
+  button {
+    @extend %button;
+  }
+  &.active {
+    > button {
+      @extend %selected-button;
+    }
+    > .widget {
+      right: 0;
+      top: 100%;
+      left: auto;
+      bottom: auto;
+      display: block;
+      height: auto;
+      margin-top: 15px;
+      text-align: left;
+      text-transform: none;
+      background-color: $panel-color;
+      width: 300px;
+      input[type=checkbox] {
+        visibility: visible;
+      }
 
       .h {
         padding: 10px 10px 10px;
@@ -4257,6 +4296,9 @@ input:disabled {
     #print-panel {
       display: none;
     }
+    #export-panel {
+      display: none;
+    }
   }
   #secondary-toolbar {
     z-index: 4000;
@@ -4418,6 +4460,17 @@ input:disabled {
     background-color: $panel-color;
   }
   #info-panel.active>.widget {
+    position: fixed;
+    top: 370px;
+    left: $toolbar-width + 2;
+    bottom: auto;
+    display: block;
+    height: auto;
+    margin-top: 15px;
+    background-color: $panel-color;
+    width: 400px;
+  }
+  #print-panel.active>.widget {
     position: fixed;
     top: 370px;
     left: $toolbar-width + 2;
