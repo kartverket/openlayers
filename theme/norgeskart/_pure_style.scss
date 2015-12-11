@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'MetaBook';
   src: url("/fonts/MetaWeb-Book.eot");
-  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
+  src: local("-"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
 }
 
 $font-family-main: MetaBook, Arial, sans-serif;
@@ -1921,6 +1921,7 @@ html.touch {
   font-size: 12px;
   border: 1px solid grey;
   margin-right: -10px;
+  padding-right: 29px;
 }
 
 #searchSubmit {
@@ -1937,6 +1938,35 @@ html.touch {
 
 .lt-ie9 #searchSubmit {
   top: 23px;
+}
+.keyboard-button {
+  position: absolute;
+  top: 7px;
+  right: 45px;
+  height: 15px;
+  margin: 0;
+  width: 21px;
+  padding: 1px;
+  z-index: 99;
+  
+  &:hover {
+    background: transparent;
+    border: solid 1px #000;
+    border-radius: 0px;
+    padding: 0px;
+  }
+  
+  img {
+    display: block;
+    height: 13px;
+    width: 19px;
+  }
+}
+
+.ui-keyboard-button {
+    span {
+        color: #000;
+    }
 }
 
 /*****************************
@@ -2186,6 +2216,7 @@ button:hover,
 a:hover {
   background-color: $link-background-color;
 }
+
 
 .layersDiv .vectorWidgetToggleBtn:hover,
 .layersDiv .vectorWidgetToggleBtn:focus,
