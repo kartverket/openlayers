@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'MetaBook';
   src: url("/fonts/MetaWeb-Book.eot");
-  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
+  src: local("x"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
 }
 
 $font-family-main: MetaBook, Arial, sans-serif;
@@ -1443,6 +1443,45 @@ input[type=radio], input[type=checkbox] {
       background-color: $panel-color;
     }
   }
+}
+
+/******************************************
+=== print panel ===
+******************************************/
+
+#print-panel {
+    .widget {
+        width: 300px;
+    }
+    &.active {
+        > .nkButton {
+            @extend %selected-button;
+        }
+        > .widget {
+            background: $panel-color;
+            bottom: auto;
+            display: block;
+            height: auto;
+            left: auto;
+            margin-top: 15px;
+            right: 0px;
+            text-align: left;
+            text-transform: none;
+            top: 100%;
+        }
+    }
+    .contents {
+        padding: 20px 20px 25px;
+        text-transform: none;
+        text-align: left;
+        color: $lightest-color;
+        
+        .btn-success {
+            color: #FFF;
+            background-color: #5CB85C;
+            border-color: #4CAE4C;
+        }
+    }
 }
 
 .embedContent {
