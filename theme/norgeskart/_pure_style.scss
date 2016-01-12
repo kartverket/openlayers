@@ -370,6 +370,10 @@ label {
   top: $toolbar-width * 1.5;
   width: $toolbar-width;
   padding-top: 8px;
+  
+  #zoom-panel {
+    padding: 10px 0 20px 0;
+  }
 
   .panel {
     width: $toolbar-width;
@@ -1379,6 +1383,19 @@ input[type=radio], input[type=checkbox] {
   }
 }
 #print-panel {
+  &.panel:last-child {
+    padding: 0px;
+  }
+  
+  .buttons-panel {
+    margin: 0px;
+    padding: 10px;
+  }
+  .step-specific {
+    background-image: none;
+    padding: 15px 10px 10px 10px;
+  }
+  
   button {
     @extend %button;
   }
@@ -1387,12 +1404,14 @@ input[type=radio], input[type=checkbox] {
       @extend %selected-button;
     }
     > .widget {
+      border-radius: 0px 10px 10px 0px;
       right: auto;
       top: 100%;
       left: 0px;
       bottom: auto;
       display: block;
       height: auto;
+      margin-top: 10px;
       text-align: left;
       text-transform: none;
       background-color: $panel-color;
