@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'MetaBook';
   src: url("/fonts/MetaWeb-Book.eot");
-  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
+  src: local("x"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
 }
 
 $font-family-main: MetaBook, Arial, sans-serif;
@@ -382,9 +382,9 @@ label {
 }
 
 #basic-toolbar {
-  right: 0;
+  left: 0;
   z-index: 2001;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0px 10px 10px 0px;
 }
 
 #secondary-toolbar {
@@ -1387,17 +1387,16 @@ input[type=radio], input[type=checkbox] {
       @extend %selected-button;
     }
     > .widget {
-      right: 0;
+      right: auto;
       top: 100%;
-      left: auto;
+      left: 0px;
       bottom: auto;
       display: block;
       height: auto;
-      margin-top: 15px;
       text-align: left;
       text-transform: none;
       background-color: $panel-color;
-      width: 300px;
+      width: 200px;
       input[type=checkbox] {
         visibility: visible;
       }
