@@ -1343,6 +1343,40 @@ input[type=radio], input[type=checkbox] {
 }
 
 /******************************************
+=== Help panel ===
+******************************************/
+#help-panel {
+    button {
+        @extend: %button;
+    }
+    .widget {
+        background-color: rgba(80, 80, 80, 0.9);
+        bottom: auto;
+        display: none;
+        height: auto;
+        left: auto;
+        margin-top: 15px;
+        right: 0px;
+        text-align: left;
+        text-transform: none;
+        top: 100%;
+        width: 300px;
+    }
+    .cnt {
+        padding: 20px 25px 10px 25px;
+    }
+    &.active {
+        > button {
+            @extend %selected-button;
+        }
+        > .widget {
+            display: block;
+        }
+    }
+}
+
+
+/******************************************
 === Info panel ===
 ******************************************/
 
