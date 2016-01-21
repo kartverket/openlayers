@@ -1475,6 +1475,17 @@ input[type=radio], input[type=checkbox] {
       padding: 10px 10px 10px;
     }
   }
+  .help-block {
+    color: rgb(255,0,0);
+    display: none;
+    font-size: 0.85em;
+    text-align: right;
+  }
+  .has-error {
+    .help-block {
+      display: block;
+    }
+  }
 }
 #infoBox{
   padding: 10px;
