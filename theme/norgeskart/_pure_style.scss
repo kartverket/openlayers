@@ -1360,10 +1360,10 @@ input[type=radio], input[type=checkbox] {
         text-align: left;
         text-transform: none;
         top: 100%;
-        width: 300px;
+        width: 350px;
     }
     .cnt {
-        padding: 20px 25px 10px 25px;
+        padding: 20px 25px 20px 25px;
     }
     &.active {
         > button {
@@ -1372,6 +1372,13 @@ input[type=radio], input[type=checkbox] {
         > .widget {
             display: block;
         }
+    }
+    h4 {
+        margin-bottom: 5px;
+    }
+    ol,
+    ul {
+        padding-left: 15px;
     }
 }
 
