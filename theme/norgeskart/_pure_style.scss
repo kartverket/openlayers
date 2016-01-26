@@ -4515,3 +4515,11 @@ input:disabled {
     visibility: hidden;
   }
 }
+
+#transformations-output {
+  margin-top: 8px;
+  img {
+    margin-right: 5px;
+    vertical-align: bottom;
+  }
+}
