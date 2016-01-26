@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'MetaBook';
   src: url("/fonts/MetaWeb-Book.eot");
-  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
+  src: local("-"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype");
 }
 
 $font-family-main: MetaBook, Arial, sans-serif;
@@ -2913,6 +2913,7 @@ focus for toolbar controls
         }
       }
       .buttonWrapper{
+        margin-top: 5px;
         button{
           margin: 5px 5px 5px 0;
           background-color: #337ab7;
@@ -4083,21 +4084,8 @@ input:disabled {
   #basic-toolbar .panel, #secondary-toolbar .panel {
     padding: 20px 0;
   }
-  #secondary-toolbar {
-    .draw,
-    .height-profile,
-    .transformations {
-      .widget {
-        position: fixed;
-        top: 60px;
-        right: $toolbar-width;
-        left: auto;
-
-        .h {
-          margin-bottom: 10px;
-        }
-      }
-    }
+  .illustration-wrapper {
+    display: none;
   }
 }
 
