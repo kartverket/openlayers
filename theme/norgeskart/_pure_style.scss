@@ -1417,6 +1417,53 @@ input[type=radio], input[type=checkbox] {
 }
 
 /******************************************
+=== print panel ===
+******************************************/
+
+#print-panel {
+  .widget {
+    background-color: rgba(80, 80, 80, 0.9);
+    bottom: auto;
+    height: auto;
+    margin-top: 15px;
+    left: auto;
+    right: 0px;
+    text-align: left;
+    text-transform: none;
+    top: 100%;
+    width: 450px;
+  }
+  &.active {
+    > .nkButton {
+      @extend %selected-button;
+    }
+    > .widget{
+      display: block;
+    }
+  }
+  .cnt {
+    padding: 25px;
+    
+    header {
+        margin-bottom: 24px;
+    }
+  }
+  
+  .print-btn {
+    background-image: -moz-linear-gradient(center top , #5A5951, #3B3B3B);
+    border: 1px solid #939292;
+    border-radius: 7px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7), 2px 2px 3px -1px #939292 inset;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+/******************************************
 === embed panel ===
 ******************************************/
 
