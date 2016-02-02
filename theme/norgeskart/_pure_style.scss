@@ -4545,17 +4545,6 @@ input:disabled {
     background-color: $panel-color;
     width: 400px;
   }
-  #print-panel.active>.widget {
-    position: fixed;
-    top: 370px;
-    left: $toolbar-width + 2;
-    bottom: auto;
-    display: block;
-    height: auto;
-    margin-top: 15px;
-    background-color: $panel-color;
-    width: 400px;
-  }
 }
 
 @media screen and (max-width: 600px) {
