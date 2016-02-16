@@ -3,8 +3,12 @@
 @font-face {
   font-family: 'MetaBook';
   src: url("/fonts/MetaWeb-Book.eot");
-  src: local("☺"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); 
+  src: local("-"), url("/fonts/MetaWeb-Book.woff") format("woff"), url("/fonts/MetaComp-Book.ttf") format("truetype"); 
 }
+
+/* HV */
+$geonorge-header-height: 217px;
+/* == */
 
 $base-color: #606060;
 $dark-color: #000;
@@ -336,24 +340,44 @@ $button-background-color: $panel-color;
   }
 }
 
+/* HV */
+html,
+body {
+    height: 100%;
+    
+    /* remove annoying white line at the bottom, iOS */
+    overflow-x: hidden !important;
+    position: relative !important;
+}
 html {
-  background-color: transparent;
+    background-color: transparent;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
-body { 
-  @extend %full-height;
-  margin: 0; 
-  padding: 0;
-
- -webkit-font-smoothing: antialiased;
- 
-  /**
-   * Overflow as hidden will hide the meny options,
-   * when the window's size is small.
-   * E.q (Plast- / papirkart) in toolbar.
-   */
-  /*overflow: hidden;*/
+header {
+    /* TEMP */
+    background-image: url(img/geonorge-header.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* ==== */
+    height: $geonorge-header-height;
 }
+
+#map {
+    height: 100%;
+    width: 100%;
+    
+   .geonorge {
+       height: calc(100% - $geonorge-header-height);
+   }
+}
+/* == */
 
 * {
   -webkit-box-sizing: border-box;
@@ -362,15 +386,6 @@ body {
   font-family: Arial, sans-serif;
   padding: 0; 
   margin: 0;
-}
-html, 
-body {
-  /* remove annoying white line at the bottom, iOS */
-    overflow-x: hidden !important;
-    position: relative !important;
-}
-#map {
-  @extend %full-height;
 }
 button {
   @extend %button;
