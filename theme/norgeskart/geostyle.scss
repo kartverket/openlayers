@@ -1,0 +1,238 @@
+/* HV */
+$geonorge-header-height: 217px;
+
+$color-orange: rgb(254, 80, 0);
+$color-blue: rgb(125,161,196);
+
+$toolbar-padding: 8px;
+$toolbar-button-height: 38px;
+$toolbar-button-width: 44px;
+$toolbar-bgcolor: rgb(223,220,218);
+$toolbar-zoompanel-alpha: 4px;
+$toolbar-zoompanel-omega: ($toolbar-button-width - 18px) / 2;
+$toolbar-icon-size: 20px;
+/* == */
+
+/* HV */
+html,
+body {
+    height: 100%;
+    
+    /* remove annoying white line at the bottom, iOS */
+    overflow-x: hidden !important;
+    position: relative !important;
+}
+html {
+    background-color: transparent;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    /* TEMP */
+    background-image: url(img/geonorge-header.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* ==== */
+    height: $geonorge-header-height;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    
+   .geonorge {
+       height: calc(100% - $geonorge-header-height);
+   }
+}
+
+.toolbar {
+    display: none;
+    
+    button {
+        background: $color-blue;
+        border: none;
+        cursor: pointer;
+        
+        &:hover {
+            background: rgb(254,80,0);
+        }
+        
+        .icon {
+            fill: rgb(255,255,255);
+            height: $toolbar-icon-size;
+            width: $toolbar-icon-size;
+        }
+    }
+    
+    .panel {
+        border-bottom: solid 1px rgb(254,80,0);
+        padding: $toolbar-padding 0px;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+#basic-toolbar {
+    background-color: $toolbar-bgcolor;
+    bottom: 0px;
+    display: block;
+    left: 0px;
+    padding: 0px $toolbar-padding;
+    position: absolute;
+    top: $geonorge-header-height;
+    width: $toolbar-button-width;
+    z-index: 1000;
+}
+
+#fullscreen-panel {
+    .fullscreen-button {
+        height: $toolbar-button-height;
+        text-align: center;
+        width: $toolbar-button-width;
+        
+        .icon {
+            &.fullscreen {
+                display: inline-block;
+            }
+            &.windowed {
+                display: none;
+            }
+        }
+        &.fullscreen-active {
+            .icon {
+                &.fullscreen {
+                    display: none;
+                }
+                &.windowed {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+#zoom-panel {
+    button {
+        height: $toolbar-button-height;
+        text-align: center;
+        width: $toolbar-button-width;
+    }
+    
+    .zoombar-and-buttons-wrapper {
+        position: relative;
+    }
+    .sliderWrapper {
+        left: 0px;
+        position: absolute;
+        top: $toolbar-button-height + $toolbar-padding;
+        width: 100%;
+        
+        .track {
+            margin: 0px auto;
+            width: 4px;
+        }
+        .slider {
+            background: rgb(254,80,0);
+            border-radius: 3px;
+            
+            span {
+                background: #ccc;
+                left: 100%;
+                padding: 10px;
+                position: absolute;
+                top: 0px;
+            }
+        }
+    }
+    .wrapper {
+        .olButton {
+            &.olControlZoomIn {
+                margin-bottom: 96px + ($toolbar-padding * 2);
+            }
+        }
+    }
+    .zoom-to-selection-button {
+        margin-top: $toolbar-padding;
+    }
+    &.zoom-to-selection-selected .zoom-to-selection-button {
+        background: $color-orange;
+    }
+}
+
+#pan-panel {
+    height: $toolbar-button-width;
+    position: relative;
+    
+    .olButton {
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 17px;
+        padding: 0px;
+        position: absolute;
+        width: 17px;
+        
+        &.olControlPanNorthItemInactive {
+            background-image: url(img/north-arrow.png);
+            left: 50%;
+            margin-left: -8px;
+            top: $toolbar-padding;
+        }
+        &.olControlPanEastItemInactive {
+            background-image: url(img/east-arrow.png);
+            margin-top: -8px;
+            right: 0px;
+            top: 50%;
+        }
+        &.olControlPanSouthItemInactive {
+            background-image: url(img/south-arrow.png);
+            bottom: $toolbar-padding;
+            left: 50%;
+            margin-left: -8px;
+        }
+        &.olControlPanWestItemInactive {
+            background-image: url(img/west-arrow.png);
+            left: 0px;
+            margin-top: -8px;
+            top: 50%;
+        }
+    }
+}
+
+#layerselector-panel {
+    .layersDiv {
+        height: $toolbar-button-height;
+        position: relative;
+        
+        &:hover .dataLayersDiv {
+            display: block;
+        }
+    }
+    .dataLayersDiv {
+        display: none;
+        left: 100%;
+        position: absolute;
+    }
+    .rasterLayerList {
+        background: $toolbar-bgcolor;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: $toolbar-button-width;
+    }
+    .raster-layer-selector-item {
+        background-image: url(img/raster-thumbs.png);
+        background-repeat: no-repeat;
+        height: $toolbar-button-height;
+        width: $toolbar-button-width;
+    }
+}
+
+/* == */

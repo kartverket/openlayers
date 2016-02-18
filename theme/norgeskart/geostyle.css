@@ -1,0 +1,150 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden !important;
+  position: relative !important; }
+
+  html {
+    background-color: transparent; }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      -webkit-font-smoothing: antialiased; }
+
+      header {
+        background-image: url(img/geonorge-header.png);
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 217px; }
+
+        #map {
+          height: 100%;
+          width: 100%; }
+          #map .geonorge {
+            height: calc(100% - $geonorge-header-height); }
+
+.toolbar {
+  display: none; }
+  .toolbar button {
+    background: #7da1c4;
+    border: none;
+    cursor: pointer; }
+    .toolbar button:hover {
+      background: #fe5000; }
+      .toolbar button .icon {
+        fill: white;
+        height: 20px;
+        width: 20px; }
+  .toolbar .panel {
+    border-bottom: solid 1px #fe5000;
+    padding: 8px 0px; }
+    .toolbar .panel:last-child {
+      border-bottom: none; }
+
+#basic-toolbar {
+  background-color: #dfdcda;
+  bottom: 0px;
+  display: block;
+  left: 0px;
+  padding: 0px 8px;
+  position: absolute;
+  top: 217px;
+  width: 44px;
+  z-index: 1000; }
+
+  #fullscreen-panel .fullscreen-button {
+    height: 38px;
+    text-align: center;
+    width: 44px; }
+    #fullscreen-panel .fullscreen-button .icon.fullscreen {
+      display: inline-block; }
+      #fullscreen-panel .fullscreen-button .icon.windowed {
+        display: none; }
+    #fullscreen-panel .fullscreen-button.fullscreen-active .icon.fullscreen {
+      display: none; }
+      #fullscreen-panel .fullscreen-button.fullscreen-active .icon.windowed {
+        display: inline-block; }
+
+#zoom-panel button {
+  height: 38px;
+  text-align: center;
+  width: 44px; }
+  #zoom-panel .zoombar-and-buttons-wrapper {
+    position: relative; }
+    #zoom-panel .sliderWrapper {
+      left: 0px;
+      position: absolute;
+      top: 46px;
+      width: 100%; }
+      #zoom-panel .sliderWrapper .track {
+        margin: 0px auto;
+        width: 4px; }
+        #zoom-panel .sliderWrapper .slider {
+          background: #fe5000;
+          border-radius: 3px; }
+          #zoom-panel .sliderWrapper .slider span {
+            background: #ccc;
+            left: 100%;
+            padding: 10px;
+            position: absolute;
+            top: 0px; }
+#zoom-panel .wrapper .olButton.olControlZoomIn {
+  margin-bottom: 112px; }
+#zoom-panel .zoom-to-selection-button {
+  margin-top: 8px; }
+  #zoom-panel.zoom-to-selection-selected .zoom-to-selection-button {
+    background: #fe5000; }
+
+#pan-panel {
+  height: 44px;
+  position: relative; }
+  #pan-panel .olButton {
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 17px;
+    padding: 0px;
+    position: absolute;
+    width: 17px; }
+    #pan-panel .olButton.olControlPanNorthItemInactive {
+      background-image: url(img/north-arrow.png);
+      left: 50%;
+      margin-left: -8px;
+      top: 8px; }
+      #pan-panel .olButton.olControlPanEastItemInactive {
+        background-image: url(img/east-arrow.png);
+        margin-top: -8px;
+        right: 0px;
+        top: 50%; }
+        #pan-panel .olButton.olControlPanSouthItemInactive {
+          background-image: url(img/south-arrow.png);
+          bottom: 8px;
+          left: 50%;
+          margin-left: -8px; }
+          #pan-panel .olButton.olControlPanWestItemInactive {
+            background-image: url(img/west-arrow.png);
+            left: 0px;
+            margin-top: -8px;
+            top: 50%; }
+
+#layerselector-panel .layersDiv {
+  height: 38px;
+  position: relative; }
+  #layerselector-panel .layersDiv:hover .dataLayersDiv {
+    display: block; }
+#layerselector-panel .dataLayersDiv {
+  display: none;
+  left: 100%;
+  position: absolute; }
+  #layerselector-panel .rasterLayerList {
+    background: #dfdcda;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 44px; }
+    #layerselector-panel .raster-layer-selector-item {
+      background-image: url(img/raster-thumbs.png);
+      background-repeat: no-repeat;
+      height: 38px;
+      width: 44px; }
