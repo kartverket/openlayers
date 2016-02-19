@@ -1,12 +1,15 @@
 html, body {
+  font-family: "Open Sans", sans-serif;
   height: 100%;
   overflow-x: hidden !important;
   position: relative !important; }
 
   html {
-    background-color: transparent; }
+    background-color: transparent;
+    font-size: 10px; }
 
     body {
+      font-size: 1.6rem;
       margin: 0;
       overflow: hidden;
       padding: 0;
@@ -27,21 +30,25 @@ html, body {
 
 .toolbar {
   display: none; }
-  .toolbar button {
-    background: #7da1c4;
-    border: none;
-    cursor: pointer; }
-    .toolbar button:hover {
-      background: #fe5000; }
-      .toolbar button .icon {
-        fill: white;
-        height: 20px;
-        width: 20px; }
   .toolbar .panel {
     border-bottom: solid 1px #fe5000;
     padding: 8px 0px; }
     .toolbar .panel:last-child {
       border-bottom: none; }
+      .toolbar .panel .button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        height: 38px;
+        padding: 0px;
+        text-align: center;
+        width: 44px; }
+        .toolbar .panel .button .icon {
+          fill: #7da1c4;
+          height: 30px;
+          width: 30px; }
+          .toolbar .panel .button:hover .icon {
+            fill: #fe5000; }
 
 #basic-toolbar {
   background-color: #dfdcda;
@@ -54,18 +61,14 @@ html, body {
   width: 44px;
   z-index: 1000; }
 
-  #fullscreen-panel .fullscreen-button {
-    height: 38px;
-    text-align: center;
-    width: 44px; }
-    #fullscreen-panel .fullscreen-button .icon.fullscreen {
-      display: inline-block; }
-      #fullscreen-panel .fullscreen-button .icon.windowed {
-        display: none; }
-    #fullscreen-panel .fullscreen-button.fullscreen-active .icon.fullscreen {
+  #fullscreen-panel .fullscreen-button .icon.fullscreen {
+    display: inline-block; }
+    #fullscreen-panel .fullscreen-button .icon.windowed {
       display: none; }
-      #fullscreen-panel .fullscreen-button.fullscreen-active .icon.windowed {
-        display: inline-block; }
+  #fullscreen-panel .fullscreen-button.fullscreen-active .icon.fullscreen {
+    display: none; }
+    #fullscreen-panel .fullscreen-button.fullscreen-active .icon.windowed {
+      display: inline-block; }
 
 #zoom-panel button {
   height: 38px;
@@ -92,9 +95,9 @@ html, body {
             top: 0px; }
 #zoom-panel .wrapper .olButton.olControlZoomIn {
   margin-bottom: 112px; }
-#zoom-panel .zoom-to-selection-button {
+#zoom-panel .button-zoom-to-selection {
   margin-top: 8px; }
-  #zoom-panel.zoom-to-selection-selected .zoom-to-selection-button {
+  #zoom-panel.zoom-to-selection-selected .button-zoom-to-selection {
     background: #fe5000; }
 
 #pan-panel {
@@ -128,23 +131,56 @@ html, body {
             margin-top: -8px;
             top: 50%; }
 
-#layerselector-panel .layersDiv {
-  height: 38px;
-  position: relative; }
-  #layerselector-panel .layersDiv:hover .dataLayersDiv {
-    display: block; }
-#layerselector-panel .dataLayersDiv {
-  display: none;
-  left: 100%;
-  position: absolute; }
-  #layerselector-panel .rasterLayerList {
-    background: #dfdcda;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 44px; }
-    #layerselector-panel .raster-layer-selector-item {
-      background-image: url(img/raster-thumbs.png);
-      background-repeat: no-repeat;
-      height: 38px;
-      width: 44px; }
+#layerselector-panel .button-raster-layer {
+  background-image: url('img/raster-thumbs.png');
+  background-repeat: no-repeat; }
+  #layerselector-panel .layersDiv {
+    background-color: #7da1c4;
+    height: 38px;
+    position: relative; }
+    #layerselector-panel .dataLayersDiv {
+      bottom: -8px;
+      display: none;
+      left: 52px;
+      position: absolute; }
+      #layerselector-panel.active .dataLayersDiv {
+        display: block; }
+        #layerselector-panel .rasterLayerList {
+          background-color: rgba(254, 80, 0, 0.9);
+          list-style: none;
+          margin: 0;
+          padding: 8px; }
+          #layerselector-panel .rasterLayerList li {
+            margin-bottom: 8px; }
+            #layerselector-panel .rasterLayerList li:last-child {
+              margin-bottom: 0px; }
+          #layerselector-panel .rasterLayerList input {
+            left: 0px;
+            opacity: 0;
+            top: 0px;
+            position: absolute; }
+            #layerselector-panel .rasterLayerList .labelSpan {
+              background-image: url('img/raster-thumbs.png');
+              background-repeat: no-repeat;
+              color: white;
+              cursor: pointer;
+              display: block;
+              height: 50px;
+              line-height: 50px;
+              padding-left: 70px; }
+              #layerselector-panel .rasterLayerList .labelSpan:hover {
+                text-decoration: underline; }
+#layerselector-panel .show-land {
+  background-position: 0px 0px; }
+  #layerselector-panel .show-terreng {
+    background-position: 0px -50px; }
+    #layerselector-panel .show-enkel {
+      background-position: 0px -100px; }
+      #layerselector-panel .show-flybilder {
+        background-position: 0px -150px; }
+        #layerselector-panel .show-sjo {
+          background-position: 0px -200px; }
+          #layerselector-panel .show-svalbard {
+            background-position: 0px -250px; }
+            #layerselector-panel .show-janmayen {
+              background-position: 0px -300px; }

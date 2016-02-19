@@ -1,7 +1,9 @@
 /* HV */
 $geonorge-header-height: 217px;
 
+$color-white: rgb(255,255,255);
 $color-orange: rgb(254, 80, 0);
+$color-orange-90: rgba(254, 80, 0, 0.90);
 $color-blue: rgb(125,161,196);
 
 $toolbar-padding: 8px;
@@ -10,12 +12,13 @@ $toolbar-button-width: 44px;
 $toolbar-bgcolor: rgb(223,220,218);
 $toolbar-zoompanel-alpha: 4px;
 $toolbar-zoompanel-omega: ($toolbar-button-width - 18px) / 2;
-$toolbar-icon-size: 20px;
+$toolbar-icon-size: 30px;
 /* == */
 
 /* HV */
 html,
 body {
+    font-family: "Open Sans", sans-serif;
     height: 100%;
     
     /* remove annoying white line at the bottom, iOS */
@@ -24,8 +27,10 @@ body {
 }
 html {
     background-color: transparent;
+    font-size: 10px;
 }
 body {
+    font-size: 1.6rem;
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -54,28 +59,31 @@ header {
 .toolbar {
     display: none;
     
-    button {
-        background: $color-blue;
-        border: none;
-        cursor: pointer;
-        
-        &:hover {
-            background: rgb(254,80,0);
-        }
-        
-        .icon {
-            fill: rgb(255,255,255);
-            height: $toolbar-icon-size;
-            width: $toolbar-icon-size;
-        }
-    }
-    
     .panel {
         border-bottom: solid 1px rgb(254,80,0);
         padding: $toolbar-padding 0px;
         
         &:last-child {
             border-bottom: none;
+        }
+        
+        .button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            height: $toolbar-button-height;
+            padding: 0px;
+            text-align: center;
+            width: $toolbar-button-width;
+            
+            .icon {
+                fill: $color-blue;
+                height: $toolbar-icon-size;
+                width: $toolbar-icon-size;
+            }
+            &:hover .icon {
+                fill: $color-orange;
+            }
         }
     }
 }
@@ -94,10 +102,6 @@ header {
 
 #fullscreen-panel {
     .fullscreen-button {
-        height: $toolbar-button-height;
-        text-align: center;
-        width: $toolbar-button-width;
-        
         .icon {
             &.fullscreen {
                 display: inline-block;
@@ -159,10 +163,10 @@ header {
             }
         }
     }
-    .zoom-to-selection-button {
+    .button-zoom-to-selection {
         margin-top: $toolbar-padding;
     }
-    &.zoom-to-selection-selected .zoom-to-selection-button {
+    &.zoom-to-selection-selected .button-zoom-to-selection {
         background: $color-orange;
     }
 }
@@ -207,32 +211,88 @@ header {
 }
 
 #layerselector-panel {
+    
+    .button-raster-layer {
+        background-image: url('img/raster-thumbs.png');
+        background-repeat: no-repeat;
+    }
+    
     .layersDiv {
+        background-color: $color-blue;
         height: $toolbar-button-height;
         position: relative;
-        
-        &:hover .dataLayersDiv {
-            display: block;
-        }
     }
+    
     .dataLayersDiv {
+        bottom: -$toolbar-padding;
         display: none;
-        left: 100%;
+        left: $toolbar-button-width + $toolbar-padding;
         position: absolute;
     }
-    .rasterLayerList {
-        background: $toolbar-bgcolor;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: $toolbar-button-width;
+    &.active .dataLayersDiv {
+        display: block;
     }
-    .raster-layer-selector-item {
-        background-image: url(img/raster-thumbs.png);
-        background-repeat: no-repeat;
-        height: $toolbar-button-height;
-        width: $toolbar-button-width;
+    
+    .rasterLayerList {
+        background-color: $color-orange-90;
+        list-style: none;
+        margin: 0;
+        padding: $toolbar-padding;
+        
+        li {
+            margin-bottom: $toolbar-padding;
+            
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+        
+        input {
+            left: 0px;
+            opacity: 0.0;
+            top: 0px;
+            position: absolute;
+        }
+        
+        .labelSpan {
+            background-image: url('img/raster-thumbs.png');
+            background-repeat: no-repeat;
+            color: $color-white;
+            cursor: pointer;
+            display: block;
+            height: 50px;
+            line-height: 50px;
+            padding-left: 70px;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    .show-land {
+        background-position: 0px -0px;
+    }
+    .show-terreng {
+        background-position: 0px -50px;
+    }
+    .show-enkel {
+        background-position: 0px -100px;
+    }
+    .show-flybilder {
+        background-position: 0px -150px;
+    }
+    .show-sjo {
+        background-position: 0px -200px;
+    }
+    .show-svalbard {
+        background-position: 0px -250px;
+    }
+    .show-janmayen {
+        background-position: 0px -300px;
     }
 }
+
+
 
 /* == */
