@@ -9,6 +9,8 @@ $color-blue: rgb(125,161,196);
 $toolbar-padding: 8px;
 $toolbar-button-height: 38px;
 $toolbar-button-width: 44px;
+$toolbar-width: $toolbar-button-width + ($toolbar-padding * 2);
+
 $toolbar-bgcolor: rgb(223,220,218);
 $toolbar-zoompanel-alpha: 4px;
 $toolbar-zoompanel-omega: ($toolbar-button-width - 18px) / 2;
@@ -61,7 +63,6 @@ header {
     
     .panel {
         border-bottom: solid 1px rgb(254,80,0);
-        padding: $toolbar-padding 0px;
         
         &:last-child {
             border-bottom: none;
@@ -93,14 +94,16 @@ header {
     bottom: 0px;
     display: block;
     left: 0px;
-    padding: 0px $toolbar-padding;
+    padding: $toolbar-padding 0px;
     position: absolute;
     top: $geonorge-header-height;
-    width: $toolbar-button-width;
+    width: $toolbar-width;
     z-index: 1000;
 }
 
 #fullscreen-panel {
+    padding: $toolbar-padding;
+    
     .fullscreen-button {
         .icon {
             &.fullscreen {
@@ -124,6 +127,8 @@ header {
 }
 
 #zoom-panel {
+    padding: $toolbar-padding;
+    
     button {
         height: $toolbar-button-height;
         text-align: center;
@@ -172,38 +177,42 @@ header {
 }
 
 #pan-panel {
-    height: $toolbar-button-width;
+    height: $toolbar-width;
     position: relative;
     
     .olButton {
+        background-color: transparent;
         background-position: center center;
         background-repeat: no-repeat;
-        height: 17px;
+        background-size: 16px;
+        border: none;
+        cursor: pointer;
+        height: 16px;
         padding: 0px;
         position: absolute;
-        width: 17px;
+        width: 16px;
         
         &.olControlPanNorthItemInactive {
-            background-image: url(img/north-arrow.png);
+            background-image: url(img/arrow-n.svg);
             left: 50%;
             margin-left: -8px;
-            top: $toolbar-padding;
+            top: 6px;
         }
         &.olControlPanEastItemInactive {
-            background-image: url(img/east-arrow.png);
+            background-image: url(img/arrow-e.svg);
             margin-top: -8px;
-            right: 0px;
+            right: 6px;
             top: 50%;
         }
         &.olControlPanSouthItemInactive {
-            background-image: url(img/south-arrow.png);
-            bottom: $toolbar-padding;
+            background-image: url(img/arrow-s.svg);
+            bottom: 6px;
             left: 50%;
             margin-left: -8px;
         }
         &.olControlPanWestItemInactive {
-            background-image: url(img/west-arrow.png);
-            left: 0px;
+            background-image: url(img/arrow-w.svg);
+            left: 6px;
             margin-top: -8px;
             top: 50%;
         }
@@ -211,6 +220,7 @@ header {
 }
 
 #layerselector-panel {
+    padding: $toolbar-padding;
     
     .button-raster-layer {
         background-image: url('img/raster-thumbs.png');
