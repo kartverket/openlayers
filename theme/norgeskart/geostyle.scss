@@ -5,6 +5,9 @@ $color-white: rgb(255,255,255);
 $color-orange: rgb(254, 80, 0);
 $color-orange-90: rgba(254, 80, 0, 0.90);
 $color-blue: rgb(125,161,196);
+$color-purple: rgb(93, 71, 119);
+
+$font-raleway: "Raleway", sans-serif;
 
 $toolbar-padding: 8px;
 $toolbar-button-height: 38px;
@@ -62,11 +65,7 @@ header {
     display: none;
     
     .panel {
-        border-bottom: solid 1px rgb(254,80,0);
-        
-        &:last-child {
-            border-bottom: none;
-        }
+        position: relative;
         
         .button {
             background: transparent;
@@ -86,9 +85,16 @@ header {
                 fill: $color-orange;
             }
         }
+        &.active,
+        &.zoom-to-selection-selected {
+            background-color: $color-orange-90;
+            
+            .button .icon {
+                fill: $color-white;
+            }
+        }
     }
 }
-
 #basic-toolbar {
     background-color: $toolbar-bgcolor;
     bottom: 0px;
@@ -96,6 +102,17 @@ header {
     left: 0px;
     padding: $toolbar-padding 0px;
     position: absolute;
+    top: $geonorge-header-height;
+    width: $toolbar-width;
+    z-index: 1000;
+}
+#secondary-toolbar {
+    background-color: $toolbar-bgcolor;
+    bottom: 0px;
+    display: block;
+    padding: $toolbar-padding 0px;
+    position: absolute;
+    right: 0px;
     top: $geonorge-header-height;
     width: $toolbar-width;
     z-index: 1000;
@@ -127,7 +144,9 @@ header {
 }
 
 #zoom-panel {
+    left: auto !important;
     padding: $toolbar-padding;
+    top: auto !important;
     
     button {
         height: $toolbar-button-height;
@@ -176,9 +195,12 @@ header {
     }
 }
 
+#selection-panel {
+    padding: $toolbar-padding;
+}
+
 #pan-panel {
     height: $toolbar-width;
-    position: relative;
     
     .olButton {
         background-color: transparent;
@@ -303,6 +325,37 @@ header {
     }
 }
 
+#addlayer-panel {
+    padding: $toolbar-padding;
+    
+    .widget {
+        background: $color-orange-90;
+        bottom: 0px;
+        display: none;
+        left: $toolbar-width;
+        position: absolute;
+        width: 450px;
+    }
+    &.active .widget {
+        display: block;
+    }
+}
 
+.cnt {
+    padding: 20px;
+    
+    h2 {
+        color: $color-white;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0px 0px 10px 0px;
+    }
+    p {
+        color: $color-white;
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin: 0px 0px 10px 0px;
+    }
+}
 
 /* == */
