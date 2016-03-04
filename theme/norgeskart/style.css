@@ -3531,3 +3531,9 @@ input:disabled {
         left: 83px;
         position: fixed;
         top: 15px; }
+        #geonorge-logo-panel.panel {
+          width: auto;
+          height: auto; }
+          #geonorge-logo-panel img {
+            display: block;
+            height: 20px; }

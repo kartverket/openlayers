@@ -5035,5 +5035,14 @@ r {
   position: fixed;
   top: 15px;
   
+  &.panel {
+    width: auto;
+    height: auto;
+  }
+  
+  img {
+    display: block;
+    height: 20px;
+  }
 }
 
