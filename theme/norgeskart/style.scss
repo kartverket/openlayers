@@ -8,6 +8,8 @@
 
 $base-color: #606060;
 $dark-color: #000;
+$dark-grey: rgb(51,51,51);
+$light-grey: rgb(204,204,204);
 $button-light-blue: rgb(222, 220, 220);
 $button-dark-blue: #0058a3;
 $button-darkest-blue: rgba($button-dark-blue, .82);
@@ -1339,6 +1341,23 @@ x,
       }
       form > button {
         @extend %super-one-lined-button;
+      }
+    }
+  }
+  .tabs {
+    border-bottom: solid 1px $dark-grey;
+    
+    a {
+      background: $light-grey;
+      border-radius: 5px 5px 0px 0px;
+      color: $dark-grey;
+      display: inline-block;
+      padding: 7px 9px 5px 9px;
+      text-decoration: none;
+      
+      &.active {
+        background: $dark-grey;
+        color: $white;
       }
     }
   }

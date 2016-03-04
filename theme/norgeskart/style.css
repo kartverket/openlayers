@@ -999,9 +999,9 @@ html {
               #geoportal-panel.active .widget a.external-link:focus .h,
               #geoportal-panel.active .widget a.external-link:active .h {
                 text-decoration: underline; }
-  #geoportal-panel.active .widget .header {
+  #geoportal-panel.active .widget .heading {
     position: relative; }
-    #geoportal-panel.active .widget .header .close {
+    #geoportal-panel.active .widget .heading .close {
       font-size: 3em;
       position: absolute;
       right: 0px;
@@ -1015,6 +1015,18 @@ html {
         margin-bottom: 0; }
   #geoportal-panel.active .widget .cnt > div {
     padding: 20px 16px 24px; }
+#geoportal-panel .tabs {
+  border-bottom: solid 1px #333; }
+  #geoportal-panel .tabs a {
+    background: #ccc;
+    border-radius: 5px 5px 0px 0px;
+    color: #333;
+    display: inline-block;
+    padding: 7px 9px 5px 9px;
+    text-decoration: none; }
+    #geoportal-panel .tabs a.active {
+      background: #333;
+      color: #fff; }
 
 #addlayer.active .widget {
   width: 475px;
