@@ -1313,6 +1313,16 @@ x,
           }
         }
       }
+      .heading {
+        position: relative;
+        
+        .close {
+          font-size: 3em;
+          position: absolute;
+          right: 0px;
+          top: 0px;
+        }
+      }
       .h {
         @extend %widget-main-heading;
         font-size: 30px;

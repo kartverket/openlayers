@@ -999,6 +999,13 @@ html {
               #geoportal-panel.active .widget a.external-link:focus .h,
               #geoportal-panel.active .widget a.external-link:active .h {
                 text-decoration: underline; }
+  #geoportal-panel.active .widget .header {
+    position: relative; }
+    #geoportal-panel.active .widget .header .close {
+      font-size: 3em;
+      position: absolute;
+      right: 0px;
+      top: 0px; }
   #geoportal-panel.active .widget .h {
     font-size: 30px;
     margin-bottom: 10px; }
