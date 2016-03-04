@@ -1810,24 +1810,50 @@ html.svg .splashscreen .widget a.close:active {
 .rasterLayerList label:hover, .rasterLayerList input:focus + label {
   text-decoration: underline; }
 
-  .user-marker, #nk-selected-feature, #nk-selected-coverage-map {
-    background-color: #606161 !important;
-    background-color: rgba(220, 220, 220, 0.85) !important;
-    color: #000;
+  .vectorWidgetToggleBtn {
+    background-color: transparent;
+    background-image: url(img/raster-thumbs.png);
+    background-position: 4px 0px;
+    background-repeat: no-repeat;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0px 0px 4px white; }
+    .vectorWidgetToggleBtn.land {
+      background-position: 4px 0px; }
+      .vectorWidgetToggleBtn.terreng {
+        background-position: 4px -50px; }
+        .vectorWidgetToggleBtn.enkel {
+          background-position: 4px -100px; }
+          .vectorWidgetToggleBtn.flybilder {
+            background-position: 4px -150px; }
+            .vectorWidgetToggleBtn.sjo {
+              background-position: 4px -200px; }
+              .vectorWidgetToggleBtn.svalbard {
+                background-position: 4px -250px; }
+                .vectorWidgetToggleBtn.janmayen {
+                  background-position: 4px -300px; }
+
+.user-marker, #nk-selected-feature, #nk-selected-coverage-map {
+  background-color: #606161 !important;
+  background-color: rgba(220, 220, 220, 0.85) !important;
+  color: #000;
+  font-size: 12px;
+  text-transform: none;
+  font-family: Arial, sans-serif;
+  line-height: 14px;
+  margin-top: 10px; }
+  .user-marker .h, #nk-selected-feature .h, #nk-selected-coverage-map .h {
     font-size: 12px;
-    text-transform: none;
     font-family: Arial, sans-serif;
-    line-height: 14px;
-    margin-top: 10px; }
-    .user-marker .h, #nk-selected-feature .h, #nk-selected-coverage-map .h {
-      font-size: 12px;
-      font-family: Arial, sans-serif;
-      font-weight: normal;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      line-height: 14px; }
-      .user-marker div, #nk-selected-feature div, #nk-selected-coverage-map div {
-        margin-bottom: 8px; }
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    line-height: 14px; }
+    .user-marker div, #nk-selected-feature div, #nk-selected-coverage-map div {
+      margin-bottom: 8px; }
 
 #nk-selected-coverage-map .municipalities ul {
   display: inline-block; }

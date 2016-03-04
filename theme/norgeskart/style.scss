@@ -2471,6 +2471,40 @@ button:focus .icon {
   text-decoration: underline;
 }
 
+.vectorWidgetToggleBtn {
+  background-color: transparent;
+  background-image: url(img/raster-thumbs.png);
+  background-position: 4px 0px;
+  background-repeat: no-repeat;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0px 0px 4px rgb(255, 255, 255);
+  
+  &.land {
+    background-position: 4px 0px;
+  }
+  &.terreng {
+    background-position: 4px -50px;
+  }
+  &.enkel {
+    background-position: 4px -100px;
+  }
+  &.flybilder {
+    background-position: 4px -150px;
+  }
+  &.sjo {
+    background-position: 4px -200px;
+  }
+  &.svalbard {
+    background-position: 4px -250px;
+  }
+  &.janmayen {
+    background-position: 4px -300px;
+  }
+}
 
 /**************************
 ==== popup styling ===
@@ -5075,3 +5109,16 @@ r {
   }
 }
 
+/*#layerselector-panel {
+  .layersDiv {
+    background: #fcc;
+    height: 100px;
+  }
+  .dataLayersDiv {
+    display: none;
+    position: absolute;
+  }
+  .layersDiv:hover .dataLayersDiv {
+    display: block;
+  }
+}*/
