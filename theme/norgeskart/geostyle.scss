@@ -1,0 +1,513 @@
+$geonorge-header-height: 217px;
+$toolbar-width: 60px;
+$toolbar-padding: 10px;
+$toolbar-button-width: $toolbar-width - ($toolbar-padding * 2);
+
+$font-raleway: "Raleway", sans-serif;
+$font-opensans: "Open Sans", sans-serif;
+
+$color-black: rgb(0,0,0);
+$color-white: rgb(255,255,255);
+$color-orange: rgb(254, 80, 0);
+$color-orange-90: rgba(254, 80, 0, 0.90);
+$color-blue: rgb(125,161,196);
+$color-purple: rgb(93, 71, 119);
+$color-grey: rgb(223,220,218);
+$color-grey-darkest: rgb(65,64,66);
+
+%default-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+}
+%panel-button {
+    @extend %default-button;
+    height: 30px;
+    padding: 5px 10px;
+    width: 50px;
+    
+    .icon {
+        fill: $color-grey-darkest;
+        height: 100%;
+        width: 100%;
+    }
+    &:hover .icon {
+        fill: $color-orange;
+    }
+}
+%panel-layout {
+    box-sizing: border-box;
+    padding: 5px;
+    position: relative;
+    width: $toolbar-width;
+}
+
+/*$font-raleway: "Raleway", sans-serif;*/
+
+html,
+body {
+    height: 100%;
+    widht: 100%;
+}
+html {
+    font-size: 10px;
+}
+body {
+    font-family: $font-opensans;
+    font-weight: 400;
+    margin: 0px;
+    padding: 0px;
+}
+
+.toolbar {
+    position: absolute;
+    z-index: 1000;
+}
+
+/* CONTROLS */
+.olControlScaleLine {
+    left: $toolbar-width + $toolbar-padding;
+}
+
+#language-button {
+    @extend %default-button;
+    background-color: $color-blue;
+    color: $color-white;
+    width: 100%;
+    
+    &:hover {
+        background-color: $color-orange;
+    }
+}
+
+#geonorge-logo-panel {
+    left: $toolbar-width + 10px;
+    position: fixed;
+    top: $geonorge-header-height + 10px;
+    
+    a {
+        height: 20px;
+        display: block;
+    }
+    img {
+        border: none;
+        display: block;
+        height: 20px;
+    }
+}
+
+/* TOOLBARS AND PANELS */
+#basic-toolbar,
+#top-toolbar {
+    background-color: $color-grey;
+    bottom: 0px;
+    top: $geonorge-header-height;
+    width: $toolbar-width;
+}
+#basic-toolbar {
+    left: 0px;
+}
+#top-toolbar {
+    right: 0px;
+}
+
+#fullscreen-panel {
+    @extend %panel-layout;
+    
+    button {
+        @extend %panel-button;
+    }
+    
+    .fullscreen-button {
+        .fullscreen {
+            display: inline-block;
+        }
+        .windowed {
+            display: none;
+        }
+    }
+    .fullscreen-active {
+        .fullscreen {
+            display: none;
+        }
+        .windowed {
+            display: inline-block;
+        }
+    }
+}
+
+#zoom-panel {
+    display: none;
+    padding: $toolbar-padding;
+    width: $toolbar-width;
+    
+    button {
+        @extend %panel-button;
+    }
+}
+
+#pan-panel {
+    height: $toolbar-width;
+    position: relative;
+    width: $toolbar-width;
+    
+    .olButton {
+        @extend %default-button;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 10px;
+        height: 20px;
+        position: absolute;
+        width: 20px;
+    }
+    .olControlPanNorthItemInactive {
+        background-image: url(img/arrow-n.svg);
+        left: 20px;
+        top: 5px;
+    }
+    .olControlPanSouthItemInactive {
+        background-image: url(img/arrow-s.svg);
+        left: 20px;
+        top: 35px;
+    }
+    .olControlPanEastItemInactive {
+        background-image: url(img/arrow-e.svg);
+        left: 35px;
+        top: 20px;
+    }
+    .olControlPanWestItemInactive {
+        background-image: url(img/arrow-w.svg);
+        left: 5px;
+        top: 20px;
+    }
+}
+
+#layerselector-panel {
+    .vectorWidgetToggleBtn {
+        background-image: url('img/raster-thumbs.png');
+        background-repeat: no-repeat;
+        cursor: pointer;
+        height: 50px;
+    }
+    .layersDiv {
+        position: relative;
+    }
+    .widget {
+        bottom: 0px;
+        display: none;
+        left: 100%;
+        position: absolute;
+    }
+    .show {
+        .widget {
+            display: block;
+        }
+    }
+}
+
+#search-panel {
+    @extend %panel-layout;
+    
+    .nkButton {
+        @extend %panel-button;
+    }
+    
+    .searchDiv {
+        background: $color-grey;
+        box-sizing: border-box;
+        border-radius: 10px;
+        display: none;
+        left: 50%;
+        margin-left: -160px;
+        margin-top: 15px;
+        padding: 15px;
+        position: fixed;
+        top: $geonorge-header-height;
+        width: 320px;
+        
+        form {
+            background: $color-white;
+            border-radius: 5px;
+            height: 26px;
+            padding: 5px 10px;
+            
+            input {
+                background-color: transparent;
+                border: none;
+                box-sizing: border-box;
+                color: $color-grey-darkest;
+                float: left;
+                height: 26px;
+                padding: 0px;
+                width: 240px;
+                
+                &:hover,
+                &:focus {
+                    color: $color-black;
+                }
+            }
+            button {
+                @extend %default-button;
+                float: left;
+                height: 26px;
+                padding: 3px;
+                width: 30px;
+                
+                svg {
+                    fill: $color-grey-darkest;
+                }
+                &:hover svg {
+                    fill: $color-orange;
+                }
+            }
+        }
+    }
+    &.active .searchDiv {
+        display: block;
+    }
+    
+    #searchResults {
+        margin-top: 10px;
+    }
+    
+    .times {
+        @extend %default-button;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+}
+
+#geoportal-panel {
+    @extend %panel-layout;
+    
+    .nkButton {
+        @extend %panel-button;
+    }
+    
+    .widget {
+        bottom: 0px;
+        display: none;
+        left: 100%;
+        position: absolute;
+    }
+    &.active .widget {
+        display: block;
+    }
+}
+
+#addlayer {
+    @extend %panel-layout;
+    
+    .nkButton {
+        @extend %panel-button;
+    }
+    
+    .widget {
+        bottom: 0px;
+        display: none;
+        left: 100%;
+        position: absolute;
+    }
+    &.active .widget {
+        display: block;
+    }
+}
+
+#draw-panel {
+    @extend %panel-layout;
+    
+    .nkButton {
+        @extend %panel-button;
+    }
+    
+    .widget {
+        bottom: 0px;
+        display: none;
+        left: 100%;
+        position: absolute;
+    }
+    &.active .widget {
+        display: block;
+    }
+}
+
+#transformations-panel {
+    @extend %panel-layout;
+    
+    .nkButton {
+        @extend %panel-button;
+    }
+    
+    .widget {
+        bottom: 0px;
+        display: none;
+        left: 100%;
+        position: absolute;
+    }
+    &.active .widget {
+        display: block;
+    }
+}
+
+#print-panel {
+    @extend %panel-layout;
+    
+    .nkButton {
+        @extend %panel-button;
+    }
+    
+    .widget {
+        display: none;
+    }
+}
+
+#getURL-panel {
+    @extend %panel-layout;
+    
+    .nkButton {
+        @extend %panel-button;
+    }
+    
+    .widget {
+        display: none;
+        position: fixed;
+        right: $toolbar-width + 10px;
+        top: $geonorge-header-height + 10px;
+    }
+    &.active .widget {
+        display: block;
+    }
+}
+
+#embed-panel {
+    @extend %panel-layout;
+    
+    .nkButton {
+        @extend %panel-button;
+    }
+    
+    .widget {
+        display: none;
+        position: absolute;
+        right: 100%;
+        top: 0px;
+    }
+    .active .widget {
+        display: block;
+    }
+}
+
+#export-panel {
+    @extend %panel-layout;
+    
+    .nkButton {
+        @extend %panel-button;
+    }
+    
+    .widget {
+        display: none;
+        position: absolute;
+        right: 100%;
+        top: 0px;
+    }
+    .active .widget {
+        display: block;
+    }
+}
+
+#help-panel {
+    @extend %panel-layout;
+    
+    .nkButton {
+        @extend %panel-button;
+    }
+    
+    .widget {
+        display: none;
+        position: fixed;
+        right: $toolbar-width + 10px;
+        top: $geonorge-header-height + 10px;
+    }
+    &.active .widget {
+        display: block;
+    }
+}
+
+/* WIDGETS */
+.wrapper {
+    background-color: $color-grey;
+    padding: 20px;
+    
+    .cnt {
+        h1 {
+            color: $color-purple;
+            font-family: $font-raleway;
+            font-size: 4rem;
+            font-weight: 300;
+            margin: 0px 0px 10px 0px;
+            position: relative;
+            
+            &:after {
+                border-bottom: solid 2.5px $color-orange;
+                content: "";
+                height: 2.5px;
+                left: 0px;
+                margin-top: 4.5rem;
+                position: absolute;
+                width: 50px;
+            }
+        }
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0px;
+            width: 100%;
+            
+            th,
+            td {
+                border: solid 1px $color-black;
+                padding: 4px;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.getURLcontent {
+    .page-url {
+        background: $color-white;
+        font-family: monospace;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        padding: 5px;
+        word-break: keep-all;
+    }
+    
+    & > span {
+        display: inline-block;
+        height: 25px;
+        line-height: 25px;
+        vertical-align: top;
+    }
+    
+    .share-link {
+        display: inline-block;
+        margin-left: 10px;
+        
+        span {
+            display: none;
+        }
+        
+        .icon {
+            fill: $color-grey-darkest;
+            height: 25px;
+            width: 25px;
+        }
+        &:hover .icon {
+            fill: $color-orange;
+        }
+    }
+}

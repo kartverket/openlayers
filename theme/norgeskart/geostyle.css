@@ -1,0 +1,275 @@
+#language-button, #fullscreen-panel button, #zoom-panel button,
+#pan-panel .olButton, #search-panel .nkButton,
+#search-panel .searchDiv form button, #search-panel .times,
+#geoportal-panel .nkButton, #addlayer .nkButton, #draw-panel .nkButton,
+#transformations-panel .nkButton, #print-panel .nkButton, #getURL-panel .nkButton,
+#embed-panel .nkButton, #export-panel .nkButton, #help-panel .nkButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0px; }
+
+  #fullscreen-panel button, #zoom-panel button, #search-panel .nkButton,
+  #geoportal-panel .nkButton, #addlayer .nkButton, #draw-panel .nkButton,
+  #transformations-panel .nkButton, #print-panel .nkButton, #getURL-panel .nkButton,
+  #embed-panel .nkButton, #export-panel .nkButton, #help-panel .nkButton {
+    height: 30px;
+    padding: 5px 10px;
+    width: 50px; }
+    #fullscreen-panel button .icon, #zoom-panel button .icon,
+    #search-panel .nkButton .icon, #geoportal-panel .nkButton .icon,
+    #addlayer .nkButton .icon, #draw-panel .nkButton .icon,
+    #transformations-panel .nkButton .icon, #print-panel .nkButton .icon,
+    #getURL-panel .nkButton .icon, #embed-panel .nkButton .icon,
+    #export-panel .nkButton .icon, #help-panel .nkButton .icon {
+      fill: #414042;
+      height: 100%;
+      width: 100%; }
+      #fullscreen-panel button:hover .icon, #zoom-panel button:hover .icon,
+      #search-panel :hover.nkButton .icon, #geoportal-panel :hover.nkButton .icon,
+      #addlayer :hover.nkButton .icon, #draw-panel :hover.nkButton .icon,
+      #transformations-panel :hover.nkButton .icon, #print-panel :hover.nkButton .icon,
+      #getURL-panel :hover.nkButton .icon, #embed-panel :hover.nkButton .icon,
+      #export-panel :hover.nkButton .icon, #help-panel :hover.nkButton .icon {
+        fill: #fe5000; }
+
+#fullscreen-panel, #search-panel, #geoportal-panel, #addlayer, #draw-panel,
+#transformations-panel, #print-panel, #getURL-panel, #embed-panel, #export-panel,
+#help-panel {
+  box-sizing: border-box;
+  padding: 5px;
+  position: relative;
+  width: 60px; }
+
+  html, body {
+    height: 100%;
+    widht: 100%; }
+
+    html {
+      font-size: 10px; }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+        margin: 0px;
+        padding: 0px; }
+
+        .toolbar {
+          position: absolute;
+          z-index: 1000; }
+
+          .olControlScaleLine {
+            left: 70px; }
+
+            #language-button {
+              background-color: #7da1c4;
+              color: white;
+              width: 100%; }
+              #language-button:hover {
+                background-color: #fe5000; }
+
+#geonorge-logo-panel {
+  left: 70px;
+  position: fixed;
+  top: 227px; }
+  #geonorge-logo-panel a {
+    height: 20px;
+    display: block; }
+    #geonorge-logo-panel img {
+      border: none;
+      display: block;
+      height: 20px; }
+
+#basic-toolbar, #top-toolbar {
+  background-color: #dfdcda;
+  bottom: 0px;
+  top: 217px;
+  width: 60px; }
+
+  #basic-toolbar {
+    left: 0px; }
+
+    #top-toolbar {
+      right: 0px; }
+
+      #fullscreen-panel .fullscreen-button .fullscreen {
+        display: inline-block; }
+        #fullscreen-panel .fullscreen-button .windowed {
+          display: none; }
+      #fullscreen-panel .fullscreen-active .fullscreen {
+        display: none; }
+        #fullscreen-panel .fullscreen-active .windowed {
+          display: inline-block; }
+
+#zoom-panel {
+  display: none;
+  padding: 10px;
+  width: 60px; }
+
+#pan-panel {
+  height: 60px;
+  position: relative;
+  width: 60px; }
+  #pan-panel .olButton {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 10px;
+    height: 20px;
+    position: absolute;
+    width: 20px; }
+    #pan-panel .olControlPanNorthItemInactive {
+      background-image: url(img/arrow-n.svg);
+      left: 20px;
+      top: 5px; }
+      #pan-panel .olControlPanSouthItemInactive {
+        background-image: url(img/arrow-s.svg);
+        left: 20px;
+        top: 35px; }
+        #pan-panel .olControlPanEastItemInactive {
+          background-image: url(img/arrow-e.svg);
+          left: 35px;
+          top: 20px; }
+          #pan-panel .olControlPanWestItemInactive {
+            background-image: url(img/arrow-w.svg);
+            left: 5px;
+            top: 20px; }
+
+#layerselector-panel .vectorWidgetToggleBtn {
+  background-image: url('img/raster-thumbs.png');
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: 50px; }
+  #layerselector-panel .layersDiv {
+    position: relative; }
+    #layerselector-panel .widget {
+      bottom: 0px;
+      display: none;
+      left: 100%;
+      position: absolute; }
+      #layerselector-panel .show .widget {
+        display: block; }
+
+#search-panel .searchDiv {
+  background: #dfdcda;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: none;
+  left: 50%;
+  margin-left: -160px;
+  margin-top: 15px;
+  padding: 15px;
+  position: fixed;
+  top: 217px;
+  width: 320px; }
+  #search-panel .searchDiv form {
+    background: white;
+    border-radius: 5px;
+    height: 26px;
+    padding: 5px 10px; }
+    #search-panel .searchDiv form input {
+      background-color: transparent;
+      border: none;
+      box-sizing: border-box;
+      color: #414042;
+      float: left;
+      height: 26px;
+      padding: 0px;
+      width: 240px; }
+      #search-panel .searchDiv form input:hover,
+      #search-panel .searchDiv form input:focus {
+        color: black; }
+    #search-panel .searchDiv form button {
+      float: left;
+      height: 26px;
+      padding: 3px;
+      width: 30px; }
+      #search-panel .searchDiv form button svg {
+        fill: #414042; }
+        #search-panel .searchDiv form button:hover svg {
+          fill: #fe5000; }
+#search-panel.active .searchDiv {
+  display: block; }
+  #search-panel #searchResults {
+    margin-top: 10px; }
+    #search-panel .times {
+      position: absolute;
+      right: 0px;
+      top: 0px; }
+
+#geoportal-panel .widget {
+  bottom: 0px;
+  display: none;
+  left: 100%;
+  position: absolute; }
+  #geoportal-panel.active .widget {
+    display: block; }
+
+#addlayer .widget {
+  bottom: 0px;
+  display: none;
+  left: 100%;
+  position: absolute; }
+  #addlayer.active .widget {
+    display: block; }
+
+#draw-panel .widget {
+  bottom: 0px;
+  display: none;
+  left: 100%;
+  position: absolute; }
+  #draw-panel.active .widget {
+    display: block; }
+
+#transformations-panel .widget {
+  bottom: 0px;
+  display: none;
+  left: 100%;
+  position: absolute; }
+  #transformations-panel.active .widget {
+    display: block; }
+
+#print-panel .widget {
+  display: none; }
+
+#getURL-panel .widget {
+  display: none;
+  position: absolute;
+  right: 100%;
+  top: 0px; }
+  #getURL-panel.active .widget {
+    display: block; }
+
+#embed-panel .widget {
+  display: none;
+  position: absolute;
+  right: 100%;
+  top: 0px; }
+  #embed-panel .active .widget {
+    display: block; }
+
+#export-panel .widget {
+  display: none;
+  position: absolute;
+  right: 100%;
+  top: 0px; }
+  #export-panel .active .widget {
+    display: block; }
+
+#help-panel .widget {
+  display: none;
+  position: absolute;
+  right: 100%;
+  top: 0px; }
+  #help-panel.active .widget {
+    display: block; }
+
+.wrapper {
+  background-color: #dfdcda;
+  padding: 20px; }
+  .wrapper .cnt h1 {
+    color: #5d4777;
+    font-family: "Raleway", sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    margin: 0; }
