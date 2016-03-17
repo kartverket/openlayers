@@ -7,9 +7,11 @@ $font-raleway: "Raleway", sans-serif;
 $font-opensans: "Open Sans", sans-serif;
 
 $color-black: rgb(0,0,0);
+$color-black-50: rgba(0,0,0,0.5);
 $color-white: rgb(255,255,255);
 $color-orange: rgb(254, 80, 0);
 $color-orange-90: rgba(254, 80, 0, 0.90);
+$color-orange-10: rgba(254, 80, 0, 0.10);
 $color-blue: rgb(125,161,196);
 $color-purple: rgb(93, 71, 119);
 $color-grey: rgb(223,220,218);
@@ -42,8 +44,18 @@ $color-grey-darkest: rgb(65,64,66);
     position: relative;
     width: $toolbar-width;
 }
+%widget-fixed {
+    display: none;
+    position: fixed;
+    right: $toolbar-width + 10px;
+    top: $geonorge-header-height + 10px;
+}
 
 /*$font-raleway: "Raleway", sans-serif;*/
+
+.hidden {
+    display: none !important;
+}
 
 html,
 body {
@@ -78,6 +90,53 @@ body {
     
     &:hover {
         background-color: $color-orange;
+    }
+}
+
+#overview-container-panel {
+    bottom: 10px;
+    position: absolute;
+    right: $toolbar-width + 10px;
+    
+    .olControlOverviewMapExpandableElement {
+        background-color: $color-grey;
+        border: solid 1px $color-orange;
+    }
+    
+    .olControlOverviewMapExpandableExtentRectangle {
+        background-color: $color-orange-10;
+        border: dotted 1px $color-orange;
+        box-sizing: border-box;
+    }
+    
+    .olControlOverviewMapExpandableToggleSizeButton {
+        @extend %default-button;
+        height: 12px;
+        left: 3px;
+        position: absolute;
+        top: 3px;
+        width: 12px;
+        
+        .icon {
+            height: 12px;
+            width: 12px;
+            
+            &.expand {
+                display: block;
+            }
+            &.minimize {
+                display: none;
+            }
+        }
+    }
+    
+    &.maximized-size .icon {
+        &.expand {
+            display: none;
+        }
+        &.minimize {
+            display: block;
+        }
     }
 }
 
@@ -398,6 +457,8 @@ body {
     .active .widget {
         display: block;
     }
+    
+    .step-specific {}
 }
 
 #export-panel {
@@ -408,13 +469,16 @@ body {
     }
     
     .widget {
-        display: none;
-        position: absolute;
-        right: 100%;
-        top: 0px;
+        @extend %widget-fixed;
+        bottom: 10px;
     }
     .active .widget {
         display: block;
+    }
+    
+    .wrapper {
+        height: 100%;
+        width: 300px;
     }
 }
 
@@ -439,13 +503,17 @@ body {
 /* WIDGETS */
 .wrapper {
     background-color: $color-grey;
+    box-shadow: 0px 0px 10px $color-black-50;
+    box-sizing: border-box;
     padding: 20px;
     
     .cnt {
+        position: relative;
+        
         h1 {
             color: $color-purple;
             font-family: $font-raleway;
-            font-size: 4rem;
+            font-size: 3.2rem;
             font-weight: 300;
             margin: 0px 0px 10px 0px;
             position: relative;
@@ -455,15 +523,27 @@ body {
                 content: "";
                 height: 2.5px;
                 left: 0px;
-                margin-top: 4.5rem;
+                margin-top: 4.0rem;
                 position: absolute;
                 width: 50px;
             }
+        }
+        h2 {
+            color: $color-grey-darkest;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
         }
         
         table {
             border-collapse: collapse;
             border-spacing: 0px;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
             width: 100%;
             
             th,
@@ -471,6 +551,62 @@ body {
                 border: solid 1px $color-black;
                 padding: 4px;
                 text-align: left;
+            }
+        }
+        
+        .progress {
+            height: 20px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            
+            li {
+                background-color: $color-blue;
+                border-radius: 50%;
+                color: $color-white;
+                display: block;
+                float: left;
+                font-size: 0;
+                height: 20px;
+                margin-left: 5px;
+                line-height: 20px;
+                text-align: center;
+                width: 20px;
+                
+                .step-number {
+                    cursor: default;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                }
+            }
+            &.info-active .info,
+            &.earea-active .earea,
+            &.format-active .format,
+            &.type-active .type,
+            &.terms-active .terms,
+            &.area-active .area,
+            &.markers-active .markers,
+            &.descriptions-active .descriptions,
+            &.preview-active .preview,
+            &.output-active .output {
+                background-color: $color-orange;
+            }
+        }
+        
+        .buttons-panel {
+            button {
+                @extend %default-button;
+                background-color: $color-blue;
+                color: $color-white;
+                margin-right: 10px;
+                padding: 5px;
+                
+                &:hover {
+                    background-color: $color-orange;
+                }
             }
         }
     }
@@ -510,4 +646,30 @@ body {
             fill: $color-orange;
         }
     }
+}
+
+/* EMBED */
+.embedLight {
+    background-color: $color-black-50;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 800;
+}
+#embedLightOFbase {
+    bottom: 0;
+    right: 0;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    background: RGB(240, 240, 240) none repeat 0 0;
+}
+#embedLightOFsquare {
+    border: 1px solid RGB(0, 0, 0);
+    background: transparent none repeat 0 0;
+}
+#embedLightOFtop {
+    z-index: 810;
+}
+#embedLightOFbottom {
+    z-index: 810;
 }

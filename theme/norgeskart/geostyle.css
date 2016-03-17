@@ -3,7 +3,8 @@
 #search-panel .searchDiv form button, #search-panel .times,
 #geoportal-panel .nkButton, #addlayer .nkButton, #draw-panel .nkButton,
 #transformations-panel .nkButton, #print-panel .nkButton, #getURL-panel .nkButton,
-#embed-panel .nkButton, #export-panel .nkButton, #help-panel .nkButton {
+#embed-panel .nkButton, #export-panel .nkButton, #help-panel .nkButton,
+.wrapper .cnt .buttons-panel button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -41,44 +42,55 @@
   position: relative;
   width: 60px; }
 
-  html, body {
-    height: 100%;
-    widht: 100%; }
+  #export-panel .widget {
+    display: none;
+    position: fixed;
+    right: 70px;
+    top: 227px; }
 
-    html {
-      font-size: 10px; }
+    html, body {
+      height: 100%;
+      widht: 100%; }
 
-      body {
-        font-family: "Open Sans", sans-serif;
-        font-weight: 400;
-        margin: 0px;
-        padding: 0px; }
+      html {
+        font-size: 10px; }
 
-        .toolbar {
-          position: absolute;
-          z-index: 1000; }
+        body {
+          font-family: "Open Sans", sans-serif;
+          font-weight: 400;
+          margin: 0px;
+          padding: 0px; }
 
-          .olControlScaleLine {
-            left: 70px; }
+          .toolbar {
+            position: absolute;
+            z-index: 1000; }
 
-            #language-button {
-              background-color: #7da1c4;
-              color: white;
-              width: 100%; }
-              #language-button:hover {
-                background-color: #fe5000; }
+            .olControlScaleLine {
+              left: 70px; }
 
-#geonorge-logo-panel {
-  left: 70px;
-  position: fixed;
-  top: 227px; }
-  #geonorge-logo-panel a {
-    height: 20px;
-    display: block; }
-    #geonorge-logo-panel img {
-      border: none;
-      display: block;
-      height: 20px; }
+              #language-button {
+                background-color: #7da1c4;
+                color: white;
+                width: 100%; }
+                #language-button:hover {
+                  background-color: #fe5000; }
+
+#overview-container-panel {
+  bottom: 10px;
+  position: absolute;
+  right: 50px; }
+
+  #geonorge-logo-panel {
+    left: 70px;
+    position: fixed;
+    top: 227px; }
+    #geonorge-logo-panel a {
+      height: 20px;
+      display: block; }
+      #geonorge-logo-panel img {
+        border: none;
+        display: block;
+        height: 20px; }
 
 #basic-toolbar, #top-toolbar {
   background-color: #dfdcda;
@@ -234,9 +246,9 @@
 
 #getURL-panel .widget {
   display: none;
-  position: absolute;
-  right: 100%;
-  top: 0px; }
+  position: fixed;
+  right: 70px;
+  top: 227px; }
   #getURL-panel.active .widget {
     display: block; }
 
@@ -249,27 +261,148 @@
     display: block; }
 
 #export-panel .widget {
-  display: none;
-  position: absolute;
-  right: 100%;
-  top: 0px; }
+  bottom: 10px; }
   #export-panel .active .widget {
     display: block; }
+    #export-panel .wrapper {
+      height: 100%;
+      width: 300px; }
 
 #help-panel .widget {
   display: none;
-  position: absolute;
-  right: 100%;
-  top: 0px; }
+  position: fixed;
+  right: 70px;
+  top: 227px; }
   #help-panel.active .widget {
     display: block; }
 
 .wrapper {
   background-color: #dfdcda;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
   padding: 20px; }
-  .wrapper .cnt h1 {
-    color: #5d4777;
-    font-family: "Raleway", sans-serif;
-    font-size: 4rem;
-    font-weight: 300;
-    margin: 0; }
+  .wrapper .cnt {
+    position: relative; }
+    .wrapper .cnt h1 {
+      color: #5d4777;
+      font-family: "Raleway", sans-serif;
+      font-size: 3.2rem;
+      font-weight: 300;
+      margin: 0px 0px 10px 0px;
+      position: relative; }
+      .wrapper .cnt h1:after {
+        border-bottom: solid 2.5px #fe5000;
+        content: "";
+        height: 2.5px;
+        left: 0px;
+        margin-top: 4rem;
+        position: absolute;
+        width: 50px; }
+    .wrapper .cnt h2 {
+      color: #414042;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 5px; }
+      .wrapper .cnt p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem; }
+        .wrapper .cnt table {
+          border-collapse: collapse;
+          border-spacing: 0px;
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+          width: 100%; }
+          .wrapper .cnt table th, .wrapper .cnt table td {
+            border: solid 1px black;
+            padding: 4px;
+            text-align: left; }
+    .wrapper .cnt .progress {
+      height: 20px;
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+      position: absolute;
+      right: 0px;
+      top: 0px; }
+      .wrapper .cnt .progress li {
+        background-color: #7da1c4;
+        border-radius: 50%;
+        color: white;
+        display: block;
+        float: left;
+        font-size: 0;
+        height: 20px;
+        margin-left: 5px;
+        line-height: 20px;
+        text-align: center;
+        width: 20px; }
+        .wrapper .cnt .progress li .step-number {
+          cursor: default;
+          font-size: 1.1rem;
+          font-weight: 700; }
+      .wrapper .cnt .progress.info-active .info,
+      .wrapper .cnt .progress.earea-active .earea,
+      .wrapper .cnt .progress.format-active .format,
+      .wrapper .cnt .progress.type-active .type,
+      .wrapper .cnt .progress.terms-active .terms,
+      .wrapper .cnt .progress.area-active .area,
+      .wrapper .cnt .progress.markers-active .markers,
+      .wrapper .cnt .progress.descriptions-active .descriptions,
+      .wrapper .cnt .progress.preview-active .preview,
+      .wrapper .cnt .progress.output-active .output {
+        background-color: #fe5000; }
+    .wrapper .cnt .buttons-panel button {
+      background-color: #7da1c4;
+      color: white;
+      margin-right: 10px;
+      padding: 5px; }
+      .wrapper .cnt .buttons-panel button:hover {
+        background-color: #fe5000; }
+
+.getURLcontent .page-url {
+  background: white;
+  font-family: monospace;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  padding: 5px;
+  word-break: keep-all; }
+  .getURLcontent > span {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: top; }
+    .getURLcontent .share-link {
+      display: inline-block;
+      margin-left: 10px; }
+      .getURLcontent .share-link span {
+        display: none; }
+        .getURLcontent .share-link .icon {
+          fill: #414042;
+          height: 25px;
+          width: 25px; }
+          .getURLcontent .share-link:hover .icon {
+            fill: #fe5000; }
+
+.embedLight {
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 800; }
+
+  #embedLightOFbase {
+    bottom: 0;
+    right: 0;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    background: RGB(240, 240, 240) none repeat 0 0; }
+
+    #embedLightOFsquare {
+      border: 1px solid RGB(0, 0, 0);
+      background: transparent none repeat 0 0; }
+
+      #embedLightOFtop {
+        z-index: 810; }
+
+        #embedLightOFbottom {
+          z-index: 810; }
