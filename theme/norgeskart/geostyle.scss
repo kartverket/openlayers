@@ -1,7 +1,7 @@
-$geonorge-header-height: 217px;
-$toolbar-width: 60px;
-$toolbar-padding: 10px;
-$toolbar-button-width: $toolbar-width - ($toolbar-padding * 2);
+$geonorge-header-height: 120px;
+$toolbar-width: 40px;
+$padding-gutter: 10px;
+$padding-gap: 5px;
 
 $font-raleway: "Raleway", sans-serif;
 $font-opensans: "Open Sans", sans-serif;
@@ -9,12 +9,14 @@ $font-opensans: "Open Sans", sans-serif;
 $color-black: rgb(0,0,0);
 $color-black-50: rgba(0,0,0,0.5);
 $color-white: rgb(255,255,255);
+$color-white-90: rgba(255,255,255,0.9);
 $color-orange: rgb(254, 80, 0);
 $color-orange-90: rgba(254, 80, 0, 0.90);
 $color-orange-10: rgba(254, 80, 0, 0.10);
 $color-blue: rgb(125,161,196);
 $color-purple: rgb(93, 71, 119);
 $color-grey: rgb(223,220,218);
+$color-grey-80: rgba(223,220,218,0.8);
 $color-grey-darkest: rgb(65,64,66);
 
 %default-button {
@@ -25,30 +27,37 @@ $color-grey-darkest: rgb(65,64,66);
 }
 %panel-button {
     @extend %default-button;
+    background-color: $color-blue;
     height: 30px;
-    padding: 5px 10px;
-    width: 50px;
+    padding: $padding-gap;
+    width: 30px;
+    
+    &:hover {
+        background-color: $color-orange;
+    }
     
     .icon {
-        fill: $color-grey-darkest;
+        fill: $color-white;
         height: 100%;
         width: 100%;
     }
-    &:hover .icon {
-        fill: $color-orange;
-    }
 }
 %panel-layout {
+    background-color: $color-grey-80;
     box-sizing: border-box;
-    padding: 5px;
+    padding: $padding-gap;
     position: relative;
     width: $toolbar-width;
 }
 %widget-fixed {
+    background-color: $color-grey;
+    box-shadow: 0px 0px 10px $color-black-50;
     display: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
     position: fixed;
-    right: $toolbar-width + 10px;
-    top: $geonorge-header-height + 10px;
+    right: $toolbar-width + $padding-gutter;
+    top: $geonorge-header-height + $padding-gutter;
 }
 
 /*$font-raleway: "Raleway", sans-serif;*/
@@ -72,31 +81,36 @@ body {
     padding: 0px;
 }
 
+/* HEADER */
+.geonorge-simple {
+    background-color: $color-white-90;
+    height: $geonorge-header-height;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 9999;
+}
+
 .toolbar {
     position: absolute;
     z-index: 1000;
 }
+.panel-name {
+    display: none;
+}
 
 /* CONTROLS */
 .olControlScaleLine {
-    left: $toolbar-width + $toolbar-padding;
-}
-
-#language-button {
-    @extend %default-button;
-    background-color: $color-blue;
-    color: $color-white;
-    width: 100%;
-    
-    &:hover {
-        background-color: $color-orange;
-    }
+    bottom: $padding-gutter;
+    left: 80px;
 }
 
 #overview-container-panel {
-    bottom: 10px;
+    bottom: $padding-gutter;
     position: absolute;
-    right: $toolbar-width + 10px;
+    right: $padding-gutter;
+    z-index: 1000;
     
     .olControlOverviewMapExpandableElement {
         background-color: $color-grey;
@@ -140,35 +154,24 @@ body {
     }
 }
 
-#geonorge-logo-panel {
-    left: $toolbar-width + 10px;
-    position: fixed;
-    top: $geonorge-header-height + 10px;
-    
-    a {
-        height: 20px;
-        display: block;
-    }
-    img {
-        border: none;
-        display: block;
-        height: 20px;
-    }
-}
-
 /* TOOLBARS AND PANELS */
 #basic-toolbar,
-#top-toolbar {
-    background-color: $color-grey;
-    bottom: 0px;
-    top: $geonorge-header-height;
-    width: $toolbar-width;
+#top-toolbar,
+#misc-toolbar {
+    top: $geonorge-header-height + $padding-gutter;
 }
-#basic-toolbar {
-    left: 0px;
+#basic-toolbar,
+#bottom-toolbar {
+    left: $padding-gutter;
 }
 #top-toolbar {
-    right: 0px;
+    right: $padding-gutter;
+}
+#bottom-toolbar {
+    bottom: $padding-gutter;
+}
+#misc-toolbar {
+    left: $toolbar-width + ($padding-gutter * 2);
 }
 
 #fullscreen-panel {
@@ -196,9 +199,63 @@ body {
     }
 }
 
+/* MISC */
+#geonorge-logo-panel {
+    left: $toolbar-width + ($padding-gutter * 2);
+    position: fixed;
+    top: $geonorge-header-height + $padding-gutter;
+    
+    a {
+        height: 20px;
+        display: block;
+    }
+    img {
+        border: none;
+        display: block;
+        height: 20px;
+    }
+}
+
+#language-button {
+    @extend %default-button;
+    background-color: $color-blue;
+    color: $color-white;
+    width: 100%;
+    
+    &:hover {
+        background-color: $color-orange;
+    }
+}
+
+/* BOTTOM */
+#layerselector-panel {
+    .vectorWidgetToggleBtn {
+        background-image: url('img/raster-thumbs.png');
+        background-repeat: no-repeat;
+        box-shadow: 0px 0px 5px $color-black-50;
+        cursor: pointer;
+        height: 50px;
+        width: 60px;
+    }
+    .layersDiv {
+        position: relative;
+    }
+    .widget {
+        bottom: 0px;
+        display: none;
+        left: 100%;
+        position: absolute;
+    }
+    .show {
+        .widget {
+            display: block;
+        }
+    }
+}
+
+/* BASIC */
 #zoom-panel {
     display: none;
-    padding: $toolbar-padding;
     width: $toolbar-width;
     
     button {
@@ -207,12 +264,13 @@ body {
 }
 
 #pan-panel {
-    height: $toolbar-width;
+    height: 60px;
     position: relative;
-    width: $toolbar-width;
+    width: 60px;
     
     .olButton {
         @extend %default-button;
+        background-color: $color-blue;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -220,6 +278,10 @@ body {
         height: 20px;
         position: absolute;
         width: 20px;
+        
+        &:hover {
+            background-color: $color-orange;
+        }
     }
     .olControlPanNorthItemInactive {
         background-image: url(img/arrow-n.svg);
@@ -240,29 +302,6 @@ body {
         background-image: url(img/arrow-w.svg);
         left: 5px;
         top: 20px;
-    }
-}
-
-#layerselector-panel {
-    .vectorWidgetToggleBtn {
-        background-image: url('img/raster-thumbs.png');
-        background-repeat: no-repeat;
-        cursor: pointer;
-        height: 50px;
-    }
-    .layersDiv {
-        position: relative;
-    }
-    .widget {
-        bottom: 0px;
-        display: none;
-        left: 100%;
-        position: absolute;
-    }
-    .show {
-        .widget {
-            display: block;
-        }
     }
 }
 
@@ -433,8 +472,8 @@ body {
     .widget {
         display: none;
         position: fixed;
-        right: $toolbar-width + 10px;
-        top: $geonorge-header-height + 10px;
+        right: $toolbar-width + $padding-gutter;
+        top: $geonorge-header-height + $padding-gutter;
     }
     &.active .widget {
         display: block;
@@ -449,16 +488,47 @@ body {
     }
     
     .widget {
-        display: none;
-        position: absolute;
-        right: 100%;
-        top: 0px;
+        @extend %widget-fixed;
+        bottom: $padding-gutter;
     }
     .active .widget {
         display: block;
     }
+    .cnt {
+        width: 450px;
+    }
     
-    .step-specific {}
+    .step-specific {
+        &.type {
+            button {
+                @extend %default-button;
+                background-color: $color-blue;
+                border-radius: 10px;
+                height: 210px;
+                margin: 1%;
+                padding: 10px;
+                vertical-align: top;
+                width: 48%;
+                
+                &:hover {
+                    background-color: $color-orange;
+                }
+                
+                span {
+                    color: $color-white;
+                }
+            }
+            .illustration {
+                stroke: $color-white;
+                width: 100%;
+            }
+            
+            & + .buttons-panel {
+                display: none;
+            }
+        }
+    }
+    
 }
 
 #export-panel {
@@ -470,14 +540,13 @@ body {
     
     .widget {
         @extend %widget-fixed;
-        bottom: 10px;
+        bottom: $padding-gutter;
     }
     .active .widget {
         display: block;
     }
     
-    .wrapper {
-        height: 100%;
+    .cnt {
         width: 300px;
     }
 }
@@ -492,8 +561,8 @@ body {
     .widget {
         display: none;
         position: fixed;
-        right: $toolbar-width + 10px;
-        top: $geonorge-header-height + 10px;
+        right: $toolbar-width + $padding-gutter;
+        top: $geonorge-header-height + $padding-gutter;
     }
     &.active .widget {
         display: block;
@@ -502,13 +571,14 @@ body {
 
 /* WIDGETS */
 .wrapper {
-    background-color: $color-grey;
-    box-shadow: 0px 0px 10px $color-black-50;
-    box-sizing: border-box;
-    padding: 20px;
-    
     .cnt {
+        box-sizing: border-box;
+        padding: 20px;
         position: relative;
+        
+        header {
+            position: relative;
+        }
         
         h1 {
             color: $color-purple;
@@ -597,17 +667,58 @@ body {
         }
         
         .buttons-panel {
+            border-top: solid 1px $color-blue;
+            margin-top: 10px;
+            padding-top: 15px;
+            
             button {
                 @extend %default-button;
                 background-color: $color-blue;
                 color: $color-white;
-                margin-right: 10px;
                 padding: 5px;
                 
                 &:hover {
                     background-color: $color-orange;
                 }
+                &.next {
+                    float: right;
+                }
             }
+        }
+    }
+}
+
+.user-marker {
+    background-color: $color-grey;
+    
+    .edit-popup-content {
+        height: 45px;
+        width: 280px;
+    }
+    input {
+        border: none;
+        box-sizing: border-box;
+        display: block;
+        font-size: 12px;
+        height: 20px;
+        margin-bottom: 5px;
+        padding: 0px 5px;
+        width: 100%;
+    }
+    button {
+        @extend %default-button;
+        background-color: $color-blue;
+        color: $color-white;
+        font-size: 12px;
+        height: 20px;
+        margin-right: 2%;
+        width: 49%;
+        
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            background-color: $color-orange;
         }
     }
 }
@@ -652,8 +763,8 @@ body {
 .embedLight {
     background-color: $color-black-50;
     left: 0;
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: $geonorge-header-height;
     z-index: 800;
 }
 #embedLightOFbase {
@@ -672,4 +783,41 @@ body {
 }
 #embedLightOFbottom {
     z-index: 810;
+}
+
+.markers-list {
+    font-size: 12px;
+    padding-left: 15px;
+    
+    li {
+        height: 20px;
+        line-height: 20px;
+        
+        span {
+            color: $color-grey-darkest;
+        }
+    }
+    
+    .remove-marker {
+        display: block;
+        float: right;
+        height: 16px;
+        margin: 2px;
+        width: 16px;
+        
+        .icon {
+            fill: transparent;
+            height: 100%;
+            stroke: $color-blue;
+            stroke-width: 3px;
+            width: 100%;
+        }
+        &:hover .icon {
+            stroke: $color-orange;
+        }
+        
+        span {
+            display: none;
+        }
+    }
 }

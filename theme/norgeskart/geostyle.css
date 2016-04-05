@@ -1,10 +1,12 @@
-#language-button, #fullscreen-panel button, #zoom-panel button,
+#overview-container-panel .olControlOverviewMapExpandableToggleSizeButton,
+#fullscreen-panel button, #language-button, #zoom-panel button,
 #pan-panel .olButton, #search-panel .nkButton,
 #search-panel .searchDiv form button, #search-panel .times,
 #geoportal-panel .nkButton, #addlayer .nkButton, #draw-panel .nkButton,
 #transformations-panel .nkButton, #print-panel .nkButton, #getURL-panel .nkButton,
-#embed-panel .nkButton, #export-panel .nkButton, #help-panel .nkButton,
-.wrapper .cnt .buttons-panel button {
+#embed-panel .nkButton, #embed-panel .step-specific.type button,
+#export-panel .nkButton, #help-panel .nkButton,
+.wrapper .cnt .buttons-panel button, .user-marker button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -14,144 +16,162 @@
   #geoportal-panel .nkButton, #addlayer .nkButton, #draw-panel .nkButton,
   #transformations-panel .nkButton, #print-panel .nkButton, #getURL-panel .nkButton,
   #embed-panel .nkButton, #export-panel .nkButton, #help-panel .nkButton {
+    background-color: #7da1c4;
     height: 30px;
-    padding: 5px 10px;
-    width: 50px; }
-    #fullscreen-panel button .icon, #zoom-panel button .icon,
-    #search-panel .nkButton .icon, #geoportal-panel .nkButton .icon,
-    #addlayer .nkButton .icon, #draw-panel .nkButton .icon,
-    #transformations-panel .nkButton .icon, #print-panel .nkButton .icon,
-    #getURL-panel .nkButton .icon, #embed-panel .nkButton .icon,
-    #export-panel .nkButton .icon, #help-panel .nkButton .icon {
-      fill: #414042;
-      height: 100%;
-      width: 100%; }
-      #fullscreen-panel button:hover .icon, #zoom-panel button:hover .icon,
-      #search-panel :hover.nkButton .icon, #geoportal-panel :hover.nkButton .icon,
-      #addlayer :hover.nkButton .icon, #draw-panel :hover.nkButton .icon,
-      #transformations-panel :hover.nkButton .icon, #print-panel :hover.nkButton .icon,
-      #getURL-panel :hover.nkButton .icon, #embed-panel :hover.nkButton .icon,
-      #export-panel :hover.nkButton .icon, #help-panel :hover.nkButton .icon {
-        fill: #fe5000; }
+    padding: 5px;
+    width: 30px; }
+    #fullscreen-panel button:hover, #zoom-panel button:hover,
+    #search-panel :hover.nkButton, #geoportal-panel :hover.nkButton,
+    #addlayer :hover.nkButton, #draw-panel :hover.nkButton,
+    #transformations-panel :hover.nkButton, #print-panel :hover.nkButton,
+    #getURL-panel :hover.nkButton, #embed-panel :hover.nkButton,
+    #export-panel :hover.nkButton, #help-panel :hover.nkButton {
+      background-color: #fe5000; }
+      #fullscreen-panel button .icon, #zoom-panel button .icon,
+      #search-panel .nkButton .icon, #geoportal-panel .nkButton .icon,
+      #addlayer .nkButton .icon, #draw-panel .nkButton .icon,
+      #transformations-panel .nkButton .icon, #print-panel .nkButton .icon,
+      #getURL-panel .nkButton .icon, #embed-panel .nkButton .icon,
+      #export-panel .nkButton .icon, #help-panel .nkButton .icon {
+        fill: white;
+        height: 100%;
+        width: 100%; }
 
 #fullscreen-panel, #search-panel, #geoportal-panel, #addlayer, #draw-panel,
 #transformations-panel, #print-panel, #getURL-panel, #embed-panel, #export-panel,
 #help-panel {
+  background-color: rgba(223, 220, 218, 0.8);
   box-sizing: border-box;
   padding: 5px;
   position: relative;
-  width: 60px; }
+  width: 40px; }
 
-  #export-panel .widget {
+  #embed-panel .widget, #export-panel .widget {
+    background-color: #dfdcda;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     display: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
     position: fixed;
-    right: 70px;
-    top: 227px; }
+    right: 50px;
+    top: 130px; }
 
-    html, body {
-      height: 100%;
-      widht: 100%; }
+    .hidden {
+      display: none !important; }
 
-      html {
-        font-size: 10px; }
+      html, body {
+        height: 100%;
+        widht: 100%; }
 
-        body {
-          font-family: "Open Sans", sans-serif;
-          font-weight: 400;
-          margin: 0px;
-          padding: 0px; }
+        html {
+          font-size: 10px; }
 
-          .toolbar {
-            position: absolute;
-            z-index: 1000; }
+          body {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            margin: 0px;
+            padding: 0px; }
 
-            .olControlScaleLine {
-              left: 70px; }
+            .geonorge-simple {
+              background-color: rgba(255, 255, 255, 0.9);
+              height: 120px;
+              left: 0px;
+              position: fixed;
+              top: 0px;
+              width: 100%;
+              z-index: 9999; }
 
-              #language-button {
-                background-color: #7da1c4;
-                color: white;
-                width: 100%; }
-                #language-button:hover {
-                  background-color: #fe5000; }
+              .toolbar {
+                position: absolute;
+                z-index: 1000; }
 
-#overview-container-panel {
-  bottom: 10px;
-  position: absolute;
-  right: 50px; }
+                .panel-name {
+                  display: none; }
 
-  #geonorge-logo-panel {
-    left: 70px;
-    position: fixed;
-    top: 227px; }
-    #geonorge-logo-panel a {
-      height: 20px;
-      display: block; }
-      #geonorge-logo-panel img {
-        border: none;
-        display: block;
-        height: 20px; }
+                  .olControlScaleLine {
+                    bottom: 10px;
+                    left: 80px; }
 
-#basic-toolbar, #top-toolbar {
-  background-color: #dfdcda;
-  bottom: 0px;
-  top: 217px;
-  width: 60px; }
+                    #overview-container-panel {
+                      bottom: 10px;
+                      position: absolute;
+                      right: 10px;
+                      z-index: 1000; }
+                      #overview-container-panel .olControlOverviewMapExpandableElement {
+                        background-color: #dfdcda;
+                        border: solid 1px #fe5000; }
+                        #overview-container-panel .olControlOverviewMapExpandableExtentRectangle {
+                          background-color: rgba(254, 80, 0, 0.1);
+                          border: dotted 1px #fe5000;
+                          box-sizing: border-box; }
+                          #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton {
+                            height: 12px;
+                            left: 3px;
+                            position: absolute;
+                            top: 3px;
+                            width: 12px; }
+                            #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton .icon {
+                              height: 12px;
+                              width: 12px; }
+                              #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton .icon.expand {
+                                display: block; }
+                                #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton .icon.minimize {
+                                  display: none; }
+                      #overview-container-panel.maximized-size .icon.expand {
+                        display: none; }
+                        #overview-container-panel.maximized-size .icon.minimize {
+                          display: block; }
 
-  #basic-toolbar {
-    left: 0px; }
+#basic-toolbar, #top-toolbar, #misc-toolbar {
+  top: 130px; }
+
+  #basic-toolbar, #bottom-toolbar {
+    left: 10px; }
 
     #top-toolbar {
-      right: 0px; }
+      right: 10px; }
 
-      #fullscreen-panel .fullscreen-button .fullscreen {
-        display: inline-block; }
-        #fullscreen-panel .fullscreen-button .windowed {
-          display: none; }
-      #fullscreen-panel .fullscreen-active .fullscreen {
-        display: none; }
-        #fullscreen-panel .fullscreen-active .windowed {
-          display: inline-block; }
+      #bottom-toolbar {
+        bottom: 10px; }
 
-#zoom-panel {
-  display: none;
-  padding: 10px;
-  width: 60px; }
+        #misc-toolbar {
+          left: 60px; }
 
-#pan-panel {
-  height: 60px;
-  position: relative;
-  width: 60px; }
-  #pan-panel .olButton {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-radius: 10px;
+          #fullscreen-panel .fullscreen-button .fullscreen {
+            display: inline-block; }
+            #fullscreen-panel .fullscreen-button .windowed {
+              display: none; }
+          #fullscreen-panel .fullscreen-active .fullscreen {
+            display: none; }
+            #fullscreen-panel .fullscreen-active .windowed {
+              display: inline-block; }
+
+#geonorge-logo-panel {
+  left: 60px;
+  position: fixed;
+  top: 130px; }
+  #geonorge-logo-panel a {
     height: 20px;
-    position: absolute;
-    width: 20px; }
-    #pan-panel .olControlPanNorthItemInactive {
-      background-image: url(img/arrow-n.svg);
-      left: 20px;
-      top: 5px; }
-      #pan-panel .olControlPanSouthItemInactive {
-        background-image: url(img/arrow-s.svg);
-        left: 20px;
-        top: 35px; }
-        #pan-panel .olControlPanEastItemInactive {
-          background-image: url(img/arrow-e.svg);
-          left: 35px;
-          top: 20px; }
-          #pan-panel .olControlPanWestItemInactive {
-            background-image: url(img/arrow-w.svg);
-            left: 5px;
-            top: 20px; }
+    display: block; }
+    #geonorge-logo-panel img {
+      border: none;
+      display: block;
+      height: 20px; }
+
+#language-button {
+  background-color: #7da1c4;
+  color: white;
+  width: 100%; }
+  #language-button:hover {
+    background-color: #fe5000; }
 
 #layerselector-panel .vectorWidgetToggleBtn {
   background-image: url('img/raster-thumbs.png');
   background-repeat: no-repeat;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  height: 50px; }
+  height: 50px;
+  width: 60px; }
   #layerselector-panel .layersDiv {
     position: relative; }
     #layerselector-panel .widget {
@@ -161,6 +181,42 @@
       position: absolute; }
       #layerselector-panel .show .widget {
         display: block; }
+
+#zoom-panel {
+  display: none;
+  width: 40px; }
+
+#pan-panel {
+  height: 60px;
+  position: relative;
+  width: 60px; }
+  #pan-panel .olButton {
+    background-color: #7da1c4;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 10px;
+    height: 20px;
+    position: absolute;
+    width: 20px; }
+    #pan-panel .olButton:hover {
+      background-color: #fe5000; }
+  #pan-panel .olControlPanNorthItemInactive {
+    background-image: url(img/arrow-n.svg);
+    left: 20px;
+    top: 5px; }
+    #pan-panel .olControlPanSouthItemInactive {
+      background-image: url(img/arrow-s.svg);
+      left: 20px;
+      top: 35px; }
+      #pan-panel .olControlPanEastItemInactive {
+        background-image: url(img/arrow-e.svg);
+        left: 35px;
+        top: 20px; }
+        #pan-panel .olControlPanWestItemInactive {
+          background-image: url(img/arrow-w.svg);
+          left: 5px;
+          top: 20px; }
 
 #search-panel .searchDiv {
   background: #dfdcda;
@@ -172,7 +228,7 @@
   margin-top: 15px;
   padding: 15px;
   position: fixed;
-  top: 217px;
+  top: 120px;
   width: 320px; }
   #search-panel .searchDiv form {
     background: white;
@@ -247,41 +303,55 @@
 #getURL-panel .widget {
   display: none;
   position: fixed;
-  right: 70px;
-  top: 227px; }
+  right: 50px;
+  top: 130px; }
   #getURL-panel.active .widget {
     display: block; }
 
 #embed-panel .widget {
-  display: none;
-  position: absolute;
-  right: 100%;
-  top: 0px; }
+  bottom: 10px; }
   #embed-panel .active .widget {
     display: block; }
+    #embed-panel .cnt {
+      width: 450px; }
+      #embed-panel .step-specific.type button {
+        background-color: #7da1c4;
+        border-radius: 10px;
+        height: 210px;
+        margin: 1%;
+        padding: 10px;
+        vertical-align: top;
+        width: 48%; }
+        #embed-panel .step-specific.type button:hover {
+          background-color: #fe5000; }
+          #embed-panel .step-specific.type button span {
+            color: white; }
+      #embed-panel .step-specific.type .illustration {
+        stroke: white;
+        width: 100%; }
+        #embed-panel .step-specific.type + .buttons-panel {
+          display: none; }
 
 #export-panel .widget {
   bottom: 10px; }
   #export-panel .active .widget {
     display: block; }
-    #export-panel .wrapper {
-      height: 100%;
+    #export-panel .cnt {
       width: 300px; }
 
 #help-panel .widget {
   display: none;
   position: fixed;
-  right: 70px;
-  top: 227px; }
+  right: 50px;
+  top: 130px; }
   #help-panel.active .widget {
     display: block; }
 
-.wrapper {
-  background-color: #dfdcda;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+.wrapper .cnt {
   box-sizing: border-box;
-  padding: 20px; }
-  .wrapper .cnt {
+  padding: 20px;
+  position: relative; }
+  .wrapper .cnt header {
     position: relative; }
     .wrapper .cnt h1 {
       color: #5d4777;
@@ -298,66 +368,97 @@
         margin-top: 4rem;
         position: absolute;
         width: 50px; }
-    .wrapper .cnt h2 {
-      color: #414042;
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 5px; }
-      .wrapper .cnt p {
+  .wrapper .cnt h2 {
+    color: #414042;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px; }
+    .wrapper .cnt p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem; }
+      .wrapper .cnt table {
+        border-collapse: collapse;
+        border-spacing: 0px;
         font-size: 1.2rem;
-        margin-bottom: 1rem; }
-        .wrapper .cnt table {
-          border-collapse: collapse;
-          border-spacing: 0px;
-          font-size: 1.2rem;
-          margin-bottom: 1rem;
-          width: 100%; }
-          .wrapper .cnt table th, .wrapper .cnt table td {
-            border: solid 1px black;
-            padding: 4px;
-            text-align: left; }
-    .wrapper .cnt .progress {
+        margin-bottom: 1rem;
+        width: 100%; }
+        .wrapper .cnt table th, .wrapper .cnt table td {
+          border: solid 1px black;
+          padding: 4px;
+          text-align: left; }
+  .wrapper .cnt .progress {
+    height: 20px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px; }
+    .wrapper .cnt .progress li {
+      background-color: #7da1c4;
+      border-radius: 50%;
+      color: white;
+      display: block;
+      float: left;
+      font-size: 0;
       height: 20px;
-      list-style-type: none;
-      margin: 0px;
-      padding: 0px;
-      position: absolute;
-      right: 0px;
-      top: 0px; }
-      .wrapper .cnt .progress li {
-        background-color: #7da1c4;
-        border-radius: 50%;
-        color: white;
-        display: block;
-        float: left;
-        font-size: 0;
-        height: 20px;
-        margin-left: 5px;
-        line-height: 20px;
-        text-align: center;
-        width: 20px; }
-        .wrapper .cnt .progress li .step-number {
-          cursor: default;
-          font-size: 1.1rem;
-          font-weight: 700; }
-      .wrapper .cnt .progress.info-active .info,
-      .wrapper .cnt .progress.earea-active .earea,
-      .wrapper .cnt .progress.format-active .format,
-      .wrapper .cnt .progress.type-active .type,
-      .wrapper .cnt .progress.terms-active .terms,
-      .wrapper .cnt .progress.area-active .area,
-      .wrapper .cnt .progress.markers-active .markers,
-      .wrapper .cnt .progress.descriptions-active .descriptions,
-      .wrapper .cnt .progress.preview-active .preview,
-      .wrapper .cnt .progress.output-active .output {
-        background-color: #fe5000; }
+      margin-left: 5px;
+      line-height: 20px;
+      text-align: center;
+      width: 20px; }
+      .wrapper .cnt .progress li .step-number {
+        cursor: default;
+        font-size: 1.1rem;
+        font-weight: 700; }
+    .wrapper .cnt .progress.info-active .info,
+    .wrapper .cnt .progress.earea-active .earea,
+    .wrapper .cnt .progress.format-active .format,
+    .wrapper .cnt .progress.type-active .type,
+    .wrapper .cnt .progress.terms-active .terms,
+    .wrapper .cnt .progress.area-active .area,
+    .wrapper .cnt .progress.markers-active .markers,
+    .wrapper .cnt .progress.descriptions-active .descriptions,
+    .wrapper .cnt .progress.preview-active .preview,
+    .wrapper .cnt .progress.output-active .output {
+      background-color: #fe5000; }
+  .wrapper .cnt .buttons-panel {
+    border-top: solid 1px #7da1c4;
+    margin-top: 10px;
+    padding-top: 15px; }
     .wrapper .cnt .buttons-panel button {
       background-color: #7da1c4;
       color: white;
-      margin-right: 10px;
       padding: 5px; }
       .wrapper .cnt .buttons-panel button:hover {
         background-color: #fe5000; }
+        .wrapper .cnt .buttons-panel button.next {
+          float: right; }
+
+.user-marker {
+  background-color: #dfdcda; }
+  .user-marker .edit-popup-content {
+    height: 45px;
+    width: 280px; }
+    .user-marker input {
+      border: none;
+      box-sizing: border-box;
+      display: block;
+      font-size: 12px;
+      height: 20px;
+      margin-bottom: 5px;
+      padding: 0px 5px;
+      width: 100%; }
+      .user-marker button {
+        background-color: #7da1c4;
+        color: white;
+        font-size: 12px;
+        height: 20px;
+        margin-right: 2%;
+        width: 49%; }
+        .user-marker button:last-child {
+          margin-right: 0; }
+          .user-marker button:hover {
+            background-color: #fe5000; }
 
 .getURLcontent .page-url {
   background: white;
@@ -386,8 +487,8 @@
 .embedLight {
   background-color: rgba(0, 0, 0, 0.5);
   left: 0;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 120px;
   z-index: 800; }
 
   #embedLightOFbase {
@@ -406,3 +507,28 @@
 
         #embedLightOFbottom {
           z-index: 810; }
+
+          .markers-list {
+            font-size: 12px;
+            padding-left: 15px; }
+            .markers-list li {
+              height: 20px;
+              line-height: 20px; }
+              .markers-list li span {
+                color: #414042; }
+            .markers-list .remove-marker {
+              display: block;
+              float: right;
+              height: 16px;
+              margin: 2px;
+              width: 16px; }
+              .markers-list .remove-marker .icon {
+                fill: transparent;
+                height: 100%;
+                stroke: #7da1c4;
+                stroke-width: 3px;
+                width: 100%; }
+                .markers-list .remove-marker:hover .icon {
+                  stroke: #fe5000; }
+                  .markers-list .remove-marker span {
+                    display: none; }
