@@ -14,6 +14,7 @@ $color-orange: rgb(254, 80, 0);
 $color-orange-90: rgba(254, 80, 0, 0.90);
 $color-orange-10: rgba(254, 80, 0, 0.10);
 $color-blue: rgb(125,161,196);
+$color-blue-dark: rgb(56, 103, 200);
 $color-purple: rgb(93, 71, 119);
 $color-grey: rgb(223,220,218);
 $color-grey-80: rgba(223,220,218,0.8);
@@ -90,6 +91,52 @@ body {
     top: 0px;
     width: 100%;
     z-index: 9999;
+    
+    .wrapper {
+        margin: 0px auto;
+        width: 940px;
+    }
+    
+    .logo {
+        height: 60px;
+        padding: 15px;
+    }
+    
+    .breadcrumbs {
+        height: 30px;
+        padding: 0px 15px;
+        
+        ul {
+            font-family: $font-raleway;
+            font-size: 14px;
+            font-weight: 500;
+            height: 30px;
+            line-height: 30px;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        li {
+            float: left;
+            
+            &.arrowed {
+                background-image: url(img/breadcrumb-arrow.svg);
+                background-position: 0px 50%;
+                background-repeat: no-repeat;
+                background-size: 8px 8px;
+                margin-left: 6px;
+                padding-left: 14px;
+            }
+        }
+        a {
+            color: $color-blue-dark;
+            text-decoration: none;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .toolbar {

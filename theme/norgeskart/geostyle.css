@@ -80,47 +80,79 @@
               top: 0px;
               width: 100%;
               z-index: 9999; }
+              .geonorge-simple .wrapper {
+                margin: 0px auto;
+                width: 940px; }
+                .geonorge-simple .logo {
+                  height: 60px;
+                  padding: 15px; }
+                  .geonorge-simple .breadcrumbs {
+                    height: 30px;
+                    padding: 0px 15px; }
+                    .geonorge-simple .breadcrumbs ul {
+                      font-family: "Raleway", sans-serif;
+                      font-size: 14px;
+                      font-weight: 500;
+                      height: 30px;
+                      line-height: 30px;
+                      list-style-type: none;
+                      margin: 0px;
+                      padding: 0px; }
+                      .geonorge-simple .breadcrumbs li {
+                        float: left; }
+                        .geonorge-simple .breadcrumbs li.arrowed {
+                          background-image: url(img/breadcrumb-arrow.svg);
+                          background-position: 0px 50%;
+                          background-repeat: no-repeat;
+                          background-size: 8px 8px;
+                          margin-left: 6px;
+                          padding-left: 14px; }
+                    .geonorge-simple .breadcrumbs a {
+                      color: #3867c8;
+                      text-decoration: none; }
+                      .geonorge-simple .breadcrumbs a:hover {
+                        text-decoration: underline; }
 
-              .toolbar {
-                position: absolute;
-                z-index: 1000; }
+.toolbar {
+  position: absolute;
+  z-index: 1000; }
 
-                .panel-name {
-                  display: none; }
+  .panel-name {
+    display: none; }
 
-                  .olControlScaleLine {
-                    bottom: 10px;
-                    left: 80px; }
+    .olControlScaleLine {
+      bottom: 10px;
+      left: 80px; }
 
-                    #overview-container-panel {
-                      bottom: 10px;
-                      position: absolute;
-                      right: 10px;
-                      z-index: 1000; }
-                      #overview-container-panel .olControlOverviewMapExpandableElement {
-                        background-color: #dfdcda;
-                        border: solid 1px #fe5000; }
-                        #overview-container-panel .olControlOverviewMapExpandableExtentRectangle {
-                          background-color: rgba(254, 80, 0, 0.1);
-                          border: dotted 1px #fe5000;
-                          box-sizing: border-box; }
-                          #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton {
-                            height: 12px;
-                            left: 3px;
-                            position: absolute;
-                            top: 3px;
-                            width: 12px; }
-                            #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton .icon {
-                              height: 12px;
-                              width: 12px; }
-                              #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton .icon.expand {
-                                display: block; }
-                                #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton .icon.minimize {
-                                  display: none; }
-                      #overview-container-panel.maximized-size .icon.expand {
-                        display: none; }
-                        #overview-container-panel.maximized-size .icon.minimize {
-                          display: block; }
+      #overview-container-panel {
+        bottom: 10px;
+        position: absolute;
+        right: 10px;
+        z-index: 1000; }
+        #overview-container-panel .olControlOverviewMapExpandableElement {
+          background-color: #dfdcda;
+          border: solid 1px #fe5000; }
+          #overview-container-panel .olControlOverviewMapExpandableExtentRectangle {
+            background-color: rgba(254, 80, 0, 0.1);
+            border: dotted 1px #fe5000;
+            box-sizing: border-box; }
+            #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton {
+              height: 12px;
+              left: 3px;
+              position: absolute;
+              top: 3px;
+              width: 12px; }
+              #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton .icon {
+                height: 12px;
+                width: 12px; }
+                #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton .icon.expand {
+                  display: block; }
+                  #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton .icon.minimize {
+                    display: none; }
+        #overview-container-panel.maximized-size .icon.expand {
+          display: none; }
+          #overview-container-panel.maximized-size .icon.minimize {
+            display: block; }
 
 #basic-toolbar, #top-toolbar, #misc-toolbar {
   top: 130px; }
