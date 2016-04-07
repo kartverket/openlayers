@@ -58,7 +58,7 @@ $color-grey-darkest: rgb(65,64,66);
     overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
-    top: 0px; /*$geonorge-header-height + $padding-gutter;*/
+    top: 0px;
 }
 
 /*$font-raleway: "Raleway", sans-serif;*/
@@ -144,6 +144,11 @@ body {
         }
     }
 }
+.fullscreen {
+    .geonorge-simple {
+        display: none;
+    }
+}
 
 .toolbar {
     position: absolute;
@@ -213,6 +218,13 @@ body {
 #misc-toolbar {
     top: $geonorge-header-height + $padding-gutter;
 }
+.fullscreen {
+    #basic-toolbar,
+    #top-toolbar,
+    #misc-toolbar {
+        top: $padding-gutter;
+    }
+}
 #basic-toolbar,
 #bottom-toolbar {
     left: $padding-gutter;
@@ -262,9 +274,10 @@ body {
 
 /* MISC */
 #geonorge-logo-panel {
+    display: none;
     left: $toolbar-width + ($padding-gutter * 2);
     position: fixed;
-    top: $geonorge-header-height + $padding-gutter;
+    top: $padding-gutter;
     
     a {
         height: 20px;
@@ -274,6 +287,11 @@ body {
         border: none;
         display: block;
         height: 20px;
+    }
+}
+.fullscreen {
+    #geonorge-logo-panel {
+        display: block;
     }
 }
 
@@ -1034,5 +1052,12 @@ button {
     input {
         margin: 0px 4px 0px 0px;
         vertical-align: sub;
+    }
+}
+
+.fullscreen {
+    .widget {
+        bottom: auto !important;
+        margin-top: $padding-gutter !important;
     }
 }

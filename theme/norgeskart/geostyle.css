@@ -121,6 +121,9 @@
                           .geonorge-simple .breadcrumbs a:hover {
                             text-decoration: underline; }
 
+.fullscreen .geonorge-simple {
+  display: none; }
+
 .toolbar {
   position: absolute;
   z-index: 1000; }
@@ -165,10 +168,13 @@
 #basic-toolbar, #top-toolbar, #misc-toolbar {
   top: 130px; }
 
-  #basic-toolbar, #bottom-toolbar {
-    left: 10px; }
-    #basic-toolbar .widget, #bottom-toolbar .widget {
-      left: 60px; }
+  .fullscreen #basic-toolbar, .fullscreen #top-toolbar, .fullscreen #misc-toolbar {
+    top: 10px; }
+
+#basic-toolbar, #bottom-toolbar {
+  left: 10px; }
+  #basic-toolbar .widget, #bottom-toolbar .widget {
+    left: 60px; }
 
 #top-toolbar {
   right: 10px; }
@@ -191,9 +197,10 @@
         display: inline-block; }
 
 #geonorge-logo-panel {
+  display: none;
   left: 60px;
   position: fixed;
-  top: 130px; }
+  top: 10px; }
   #geonorge-logo-panel a {
     height: 20px;
     display: block; }
@@ -201,6 +208,9 @@
       border: none;
       display: block;
       height: 20px; }
+
+.fullscreen #geonorge-logo-panel {
+  display: block; }
 
 #language-button {
   background-color: #7da1c4;
@@ -325,27 +335,36 @@
   bottom: 10px; }
   #draw-panel .widget ul {
     list-style: none;
-    margin: 0px;
-    padding: 0px; }
+    margin: 0px auto;
+    padding: 10px 0px 0px 0px;
+    width: 80px; }
     #draw-panel .widget ul li {
-      margin-bottom: 5px; }
-      #draw-panel .widget ul button {
-        background-color: #7da1c4;
-        height: 40px;
-        padding: 5px;
-        position: relative;
-        width: 100px; }
-        #draw-panel .widget ul button:hover, #draw-panel .widget ul button.active {
-          background-color: #fe5000; }
-          #draw-panel .widget ul button svg {
-            fill: white;
-            height: 30px;
-            position: absolute;
-            stroke: white;
-            width: 30px; }
-            #draw-panel .widget ul button span {
-              display: block;
-              padding-left: 40px; }
+      margin-bottom: 5px;
+      margin-left: 20px;
+      margin-right: 20px;
+      width: 40px; }
+      #draw-panel .widget ul li span {
+        display: none; }
+        #draw-panel .widget ul li.text-only {
+          margin-left: 0px;
+          margin-right: 0px;
+          width: 80px; }
+          #draw-panel .widget ul li.text-only span {
+            display: block; }
+    #draw-panel .widget ul button {
+      background-color: #7da1c4;
+      color: white;
+      font-weight: 700;
+      height: 40px;
+      padding: 5px;
+      width: 100%; }
+      #draw-panel .widget ul button:hover, #draw-panel .widget ul button.active {
+        background-color: #fe5000; }
+        #draw-panel .widget ul button svg {
+          fill: white;
+          height: 30px;
+          stroke: white;
+          width: 30px; }
   #draw-panel .widget .measures dt {
     display: none;
     font-weight: 700; }
@@ -634,3 +653,7 @@ button.btn {
   .radio input {
     margin: 0px 4px 0px 0px;
     vertical-align: sub; }
+
+.fullscreen .widget {
+  bottom: auto !important;
+  margin-top: 10px !important; }
