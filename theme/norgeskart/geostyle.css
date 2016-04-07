@@ -3,10 +3,10 @@
 #pan-panel .olButton, #search-panel .nkButton,
 #search-panel .searchDiv form button, #search-panel .times,
 #geoportal-panel .nkButton, #addlayer .nkButton, #draw-panel .nkButton,
-#transformations-panel .nkButton, #print-panel .nkButton, #getURL-panel .nkButton,
-#embed-panel .nkButton, #embed-panel .step-specific.type button,
-#export-panel .nkButton, #help-panel .nkButton,
-.wrapper .cnt .buttons-panel button, .user-marker button {
+#draw-panel .widget ul button, #transformations-panel .nkButton,
+#print-panel .nkButton, #getURL-panel .nkButton, #embed-panel .nkButton,
+#embed-panel .step-specific.type button, #export-panel .nkButton,
+#help-panel .nkButton, .wrapper .cnt .buttons-panel button, .user-marker button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -46,72 +46,80 @@
   position: relative;
   width: 40px; }
 
-  #embed-panel .widget, #export-panel .widget {
+  #geoportal-panel .widget, #addlayer .widget, #draw-panel .widget,
+  #transformations-panel .widget, #getURL-panel .widget, #embed-panel .widget,
+  #export-panel .widget, #help-panel .widget {
     background-color: #dfdcda;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     display: none;
+    margin-top: 130px;
     overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
-    right: 50px;
-    top: 130px; }
+    top: 0px; }
 
     .hidden {
       display: none !important; }
 
-      html, body {
-        height: 100%;
-        widht: 100%; }
+      .pull-left {
+        float: left; }
 
-        html {
-          font-size: 10px; }
+        .pull-right {
+          float: right; }
 
-          body {
-            font-family: "Open Sans", sans-serif;
-            font-weight: 400;
-            margin: 0px;
-            padding: 0px; }
+          html, body {
+            height: 100%;
+            widht: 100%; }
 
-            .geonorge-simple {
-              background-color: rgba(255, 255, 255, 0.9);
-              height: 120px;
-              left: 0px;
-              position: fixed;
-              top: 0px;
-              width: 100%;
-              z-index: 9999; }
-              .geonorge-simple .wrapper {
-                margin: 0px auto;
-                width: 940px; }
-                .geonorge-simple .logo {
-                  height: 60px;
-                  padding: 15px; }
-                  .geonorge-simple .breadcrumbs {
-                    height: 30px;
-                    padding: 0px 15px; }
-                    .geonorge-simple .breadcrumbs ul {
-                      font-family: "Raleway", sans-serif;
-                      font-size: 14px;
-                      font-weight: 500;
-                      height: 30px;
-                      line-height: 30px;
-                      list-style-type: none;
-                      margin: 0px;
-                      padding: 0px; }
-                      .geonorge-simple .breadcrumbs li {
-                        float: left; }
-                        .geonorge-simple .breadcrumbs li.arrowed {
-                          background-image: url(img/breadcrumb-arrow.svg);
-                          background-position: 0px 50%;
-                          background-repeat: no-repeat;
-                          background-size: 8px 8px;
-                          margin-left: 6px;
-                          padding-left: 14px; }
-                    .geonorge-simple .breadcrumbs a {
-                      color: #3867c8;
-                      text-decoration: none; }
-                      .geonorge-simple .breadcrumbs a:hover {
-                        text-decoration: underline; }
+            html {
+              font-size: 10px; }
+
+              body {
+                font-family: "Open Sans", sans-serif;
+                font-weight: 400;
+                margin: 0px;
+                padding: 0px; }
+
+                .geonorge-simple {
+                  background-color: rgba(255, 255, 255, 0.9);
+                  height: 120px;
+                  left: 0px;
+                  position: fixed;
+                  top: 0px;
+                  width: 100%;
+                  z-index: 9999; }
+                  .geonorge-simple .wrapper {
+                    margin: 0px auto;
+                    width: 940px; }
+                    .geonorge-simple .logo {
+                      height: 60px;
+                      padding: 15px; }
+                      .geonorge-simple .breadcrumbs {
+                        height: 30px;
+                        padding: 0px 15px; }
+                        .geonorge-simple .breadcrumbs ul {
+                          font-family: "Raleway", sans-serif;
+                          font-size: 14px;
+                          font-weight: 500;
+                          height: 30px;
+                          line-height: 30px;
+                          list-style-type: none;
+                          margin: 0px;
+                          padding: 0px; }
+                          .geonorge-simple .breadcrumbs li {
+                            float: left; }
+                            .geonorge-simple .breadcrumbs li.arrowed {
+                              background-image: url(img/breadcrumb-arrow.svg);
+                              background-position: 0px 50%;
+                              background-repeat: no-repeat;
+                              background-size: 8px 8px;
+                              margin-left: 6px;
+                              padding-left: 14px; }
+                        .geonorge-simple .breadcrumbs a {
+                          color: #3867c8;
+                          text-decoration: none; }
+                          .geonorge-simple .breadcrumbs a:hover {
+                            text-decoration: underline; }
 
 .toolbar {
   position: absolute;
@@ -128,7 +136,7 @@
         bottom: 10px;
         position: absolute;
         right: 10px;
-        z-index: 1000; }
+        z-index: 900; }
         #overview-container-panel .olControlOverviewMapExpandableElement {
           background-color: #dfdcda;
           border: solid 1px #fe5000; }
@@ -159,24 +167,28 @@
 
   #basic-toolbar, #bottom-toolbar {
     left: 10px; }
+    #basic-toolbar .widget, #bottom-toolbar .widget {
+      left: 60px; }
 
-    #top-toolbar {
-      right: 10px; }
+#top-toolbar {
+  right: 10px; }
+  #top-toolbar .widget {
+    right: 60px; }
 
-      #bottom-toolbar {
-        bottom: 10px; }
+#bottom-toolbar {
+  bottom: 10px; }
 
-        #misc-toolbar {
-          left: 60px; }
+  #misc-toolbar {
+    left: 60px; }
 
-          #fullscreen-panel .fullscreen-button .fullscreen {
-            display: inline-block; }
-            #fullscreen-panel .fullscreen-button .windowed {
-              display: none; }
-          #fullscreen-panel .fullscreen-active .fullscreen {
-            display: none; }
-            #fullscreen-panel .fullscreen-active .windowed {
-              display: inline-block; }
+    #fullscreen-panel .fullscreen-button .fullscreen {
+      display: inline-block; }
+      #fullscreen-panel .fullscreen-button .windowed {
+        display: none; }
+    #fullscreen-panel .fullscreen-active .fullscreen {
+      display: none; }
+      #fullscreen-panel .fullscreen-active .windowed {
+        display: inline-block; }
 
 #geonorge-logo-panel {
   left: 60px;
@@ -298,84 +310,114 @@
       top: 0px; }
 
 #geoportal-panel .widget {
-  bottom: 0px;
-  display: none;
-  left: 100%;
-  position: absolute; }
-  #geoportal-panel.active .widget {
-    display: block; }
+  bottom: 10px; }
+  #geoportal-panel.active .nkButton {
+    background-color: #fe5000; }
+    #geoportal-panel.active .widget {
+      display: block; }
 
-#addlayer .widget {
-  bottom: 0px;
-  display: none;
-  left: 100%;
-  position: absolute; }
+#addlayer.active .nkButton {
+  background-color: #fe5000; }
   #addlayer.active .widget {
     display: block; }
 
 #draw-panel .widget {
-  bottom: 0px;
-  display: none;
-  left: 100%;
-  position: absolute; }
+  bottom: 10px; }
+  #draw-panel .widget ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px; }
+    #draw-panel .widget ul li {
+      margin-bottom: 5px; }
+      #draw-panel .widget ul button {
+        background-color: #7da1c4;
+        height: 40px;
+        padding: 5px;
+        position: relative;
+        width: 100px; }
+        #draw-panel .widget ul button:hover, #draw-panel .widget ul button.active {
+          background-color: #fe5000; }
+          #draw-panel .widget ul button svg {
+            fill: white;
+            height: 30px;
+            position: absolute;
+            stroke: white;
+            width: 30px; }
+            #draw-panel .widget ul button span {
+              display: block;
+              padding-left: 40px; }
+  #draw-panel .widget .measures dt {
+    display: none;
+    font-weight: 700; }
+    #draw-panel .widget .measures dd {
+      display: none;
+      margin: 0px; }
+      #draw-panel .widget .measures.point .lat, #draw-panel .widget .measures.point .lon {
+        display: block; }
+  #draw-panel .widget .measures.line .lat, #draw-panel .widget .measures.line .lon,
+  #draw-panel .widget .measures.line .length {
+    display: block; }
+  #draw-panel .widget .measures.area .lat, #draw-panel .widget .measures.area .lon,
+  #draw-panel .widget .measures.area .length,
+  #draw-panel .widget .measures.area .area {
+    display: block; }
+#draw-panel.active .nkButton {
+  background-color: #fe5000; }
   #draw-panel.active .widget {
     display: block; }
 
 #transformations-panel .widget {
-  bottom: 0px;
-  display: none;
-  left: 100%;
-  position: absolute; }
-  #transformations-panel.active .widget {
-    display: block; }
+  bottom: 10px; }
+  #transformations-panel.active .nkButton {
+    background-color: #fe5000; }
+    #transformations-panel.active .widget {
+      display: block; }
 
 #print-panel .widget {
   display: none; }
 
-#getURL-panel .widget {
-  display: none;
-  position: fixed;
-  right: 50px;
-  top: 130px; }
+#getURL-panel.active .nkButton {
+  background-color: #fe5000; }
   #getURL-panel.active .widget {
     display: block; }
 
 #embed-panel .widget {
   bottom: 10px; }
-  #embed-panel .active .widget {
-    display: block; }
-    #embed-panel .cnt {
-      width: 450px; }
-      #embed-panel .step-specific.type button {
-        background-color: #7da1c4;
-        border-radius: 10px;
-        height: 210px;
-        margin: 1%;
-        padding: 10px;
-        vertical-align: top;
-        width: 48%; }
-        #embed-panel .step-specific.type button:hover {
-          background-color: #fe5000; }
-          #embed-panel .step-specific.type button span {
-            color: white; }
-      #embed-panel .step-specific.type .illustration {
-        stroke: white;
-        width: 100%; }
-        #embed-panel .step-specific.type + .buttons-panel {
-          display: none; }
+  #embed-panel .active .nkButton {
+    background-color: #fe5000; }
+    #embed-panel .active .widget {
+      display: block; }
+#embed-panel .cnt {
+  width: 450px; }
+  #embed-panel .step-specific.type button {
+    background-color: #7da1c4;
+    border-radius: 10px;
+    height: 210px;
+    margin: 1%;
+    padding: 10px;
+    vertical-align: top;
+    width: 48%; }
+    #embed-panel .step-specific.type button:hover {
+      background-color: #fe5000; }
+      #embed-panel .step-specific.type button span {
+        color: white; }
+  #embed-panel .step-specific.type .illustration {
+    stroke: white;
+    width: 100%; }
+    #embed-panel .step-specific.type + .buttons-panel {
+      display: none; }
 
 #export-panel .widget {
   bottom: 10px; }
-  #export-panel .active .widget {
-    display: block; }
-    #export-panel .cnt {
-      width: 300px; }
+  #export-panel .active .nkButton {
+    background-color: #fe5000; }
+    #export-panel .active .widget {
+      display: block; }
+#export-panel .cnt {
+  width: 300px; }
 
-#help-panel .widget {
-  display: none;
-  position: fixed;
-  right: 50px;
-  top: 130px; }
+#help-panel.active .nkButton {
+  background-color: #fe5000; }
   #help-panel.active .widget {
     display: block; }
 
@@ -564,3 +606,31 @@
                   stroke: #fe5000; }
                   .markers-list .remove-marker span {
                     display: none; }
+
+input.form-control {
+  background: white;
+  border: none;
+  box-sizing: border-box;
+  font-size: 12px;
+  height: 20px;
+  margin-bottom: 5px;
+  padding: 0px 5px;
+  width: 100%; }
+
+button.btn {
+  background: #7da1c4;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+  height: 20px; }
+  button.btn:hover {
+    background: #fe5000; }
+
+.radio {
+  height: 20px;
+  line-height: 20px;
+  margin-right: 10px; }
+  .radio input {
+    margin: 0px 4px 0px 0px;
+    vertical-align: sub; }

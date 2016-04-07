@@ -54,17 +54,23 @@ $color-grey-darkest: rgb(65,64,66);
     background-color: $color-grey;
     box-shadow: 0px 0px 10px $color-black-50;
     display: none;
+    margin-top: $geonorge-header-height + $padding-gutter;
     overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
-    right: $toolbar-width + $padding-gutter;
-    top: $geonorge-header-height + $padding-gutter;
+    top: 0px; /*$geonorge-header-height + $padding-gutter;*/
 }
 
 /*$font-raleway: "Raleway", sans-serif;*/
 
 .hidden {
     display: none !important;
+}
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
 }
 
 html,
@@ -157,7 +163,7 @@ body {
     bottom: $padding-gutter;
     position: absolute;
     right: $padding-gutter;
-    z-index: 1000;
+    z-index: 900;
     
     .olControlOverviewMapExpandableElement {
         background-color: $color-grey;
@@ -210,9 +216,17 @@ body {
 #basic-toolbar,
 #bottom-toolbar {
     left: $padding-gutter;
+    
+    .widget {
+        left: $toolbar-width + ($padding-gutter * 2);
+    }
 }
 #top-toolbar {
     right: $padding-gutter;
+    
+    .widget {
+        right: $toolbar-width + ($padding-gutter * 2);
+    }
 }
 #bottom-toolbar {
     bottom: $padding-gutter;
@@ -433,13 +447,17 @@ body {
     }
     
     .widget {
-        bottom: 0px;
-        display: none;
-        left: 100%;
-        position: absolute;
+        @extend %widget-fixed;
+        bottom: $padding-gutter;
     }
-    &.active .widget {
-        display: block;
+    
+    &.active {
+        .nkButton {
+            background-color: $color-orange;
+        }
+        .widget {
+            display: block;
+        }
     }
 }
 
@@ -451,13 +469,16 @@ body {
     }
     
     .widget {
-        bottom: 0px;
-        display: none;
-        left: 100%;
-        position: absolute;
+        @extend %widget-fixed;
     }
-    &.active .widget {
-        display: block;
+    
+    &.active {
+        .nkButton {
+            background-color: $color-orange;
+        }
+        .widget {
+            display: block;
+        }
     }
 }
 
@@ -469,13 +490,100 @@ body {
     }
     
     .widget {
-        bottom: 0px;
-        display: none;
-        left: 100%;
-        position: absolute;
+        @extend %widget-fixed;
+        bottom: $padding-gutter;
+        
+        ul {
+            list-style: none;
+            margin: 0px auto;
+            padding: 10px 0px 0px 0px;
+            width: 80px;
+            
+            li {
+                margin-bottom: $padding-gap;
+                margin-left: 20px;
+                margin-right: 20px;
+                width: 40px;
+                
+                span {
+                    display: none;
+                }
+                &.text-only {
+                    margin-left: 0px;
+                    margin-right: 0px;
+                    width: 80px;
+                    
+                    span {
+                        display: block;
+                    }
+                }
+            }
+            
+            button {
+                @extend %default-button;
+                
+                background-color: $color-blue;
+                color: $color-white;
+                font-weight: 700;
+                height: 40px;
+                padding: 5px;
+                width: 100%;
+                
+                &:hover,
+                &.active {
+                    background-color: $color-orange;
+                }
+                
+                svg {
+                    fill: $color-white;
+                    height: 30px;
+                    stroke: $color-white;
+                    width: 30px;
+                }
+            }
+        }
+        
+        .measures {
+            dt {
+                display: none;
+                font-weight: 700;
+            }
+            dd {
+                display: none;
+                margin: 0px;
+            }
+            
+            &.point {
+                .lat,
+                .lon {
+                    display: block;
+                }
+            }
+            &.line {
+                .lat,
+                .lon,
+                .length {
+                    display: block;
+                }
+            }
+            &.area {
+                .lat,
+                .lon,
+                .length,
+                .area {
+                    display: block;
+                }
+            }
+        }
     }
-    &.active .widget {
-        display: block;
+    
+    &.active {
+        .nkButton {
+            background-color: $color-orange;
+        }
+        .widget {
+            display: block;
+        }
     }
 }
 
@@ -487,13 +595,17 @@ body {
     }
     
     .widget {
-        bottom: 0px;
-        display: none;
-        left: 100%;
-        position: absolute;
+        @extend %widget-fixed;
+        bottom: $padding-gutter;
     }
-    &.active .widget {
-        display: block;
+    
+    &.active {
+        .nkButton {
+            background-color: $color-orange;
+        }
+        .widget {
+            display: block;
+        }
     }
 }
 
@@ -517,13 +629,16 @@ body {
     }
     
     .widget {
-        display: none;
-        position: fixed;
-        right: $toolbar-width + $padding-gutter;
-        top: $geonorge-header-height + $padding-gutter;
+        @extend %widget-fixed;
     }
-    &.active .widget {
-        display: block;
+    
+    &.active {
+        .nkButton {
+            background-color: $color-orange;
+        }
+        .widget {
+            display: block;
+        }
     }
 }
 
@@ -538,9 +653,16 @@ body {
         @extend %widget-fixed;
         bottom: $padding-gutter;
     }
-    .active .widget {
-        display: block;
+    
+    .active {
+        .nkButton {
+            background-color: $color-orange;
+        }
+        .widget {
+            display: block;
+        }
     }
+    
     .cnt {
         width: 450px;
     }
@@ -589,8 +711,14 @@ body {
         @extend %widget-fixed;
         bottom: $padding-gutter;
     }
-    .active .widget {
-        display: block;
+    
+    .active {
+        .nkButton {
+            background-color: $color-orange;
+        }
+        .widget {
+            display: block;
+        }
     }
     
     .cnt {
@@ -606,13 +734,16 @@ body {
     }
     
     .widget {
-        display: none;
-        position: fixed;
-        right: $toolbar-width + $padding-gutter;
-        top: $geonorge-header-height + $padding-gutter;
+        @extend %widget-fixed;
     }
-    &.active .widget {
-        display: block;
+    
+    &.active {
+        .nkButton {
+            background-color: $color-orange;
+        }
+        .widget {
+            display: block;
+        }
     }
 }
 
@@ -866,5 +997,42 @@ body {
         span {
             display: none;
         }
+    }
+}
+
+input {
+    &.form-control {
+        background: $color-white;
+        border: none;
+        box-sizing: border-box;
+        font-size: 12px;
+        height: 20px;
+        margin-bottom: 5px;
+        padding: 0px 5px;
+        width: 100%;
+    }
+}
+button {
+    &.btn {
+        background: $color-blue;
+        border: none;
+        cursor: pointer;
+        color: $color-white;
+        font-size: 12px;
+        height: 20px;
+        
+        &:hover {
+            background: $color-orange;
+        }
+    }
+}
+.radio {
+    height: 20px;
+    line-height: 20px;
+    margin-right: 10px;
+    
+    input {
+        margin: 0px 4px 0px 0px;
+        vertical-align: sub;
     }
 }
