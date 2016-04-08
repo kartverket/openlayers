@@ -521,6 +521,7 @@
     .wrapper .cnt .buttons-panel button {
       background-color: #7da1c4;
       color: white;
+      margin-right: 5px;
       padding: 5px; }
       .wrapper .cnt .buttons-panel button:hover {
         background-color: #fe5000; }
@@ -626,7 +627,7 @@
                   .markers-list .remove-marker span {
                     display: none; }
 
-input.form-control {
+select.form-control, input.form-control {
   background: white;
   border: none;
   box-sizing: border-box;
@@ -646,6 +647,19 @@ button.btn {
   button.btn:hover {
     background: #fe5000; }
 
+label.lbl {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 4px; }
+
+fieldset.fld {
+  border: solid 1px #7da1c4;
+  margin: 15px 0; }
+  fieldset.fld legend {
+    font-size: 11px;
+    font-weight: 700; }
+
 .radio {
   height: 20px;
   line-height: 20px;
@@ -657,3 +671,14 @@ button.btn {
 .fullscreen .widget {
   bottom: auto !important;
   margin-top: 10px !important; }
+
+#transformations-output {
+  font-size: 1.2rem; }
+  #transformations-output .output-label, #transformations-output .output-value {
+    box-sizing: border-box;
+    display: inline-block; }
+    #transformations-output .output-label {
+      width: 33%; }
+      #transformations-output .output-value {
+        font-weight: 700;
+        width: 67%; }

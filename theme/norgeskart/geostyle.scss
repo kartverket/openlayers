@@ -871,6 +871,7 @@ body {
                 @extend %default-button;
                 background-color: $color-blue;
                 color: $color-white;
+                margin-right: 5px;
                 padding: 5px;
                 
                 &:hover {
@@ -1018,6 +1019,7 @@ body {
     }
 }
 
+select,
 input {
     &.form-control {
         background: $color-white;
@@ -1044,6 +1046,25 @@ button {
         }
     }
 }
+label {
+    &.lbl {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+}
+fieldset {
+    &.fld {
+        border: solid 1px $color-blue;
+        margin: 15px 0;
+        
+        legend {
+            font-size: 11px;
+            font-weight: 700;
+        }
+    }
+}
 .radio {
     height: 20px;
     line-height: 20px;
@@ -1059,5 +1080,22 @@ button {
     .widget {
         bottom: auto !important;
         margin-top: $padding-gutter !important;
+    }
+}
+
+#transformations-output {
+    font-size: 1.2rem;
+    
+    .output-label,
+    .output-value {
+        box-sizing: border-box;
+        display: inline-block;
+    }
+    .output-label {
+        width: 33%;
+    }
+    .output-value {
+        font-weight: 700;
+        width: 67%;
     }
 }
