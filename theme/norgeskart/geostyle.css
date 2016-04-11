@@ -6,7 +6,8 @@
 #draw-panel .widget ul button, #transformations-panel .nkButton,
 #print-panel .nkButton, #getURL-panel .nkButton, #embed-panel .nkButton,
 #embed-panel .step-specific.type button, #export-panel .nkButton,
-#help-panel .nkButton, .wrapper .cnt .buttons-panel button, .user-marker button {
+#help-panel .nkButton, .wrapper .cnt .buttons-panel button, .user-marker button,
+.heading .close {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -451,7 +452,7 @@
       font-family: "Raleway", sans-serif;
       font-size: 3.2rem;
       font-weight: 300;
-      margin: 0px 0px 10px 0px;
+      margin: 0px 0px 15px 0px;
       position: relative; }
       .wrapper .cnt h1:after {
         border-bottom: solid 2.5px #fe5000;
@@ -682,3 +683,29 @@ fieldset.fld {
       #transformations-output .output-value {
         font-weight: 700;
         width: 67%; }
+
+.heading {
+  position: relative; }
+  .heading .close {
+    position: absolute;
+    right: 0px;
+    top: 0px; }
+
+.tabs nav {
+  border-bottom: solid 1px #fe5000;
+  height: 20px;
+  line-height: 20px; }
+  .tabs nav a {
+    background: #7da1c4;
+    border-radius: 5px 5px 0px 0px;
+    color: white;
+    display: inline-block;
+    height: 20px;
+    padding: 0 10px;
+    text-decoration: none; }
+    .tabs nav a.active {
+      background: #fe5000; }
+.tabs .tab {
+  display: none; }
+  .tabs .tab.active {
+    display: block; }

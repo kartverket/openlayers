@@ -781,7 +781,7 @@ body {
             font-family: $font-raleway;
             font-size: 3.2rem;
             font-weight: 300;
-            margin: 0px 0px 10px 0px;
+            margin: 0px 0px 15px 0px;
             position: relative;
             
             &:after {
@@ -1097,5 +1097,47 @@ fieldset {
     .output-value {
         font-weight: 700;
         width: 67%;
+    }
+}
+
+.heading {
+    position: relative;
+    
+    .close {
+        @extend %default-button;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+}
+
+.tabs {
+
+    nav {
+        border-bottom: solid 1px $color-orange;
+        height: 20px;
+        line-height: 20px;
+        
+        a {
+            background: $color-blue;
+            border-radius: 5px 5px 0px 0px;
+            color: $color-white;
+            display: inline-block;
+            height: 20px;
+            padding: 0 10px;
+            text-decoration: none;
+            
+            &.active {
+                background: $color-orange;
+            }
+        }
+    }
+    
+    .tab {
+        display: none;
+        
+        &.active {
+            display: block;
+        }
     }
 }
