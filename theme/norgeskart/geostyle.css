@@ -1,13 +1,13 @@
 #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton,
 #fullscreen-panel button, #language-button, #zoom-panel button,
-#pan-panel .olButton, #search-panel .nkButton,
-#search-panel .searchDiv form button, #search-panel .times,
-#geoportal-panel .nkButton, #addlayer .nkButton, #draw-panel .nkButton,
-#draw-panel .widget ul button, #transformations-panel .nkButton,
-#print-panel .nkButton, #getURL-panel .nkButton, #embed-panel .nkButton,
-#embed-panel .step-specific.type button, #export-panel .nkButton,
-#help-panel .nkButton, .wrapper .cnt .buttons-panel button, .user-marker button,
-.heading .close {
+#pan-panel .olButton, #search-panel .nkButton, #search-panel .searchDiv .times,
+#searchResults .result-paging button, #geoportal-panel .nkButton,
+#addlayer .nkButton, #draw-panel .nkButton, #draw-panel .widget ul button,
+#transformations-panel .nkButton, #print-panel .nkButton, #getURL-panel .nkButton,
+#embed-panel .nkButton, #embed-panel .step-specific.type button,
+#export-panel .nkButton, #help-panel .nkButton,
+.wrapper .cnt .buttons-panel button, .user-marker button, .heading .close,
+#layerList .layersDiv > div button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -274,51 +274,103 @@
           top: 20px; }
 
 #search-panel .searchDiv {
-  background: #dfdcda;
-  box-sizing: border-box;
-  border-radius: 10px;
   display: none;
   left: 50%;
-  margin-left: -160px;
-  margin-top: 15px;
-  padding: 15px;
+  margin-left: -150px;
   position: fixed;
-  top: 120px;
-  width: 320px; }
+  top: 130px;
+  width: 300px; }
   #search-panel .searchDiv form {
-    background: white;
-    border-radius: 5px;
-    height: 26px;
-    padding: 5px 10px; }
-    #search-panel .searchDiv form input {
-      background-color: transparent;
+    background-color: #dfdcda;
+    height: 30px;
+    padding: 10px; }
+    #search-panel .searchDiv form input, #search-panel .searchDiv form button {
+      background: white;
       border: none;
-      box-sizing: border-box;
-      color: #414042;
       float: left;
-      height: 26px;
-      padding: 0px;
-      width: 240px; }
-      #search-panel .searchDiv form input:hover,
-      #search-panel .searchDiv form input:focus {
-        color: black; }
-    #search-panel .searchDiv form button {
-      float: left;
-      height: 26px;
-      padding: 3px;
-      width: 30px; }
-      #search-panel .searchDiv form button svg {
-        fill: #414042; }
-        #search-panel .searchDiv form button:hover svg {
-          fill: #fe5000; }
-#search-panel.active .searchDiv {
-  display: block; }
-  #search-panel #searchResults {
+      height: 30px; }
+      #search-panel .searchDiv form input {
+        padding: 0px 10px;
+        width: 250px; }
+        #search-panel .searchDiv form button {
+          cursor: pointer;
+          fill: #dfdcda;
+          padding: 3px 3px 0px 6px;
+          width: 30px; }
+  #search-panel .searchDiv .times {
+    position: absolute;
+    right: 0px;
+    top: 0px; }
+#search-panel.active .nkButton {
+  background-color: #fe5000; }
+  #search-panel.active .searchDiv {
+    display: block; }
+
+#searchResults {
+  background-color: #dfdcda;
+  height: 400px;
+  margin-top: 10px;
+  padding: 20px;
+  position: relative;
+  overflow-y: scroll; }
+  #searchResults .close {
+    display: block;
+    float: right;
+    height: 16px;
+    margin: 2px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 16px; }
+    #searchResults .close svg {
+      float: none;
+      fill: none;
+      margin: 0px;
+      stroke: black; }
+  #searchResults .result-paging {
+    font-size: 1.2rem;
+    height: 20px;
+    line-height: 20px; }
+    #searchResults .result-paging button {
+      background: #7da1c4;
+      color: white;
+      float: right;
+      font-size: 1.2rem;
+      height: 20px;
+      margin-right: 10px;
+      padding: 0px 6px; }
+      #searchResults .result-paging button:hover {
+        background-color: #fe5000; }
+  #searchResults .result-category {
     margin-top: 10px; }
-    #search-panel .times {
-      position: absolute;
-      right: 0px;
-      top: 0px; }
+    #searchResults .result-category .icon {
+      display: inline-block;
+      height: 20px;
+      vertical-align: bottom;
+      width: 20px; }
+      #searchResults .result-category h2 {
+        display: inline-block;
+        font-size: 1.4rem;
+        height: 20px;
+        margin: 0px 0px 0px 10px; }
+        #searchResults .result-category ul {
+          font-size: 1.1rem;
+          list-style-type: none;
+          margin-top: 5px;
+          padding: 0px; }
+          #searchResults .result-category li {
+            cursor: pointer;
+            height: 18px;
+            line-height: 18px;
+            margin-bottom: 2px;
+            word-break: keep-all; }
+            #searchResults .result-category li .municipality-name {
+              font-weight: 700; }
+              #searchResults .result-category li select {
+                background: white;
+                border: none;
+                float: right;
+                font-size: 1.1rem;
+                height: 18px; }
 
 #geoportal-panel .widget {
   bottom: 10px; }
@@ -709,3 +761,10 @@ fieldset.fld {
   display: none; }
   .tabs .tab.active {
     display: block; }
+
+#layerList .layersDiv > div {
+  font-weight: 700;
+  margin: 10px 0px; }
+#layerList .layersDiv table th, #layerList .layersDiv table td {
+  border: none;
+  padding: 0px; }
