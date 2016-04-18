@@ -152,7 +152,6 @@ body {
 
 .toolbar {
     position: absolute;
-    z-index: 1000;
 }
 .panel-name {
     display: none;
@@ -162,6 +161,7 @@ body {
 .olControlScaleLine {
     bottom: $padding-gutter;
     left: 80px;
+    z-index: 1000 !important;
 }
 
 #overview-container-panel {
@@ -233,8 +233,12 @@ body {
         left: $toolbar-width + ($padding-gutter * 2);
     }
 }
+#basic-toolbar {
+    z-index: 1004;
+}
 #top-toolbar {
     right: $padding-gutter;
+    z-index: 1003;
     
     .widget {
         right: $toolbar-width + ($padding-gutter * 2);
@@ -242,9 +246,11 @@ body {
 }
 #bottom-toolbar {
     bottom: $padding-gutter;
+    z-index: 1001;
 }
 #misc-toolbar {
     left: $toolbar-width + ($padding-gutter * 2);
+    z-index: 1002;
 }
 
 #fullscreen-panel {
@@ -316,6 +322,7 @@ body {
         height: 50px;
         width: 60px;
     }
+    
     .layersDiv {
         position: relative;
     }
@@ -330,15 +337,85 @@ body {
             display: block;
         }
     }
+    
+    .dataLayersDiv {
+        background-color: $color-blue;
+        padding: 5px;
+        
+        ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            width: 60px;
+        }
+        li {
+            background-image: url('img/raster-thumbs.png');
+            background-repeat: no-repeat;
+            display: block;
+            height: 50px;
+            margin: 0px;
+            padding: 0px;
+            width: 60px;
+        }
+    }
+    
 }
 
 /* BASIC */
 #zoom-panel {
-    display: none;
-    width: $toolbar-width;
+    @extend %panel-layout;
+    left: auto !important;
+    top: auto !important;
     
     button {
         @extend %panel-button;
+    }
+    &.zoom-to-selection-selected {
+        .zoom-to-selection-button {
+            background-color: $color-orange;
+        }
+    }
+    
+    .zoombar-and-buttons-wrapper {
+        margin-bottom: $padding-gutter;
+        
+        .sliderWrapper {
+            display: none;
+            height: 96px;
+            margin-bottom: $padding-gutter;
+            position: relative;
+        }
+        
+        .track {
+            background-color: $color-grey-darkest;
+            margin-left: 13px;
+            left: auto !important;
+            top: auto !important;
+        }
+        
+        .slider {
+            background-color: $color-blue;
+            left: 5px !important;
+            
+            span {
+                background: $color-white-90;
+                display: none;
+                height: 19px;
+                left: calc(100% + #{$padding-gap});
+                line-height: 19px;
+                padding: 0px 5px;
+                position: absolute;
+                top: -5px;
+            }
+            
+            &:hover {
+                background-color: $color-orange;
+                
+                span {
+                    display: block;
+                }
+            }
+        }
     }
 }
 
@@ -1092,6 +1169,7 @@ body {
     }
 }
 
+textarea,
 select,
 input {
     &.form-control {
@@ -1103,6 +1181,13 @@ input {
         margin-bottom: 5px;
         padding: 0px 5px;
         width: 100%;
+    }
+}
+textarea {
+    &.form-control {
+        font-family: $font-opensans;
+        height: 60px;
+        resize: none;
     }
 }
 button {
@@ -1147,6 +1232,12 @@ fieldset {
         margin: 0px 4px 0px 0px;
         vertical-align: sub;
     }
+}
+.form-help {
+    color: $color-grey-darkest;
+    font-style: italic;
+    margin-bottom: $padding-gutter;
+    text-align: right;
 }
 
 .fullscreen {
@@ -1217,21 +1308,67 @@ fieldset {
 
 #layerList {
     .layersDiv {
-    & > div {
-        font-weight: 700;
-        margin: 10px 0px;
+        & > div {
+            font-weight: 700;
+            margin: 10px 0px;
+            
+            button {
+                @extend %default-button;
+            }
+        }
         
+        table {
+            th,
+            td {
+                border: none;
+                padding: 0px;
+            }
+        }
+    }
+    .availableDiv {
         button {
             @extend %default-button;
+            
+            svg {
+                fill: none;
+                height: 18px;
+                stroke: $color-black;
+                stroke-width: 3px;
+                width: 18px;
+                
+                &.selected {
+                    fill: $color-black;
+                }
+            }
         }
     }
-    
-    table {
-        th,
-        td {
-            border: none;
-            padding: 0px;
-        }
-    }
-    }
+}
+
+#land-selector,
+.land {
+    background-position: 0 0;
+}
+#terreng-selector,
+.terreng {
+    background-position: 0 -50px;
+}
+#enkel-selector,
+.enkel {
+    background-position: 0 -100px;
+}
+#flybilder-selector,
+.flybilder {
+    background-position: 0 -150px;
+}
+#sjo-selector,
+.sjo {
+    background-position: 0 -200px;
+}
+#svalbard-selector,
+.svalbard {
+    background-position: 0 -250px;
+}
+#janmayen-selector,
+.janmayen {
+    background-position: 0 -300px;
 }

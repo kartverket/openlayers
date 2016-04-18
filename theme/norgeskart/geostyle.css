@@ -7,7 +7,7 @@
 #embed-panel .nkButton, #embed-panel .step-specific.type button,
 #export-panel .nkButton, #help-panel .nkButton,
 .wrapper .cnt .buttons-panel button, .user-marker button, .heading .close,
-#layerList .layersDiv > div button {
+#layerList .layersDiv > div button, #layerList .availableDiv button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -38,9 +38,9 @@
         height: 100%;
         width: 100%; }
 
-#fullscreen-panel, #search-panel, #geoportal-panel, #addlayer, #draw-panel,
-#transformations-panel, #print-panel, #getURL-panel, #embed-panel, #export-panel,
-#help-panel {
+#fullscreen-panel, #zoom-panel, #search-panel, #geoportal-panel, #addlayer,
+#draw-panel, #transformations-panel, #print-panel, #getURL-panel, #embed-panel,
+#export-panel, #help-panel {
   background-color: rgba(223, 220, 218, 0.8);
   box-sizing: border-box;
   padding: 5px;
@@ -126,15 +126,15 @@
   display: none; }
 
 .toolbar {
-  position: absolute;
-  z-index: 1000; }
+  position: absolute; }
 
   .panel-name {
     display: none; }
 
     .olControlScaleLine {
       bottom: 10px;
-      left: 80px; }
+      left: 80px;
+      z-index: 1000 !important; }
 
       #overview-container-panel {
         bottom: 10px;
@@ -177,16 +177,22 @@
   #basic-toolbar .widget, #bottom-toolbar .widget {
     left: 60px; }
 
-#top-toolbar {
-  right: 10px; }
-  #top-toolbar .widget {
-    right: 60px; }
+#basic-toolbar {
+  z-index: 1004; }
+
+  #top-toolbar {
+    right: 10px;
+    z-index: 1003; }
+    #top-toolbar .widget {
+      right: 60px; }
 
 #bottom-toolbar {
-  bottom: 10px; }
+  bottom: 10px;
+  z-index: 1001; }
 
   #misc-toolbar {
-    left: 60px; }
+    left: 60px;
+    z-index: 1002; }
 
     #fullscreen-panel .fullscreen-button .fullscreen {
       display: inline-block; }
@@ -236,10 +242,56 @@
       position: absolute; }
       #layerselector-panel .show .widget {
         display: block; }
+#layerselector-panel .dataLayersDiv {
+  background-color: #7da1c4;
+  padding: 5px; }
+  #layerselector-panel .dataLayersDiv ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    width: 60px; }
+    #layerselector-panel .dataLayersDiv li {
+      background-image: url('img/raster-thumbs.png');
+      background-repeat: no-repeat;
+      display: block;
+      height: 50px;
+      margin: 0px;
+      padding: 0px;
+      width: 60px; }
 
 #zoom-panel {
-  display: none;
-  width: 40px; }
+  left: auto !important;
+  top: auto !important; }
+  #zoom-panel.zoom-to-selection-selected .zoom-to-selection-button {
+    background-color: #fe5000; }
+  #zoom-panel .zoombar-and-buttons-wrapper {
+    margin-bottom: 10px; }
+    #zoom-panel .zoombar-and-buttons-wrapper .sliderWrapper {
+      display: none;
+      height: 96px;
+      margin-bottom: 10px;
+      position: relative; }
+      #zoom-panel .zoombar-and-buttons-wrapper .track {
+        background-color: #414042;
+        margin-left: 13px;
+        left: auto !important;
+        top: auto !important; }
+        #zoom-panel .zoombar-and-buttons-wrapper .slider {
+          background-color: #7da1c4;
+          left: 5px !important; }
+          #zoom-panel .zoombar-and-buttons-wrapper .slider span {
+            background: rgba(255, 255, 255, 0.9);
+            display: none;
+            height: 19px;
+            left: calc(100% + 5px);
+            line-height: 19px;
+            padding: 0px 5px;
+            position: absolute;
+            top: -5px; }
+            #zoom-panel .zoombar-and-buttons-wrapper .slider:hover {
+              background-color: #fe5000; }
+              #zoom-panel .zoombar-and-buttons-wrapper .slider:hover span {
+                display: block; }
 
 #pan-panel {
   height: 60px;
@@ -680,7 +732,7 @@
                   .markers-list .remove-marker span {
                     display: none; }
 
-select.form-control, input.form-control {
+textarea.form-control, select.form-control, input.form-control {
   background: white;
   border: none;
   box-sizing: border-box;
@@ -689,6 +741,11 @@ select.form-control, input.form-control {
   margin-bottom: 5px;
   padding: 0px 5px;
   width: 100%; }
+
+textarea.form-control {
+  font-family: "Open Sans", sans-serif;
+  height: 60px;
+  resize: none; }
 
 button.btn {
   background: #7da1c4;
@@ -721,9 +778,15 @@ fieldset.fld {
     margin: 0px 4px 0px 0px;
     vertical-align: sub; }
 
-.fullscreen .widget {
-  bottom: auto !important;
-  margin-top: 10px !important; }
+.form-help {
+  color: #414042;
+  font-style: italic;
+  margin-bottom: 10px;
+  text-align: right; }
+
+  .fullscreen .widget {
+    bottom: auto !important;
+    margin-top: 10px !important; }
 
 #transformations-output {
   font-size: 1.2rem; }
@@ -768,3 +831,32 @@ fieldset.fld {
 #layerList .layersDiv table th, #layerList .layersDiv table td {
   border: none;
   padding: 0px; }
+#layerList .availableDiv button svg {
+  fill: none;
+  height: 18px;
+  stroke: black;
+  stroke-width: 3px;
+  width: 18px; }
+  #layerList .availableDiv button svg.selected {
+    fill: black; }
+
+#land-selector, .land {
+  background-position: 0 0; }
+
+  #terreng-selector, .terreng {
+    background-position: 0 -50px; }
+
+    #enkel-selector, .enkel {
+      background-position: 0 -100px; }
+
+      #flybilder-selector, .flybilder {
+        background-position: 0 -150px; }
+
+        #sjo-selector, .sjo {
+          background-position: 0 -200px; }
+
+          #svalbard-selector, .svalbard {
+            background-position: 0 -250px; }
+
+            #janmayen-selector, .janmayen {
+              background-position: 0 -300px; }
