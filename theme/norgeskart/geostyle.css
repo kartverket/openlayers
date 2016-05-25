@@ -425,7 +425,7 @@
                 height: 18px; }
 
 #geoportal-panel .widget {
-  bottom: 10px; }
+  max-height: calc(100% - ${geonorge-header-height + padding-gutter + padding-gutter}); }
   #geoportal-panel.active .nkButton {
     background-color: #fe5000; }
     #geoportal-panel.active .widget {

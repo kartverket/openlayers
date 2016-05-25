@@ -616,7 +616,7 @@ body {
     
     .widget {
         @extend %widget-fixed;
-        bottom: $padding-gutter;
+        max-height: calc(100% - ${geonorge-header-height + padding-gutter + padding-gutter});
     }
     
     &.active {
