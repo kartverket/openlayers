@@ -18,6 +18,7 @@ $color-blue-dark: rgb(56, 103, 200);
 $color-purple: rgb(93, 71, 119);
 $color-grey: rgb(223,220,218);
 $color-grey-80: rgba(223,220,218,0.8);
+$color-grey-dark: rgb(182,175,168);
 $color-grey-darkest: rgb(65,64,66);
 
 %default-button {
@@ -499,13 +500,6 @@ body {
                 padding: 3px 3px 0px 6px;
                 width: 30px;
             }
-        }
-        
-        .times {
-            @extend %default-button;
-            position: absolute;
-            right: 0px;
-            top: 0px;
         }
     }
     
@@ -1371,4 +1365,15 @@ fieldset {
 #janmayen-selector,
 .janmayen {
     background-position: 0 -300px;
+}
+
+.times {
+    @extend %default-button;
+    background-color: $color-grey-dark;
+    color: $color-white;
+    height: 18px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 18px;
 }

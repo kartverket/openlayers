@@ -1,13 +1,13 @@
 #overview-container-panel .olControlOverviewMapExpandableToggleSizeButton,
 #fullscreen-panel button, #language-button, #zoom-panel button,
-#pan-panel .olButton, #search-panel .nkButton, #search-panel .searchDiv .times,
+#pan-panel .olButton, #search-panel .nkButton,
 #searchResults .result-paging button, #geoportal-panel .nkButton,
 #addlayer .nkButton, #draw-panel .nkButton, #draw-panel .widget ul button,
 #transformations-panel .nkButton, #print-panel .nkButton, #getURL-panel .nkButton,
 #embed-panel .nkButton, #embed-panel .step-specific.type button,
 #export-panel .nkButton, #help-panel .nkButton,
 .wrapper .cnt .buttons-panel button, .user-marker button, .heading .close,
-#layerList .layersDiv > div button, #layerList .availableDiv button {
+#layerList .layersDiv > div button, #layerList .availableDiv button, .times {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -349,10 +349,6 @@
           fill: #dfdcda;
           padding: 3px 3px 0px 6px;
           width: 30px; }
-  #search-panel .searchDiv .times {
-    position: absolute;
-    right: 0px;
-    top: 0px; }
 #search-panel.active .nkButton {
   background-color: #fe5000; }
   #search-panel.active .searchDiv {
@@ -860,3 +856,12 @@ fieldset.fld {
 
             #janmayen-selector, .janmayen {
               background-position: 0 -300px; }
+
+              .times {
+                background-color: #b6afa8;
+                color: white;
+                height: 18px;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                width: 18px; }
