@@ -53,7 +53,7 @@
     background-color: #dfdcda;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     display: none;
-    margin-top: 130px;
+    margin-top: 100px;
     overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
@@ -83,7 +83,7 @@
 
                 .geonorge-simple {
                   background-color: rgba(255, 255, 255, 0.9);
-                  height: 120px;
+                  height: 90px;
                   left: 0px;
                   position: fixed;
                   top: 0px;
@@ -167,7 +167,7 @@
             display: block; }
 
 #basic-toolbar, #top-toolbar, #misc-toolbar {
-  top: 130px; }
+  top: 100px; }
 
   .fullscreen #basic-toolbar, .fullscreen #top-toolbar, .fullscreen #misc-toolbar {
     top: 10px; }
@@ -330,7 +330,7 @@
   left: 50%;
   margin-left: -150px;
   position: fixed;
-  top: 130px;
+  top: 100px;
   width: 300px; }
   #search-panel .searchDiv form {
     background-color: #dfdcda;
@@ -339,6 +339,7 @@
     #search-panel .searchDiv form input, #search-panel .searchDiv form button {
       background: white;
       border: none;
+      box-sizing: border-box;
       float: left;
       height: 30px; }
       #search-panel .searchDiv form input {
@@ -407,7 +408,7 @@
           padding: 0px; }
           #searchResults .result-category li {
             cursor: pointer;
-            height: 18px;
+            min-height: 18px;
             line-height: 18px;
             margin-bottom: 2px;
             word-break: keep-all; }
@@ -421,7 +422,7 @@
                 height: 18px; }
 
 #geoportal-panel .widget {
-  max-height: calc(100% - ${geonorge-header-height + padding-gutter + padding-gutter}); }
+  max-height: calc( 100% - 110px ); }
   #geoportal-panel.active .nkButton {
     background-color: #fe5000; }
     #geoportal-panel.active .widget {
@@ -683,7 +684,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   left: 0;
   position: fixed;
-  top: 120px;
+  top: 90px;
   z-index: 800; }
 
   #embedLightOFbase {
@@ -835,6 +836,16 @@ fieldset.fld {
   width: 18px; }
   #layerList .availableDiv button svg.selected {
     fill: black; }
+
+#legendBox {
+  background: white;
+  font-weight: bold;
+  margin: 10px 0px;
+  padding: 0px 5px; }
+  #legendBox span {
+    display: block; }
+    #legendBox span a {
+      color: #3867c8 !important; }
 
 #land-selector, .land {
   background-position: 0 0; }
