@@ -219,15 +219,20 @@ body {
 #misc-toolbar {
     top: $geonorge-header-height + $padding-gutter;
 }
+#embed-basic-toolbar {
+    top: $padding-gutter;
+}
 .fullscreen {
     #basic-toolbar,
     #top-toolbar,
-    #misc-toolbar {
+    #misc-toolbar,
+    #embed-basic-toolbar {
         top: $padding-gutter;
     }
 }
 #basic-toolbar,
-#bottom-toolbar {
+#bottom-toolbar,
+#embed-basic-toolbar {
     left: $padding-gutter;
     
     .widget {
@@ -252,6 +257,9 @@ body {
 #misc-toolbar {
     left: $toolbar-width + ($padding-gutter * 2);
     z-index: 1002;
+}
+#embed-basic-toolbar {
+    z-index: 1005;
 }
 
 #fullscreen-panel {
@@ -1392,4 +1400,67 @@ fieldset {
     right: 0px;
     top: 0px;
     width: 18px;
+}
+
+.draw-hide-fix .Draw-button {
+    display: none;
+}
+
+#embed-basic-toolbar {
+    background-color: $color-grey;
+    width: 60px;
+    
+    #zoom-panel {
+        margin: 10px 10px 0px 10px;
+    }
+    #pan-panel {
+        margin-bottom: 10px;
+    }
+    
+    .collapse-toolbar-toggle {
+        @extend %panel-button;
+        position: relative;
+        text-indent: -9999px;
+        width: 100%;
+        
+        &:after {
+            border: 10px solid transparent;
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50%;
+            margin-left: -10px;
+        }
+        
+        &.on {
+            display: none;
+            &:after {
+                top: 10px;
+                border-top-color: $color-white;
+            }
+        }
+        &.off {
+            display: block;
+            &:after {
+                bottom: 10px;
+                border-bottom-color: $color-white;
+            }
+        }
+    }
+    
+    &.collapsed {
+        #zoom-panel,
+        #pan-panel {
+            display: none;
+        }
+        
+        .collapse-toolbar-toggle {
+            &.on {
+                display: block;
+            }
+            &.off {
+                display: none;
+            }
+        }
+    }
 }

@@ -7,7 +7,8 @@
 #embed-panel .nkButton, #embed-panel .step-specific.type button,
 #export-panel .nkButton, #help-panel .nkButton,
 .wrapper .cnt .buttons-panel button, .user-marker button, .heading .close,
-#layerList .layersDiv > div button, #layerList .availableDiv button, .times {
+#layerList .layersDiv > div button, #layerList .availableDiv button, .times,
+#embed-basic-toolbar .collapse-toolbar-toggle {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -16,7 +17,8 @@
   #fullscreen-panel button, #zoom-panel button, #search-panel .nkButton,
   #geoportal-panel .nkButton, #addlayer .nkButton, #draw-panel .nkButton,
   #transformations-panel .nkButton, #print-panel .nkButton, #getURL-panel .nkButton,
-  #embed-panel .nkButton, #export-panel .nkButton, #help-panel .nkButton {
+  #embed-panel .nkButton, #export-panel .nkButton, #help-panel .nkButton,
+  #embed-basic-toolbar .collapse-toolbar-toggle {
     background-color: #7da1c4;
     height: 30px;
     padding: 5px;
@@ -26,14 +28,16 @@
     #addlayer :hover.nkButton, #draw-panel :hover.nkButton,
     #transformations-panel :hover.nkButton, #print-panel :hover.nkButton,
     #getURL-panel :hover.nkButton, #embed-panel :hover.nkButton,
-    #export-panel :hover.nkButton, #help-panel :hover.nkButton {
+    #export-panel :hover.nkButton, #help-panel :hover.nkButton,
+    #embed-basic-toolbar :hover.collapse-toolbar-toggle {
       background-color: #fe5000; }
       #fullscreen-panel button .icon, #zoom-panel button .icon,
       #search-panel .nkButton .icon, #geoportal-panel .nkButton .icon,
       #addlayer .nkButton .icon, #draw-panel .nkButton .icon,
       #transformations-panel .nkButton .icon, #print-panel .nkButton .icon,
       #getURL-panel .nkButton .icon, #embed-panel .nkButton .icon,
-      #export-panel .nkButton .icon, #help-panel .nkButton .icon {
+      #export-panel .nkButton .icon, #help-panel .nkButton .icon,
+      #embed-basic-toolbar .collapse-toolbar-toggle .icon {
         fill: white;
         height: 100%;
         width: 100%; }
@@ -169,12 +173,16 @@
 #basic-toolbar, #top-toolbar, #misc-toolbar {
   top: 100px; }
 
-  .fullscreen #basic-toolbar, .fullscreen #top-toolbar, .fullscreen #misc-toolbar {
+  #embed-basic-toolbar {
     top: 10px; }
 
-#basic-toolbar, #bottom-toolbar {
+    .fullscreen #basic-toolbar, .fullscreen #top-toolbar, .fullscreen #misc-toolbar,
+    .fullscreen #embed-basic-toolbar {
+      top: 10px; }
+
+#basic-toolbar, #bottom-toolbar, #embed-basic-toolbar {
   left: 10px; }
-  #basic-toolbar .widget, #bottom-toolbar .widget {
+  #basic-toolbar .widget, #bottom-toolbar .widget, #embed-basic-toolbar .widget {
     left: 60px; }
 
 #basic-toolbar {
@@ -194,14 +202,17 @@
     left: 60px;
     z-index: 1002; }
 
-    #fullscreen-panel .fullscreen-button .fullscreen {
-      display: inline-block; }
-      #fullscreen-panel .fullscreen-button .windowed {
-        display: none; }
-    #fullscreen-panel .fullscreen-active .fullscreen {
-      display: none; }
-      #fullscreen-panel .fullscreen-active .windowed {
+    #embed-basic-toolbar {
+      z-index: 1005; }
+
+      #fullscreen-panel .fullscreen-button .fullscreen {
         display: inline-block; }
+        #fullscreen-panel .fullscreen-button .windowed {
+          display: none; }
+      #fullscreen-panel .fullscreen-active .fullscreen {
+        display: none; }
+        #fullscreen-panel .fullscreen-active .windowed {
+          display: inline-block; }
 
 #geonorge-logo-panel {
   display: none;
@@ -876,3 +887,42 @@ fieldset.fld {
                 right: 0px;
                 top: 0px;
                 width: 18px; }
+
+                .draw-hide-fix .Draw-button {
+                  display: none; }
+
+                  #embed-basic-toolbar {
+                    background-color: #dfdcda;
+                    width: 60px; }
+                    #embed-basic-toolbar #zoom-panel {
+                      margin: 10px 10px 0px 10px; }
+                      #embed-basic-toolbar #pan-panel {
+                        margin-bottom: 10px; }
+                        #embed-basic-toolbar .collapse-toolbar-toggle {
+                          position: relative;
+                          text-indent: -9999px;
+                          width: 100%; }
+                          #embed-basic-toolbar .collapse-toolbar-toggle:after {
+                            border: 10px solid transparent;
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            left: 50%;
+                            margin-left: -10px; }
+                            #embed-basic-toolbar .collapse-toolbar-toggle.on {
+                              display: none; }
+                              #embed-basic-toolbar .collapse-toolbar-toggle.on:after {
+                                top: 10px;
+                                border-top-color: white; }
+                          #embed-basic-toolbar .collapse-toolbar-toggle.off {
+                            display: block; }
+                            #embed-basic-toolbar .collapse-toolbar-toggle.off:after {
+                              bottom: 10px;
+                              border-bottom-color: white; }
+                    #embed-basic-toolbar.collapsed #zoom-panel,
+                    #embed-basic-toolbar.collapsed #pan-panel {
+                      display: none; }
+                      #embed-basic-toolbar.collapsed .collapse-toolbar-toggle.on {
+                        display: block; }
+                        #embed-basic-toolbar.collapsed .collapse-toolbar-toggle.off {
+                          display: none; }
