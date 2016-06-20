@@ -241,8 +241,13 @@
   background-image: url('img/raster-thumbs.png');
   background-repeat: no-repeat;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  color: white;
   cursor: pointer;
+  font-weight: 700;
   height: 50px;
+  line-height: 50px;
+  text-align: center;
+  text-shadow: 0px 1px 1px black;
   width: 60px; }
   #layerselector-panel .layersDiv {
     position: relative; }
@@ -268,7 +273,23 @@
       height: 50px;
       margin: 0px;
       padding: 0px;
+      position: relative;
       width: 60px; }
+      #layerselector-panel .dataLayersDiv li input {
+        position: absolute;
+        visibility: hidden; }
+        #layerselector-panel .dataLayersDiv li label {
+          background-color: rgba(0, 0, 0, 0.4);
+          color: white;
+          display: block;
+          height: 50px;
+          line-height: 50px;
+          text-align: center;
+          text-shadow: 0px 1px 1px black;
+          width: 60px; }
+          #layerselector-panel .dataLayersDiv li label.for-checked {
+            background-color: rgba(0, 0, 0, 0.2);
+            font-weight: 700; }
 
 #zoom-panel {
   left: auto !important;
