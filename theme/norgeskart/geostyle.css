@@ -949,3 +949,6 @@ fieldset.fld {
                         display: block; }
                         #embed-basic-toolbar.collapsed .collapse-toolbar-toggle.off {
                           display: none; }
+
+.olImageLoadError {
+  display: none !important; }
