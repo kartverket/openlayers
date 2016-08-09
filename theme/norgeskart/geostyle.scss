@@ -94,6 +94,8 @@ body {
 /* HEADER */
 .geonorge-simple {
     background-color: $color-white-90;
+    border-bottom: solid 1px $color-orange;
+    box-sizing: border-box;
     height: $geonorge-header-height;
     left: 0px;
     position: fixed;
