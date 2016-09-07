@@ -902,53 +902,56 @@ fieldset.fld {
             #janmayen-selector, .janmayen {
               background-position: 0 -300px; }
 
-              .times {
-                background-color: #b6afa8;
-                color: white;
-                height: 18px;
-                position: absolute;
-                right: 0px;
-                top: 0px;
-                width: 18px; }
+              #graa-selector, .graa {
+                background-position: 0 -350px; }
 
-                .draw-hide-fix .Draw-button {
-                  display: none; }
+                .times {
+                  background-color: #b6afa8;
+                  color: white;
+                  height: 18px;
+                  position: absolute;
+                  right: 0px;
+                  top: 0px;
+                  width: 18px; }
 
-                  #embed-basic-toolbar {
-                    background-color: #dfdcda;
-                    width: 60px; }
-                    #embed-basic-toolbar #zoom-panel {
-                      margin: 10px 10px 0px 10px; }
-                      #embed-basic-toolbar #pan-panel {
-                        margin-bottom: 10px; }
-                        #embed-basic-toolbar .collapse-toolbar-toggle {
-                          position: relative;
-                          text-indent: -9999px;
-                          width: 100%; }
-                          #embed-basic-toolbar .collapse-toolbar-toggle:after {
-                            border: 10px solid transparent;
-                            content: "";
-                            display: block;
-                            position: absolute;
-                            left: 50%;
-                            margin-left: -10px; }
-                            #embed-basic-toolbar .collapse-toolbar-toggle.on {
-                              display: none; }
-                              #embed-basic-toolbar .collapse-toolbar-toggle.on:after {
-                                top: 10px;
-                                border-top-color: white; }
-                          #embed-basic-toolbar .collapse-toolbar-toggle.off {
-                            display: block; }
-                            #embed-basic-toolbar .collapse-toolbar-toggle.off:after {
-                              bottom: 10px;
-                              border-bottom-color: white; }
-                    #embed-basic-toolbar.collapsed #zoom-panel,
-                    #embed-basic-toolbar.collapsed #pan-panel {
-                      display: none; }
-                      #embed-basic-toolbar.collapsed .collapse-toolbar-toggle.on {
-                        display: block; }
-                        #embed-basic-toolbar.collapsed .collapse-toolbar-toggle.off {
-                          display: none; }
+                  .draw-hide-fix .Draw-button {
+                    display: none; }
+
+                    #embed-basic-toolbar {
+                      background-color: #dfdcda;
+                      width: 60px; }
+                      #embed-basic-toolbar #zoom-panel {
+                        margin: 10px 10px 0px 10px; }
+                        #embed-basic-toolbar #pan-panel {
+                          margin-bottom: 10px; }
+                          #embed-basic-toolbar .collapse-toolbar-toggle {
+                            position: relative;
+                            text-indent: -9999px;
+                            width: 100%; }
+                            #embed-basic-toolbar .collapse-toolbar-toggle:after {
+                              border: 10px solid transparent;
+                              content: "";
+                              display: block;
+                              position: absolute;
+                              left: 50%;
+                              margin-left: -10px; }
+                              #embed-basic-toolbar .collapse-toolbar-toggle.on {
+                                display: none; }
+                                #embed-basic-toolbar .collapse-toolbar-toggle.on:after {
+                                  top: 10px;
+                                  border-top-color: white; }
+                            #embed-basic-toolbar .collapse-toolbar-toggle.off {
+                              display: block; }
+                              #embed-basic-toolbar .collapse-toolbar-toggle.off:after {
+                                bottom: 10px;
+                                border-bottom-color: white; }
+                      #embed-basic-toolbar.collapsed #zoom-panel,
+                      #embed-basic-toolbar.collapsed #pan-panel {
+                        display: none; }
+                        #embed-basic-toolbar.collapsed .collapse-toolbar-toggle.on {
+                          display: block; }
+                          #embed-basic-toolbar.collapsed .collapse-toolbar-toggle.off {
+                            display: none; }
 
 .olImageLoadError {
   display: none !important; }
