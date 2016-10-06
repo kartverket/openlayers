@@ -969,3 +969,67 @@ fieldset.fld {
         .starred-layer-toggle input {
           margin-left: 7px;
           vertical-align: middle; }
+
+          .layer-list {
+            list-style-type: none;
+            margin: 10px 0px 0px 0px;
+            padding: 0px; }
+
+            .layer-list-item {
+              border-bottom: dashed 1px #ccc;
+              cursor: pointer;
+              height: 20px;
+              line-height: 20px;
+              margin: 0;
+              padding-left: 20px;
+              position: relative; }
+              .layer-list-item.active {
+                color: red;
+                font-weight: bold; }
+                .layer-list-item.hidden {
+                  display: none; }
+                  .layer-list-item.level-1 {
+                    padding-left: 32px; }
+                    .layer-list-item.level-2 {
+                      padding-left: 44px; }
+                      .layer-list-item.level-3 {
+                        padding-left: 56px; }
+                        .layer-list-item.level-4 {
+                          padding-left: 68px; }
+                          .layer-list-item.level-5 {
+                            padding-left: 80px; }
+                            .layer-list-item.level-6 {
+                              padding-left: 92px; }
+                              .layer-list-item.level-7 {
+                                padding-left: 104px; }
+                                .layer-list-item.level-8 {
+                                  padding-left: 116px; }
+                                  .layer-list-item.level-9 {
+                                    padding-left: 128px; }
+                                    .layer-list-item.level-10 {
+                                      padding-left: 140px; }
+                                      .layer-list-item:before {
+                                        background-image: url(icons.gif);
+                                        background-position: 0px -112px;
+                                        background-repeat: no-repeat;
+                                        content: "";
+                                        display: block;
+                                        height: 16px;
+                                        left: 0px;
+                                        position: absolute;
+                                        top: 2px;
+                                        width: 16px; }
+
+.layer-list-item-bg:before {
+  background-position: 0px 0px; }
+  .layer-list-item-bg:hover:before {
+    background-position: -16px 0px; }
+
+.layer-list-item-fg:before {
+  background-position: 0px -32px; }
+  .layer-list-item-fg:hover:before {
+    background-position: -16px -32px; }
+    .layer-list-item-fg.active:before {
+      background-position: -32px -32px; }
+      .layer-list-item-fg.active:hover:before {
+        background-position: -48px -32px; }
