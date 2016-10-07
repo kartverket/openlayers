@@ -1041,3 +1041,13 @@ fieldset.fld {
   .list-label small {
     font-weight: 400;
     margin-top: 3px; }
+
+.olControlLoadingPanel {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url(img/loading.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  width: 100%; }

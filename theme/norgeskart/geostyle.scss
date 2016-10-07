@@ -12,6 +12,7 @@ $color-black-40: rgba(0,0,0,0.4);
 $color-black-50: rgba(0,0,0,0.5);
 $color-white: rgb(255,255,255);
 $color-white-90: rgba(255,255,255,0.9);
+$color-white-10: rgba(255,255,255,0.1);
 $color-orange: rgb(254, 80, 0);
 $color-orange-90: rgba(254, 80, 0, 0.90);
 $color-orange-10: rgba(254, 80, 0, 0.10);
@@ -1592,4 +1593,15 @@ fieldset {
     font-weight: 400;
     margin-top: 3px;
   }
+}
+
+.olControlLoadingPanel {
+  background-color: $color-white-10;
+  background-image: url(img/loading.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  width: 100%;
 }
