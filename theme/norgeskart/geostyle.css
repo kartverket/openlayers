@@ -983,42 +983,44 @@ fieldset.fld {
               margin: 0;
               padding-left: 20px;
               position: relative; }
-              .layer-list-item.active {
-                color: red;
-                font-weight: bold; }
-                .layer-list-item.hidden {
-                  display: none; }
-                  .layer-list-item.level-1 {
-                    padding-left: 32px; }
-                    .layer-list-item.level-2 {
-                      padding-left: 44px; }
-                      .layer-list-item.level-3 {
-                        padding-left: 56px; }
-                        .layer-list-item.level-4 {
-                          padding-left: 68px; }
-                          .layer-list-item.level-5 {
-                            padding-left: 80px; }
-                            .layer-list-item.level-6 {
-                              padding-left: 92px; }
-                              .layer-list-item.level-7 {
-                                padding-left: 104px; }
-                                .layer-list-item.level-8 {
-                                  padding-left: 116px; }
-                                  .layer-list-item.level-9 {
-                                    padding-left: 128px; }
-                                    .layer-list-item.level-10 {
-                                      padding-left: 140px; }
-                                      .layer-list-item:before {
-                                        background-image: url(icons.gif);
-                                        background-position: 0px -112px;
-                                        background-repeat: no-repeat;
-                                        content: "";
-                                        display: block;
-                                        height: 16px;
-                                        left: 0px;
-                                        position: absolute;
-                                        top: 2px;
-                                        width: 16px; }
+              .layer-list-item:last-child {
+                border-bottom: none; }
+                .layer-list-item.active {
+                  color: red;
+                  font-weight: bold; }
+                  .layer-list-item.hidden {
+                    display: none; }
+                    .layer-list-item.level-1 {
+                      padding-left: 32px; }
+                      .layer-list-item.level-2 {
+                        padding-left: 44px; }
+                        .layer-list-item.level-3 {
+                          padding-left: 56px; }
+                          .layer-list-item.level-4 {
+                            padding-left: 68px; }
+                            .layer-list-item.level-5 {
+                              padding-left: 80px; }
+                              .layer-list-item.level-6 {
+                                padding-left: 92px; }
+                                .layer-list-item.level-7 {
+                                  padding-left: 104px; }
+                                  .layer-list-item.level-8 {
+                                    padding-left: 116px; }
+                                    .layer-list-item.level-9 {
+                                      padding-left: 128px; }
+                                      .layer-list-item.level-10 {
+                                        padding-left: 140px; }
+                                        .layer-list-item:before {
+                                          background-image: url(icons.gif);
+                                          background-position: 0px -112px;
+                                          background-repeat: no-repeat;
+                                          content: "";
+                                          display: block;
+                                          height: 16px;
+                                          left: 0px;
+                                          position: absolute;
+                                          top: 2px;
+                                          width: 16px; }
 
 .layer-list-item-bg:before {
   background-position: 0px 0px; }
@@ -1033,3 +1035,9 @@ fieldset.fld {
       background-position: -32px -32px; }
       .layer-list-item-fg.active:hover:before {
         background-position: -48px -32px; }
+
+.list-label {
+  margin-bottom: 0; }
+  .list-label small {
+    font-weight: 400;
+    margin-top: 3px; }

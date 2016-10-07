@@ -1532,6 +1532,10 @@ fieldset {
   padding-left: 20px;
   position: relative;
   
+  &:last-child {
+    border-bottom: none;
+  }
+  
   &.active {
     color: red;
     font-weight: bold;
@@ -1578,5 +1582,14 @@ fieldset {
   }
   &.active:hover:before {
     background-position: -48px -32px;
+  }
+}
+
+.list-label {
+  margin-bottom: 0;
+  
+  small {
+    font-weight: 400;
+    margin-top: 3px;
   }
 }
