@@ -1596,12 +1596,13 @@ fieldset {
 }
 
 .olControlLoadingPanel {
-  background-color: $color-white-10;
   background-image: url(img/loading.gif);
   background-position: center center;
   background-repeat: no-repeat;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-  width: 100%;
+  height: 31px;
+  left: 50%;
+  margin-left: -16px;
+  margin-top: -16px;
+  top: 50%;
+  width: 31px;
 }
