@@ -1147,6 +1147,20 @@ body {
     position: fixed;
     top: $geonorge-header-height;
     z-index: 800;
+    
+    .tool {
+        background-color: $color-white;
+        border: 1px solid $color-blue;
+        border-radius: 5px;
+        height: 10px;
+        position: absolute;
+        width: 10px;
+        z-index: 10;
+        
+        &:hover {
+            border-color: $color-orange;
+        }
+    }
 }
 #embedLightOFbase {
     bottom: 0;
@@ -1158,12 +1172,53 @@ body {
 #embedLightOFsquare {
     border: 1px solid RGB(0, 0, 0);
     background: transparent none repeat 0 0;
+    
+    .tool {
+        border: none;
+        border-radius: 0px;
+        height: auto;
+        left: 0px;
+        margin: 0px;
+        top: 0px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        width: auto;
+        z-index: 100;
+    }
 }
 #embedLightOFtop {
     z-index: 810;
+    
+    .left {
+        bottom: 0px;
+        cursor: nw-resize;
+        margin: 0px -5px -5px 0px;
+        right: 100%;
+    }
+    .right {
+        bottom: 0px;
+        cursor: ne-resize;
+        left: 100%;
+        margin: 0px 0px -5px -5px;
+    }
 }
 #embedLightOFbottom {
     z-index: 810;
+    
+    .left {
+        cursor: ne-resize;
+        left: 0px;
+        top: 0px;
+        margin: -5px 0px 0px -5px;
+    }
+    .right {
+        cursor: nw-resize;
+        left: 100%;
+        margin: -5px 0px 0px -5px;
+        top: 0px;
+    }
 }
 
 .markers-list {

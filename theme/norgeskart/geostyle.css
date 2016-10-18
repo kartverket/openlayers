@@ -720,48 +720,91 @@
   position: fixed;
   top: 90px;
   z-index: 800; }
+  .embedLight .tool {
+    background-color: white;
+    border: 1px solid #7da1c4;
+    border-radius: 5px;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    z-index: 10; }
+    .embedLight .tool:hover {
+      border-color: #fe5000; }
 
-  #embedLightOFbase {
-    bottom: 0;
-    right: 0;
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    background: RGB(240, 240, 240) none repeat 0 0; }
+#embedLightOFbase {
+  bottom: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  background: RGB(240, 240, 240) none repeat 0 0; }
 
-    #embedLightOFsquare {
-      border: 1px solid RGB(0, 0, 0);
-      background: transparent none repeat 0 0; }
+  #embedLightOFsquare {
+    border: 1px solid RGB(0, 0, 0);
+    background: transparent none repeat 0 0; }
+    #embedLightOFsquare .tool {
+      border: none;
+      border-radius: 0px;
+      height: auto;
+      left: 0px;
+      margin: 0px;
+      top: 0px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      width: auto;
+      z-index: 100; }
 
-      #embedLightOFtop {
-        z-index: 810; }
+#embedLightOFtop {
+  z-index: 810; }
+  #embedLightOFtop .left {
+    bottom: 0px;
+    cursor: nw-resize;
+    margin: 0px -5px -5px 0px;
+    right: 100%; }
+    #embedLightOFtop .right {
+      bottom: 0px;
+      cursor: ne-resize;
+      left: 100%;
+      margin: 0px 0px -5px -5px; }
 
-        #embedLightOFbottom {
-          z-index: 810; }
+#embedLightOFbottom {
+  z-index: 810; }
+  #embedLightOFbottom .left {
+    cursor: ne-resize;
+    left: 0px;
+    top: 0px;
+    margin: -5px 0px 0px -5px; }
+    #embedLightOFbottom .right {
+      cursor: nw-resize;
+      left: 100%;
+      margin: -5px 0px 0px -5px;
+      top: 0px; }
 
-          .markers-list {
-            font-size: 12px;
-            padding-left: 15px; }
-            .markers-list li {
-              height: 20px;
-              line-height: 20px; }
-              .markers-list li span {
-                color: #414042; }
-            .markers-list .remove-marker {
-              display: block;
-              float: right;
-              height: 16px;
-              margin: 2px;
-              width: 16px; }
-              .markers-list .remove-marker .icon {
-                fill: transparent;
-                height: 100%;
-                stroke: #7da1c4;
-                stroke-width: 3px;
-                width: 100%; }
-                .markers-list .remove-marker:hover .icon {
-                  stroke: #fe5000; }
-                  .markers-list .remove-marker span {
-                    display: none; }
+.markers-list {
+  font-size: 12px;
+  padding-left: 15px; }
+  .markers-list li {
+    height: 20px;
+    line-height: 20px; }
+    .markers-list li span {
+      color: #414042; }
+  .markers-list .remove-marker {
+    display: block;
+    float: right;
+    height: 16px;
+    margin: 2px;
+    width: 16px; }
+    .markers-list .remove-marker .icon {
+      fill: transparent;
+      height: 100%;
+      stroke: #7da1c4;
+      stroke-width: 3px;
+      width: 100%; }
+      .markers-list .remove-marker:hover .icon {
+        stroke: #fe5000; }
+        .markers-list .remove-marker span {
+          display: none; }
 
 textarea.form-control, select.form-control, input.form-control {
   background: white;
