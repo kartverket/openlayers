@@ -1029,7 +1029,6 @@ fieldset.fld {
               .layer-list-item:last-child {
                 border-bottom: none; }
                 .layer-list-item.active {
-                  color: red;
                   font-weight: bold; }
                   .layer-list-item.hidden {
                     display: none; }
